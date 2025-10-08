@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger 22 - Menu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #2c2c2c;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+            text-align: center;
+            padding: 80px 20px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(255, 159, 28, 0.1) 0%, transparent 50%);
+        }
+
+        .logo {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 4.5em;
+            color: #FF9F1C;
+            font-weight: 900;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.4em;
+            color: #ffffff;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #FF9F1C;
+            color: #2c2c2c;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(255, 159, 28, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #ffb347;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255, 159, 28, 0.4);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .benefit-item {
+            padding: 30px;
+            background: #1a1a1a;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .benefit-title {
+            color: #FF9F1C;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .benefit-text {
+            color: #cccccc;
+        }
+
+        .menu-section {
+            margin-bottom: 70px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2.8em;
+            color: #FF9F1C;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .section-description {
+            font-size: 1.2em;
+            color: #cccccc;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+        }
+
+        .menu-item {
+            background: #1a1a1a;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(255, 159, 28, 0.2);
+            border-color: #FF9F1C;
+        }
+
+        .item-content {
+            padding: 30px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .item-name {
+            font-size: 1.6em;
+            color: #ffffff;
+            font-weight: 700;
+            flex: 1;
+        }
+
+        .item-badge {
+            background: #FF9F1C;
+            color: #2c2c2c;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .item-description {
+            color: #b0b0b0;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-size: 1em;
+        }
+
+        .item-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid #3c3c3c;
+        }
+
+        .item-price {
+            font-size: 2em;
+            color: #FF9F1C;
+            font-weight: 900;
+        }
+
+        .order-btn {
+            background: #FF9F1C;
+            color: #2c2c2c;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .order-btn:hover {
+            background: #ffb347;
+            transform: scale(1.05);
+        }
+
+        .spicy {
+            color: #ff4444;
+            margin-left: 8px;
+            font-size: 1.2em;
+        }
+
+        .popular {
+            position: relative;
+        }
+
+        .popular::before {
+            content: '⭐ BESTSELLER';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #FF9F1C;
+            color: #2c2c2c;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.75em;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        footer {
+            background: #1a1a1a;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-text {
+            color: #b0b0b0;
+            font-size: 1em;
+        }
+
+        .footer-highlight {
+            color: #FF9F1C;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3em;
+            }
+            
+            .section-title {
+                font-size: 2em;
+            }
+            
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="logo">
+            <h1>🍔 BURGER 22</h1>
+            <p class="hero-subtitle">Najlepsze burgery w mieście</p>
+            <a href="#menu" class="cta-button">Zobacz Menu</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="benefits">
+            <div class="benefit-item">
+                <div class="benefit-icon">🥩</div>
+                <h3 class="benefit-title">100% Wołowina</h3>
+                <p class="benefit-text">Tylko świeże mięso najwyższej jakości</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">👨‍🍳</div>
+                <h3 class="benefit-title">Własna Receptura</h3>
+                <p class="benefit-text">Unikalne sosy i składniki</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">⚡</div>
+                <h3 class="benefit-title">Szybka Obsługa</h3>
+                <p class="benefit-text">Twój burger gotowy w 10 minut</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">🚚</div>
+                <h3 class="benefit-title">Dostawa Gratis</h3>
+                <p class="benefit-text">Darmowa dostawa od 50 zł</p>
+            </div>
+        </div>
+
+        <div class="menu-section" id="menu">
+            <div class="section-header">
+                <h2 class="section-title">Nasze Burgery</h2>
+                <p class="section-description">Każdy burger grillowany na świeżo i przygotowywany z najlepszych składników</p>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item popular">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name">Klasyczny Burger</h3>
+                        </div>
+                        <p class="item-description">
+                            Soczysta kotleta wołowa 200g, świeża sałata, pomidor, marynowany ogórek, cebula i nasz firmowy sos
+                        </p>
+                        <div class="item-footer">
+                            <span class="item-price">28 zł</span>
+                            <button class="order-btn">Zamów</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item popular">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name">Double Cheese</h3>
+                        </div>
+                        <p class="item-description">
+                            Dwie kotlety wołowe, podwójny cheddar, karmelizowana cebula, sos serowy i pikle
+                        </p>
+                        <div class="item-footer">
+                            <span class="item-price">38 zł</span>
+                            <button class="order-btn">Zamów</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name">BBQ Bacon</h3>
+                        </div>
+                        <p class="item-description">
+                            Kotleta z marmurowej wołowiny, chrupiący bekon, sos BBQ, krążki cebulowe i ser cheddar
+                        </p>
+                        <div class="item-footer">
+                            <span class="item-price">42 zł</span>
+                            <button class="order-btn">Zamów</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name">Pikantny Meksyk <span class="spicy">🌶️🌶️</span></h3>
+                        </div>
+                        <p class="item-description">
+                            Ostra kotleta, jalapeño, salsa, guacamole, ser cheddar i majonez chipotle
+                        </p>
+                        <div class="item-footer">
+                            <span class="item-price">40 zł</span>
+                            <button class="order-btn">Zamów</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name">Truflowy Deluxe</h3>
+                            <span class="item-badge">PREMIUM</span>
+                        </div>
+                        <p class="item-description">
+                            Kotleta Angus, smażone pieczarki, majonez truflowy, rukola i parmezan
+                        </p>
+                        <div class="item-footer">
+                            <span class="item-price">52 zł</span>
+                            <button class="order-btn">Zamów</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name">Crispy Chicken</h3>
+                        </div>
+                        <p class="item-description">
+                            Chrupiący kurczak panierowany, bekon, sałata lodowa, pomidor i sos ranch
+                        </p>
+                        <div class="item-footer">
+                            <span class="item-price">34 zł</span>
+                            <button class="order-btn">Zamów</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <div class="section-header">
+                <h2 class="section-title">Dodatki</h2>
+                <p class="section-description">Idealne uzupełnienie do twojego burgera</p>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name">Frytki Belgijskie</h3>
+                        </div>
+                        <p class="item-description">
+                            Chrupiące frytki z solą morską (duża porcja)
+                        </p>
+                        <div class="item-footer">
+                            <span class="item-price">12 zł</span>
+                            <button class="order-btn">Zamów</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name">Krążki Cebulowe</h3>
+                        </div>
+                        <p class="item-description">
+                            W chrupiącej panierce z sosem czosnkowym
+                        </p>
+                        <div class="item-footer">
+                            <span class="item-price">14 zł</span>
+                            <button class="order-btn">Zamów</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name">Nuggetsy z Kurczaka</h3>
+                        </div>
+                        <p class="item-description">
+                            8 sztuk z sosem miodowo-musztardowym
+                        </p>
+                        <div class="item-footer">
+                            <span class="item-price">16 zł</span>
+                            <button class="order-btn">Zamów</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name">Napoje</h3>
+                        </div>
+                        <p class="item-description">
+                            Coca-Cola, Sprite, Fanta, Lemoniada domowa (0.5L)
+                        </p>
+                        <div class="item-footer">
+                            <span class="item-price">8 zł</span>
+                            <button class="order-btn">Zamów</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name">Milkshake</h3>
+                        </div>
+                        <p class="item-description">
+                            Wanilia, czekolada lub truskawka
+                        </p>
+                        <div class="item-footer">
+                            <span class="item-price">15 zł</span>
+                            <button class="order-btn">Zamów</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name">Sosy Extra</h3>
+                        </div>
+                        <p class="item-description">
+                            BBQ, Czosnkowy, Ostry, Truflowy
+                        </p>
+                        <div class="item-footer">
+                            <span class="item-price">3 zł</span>
+                            <button class="order-btn">Zamów</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p class="footer-text">🍔 <span class="footer-highlight">BURGER 22</span> - Najlepsze burgery od 2022 roku</p>
+        <p class="footer-text">📞 +48 123 456 789 | 📍 ul. Przykładowa 22, Warszawa</p>
+        <p class="footer-text" style="margin-top: 20px; font-size: 0.9em;">Czynne: Pn-Nd 11:00 - 23:00</p>
+    </footer>
+
+    <script>
+        const buttons = document.querySelectorAll('.order-btn');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const itemName = this.closest('.menu-item').querySelector('.item-name').textContent;
+                const itemPrice = this.closest('.menu-item').querySelector('.item-price').textContent;
+                alert(`✅ Dodano do koszyka!\n\n${itemName}\nCena: ${itemPrice}\n\nDziękujemy za zamówienie!`);
+            });
+        });
+
+        document.querySelector('.cta-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#menu').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
