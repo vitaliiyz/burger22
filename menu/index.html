@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Burger 22 - Menu</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap');
 
         * {
             margin: 0;
@@ -13,84 +13,307 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary-orange: #FFA500;
+            --warm-yellow: #FFB84D;
+            --graphite: #3A3A3A;
+            --graphite-light: #5A5A5A;
+            --white: #FFFFFF;
+            --off-white: #FAFAFA;
+            --shadow: rgba(58, 58, 58, 0.1);
+            --shadow-hover: rgba(58, 58, 58, 0.15);
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #FFFFFF;
-            color: #3A3A3A;
-            line-height: 1.5;
-            padding-bottom: 30px;
+            background: var(--off-white);
+            color: var(--graphite);
+            line-height: 1.6;
+            padding-bottom: 40px;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .hero {
-            background: #FFB347;
+            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--warm-yellow) 100%);
             text-align: center;
-            padding: 40px 20px;
-            margin-bottom: 30px;
+            padding: 60px 20px 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(255, 165, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
         }
 
         h1 {
-            font-size: 2.2em;
-            color: #3A3A3A;
-            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5em;
+            color: var(--white);
+            font-weight: 900;
             margin: 0;
-            letter-spacing: -0.5px;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 0 16px;
-        }
-
-        .menu-section {
-            margin-bottom: 40px;
-        }
-
-        .section-header {
-            margin-bottom: 16px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #FFB347;
-        }
-
-        .section-title {
-            font-size: 1.4em;
-            color: #3A3A3A;
-            font-weight: 700;
+            letter-spacing: 3px;
+            text-shadow: 3px 5px 12px rgba(0, 0, 0, 0.25);
+            position: relative;
+            z-index: 1;
             text-transform: uppercase;
+        }
+
+        .tagline {
+            font-family: 'Inter', sans-serif;
+            color: var(--white);
+            font-size: 1.1em;
+            margin-top: 12px;
+            opacity: 0.97;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
             letter-spacing: 0.5px;
         }
 
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .menu-nav {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-radius: 16px;
+            box-shadow: 0 4px 15px var(--shadow), 0 1px 3px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 100;
+        }
+
+        .menu-nav.sticky {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            max-width: 100%;
+            width: 100%;
+            border-radius: 0 0 16px 16px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(30px) saturate(180%);
+            -webkit-backdrop-filter: blur(30px) saturate(180%);
+            box-shadow: 0 6px 25px var(--shadow-hover), 0 2px 5px rgba(0, 0, 0, 0.08);
+            border-bottom: 1px solid rgba(255, 165, 0, 0.1);
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @media (min-width: 940px) {
+            .menu-nav.sticky {
+                max-width: 900px;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .nav-item {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1em;
+            font-weight: 700;
+            color: var(--graphite);
+            text-decoration: none;
+            padding: 16px 20px;
+            background: var(--off-white);
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--warm-yellow) 100%);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-item:hover {
+            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--warm-yellow) 100%);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 165, 0, 0.3);
+            border-color: var(--primary-orange);
+        }
+
+        .nav-item.active {
+            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--warm-yellow) 100%);
+            color: var(--white);
+            border-color: var(--primary-orange);
+            box-shadow: 0 4px 15px rgba(255, 165, 0, 0.4);
+        }
+
+        .nav-item.active::after {
+            width: 80%;
+        }
+
+        .nav-item:active {
+            transform: translateY(-1px);
+        }
+
+        /* Spacer for sticky nav */
+        .nav-spacer {
+            height: 0;
+            transition: height 0.3s ease;
+        }
+
+        .nav-spacer.active {
+            height: 100px;
+        }
+
+        .menu-section {
+            margin-bottom: 50px;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-header {
+            margin-bottom: 24px;
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px) saturate(160%);
+            -webkit-backdrop-filter: blur(15px) saturate(160%);
+            border-radius: 12px;
+            box-shadow: 0 2px 10px var(--shadow), 0 1px 3px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid var(--primary-orange);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-left: 5px solid var(--primary-orange);
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8em;
+            color: var(--graphite);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
         .menu-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
 
         .menu-item {
-            background: #FFFFFF;
-            border: 2px solid #F5F5F5;
-            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px) saturate(150%);
+            -webkit-backdrop-filter: blur(10px) saturate(150%);
+            border-radius: 16px;
             overflow: hidden;
-            transition: border-color 0.2s;
+            box-shadow: 0 4px 15px var(--shadow), 0 1px 3px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
-            flex-direction: row;
-            align-items: stretch;
+            flex-direction: column;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px) saturate(180%);
+            -webkit-backdrop-filter: blur(15px) saturate(180%);
+            box-shadow: 0 8px 25px var(--shadow-hover), 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-color: rgba(255, 165, 0, 0.15);
         }
 
         .menu-item:active {
-            border-color: #FFB347;
+            transform: translateY(-4px);
         }
 
         .item-image {
-            width: 100px;
-            min-width: 100px;
-            background: #F5F5F5;
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--warm-yellow) 0%, var(--primary-orange) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #999;
-            font-size: 0.75em;
+            color: var(--graphite-light);
+            font-size: 0.9em;
+            font-weight: 500;
             overflow: hidden;
+            position: relative;
+        }
+
+        .item-image::before {
+            content: '';
+            font-size: 4em;
+            opacity: 0.3;
+            position: absolute;
         }
 
         .item-image img {
@@ -98,88 +321,407 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover .item-image img {
+            transform: scale(1.1);
         }
 
         .item-content {
-            padding: 14px;
+            padding: 20px;
             flex: 1;
             display: flex;
             flex-direction: column;
-            justify-content: center;
         }
 
         .item-header {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 8px;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            gap: 12px;
         }
 
         .item-name {
-            font-size: 1.15em;
-            color: #3A3A3A;
-            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4em;
+            color: var(--graphite);
+            font-weight: 700;
             flex: 1;
+            line-height: 1.2;
+            letter-spacing: 0.5px;
         }
 
         .item-description {
-            color: #666;
-            line-height: 1.5;
-            font-size: 0.875em;
-            margin-bottom: 10px;
+            font-family: 'Inter', sans-serif;
+            color: var(--graphite-light);
+            line-height: 1.7;
+            font-size: 0.9em;
+            margin-bottom: 16px;
+            flex: 1;
+            letter-spacing: 0.2px;
+        }
+
+        .item-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 12px;
+            border-top: 2px solid #F8F9FA;
         }
 
         .item-price {
-            font-size: 1.25em;
-            color: #FFB347;
-            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8em;
+            background: linear-gradient(135deg, var(--primary-orange), var(--warm-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+            letter-spacing: 1px;
         }
 
+        .price-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.5em;
+            color: var(--graphite-light);
+            font-weight: 500;
+            display: block;
+        }
+
+        .zestaw-price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.15em;
+            color: var(--graphite);
+            font-weight: 700;
+            margin-top: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .zestaw-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7em;
+            color: var(--graphite-light);
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
+
+        .addon-note {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8em;
+            color: var(--graphite-light);
+            font-weight: 500;
+            margin-top: 4px;
+            font-style: italic;
+        }
+
+        .sauce-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px) saturate(160%);
+            -webkit-backdrop-filter: blur(12px) saturate(160%);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px var(--shadow), 0 1px 3px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .sauce-column {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .sauce-item {
+            font-family: 'Inter', sans-serif;
+            font-size: 1em;
+            color: var(--graphite);
+            font-weight: 500;
+            padding: 12px 16px;
+            background: rgba(250, 250, 250, 0.8);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.2s ease;
+            letter-spacing: 0.3px;
+        }
+
+        .sauce-item:hover {
+            background: linear-gradient(135deg, var(--warm-yellow) 0%, var(--primary-orange) 100%);
+            color: var(--white);
+            transform: translateX(5px);
+        }
+
+        /* Scroll to top button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--warm-yellow) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 165, 0, 0.4);
+            transition: all 0.3s ease;
+            z-index: 10000;
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0.8);
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+        }
+
+        .scroll-to-top:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(255, 165, 0, 0.6);
+        }
+
+        .scroll-to-top:active {
+            transform: scale(0.95);
+        }
+
+        .scroll-to-top::before {
+            content: '↑';
+            font-size: 24px;
+            color: var(--white);
+            font-weight: bold;
+        }
+
+        /* No image menu items */
+        .menu-item.no-image {
+            flex-direction: row;
+            align-items: center;
+            min-height: auto;
+        }
+
+        .menu-item.no-image .item-content {
+            padding: 18px 20px;
+        }
+
+        .menu-item.no-image .item-header {
+            margin-bottom: 0;
+        }
+
+        .menu-item.no-image .item-footer {
+            border: none;
+            padding: 0;
+        }
+
+        /* Tablet responsive */
         @media (max-width: 768px) {
             h1 {
-                font-size: 1.8em;
+                font-size: 2.5em;
+                letter-spacing: 2px;
+            }
+
+            .hero {
+                padding: 50px 20px 40px;
             }
 
             .section-title {
-                font-size: 1.2em;
+                font-size: 1.5em;
+                letter-spacing: 1.5px;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+
+            .item-name {
+                font-size: 1.3em;
+            }
+
+            .menu-nav {
+                display: flex;
+                overflow-x: auto;
+                overflow-y: hidden;
+                gap: 10px;
+                padding: 14px;
+                scroll-behavior: smooth;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+
+            .menu-nav::-webkit-scrollbar {
+                display: none;
+            }
+
+            .menu-nav.sticky {
+                padding: 10px 14px;
+                border-radius: 0 0 12px 12px;
+            }
+
+            .nav-item {
+                flex: 0 0 auto;
+                min-width: 140px;
+                white-space: nowrap;
+                font-size: 0.9em;
+                padding: 12px 16px;
+            }
+
+            .nav-spacer.active {
+                height: 70px;
             }
         }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2em;
+                letter-spacing: 1.5px;
+            }
+
+            .tagline {
+                font-size: 0.95em;
+            }
+
+            .hero {
+                padding: 40px 16px 30px;
+            }
+
+            .section-header {
+                padding: 12px 16px;
+            }
+
+            .section-title {
+                font-size: 1.3em;
+                letter-spacing: 1.2px;
+            }
+
+            .item-image {
+                height: 180px;
+            }
+
+            .item-content {
+                padding: 16px;
+            }
+
+            .item-name {
+                font-size: 1.2em;
+            }
+
+            .item-description {
+                font-size: 0.87em;
+                line-height: 1.6;
+            }
+
+            .item-price {
+                font-size: 1.5em;
+            }
+
+            .zestaw-price {
+                font-size: 1.05em;
+            }
+
+            .menu-grid {
+                gap: 16px;
+            }
+
+            .menu-nav {
+                padding: 10px;
+                gap: 8px;
+            }
+
+            .menu-nav.sticky {
+                padding: 8px 10px;
+            }
+
+            .nav-item {
+                min-width: 130px;
+                font-size: 0.85em;
+                padding: 10px 14px;
+            }
+
+            .nav-spacer.active {
+                height: 65px;
+            }
+
+            .scroll-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+
+            .scroll-to-top::before {
+                font-size: 20px;
+            }
+        }
+
+        /* Section fade-in animation */
+        .menu-section:nth-child(1) { animation-delay: 0.1s; }
+        .menu-section:nth-child(2) { animation-delay: 0.2s; }
+        .menu-section:nth-child(3) { animation-delay: 0.3s; }
     </style>
 </head>
 <body>
     <div class="hero">
         <h1>🍔 BURGER 22</h1>
+        <p class="tagline">Najlepsze burgery w mieście</p>
     </div>
 
     <div class="container">
-        <div class="menu-section">
+        <nav class="menu-nav" id="menuNav">
+            <a href="#burgery" class="nav-item" data-section="burgery">🍔 Burgery</a>
+            <a href="#dodatki" class="nav-item" data-section="dodatki">🍟 Dodatki</a>
+            <a href="#sosy" class="nav-item" data-section="sosy">🧂 Sosy</a>
+            <a href="#napoje" class="nav-item" data-section="napoje">🥤 Napoje</a>
+        </nav>
+        <div class="nav-spacer" id="navSpacer"></div>
+
+        <div class="menu-section" id="burgery">
             <div class="section-header">
                 <h2 class="section-title">Burgery</h2>
             </div>
             <div class="menu-grid">
                 <div class="menu-item">
-                    <div class="item-image">Zdjęcie</div>
+                    <div class="item-image"></div>
                     <div class="item-content">
                         <div class="item-header">
                             <h3 class="item-name">Klasyczny</h3>
-                            <span class="item-price">28 zł</span>
                         </div>
                         <p class="item-description">
-                            Ser x2, kotleta wołowa, pomidor, sałata, cebula, ogórek, musztarda, ketchup
+                            Bułeczka brioche, musztarda, cebula, pomidor, cheddar, wołowina, sałata, ogórek kiszony, ketchup
                         </p>
+                        <div class="item-footer">
+                            <div>
+                                <div class="item-price">33 zł</div>
+                                <div class="zestaw-price">42 zł <span class="zestaw-label">(zestaw: burger + frytki + sos)</span></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="menu-item">
-                    <div class="item-image">Zdjęcie</div>
+                    <div class="item-image"></div>
                     <div class="item-content">
                         <div class="item-header">
                             <h3 class="item-name">BBQ</h3>
-                            <span class="item-price">35 zł</span>
                         </div>
                         <p class="item-description">
-                            Bekon x2, ser x2, kotleta wołowa, pomidor, sałata, cebula, ogórek, sos BBQ
+                            Bułeczka brioche, sos BBQ x2, cebula, pomidor, bekon smażony, cheddar, wołowina, sałata, ogórek kiszony
                         </p>
+                        <div class="item-footer">
+                            <div>
+                                <div class="item-price">36 zł</div>
+                                <div class="zestaw-price">45 zł <span class="zestaw-label">(zestaw: burger + frytki + sos)</span></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -190,102 +732,443 @@
                     <div class="item-content">
                         <div class="item-header">
                             <h3 class="item-name">Ostry</h3>
-                            <span class="item-price">36 zł</span>
                         </div>
                         <p class="item-description">
-                            Bekon x2, ser x2, kotleta wołowa, sałata, ogórek, jalapeño, smażona cebula, chili, ostry sos
+                            Bułeczka brioche, sos chili, jalapeño, bekon smażony, cheddar, wołowina, sałata, ogórek kiszony, smażona cebula, ostry sos
                         </p>
+                        <div class="item-footer">
+                            <div>
+                                <div class="item-price">39 zł</div>
+                                <div class="zestaw-price">48 zł <span class="zestaw-label">(zestaw: burger + frytki + sos)</span></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="menu-item">
-                    <div class="item-image">Zdjęcie</div>
+                    <div class="item-image"></div>
                     <div class="item-content">
                         <div class="item-header">
                             <h3 class="item-name">Serowy</h3>
-                            <span class="item-price">37 zł</span>
                         </div>
                         <p class="item-description">
-                            Bekon x2, ser specjalny, ser x2, kotleta wołowa, pomidor, cebula, ogórek, serowy sos
+                            Bułeczka brioche, sos serowy x2, cebula, pomidor, bekon smażony, mozzarella, cheddar topiony x2, wołowina, ogórek kiszony
                         </p>
+                        <div class="item-footer">
+                            <div>
+                                <div class="item-price">40 zł</div>
+                                <div class="zestaw-price">49 zł <span class="zestaw-label">(zestaw: burger + frytki + sos)</span></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="menu-item">
-                    <div class="item-image">Zdjęcie</div>
+                    <div class="item-image"></div>
                     <div class="item-content">
                         <div class="item-header">
                             <h3 class="item-name">Kurczak</h3>
-                            <span class="item-price">30 zł</span>
                         </div>
                         <p class="item-description">
-                            Ser x2, kotleta z kurczaka, pomidor, sałata, cebula, ketchup, majonez
+                            Bułeczka brioche, ketchup, cebula, pomidor, cheddar, kurczak, sałata, majonez
                         </p>
+                        <div class="item-footer">
+                            <div>
+                                <div class="item-price">37 zł</div>
+                                <div class="zestaw-price">46 zł <span class="zestaw-label">(zestaw: burger + frytki + sos)</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-image"></div>
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name">Jaja Burger</h3>
+                        </div>
+                        <p class="item-description">
+                            Bułeczka brioche, majonez, bekon smażony, jajko, wołowina, ogórek kiszony, sałata, smażona cebula, sos algierski
+                        </p>
+                        <div class="item-footer">
+                            <div>
+                                <div class="item-price">38 zł</div>
+                                <div class="zestaw-price">47 zł <span class="zestaw-label">(zestaw: burger + frytki + sos)</span></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="menu-section">
+        <div class="menu-section" id="dodatki">
             <div class="section-header">
                 <h2 class="section-title">Dodatki</h2>
             </div>
             <div class="menu-grid">
-                <div class="menu-item">
+                <div class="menu-item no-image">
                     <div class="item-content">
                         <div class="item-header">
-                            <h3 class="item-name">Frytki</h3>
-                            <span class="item-price">10 zł</span>
+                            <h3 class="item-name">🍟 Frytki małe</h3>
+                        </div>
+                        <div class="item-footer">
+                            <div>
+                                <span class="item-price">14 zł</span>
+                                <div class="addon-note">sos w cenie</div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="menu-item">
+                <div class="menu-item no-image">
                     <div class="item-content">
                         <div class="item-header">
-                            <h3 class="item-name">Krążki cebulowe</h3>
-                            <span class="item-price">12 zł</span>
+                            <h3 class="item-name">🍟 Frytki duże</h3>
+                        </div>
+                        <div class="item-footer">
+                            <div>
+                                <span class="item-price">18 zł</span>
+                                <div class="addon-note">sos w cenie</div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="menu-item">
+                <div class="menu-item no-image">
                     <div class="item-content">
                         <div class="item-header">
-                            <h3 class="item-name">Nuggetsy (8 szt.)</h3>
-                            <span class="item-price">15 zł</span>
+                            <h3 class="item-name">🧅 Krążki cebulowe małe</h3>
+                        </div>
+                        <div class="item-footer">
+                            <div>
+                                <span class="item-price">13 zł</span>
+                                <div class="addon-note">sos w cenie</div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="menu-item">
+                <div class="menu-item no-image">
                     <div class="item-content">
                         <div class="item-header">
-                            <h3 class="item-name">Napoje (0.5L)</h3>
-                            <span class="item-price">7 zł</span>
+                            <h3 class="item-name">🧅 Krążki cebulowe duże</h3>
+                        </div>
+                        <div class="item-footer">
+                            <div>
+                                <span class="item-price">19 zł</span>
+                                <div class="addon-note">sos w cenie</div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="menu-item">
+                <div class="menu-item no-image">
                     <div class="item-content">
                         <div class="item-header">
-                            <h3 class="item-name">Milkshake</h3>
-                            <span class="item-price">14 zł</span>
+                            <h3 class="item-name">🍗 Nuggetsy małe</h3>
+                        </div>
+                        <div class="item-footer">
+                            <div>
+                                <span class="item-price">17 zł</span>
+                                <div class="addon-note">sos w cenie</div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="menu-item">
+                <div class="menu-item no-image">
                     <div class="item-content">
                         <div class="item-header">
-                            <h3 class="item-name">Sos extra</h3>
-                            <span class="item-price">3 zł</span>
+                            <h3 class="item-name">🍗 Nuggetsy duże</h3>
+                        </div>
+                        <div class="item-footer">
+                            <div>
+                                <span class="item-price">25 zł</span>
+                                <div class="addon-note">sos w cenie</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name">🧂 Sos dodatkowy</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">5 zł</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section" id="sosy">
+            <div class="section-header">
+                <h2 class="section-title">Sosy na wybór</h2>
+            </div>
+            <div class="sauce-list">
+                <div class="sauce-column">
+                    <div class="sauce-item">🍅 Ketchup</div>
+                    <div class="sauce-item">🍖 BBQ</div>
+                    <div class="sauce-item">🌶️ Chili</div>
+                    <div class="sauce-item">🔥 Amerykański (hot)</div>
+                    <div class="sauce-item">🧀 Serowy</div>
+                </div>
+                <div class="sauce-column">
+                    <div class="sauce-item">🥚 Majonez</div>
+                    <div class="sauce-item">🍯 Kwaśno-słodki</div>
+                    <div class="sauce-item">🧄 Czosnkowy</div>
+                    <div class="sauce-item">🌭 Musztarda</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section" id="napoje">
+            <div class="section-header">
+                <h2 class="section-title">Napoje</h2>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name">🥤 Cola/Pepsi</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">9 zł</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name">🥤 Cola/Pepsi (zero)</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">9 zł</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name">🥤 Sprite</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">9 zł</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name">🥤 Fanta</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">9 zł</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name">🍊 Sok pomarańczowy</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">9 zł</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name">🍎 Sok jabłkowy</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">9 zł</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name">🍹 Sok multiwitamina</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">9 zł</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name">🍅 Sok pomidorowy</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">9 zł</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name">💧 Woda niegazowana</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">6 zł</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name">💦 Woda gazowana</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">6 zł</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name">🍺 Piwo bezalkoholowe</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">— zł</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="scroll-to-top" id="scrollToTop"></div>
+
+    <script>
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        const menuNav = document.getElementById('menuNav');
+        const navSpacer = document.getElementById('navSpacer');
+        const navItems = document.querySelectorAll('.nav-item');
+        const sections = document.querySelectorAll('.menu-section');
+
+        let navOffset = menuNav.offsetTop;
+
+        // Recalculate offset on load
+        window.addEventListener('load', function() {
+            navOffset = menuNav.offsetTop;
+        });
+
+        // Function to detect active section
+        function updateActiveSection() {
+            let currentSection = '';
+            const scrollPosition = window.pageYOffset + 150;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            // Update active class for navigation
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('data-section') === currentSection) {
+                    item.classList.add('active');
+
+                    // Auto-scroll navigation to show active item
+                    scrollNavToActiveItem(item);
+                }
+            });
+        }
+
+        // Function to scroll navigation to active item (for mobile horizontal scroll)
+        function scrollNavToActiveItem(activeItem) {
+            if (window.innerWidth <= 768) {
+                const navContainer = menuNav;
+                const itemLeft = activeItem.offsetLeft;
+                const itemWidth = activeItem.offsetWidth;
+                const navWidth = navContainer.offsetWidth;
+                const scrollLeft = itemLeft - (navWidth / 2) + (itemWidth / 2);
+
+                navContainer.scrollTo({
+                    left: scrollLeft,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // Handle scroll
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.pageYOffset;
+
+            // Sticky navigation - only stick if scrolled past the nav AND not at the very top
+            if (scrollPosition >= navOffset && scrollPosition > 10) {
+                menuNav.classList.add('sticky');
+                navSpacer.classList.add('active');
+            } else {
+                menuNav.classList.remove('sticky');
+                navSpacer.classList.remove('active');
+            }
+
+            // Show/hide scroll to top button
+            if (scrollPosition > 150) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+
+            // Update active section
+            updateActiveSection();
+        });
+
+        // Scroll to top on click
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+
+            // Force update offset after scroll animation completes
+            setTimeout(function() {
+                navOffset = menuNav.offsetTop;
+            }, 500);
+        });
+
+        // Smooth scroll to sections with sticky nav offset
+        navItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                if (targetSection) {
+                    const navHeight = menuNav.offsetHeight;
+                    const targetPosition = targetSection.offsetTop - navHeight - 20;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Initial active section update
+        updateActiveSection();
+    </script>
 </body>
 </html>
