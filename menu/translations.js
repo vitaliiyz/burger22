@@ -6,38 +6,40 @@ const translations = {
             burgers: '🍔 Burgery',
             sides: '🍟 Dodatki',
             sauces: '🧂 Sosy',
-            drinks: '🥤 Napoje'
+            drinks: '🥤 Napoje',
+            extras: '➕ Dodatki do burgera'
         },
         sections: {
             burgers: 'Burgery',
             sides: 'Dodatki',
             sauces: 'Sosy na wybór',
-            drinks: 'Napoje'
+            drinks: 'Napoje',
+            extras: 'Dodatki do burgera'
         },
         burgers: {
             classic: {
                 name: 'Klasyczny',
-                desc: 'Bułeczka brioche, musztarda, cebula, pomidor, cheddar, wołowina, sałata, ogórek kiszony, ketchup'
+                desc: 'Bułeczka brioche • Kotlet wołowy • Sałata • Ogórek kiszony • Cebula • Pomidor • Cheddar • Ketchup • Musztarda'
             },
             bbq: {
                 name: 'BBQ',
-                desc: 'Bułeczka brioche, sos BBQ x2, cebula, pomidor, bekon smażony, cheddar, wołowina, sałata, ogórek kiszony'
+                desc: 'Bułeczka brioche • Kotlet wołowy • Bekon • Cebula • Ogórek kiszony • Rukola • Pomidor • Cheddar • Sos BBQ'
             },
             spicy: {
                 name: 'Ostry',
-                desc: 'Bułeczka brioche, sos chili, jalapeño, bekon smażony, cheddar, wołowina, sałata, ogórek kiszony, smażona cebula, ostry sos'
+                desc: 'Bułeczka brioche • Kotlet wołowy • Bekon • Cebula smażona • Sałata • Ogórek kiszony • Jalapeño • Cheddar • Sos chilli słodki • Sos amerykański'
             },
             cheese: {
                 name: 'Serowy',
-                desc: 'Bułeczka brioche, sos serowy x2, cebula, pomidor, bekon smażony, mozzarella, cheddar topiony x2, wołowina, ogórek kiszony'
+                desc: 'Bułeczka brioche • Kotlet wołowy • Rukola • Cebula smażona • Ogórek kiszony • Pomidor • Cheddar ×2 • Mozzarella • Sos serowy'
             },
             chicken: {
                 name: 'Kurczak',
-                desc: 'Bułeczka brioche, ketchup, cebula, pomidor, cheddar, kurczak, sałata, majonez'
+                desc: 'Bułeczka brioche • Polędwiczki z kurczaka • Sałata • Cebula • Pomidor • Cheddar • Ketchup • Sos majonez'
             },
             egg: {
-                name: 'Jaja Burger',
-                desc: 'Bułeczka brioche, majonez, bekon smażony, jajko, wołowina, ogórek kiszony, sałata, smażona cebula, sos algierski'
+                name: 'Jaja',
+                desc: 'Bułeczka brioche • Kotlet wołowy • Bekon • Cebula smażona • Jajko • Sałata • Ogórek kiszony • Sos majonez • Sos BBQ'
             }
         },
         sides: {
@@ -74,6 +76,13 @@ const translations = {
             waterStill: '💧 Woda niegazowana',
             waterSparkling: '💦 Woda gazowana',
             beerNonAlcoholic: '🍺 Piwo bezalkoholowe'
+        },
+        extras: {
+            meat: 'Mięso',
+            bacon: 'Boczek',
+            cheese: 'Ser',
+            jalapeno: 'Jalapeño',
+            vegetables: 'Warzywa'
         }
     },
     en: {
@@ -82,38 +91,40 @@ const translations = {
             burgers: '🍔 Burgers',
             sides: '🍟 Sides',
             sauces: '🧂 Sauces',
-            drinks: '🥤 Drinks'
+            drinks: '🥤 Drinks',
+            extras: '➕ Burger Extras'
         },
         sections: {
             burgers: 'Burgers',
             sides: 'Sides',
             sauces: 'Choice of Sauces',
-            drinks: 'Drinks'
+            drinks: 'Drinks',
+            extras: 'Burger Extras'
         },
         burgers: {
             classic: {
                 name: 'Classic',
-                desc: 'Brioche bun, mustard, onion, tomato, cheddar, beef, lettuce, pickled cucumber, ketchup'
+                desc: 'Brioche bun • Beef patty • Lettuce • Pickled cucumber • Onion • Tomato • Cheddar • Ketchup • Mustard'
             },
             bbq: {
                 name: 'BBQ',
-                desc: 'Brioche bun, BBQ sauce x2, onion, tomato, fried bacon, cheddar, beef, lettuce, pickled cucumber'
+                desc: 'Brioche bun • Beef patty • Bacon • Onion • Pickled cucumber • Arugula • Tomato • Cheddar • BBQ sauce'
             },
             spicy: {
                 name: 'Spicy',
-                desc: 'Brioche bun, chili sauce, jalapeño, fried bacon, cheddar, beef, lettuce, pickled cucumber, fried onion, hot sauce'
+                desc: 'Brioche bun • Beef patty • Bacon • Fried onion • Lettuce • Pickled cucumber • Jalapeño • Cheddar • Sweet chilli sauce • American sauce'
             },
             cheese: {
                 name: 'Cheesy',
-                desc: 'Brioche bun, cheese sauce x2, onion, tomato, fried bacon, mozzarella, melted cheddar x2, beef, pickled cucumber'
+                desc: 'Brioche bun • Beef patty • Arugula • Fried onion • Pickled cucumber • Tomato • Cheddar ×2 • Mozzarella • Cheese sauce'
             },
             chicken: {
                 name: 'Chicken',
-                desc: 'Brioche bun, ketchup, onion, tomato, cheddar, chicken, lettuce, mayo'
+                desc: 'Brioche bun • Chicken tenderloins • Lettuce • Onion • Tomato • Cheddar • Ketchup • Mayo sauce'
             },
             egg: {
-                name: 'Egg Burger',
-                desc: 'Brioche bun, mayo, fried bacon, egg, beef, pickled cucumber, lettuce, fried onion, algerian sauce'
+                name: 'Egg',
+                desc: 'Brioche bun • Beef patty • Bacon • Fried onion • Egg • Lettuce • Pickled cucumber • Mayo sauce • BBQ sauce'
             }
         },
         sides: {
@@ -150,6 +161,13 @@ const translations = {
             waterStill: '💧 Still Water',
             waterSparkling: '💦 Sparkling Water',
             beerNonAlcoholic: '🍺 Non-Alcoholic Beer'
+        },
+        extras: {
+            meat: 'Meat',
+            bacon: 'Bacon',
+            cheese: 'Cheese',
+            jalapeno: 'Jalapeño',
+            vegetables: 'Vegetables'
         }
     }
 };
@@ -226,6 +244,16 @@ function translatePage(lang) {
         if (drinkKeys[index]) {
             const nameEl = item.querySelector('.item-name');
             if (nameEl) nameEl.textContent = translations[lang].drinks[drinkKeys[index]];
+        }
+    });
+
+    // Update extras
+    const extraItems = document.querySelectorAll('#dodatki-burgera .menu-item');
+    const extraKeys = ['meat', 'bacon', 'cheese', 'jalapeno', 'vegetables'];
+    extraItems.forEach((item, index) => {
+        if (extraKeys[index]) {
+            const nameEl = item.querySelector('.item-name');
+            if (nameEl) nameEl.textContent = translations[lang].extras[extraKeys[index]];
         }
     });
 

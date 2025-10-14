@@ -110,15 +110,15 @@ h1 {
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 .menu-nav {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 12px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
     margin-bottom: 30px;
     padding: 16px;
     background: rgba(255, 255, 255, 0.5);
@@ -151,9 +151,9 @@ h1 {
     padding-top: calc(16px + env(safe-area-inset-top, 0));
 }
 
-@media (min-width: 940px) {
+@media (min-width: 1040px) {
     .menu-nav.sticky {
-        max-width: 900px;
+        max-width: 1000px;
     }
 }
 
@@ -170,19 +170,20 @@ h1 {
 
 .nav-item {
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.95em;
+    font-size: 0.8em;
     font-weight: 700;
     color: var(--graphite);
     text-decoration: none;
-    padding: 12px 18px;
+    padding: 10px 6px;
     background: rgba(255, 255, 255, 0.7);
     border-radius: 10px;
     text-align: center;
     transition: all 0.3s ease;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.2px;
     border: 2px solid transparent;
     position: relative;
     overflow: hidden;
+    white-space: nowrap;
 }
 
 .nav-item::after {
@@ -219,6 +220,7 @@ h1 {
 .nav-item:active {
     transform: translateY(-1px);
 }
+
 
 /* Spacer for sticky nav */
 .nav-spacer {
