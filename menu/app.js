@@ -94,24 +94,34 @@ function scrollNavToActiveItem(activeItem) {
     }
 }
 
-// Handle scroll
+// Handle scroll with performance optimization
+let ticking = false;
+
 window.addEventListener('scroll', function() {
-    const scrollPosition = window.pageYOffset;
+    if (!ticking) {
+        window.requestAnimationFrame(function() {
+            const scrollPosition = window.pageYOffset;
 
-    // Sticky navigation
-    if (scrollPosition >= navOffset) {
-        menuNav.classList.add('sticky');
-        navSpacer.classList.add('active');
-    } else {
-        menuNav.classList.remove('sticky');
-        navSpacer.classList.remove('active');
-        // Recalculate offset when nav becomes unsticky
-        calculateNavOffset();
+            // Sticky navigation
+            if (scrollPosition >= navOffset) {
+                menuNav.classList.add('sticky');
+                navSpacer.classList.add('active');
+            } else {
+                menuNav.classList.remove('sticky');
+                navSpacer.classList.remove('active');
+                // Recalculate offset when nav becomes unsticky
+                calculateNavOffset();
+            }
+
+            // Update active section
+            updateActiveSection();
+
+            ticking = false;
+        });
+
+        ticking = true;
     }
-
-    // Update active section
-    updateActiveSection();
-});
+}, { passive: true });
 
 // Smooth scroll to sections with sticky nav offset
 document.querySelectorAll('.nav-item').forEach(item => {
