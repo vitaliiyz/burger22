@@ -2,62 +2,77 @@
 
 const menuNav = document.getElementById('menuNav');
 const navSpacer = document.getElementById('navSpacer');
-const navItems = document.querySelectorAll('.nav-item');
 const sections = document.querySelectorAll('.menu-section');
 
-let navOffset = menuNav.offsetTop;
-let scrollTimeout;
-let currentActiveSection = '';
+let navOffset = 0;
 
-// Recalculate offset on load
-window.addEventListener('load', function() {
-    navOffset = menuNav.offsetTop;
-});
+// Calculate initial offset
+function calculateNavOffset() {
+    // Only recalculate if nav is NOT sticky
+    if (!menuNav.classList.contains('sticky')) {
+        navOffset = menuNav.offsetTop;
+    }
+}
+
+// Recalculate offset on load and resize
+window.addEventListener('load', calculateNavOffset);
+window.addEventListener('resize', calculateNavOffset);
+
+// Initial calculation
+calculateNavOffset();
 
 // Function to detect active section
 function updateActiveSection() {
-    const scrollPosition = window.pageYOffset;
     const navHeight = menuNav.offsetHeight;
-    const offset = scrollPosition + navHeight + 100;
+    // Use middle of the viewport as the reference point
+    const viewportMiddle = window.pageYOffset + navHeight + (window.innerHeight - navHeight) / 3;
 
-    let newActiveSection = '';
+    let currentSection = '';
 
-    // Check each section from top to bottom
+    // Find which section contains the viewport middle
     for (let i = 0; i < sections.length; i++) {
         const section = sections[i];
         const sectionTop = section.offsetTop;
-        const sectionBottom = sectionTop + section.offsetHeight;
+        const sectionBottom = sectionTop + section.clientHeight;
+        const sectionId = section.getAttribute('id');
 
-        // If the offset point is within this section
-        if (offset >= sectionTop && offset < sectionBottom) {
-            newActiveSection = section.getAttribute('id');
+        // Check if viewport middle is within this section
+        if (viewportMiddle >= sectionTop && viewportMiddle < sectionBottom) {
+            currentSection = sectionId;
             break;
         }
     }
 
-    // If no section found (shouldn't happen), try fallback
-    if (newActiveSection === '') {
-        for (let i = sections.length - 1; i >= 0; i--) {
-            const section = sections[i];
-            if (offset >= section.offsetTop) {
-                newActiveSection = section.getAttribute('id');
-                break;
-            }
+    // If still no section (edge case at bottom), use the last section
+    if (!currentSection && sections.length > 0) {
+        const lastSection = sections[sections.length - 1];
+        const lastSectionTop = lastSection.offsetTop;
+
+        if (window.pageYOffset + navHeight >= lastSectionTop) {
+            currentSection = lastSection.getAttribute('id');
         }
     }
 
-    // ALWAYS update classes, even if section is the same
-    // This ensures we clean up any duplicate active states
-    navItems.forEach(item => item.classList.remove('active'));
+    // If still no section (edge case at top), use the first section
+    if (!currentSection && sections.length > 0) {
+        currentSection = sections[0].getAttribute('id');
+    }
 
-    // Add active to the correct item
-    if (newActiveSection !== '') {
-        currentActiveSection = newActiveSection;
-        const activeItem = document.querySelector(`.nav-item[data-section="${newActiveSection}"]`);
-        if (activeItem) {
-            activeItem.classList.add('active');
+    // Remove active from ALL nav items
+    const allNavItems = document.querySelectorAll('.nav-item');
+    allNavItems.forEach(item => {
+        item.classList.remove('active');
+    });
+
+    // Add active to ONLY the current section
+    if (currentSection) {
+        const activeNavItem = document.querySelector(`.nav-item[data-section="${currentSection}"]`);
+        if (activeNavItem) {
+            activeNavItem.classList.add('active');
+
+            // Auto-scroll navigation on mobile
             if (window.innerWidth <= 768) {
-                scrollNavToActiveItem(activeItem);
+                scrollNavToActiveItem(activeNavItem);
             }
         }
     }
@@ -83,21 +98,23 @@ function scrollNavToActiveItem(activeItem) {
 window.addEventListener('scroll', function() {
     const scrollPosition = window.pageYOffset;
 
-    // Sticky navigation - always sticky once scrolled past initial position
+    // Sticky navigation
     if (scrollPosition >= navOffset) {
         menuNav.classList.add('sticky');
         navSpacer.classList.add('active');
     } else {
         menuNav.classList.remove('sticky');
         navSpacer.classList.remove('active');
+        // Recalculate offset when nav becomes unsticky
+        calculateNavOffset();
     }
 
-    // Update active section immediately
+    // Update active section
     updateActiveSection();
-}, { passive: true });
+});
 
 // Smooth scroll to sections with sticky nav offset
-navItems.forEach(item => {
+document.querySelectorAll('.nav-item').forEach(item => {
     item.addEventListener('click', function(e) {
         e.preventDefault();
 

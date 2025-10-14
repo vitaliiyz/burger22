@@ -4,17 +4,17 @@ const translations = {
         tagline: 'Menu',
         nav: {
             burgers: '🍔 Burgery',
-            sides: '🍟 Dodatki',
+            sides: '🍟 Frytki i dodatki',
             sauces: '🧂 Sosy',
             drinks: '🥤 Napoje',
-            extras: '➕ Dodatki do burgera'
+            extras: '🥓 Dodatki do burgera'
         },
         sections: {
             burgers: 'Burgery',
-            sides: 'Dodatki',
+            sides: 'Frytki i dodatki',
             sauces: 'Sosy na wybór',
             drinks: 'Napoje',
-            extras: 'Dodatki do burgera'
+            extras: '🥓 Dodatki do burgera'
         },
         burgers: {
             classic: {
@@ -65,8 +65,8 @@ const translations = {
             mustard: '🌭 Musztarda'
         },
         drinks: {
-            cola: '🥤 Cola/Pepsi',
-            colaZero: '🥤 Cola/Pepsi (zero)',
+            cola: '🥤 Pepsi',
+            colaZero: '🥤 Pepsi (zero)',
             sprite: '🥤 Sprite',
             fanta: '🥤 Fanta',
             orangeJuice: '🍊 Sok pomarańczowy',
@@ -78,28 +78,28 @@ const translations = {
             beerNonAlcoholic: '🍺 Piwo bezalkoholowe'
         },
         extras: {
-            meat: 'Mięso',
-            bacon: 'Boczek',
-            cheese: 'Ser',
-            jalapeno: 'Jalapeño',
-            vegetables: 'Warzywa'
+            meat: '🥩 Mięso',
+            bacon: '🥓 Boczek',
+            cheese: '🧀 Ser',
+            jalapeno: '🌶️ Jalapeño',
+            vegetables: '🥗 Warzywa'
         }
     },
     en: {
         tagline: 'Menu',
         nav: {
             burgers: '🍔 Burgers',
-            sides: '🍟 Sides',
+            sides: '🍟 Fries & Sides',
             sauces: '🧂 Sauces',
             drinks: '🥤 Drinks',
-            extras: '➕ Burger Extras'
+            extras: '🥓 Burger Extras'
         },
         sections: {
             burgers: 'Burgers',
-            sides: 'Sides',
+            sides: 'Fries & Sides',
             sauces: 'Choice of Sauces',
             drinks: 'Drinks',
-            extras: 'Burger Extras'
+            extras: '🥓 Burger Extras'
         },
         burgers: {
             classic: {
@@ -150,8 +150,8 @@ const translations = {
             mustard: '🌭 Mustard'
         },
         drinks: {
-            cola: '🥤 Cola/Pepsi',
-            colaZero: '🥤 Cola/Pepsi (zero)',
+            cola: '🥤 Pepsi',
+            colaZero: '🥤 Pepsi (zero)',
             sprite: '🥤 Sprite',
             fanta: '🥤 Fanta',
             orangeJuice: '🍊 Orange Juice',
@@ -163,11 +163,11 @@ const translations = {
             beerNonAlcoholic: '🍺 Non-Alcoholic Beer'
         },
         extras: {
-            meat: 'Meat',
-            bacon: 'Bacon',
-            cheese: 'Cheese',
-            jalapeno: 'Jalapeño',
-            vegetables: 'Vegetables'
+            meat: '🥩 Meat',
+            bacon: '🥓 Bacon',
+            cheese: '🧀 Cheese',
+            jalapeno: '🌶️ Jalapeño',
+            vegetables: '🥗 Vegetables'
         }
     }
 };

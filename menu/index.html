@@ -22,10 +22,10 @@
     <div class="container">
         <nav class="menu-nav" id="menuNav">
             <a href="#burgery" class="nav-item" data-section="burgery" data-i18n="nav.burgers">🍔 Burgery</a>
-            <a href="#dodatki" class="nav-item" data-section="dodatki" data-i18n="nav.sides">🍟 Dodatki</a>
+            <a href="#dodatki-burgera" class="nav-item" data-section="dodatki-burgera" data-i18n="nav.extras">🥓 Dodatki do burgera</a>
+            <a href="#dodatki" class="nav-item" data-section="dodatki" data-i18n="nav.sides">🍟 Frytki i dodatki</a>
             <a href="#sosy" class="nav-item" data-section="sosy" data-i18n="nav.sauces">🧂 Sosy</a>
             <a href="#napoje" class="nav-item" data-section="napoje" data-i18n="nav.drinks">🥤 Napoje</a>
-            <a href="#dodatki-burgera" class="nav-item" data-section="dodatki-burgera" data-i18n="nav.extras">➕ Dodatki do burgera</a>
         </nav>
         <div class="nav-spacer" id="navSpacer"></div>
 
@@ -144,9 +144,71 @@
             </div>
         </div>
 
+        <div class="menu-section" id="dodatki-burgera">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="sections.extras">🥓 Dodatki do burgera</h2>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name">🥩 Mięso</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">12 zł</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name">🥓 Boczek</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">4 zł</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name">🧀 Ser</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">2 zł</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name">🌶️ Jalapeño</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">2 zł</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name">🥗 Warzywa</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">2 zł</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="menu-section" id="dodatki">
             <div class="section-header">
-                <h2 class="section-title" data-i18n="sections.sides">Dodatki</h2>
+                <h2 class="section-title" data-i18n="sections.sides">Frytki i dodatki</h2>
             </div>
             <div class="menu-grid">
                 <div class="menu-item no-image">
@@ -239,7 +301,7 @@
                             <h3 class="item-name">🧂 Sos dodatkowy</h3>
                         </div>
                         <div class="item-footer">
-                            <span class="item-price">5 zł</span>
+                            <span class="item-price">3 zł</span>
                         </div>
                     </div>
                 </div>
@@ -260,7 +322,7 @@
                 </div>
                 <div class="sauce-column">
                     <div class="sauce-item">🥚 Majonez</div>
-                    <div class="sauce-item unavailable">🍯 Kwaśno-słodki</div>
+                    <div class="sauce-item">🍯 Kwaśno-słodki</div>
                     <div class="sauce-item">🧄 Czosnkowy</div>
                     <div class="sauce-item">🌭 Musztarda</div>
                 </div>
@@ -275,7 +337,7 @@
                 <div class="menu-item no-image">
                     <div class="item-content">
                         <div class="item-header">
-                            <h3 class="item-name">🥤 Cola/Pepsi</h3>
+                            <h3 class="item-name">🥤 Pepsi</h3>
                         </div>
                         <div class="item-footer">
                             <span class="item-price">9 zł</span>
@@ -286,7 +348,7 @@
                 <div class="menu-item no-image">
                     <div class="item-content">
                         <div class="item-header">
-                            <h3 class="item-name">🥤 Cola/Pepsi (zero)</h3>
+                            <h3 class="item-name">🥤 Pepsi (zero)</h3>
                         </div>
                         <div class="item-footer">
                             <span class="item-price">9 zł</span>
@@ -294,24 +356,24 @@
                     </div>
                 </div>
 
-                <div class="menu-item no-image">
+                <div class="menu-item no-image unavailable">
                     <div class="item-content">
                         <div class="item-header">
                             <h3 class="item-name">🥤 Sprite</h3>
                         </div>
                         <div class="item-footer">
-                            <span class="item-price">9 zł</span>
+                            <span class="item-price">— zł</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="menu-item no-image">
+                <div class="menu-item no-image unavailable">
                     <div class="item-content">
                         <div class="item-header">
                             <h3 class="item-name">🥤 Fanta</h3>
                         </div>
                         <div class="item-footer">
-                            <span class="item-price">9 zł</span>
+                            <span class="item-price">— zł</span>
                         </div>
                     </div>
                 </div>
@@ -389,68 +451,6 @@
                         </div>
                         <div class="item-footer">
                             <span class="item-price">— zł</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="menu-section" id="dodatki-burgera">
-            <div class="section-header">
-                <h2 class="section-title" data-i18n="sections.extras">Dodatki do burgera</h2>
-            </div>
-            <div class="menu-grid">
-                <div class="menu-item no-image">
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3 class="item-name">Mięso</h3>
-                        </div>
-                        <div class="item-footer">
-                            <span class="item-price">12 zł</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="menu-item no-image">
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3 class="item-name">Boczek</h3>
-                        </div>
-                        <div class="item-footer">
-                            <span class="item-price">4 zł</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="menu-item no-image">
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3 class="item-name">Ser</h3>
-                        </div>
-                        <div class="item-footer">
-                            <span class="item-price">2 zł</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="menu-item no-image">
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3 class="item-name">Jalapeño</h3>
-                        </div>
-                        <div class="item-footer">
-                            <span class="item-price">2 zł</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="menu-item no-image">
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3 class="item-name">Warzywa</h3>
-                        </div>
-                        <div class="item-footer">
-                            <span class="item-price">2 zł</span>
                         </div>
                     </div>
                 </div>
