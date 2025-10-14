@@ -43,12 +43,12 @@ const translations = {
             }
         },
         sides: {
-            friesSmall: '🍟 Frytki małe',
-            friesLarge: '🍟 Frytki duże',
-            onionRingsSmall: '🧅 Krążki cebulowe małe',
-            onionRingsLarge: '🧅 Krążki cebulowe duże',
-            nuggetsSmall: '🍗 Nuggetsy małe',
-            nuggetsLarge: '🍗 Nuggetsy duże',
+            friesSmall: '🍟 Frytki 150g',
+            friesLarge: '🍟 Frytki 300g',
+            onionRingsSmall: '🧅 Krążki cebulowe 6 szt',
+            onionRingsLarge: '🧅 Krążki cebulowe 12 szt',
+            nuggetsSmall: '🍗 Nuggetsy 6 szt',
+            nuggetsLarge: '🍗 Nuggetsy 12 szt',
             extraSauce: '🧂 Sos dodatkowy'
         },
         sauceIncluded: 'sos w cenie',
@@ -128,12 +128,12 @@ const translations = {
             }
         },
         sides: {
-            friesSmall: '🍟 Small Fries',
-            friesLarge: '🍟 Large Fries',
-            onionRingsSmall: '🧅 Small Onion Rings',
-            onionRingsLarge: '🧅 Large Onion Rings',
-            nuggetsSmall: '🍗 Small Nuggets',
-            nuggetsLarge: '🍗 Large Nuggets',
+            friesSmall: '🍟 Fries 150g',
+            friesLarge: '🍟 Fries 300g',
+            onionRingsSmall: '🧅 Onion Rings 6 pcs',
+            onionRingsLarge: '🧅 Onion Rings 12 pcs',
+            nuggetsSmall: '🍗 Nuggets 6 pcs',
+            nuggetsLarge: '🍗 Nuggets 12 pcs',
             extraSauce: '🧂 Extra Sauce'
         },
         sauceIncluded: 'sauce included',
