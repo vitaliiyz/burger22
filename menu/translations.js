@@ -31,7 +31,7 @@ const translations = {
             },
             cheese: {
                 name: 'Serowy',
-                desc: 'Bułeczka brioche • Kotlet wołowy • Rukola • Cebula smażona • Ogórek kiszony • Pomidor • Cheddar ×2 • Mozzarella • Sos serowy'
+                desc: 'Bułeczka brioche • Kotlet wołowy • Rukola • Cebula prażona • Ogórek kiszony • Pomidor • Cheddar ×2 • Mozzarella • Sos serowy'
             },
             chicken: {
                 name: 'Kurczak',
@@ -116,7 +116,7 @@ const translations = {
             },
             cheese: {
                 name: 'Cheesy',
-                desc: 'Brioche bun • Beef patty • Arugula • Fried onion • Pickled cucumber • Tomato • Cheddar ×2 • Mozzarella • Cheese sauce'
+                desc: 'Brioche bun • Beef patty • Arugula • Roasted onion • Pickled cucumber • Tomato • Cheddar ×2 • Mozzarella • Cheese sauce'
             },
             chicken: {
                 name: 'Chicken',
