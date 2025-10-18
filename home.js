@@ -1,0 +1,54 @@
+// Home page specific logic - Burger 22
+
+// Page-specific translations
+const pageTranslations = {
+    pl: {
+        tagline: 'Najlepsze burgery w mieście',
+        nav: {
+            menu: 'Menu',
+            'menu-desc': 'Zobacz naszą ofertę burgerów',
+            contact: 'Kontakt'
+        }
+    },
+    en: {
+        tagline: 'Best burgers in town',
+        nav: {
+            menu: 'Menu',
+            'menu-desc': 'Check out our burger selection',
+            contact: 'Contact'
+        }
+    }
+};
+
+// Merge common and page-specific translations
+function getMergedTranslations() {
+    const common = window.CommonUtils.commonTranslations;
+    return {
+        pl: { ...common.pl, ...pageTranslations.pl },
+        en: { ...common.en, ...pageTranslations.en }
+    };
+}
+
+// Apply all translations
+function applyAllTranslations() {
+    const mergedTranslations = getMergedTranslations();
+    window.CommonUtils.applyTranslations(mergedTranslations);
+}
+
+// Listen for language changes
+window.addEventListener('languageChanged', () => {
+    applyAllTranslations();
+});
+
+// Initialize page-specific functionality
+document.addEventListener('DOMContentLoaded', () => {
+    // Apply translations after a short delay to ensure common components are loaded
+    setTimeout(() => {
+        applyAllTranslations();
+
+        // Initialize language buttons
+        if (window.CommonUtils && window.CommonUtils.initLanguageButtons) {
+            window.CommonUtils.initLanguageButtons();
+        }
+    }, 100);
+});

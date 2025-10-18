@@ -120,3 +120,5 @@ document.querySelectorAll('.nav-item').forEach(item => {
         }
     });
 });
+
+// Note: Burger menu functionality is now handled by common/common.js

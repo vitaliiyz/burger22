@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Burger 22 - Kontakt</title>
+    <link rel="stylesheet" href="common/common.css">
+    <link rel="stylesheet" href="contact-styles.css">
+</head>
+<body>
+    <!-- Common Header (loaded dynamically) -->
+    <div id="common-header"></div>
+
+    <div class="hero">
+        <a href="index.html" class="home-link">
+            <h1>🍔 BURGER 22</h1>
+        </a>
+        <p class="tagline" data-i18n="tagline">Kontakt</p>
+        <div class="language-switcher">
+            <button class="lang-btn active" data-lang="pl">PL</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Opening Hours Section -->
+        <div class="hours-section">
+            <h2 class="section-title" data-i18n="contact.hours-title">Godziny otwarcia</h2>
+            <div class="hours-card">
+                <div class="hours-icon">🕐</div>
+                <div class="hours-content">
+                    <p class="hours-info" data-i18n="footer.hours-info">Pn-Nd: 13:00 - 20:00</p>
+                    <p class="hours-notice" data-i18n="footer.hours-closed">⚠️ 20-21 października NIECZYNNE</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-grid">
+            <!-- Email -->
+            <div class="contact-card email-card">
+                <div class="contact-icon">📧</div>
+                <div class="contact-content">
+                    <h3 class="contact-title" data-i18n="contact.email">Email</h3>
+                    <p class="contact-info">burger22.wroclaw@gmail.com</p>
+                </div>
+                <div class="contact-buttons">
+                    <a href="mailto:burger22.wroclaw@gmail.com" class="icon-btn" title="Napisz">
+                        ✉️
+                    </a>
+                    <button class="icon-btn copy-icon-btn" data-copy="burger22.wroclaw@gmail.com" title="Kopiuj">
+                        📋
+                    </button>
+                </div>
+            </div>
+
+            <!-- Instagram -->
+            <div class="contact-card social-card">
+                <div class="contact-icon contact-icon-svg">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </div>
+                <div class="contact-content">
+                    <h3 class="contact-title">Instagram</h3>
+                    <p class="contact-info">@burger22.pl</p>
+                </div>
+                <div class="contact-buttons">
+                    <a href="https://www.instagram.com/burger22.pl" target="_blank" rel="noopener noreferrer" class="icon-btn" title="Otwórz">
+                        👆
+                    </a>
+                    <button class="icon-btn copy-icon-btn" data-copy="https://www.instagram.com/burger22.pl" title="Kopiuj">
+                        📋
+                    </button>
+                </div>
+            </div>
+
+            <!-- Facebook -->
+            <div class="contact-card social-card">
+                <div class="contact-icon contact-icon-svg">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                </div>
+                <div class="contact-content">
+                    <h3 class="contact-title">Facebook</h3>
+                    <p class="contact-info">Burger 22</p>
+                </div>
+                <div class="contact-buttons">
+                    <a href="https://www.facebook.com/share/14Jwx2EtbrD" target="_blank" rel="noopener noreferrer" class="icon-btn" title="Otwórz">
+                        👆
+                    </a>
+                    <button class="icon-btn copy-icon-btn" data-copy="https://www.facebook.com/share/14Jwx2EtbrD" title="Kopiuj">
+                        📋
+                    </button>
+                </div>
+            </div>
+
+            <!-- Address -->
+            <div class="contact-card address-card">
+                <div class="contact-icon">📍</div>
+                <div class="contact-content">
+                    <h3 class="contact-title" data-i18n="contact.address">Adres</h3>
+                    <p class="contact-info">Henryka Probusa 11<br>50-242 Wrocław</p>
+                </div>
+                <div class="contact-buttons">
+                    <button class="icon-btn copy-icon-btn" data-copy="Henryka Probusa 11, 50-242 Wrocław" title="Kopiuj">
+                        📋
+                    </button>
+                </div>
+            </div>
+
+            <!-- Google Maps -->
+            <div class="contact-card map-card">
+                <div class="contact-icon">🗺️</div>
+                <div class="contact-content">
+                    <h3 class="contact-title" data-i18n="contact.map">Mapa</h3>
+                    <p class="contact-info" data-i18n="contact.map-desc">Jak do nas dojechać</p>
+                </div>
+                <div class="contact-buttons">
+                    <a href="https://maps.app.goo.gl/tV2N1Prij1Tdptot8" target="_blank" rel="noopener noreferrer" class="icon-btn" title="Otwórz">
+                        👆
+                    </a>
+                    <button class="icon-btn copy-icon-btn" data-copy="https://maps.app.goo.gl/tV2N1Prij1Tdptot8" title="Kopiuj">
+                        📋
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Embedded Map Section -->
+        <div class="map-section">
+            <h2 class="section-title" data-i18n="contact.location">Nasza Lokalizacja</h2>
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2504.7726890476755!2d17.035239276738585!3d51.11881107171841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fc27514ec7ea1%3A0x7f9be0a0b9d7e8e8!2sHenryka%20Probusa%2011%2C%2050-242%20Wroc%C5%82aw!5e0!3m2!1spl!2spl!4v1699999999999"
+                    width="100%"
+                    height="400"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Common Footer (loaded dynamically) -->
+    <div id="common-footer"></div>
+
+    <!-- Common JS (must load first) -->
+    <script src="common/common.js"></script>
+    <!-- Page-specific JS -->
+    <script src="contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Burger 22</title>
+    <link rel="stylesheet" href="common/common.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Common Header (loaded dynamically) -->
+    <div id="common-header"></div>
+
+    <div class="hero">
+        <h1>🍔 BURGER 22</h1>
+        <p class="tagline" data-i18n="tagline">Najlepsze burgery w mieście</p>
+        <div class="language-switcher">
+            <button class="lang-btn active" data-lang="pl">PL</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="main-nav">
+            <a href="menu/index.html" class="main-nav-item">
+                <div class="nav-icon">📖</div>
+                <h2 class="nav-title" data-i18n="nav.menu">Menu</h2>
+                <p class="nav-description" data-i18n="nav.menu-desc">Zobacz naszą ofertę burgerów</p>
+            </a>
+
+            <a href="contact.html" class="main-nav-item">
+                <div class="nav-icon">📞</div>
+                <h2 class="nav-title" data-i18n="nav.contact">Kontakt</h2>
+            </a>
+        </div>
+    </div>
+
+    <!-- Common Footer (loaded dynamically) -->
+    <div id="common-footer"></div>
+
+    <!-- Common JS (must load first) -->
+    <script src="common/common.js"></script>
+    <!-- Page-specific JS -->
+    <script src="home.js"></script>
+</body>
+</html>
