@@ -8,13 +8,9 @@ const commonTranslations = {
             menu: 'Menu',
             contact: 'Kontakt'
         },
-        notice: {
-            closed: '⚠️ 20-21 października NIECZYNNE'
-        },
         footer: {
             hours: 'Godziny otwarcia',
-            'hours-info': 'Pn-Nd: 13:00 - 20:00',
-            'hours-closed': '⚠️ 20-21 października NIECZYNNE',
+            'hours-info': 'Pn-Nd: 12:00 - 22:00',
             contact: 'Kontakt',
             social: 'Znajdź nas',
             rights: 'Wszelkie prawa zastrzeżone'
@@ -26,13 +22,9 @@ const commonTranslations = {
             menu: 'Menu',
             contact: 'Contact'
         },
-        notice: {
-            closed: '⚠️ CLOSED Oct 20-21'
-        },
         footer: {
             hours: 'Opening Hours',
-            'hours-info': 'Mon-Sun: 1:00 PM - 8:00 PM',
-            'hours-closed': '⚠️ CLOSED Oct 20-21',
+            'hours-info': 'Mon-Sun: 12:00 PM - 10:00 PM',
             contact: 'Contact',
             social: 'Find Us',
             rights: 'All rights reserved'

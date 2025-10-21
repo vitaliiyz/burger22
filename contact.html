@@ -7,6 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Burger 22 - Kontakt</title>
+    <link rel="icon" type="image/jpeg" href="common/images/favicon.jpg">
     <link rel="stylesheet" href="common/common.css">
     <link rel="stylesheet" href="contact-styles.css">
 </head>
@@ -16,7 +17,9 @@
 
     <div class="hero">
         <a href="index.html" class="home-link">
-            <h1>🍔 BURGER 22</h1>
+            <div class="hero-branding">
+                <img src="common/images/logo_full.png" alt="Burger 22" class="logo-full-main">
+            </div>
         </a>
         <p class="tagline" data-i18n="tagline">Kontakt</p>
         <div class="language-switcher">
@@ -26,19 +29,16 @@
     </div>
 
     <div class="container">
-        <!-- Opening Hours Section -->
-        <div class="hours-section">
-            <h2 class="section-title" data-i18n="contact.hours-title">Godziny otwarcia</h2>
-            <div class="hours-card">
-                <div class="hours-icon">🕐</div>
-                <div class="hours-content">
-                    <p class="hours-info" data-i18n="footer.hours-info">Pn-Nd: 13:00 - 20:00</p>
-                    <p class="hours-notice" data-i18n="footer.hours-closed">⚠️ 20-21 października NIECZYNNE</p>
+        <div class="contact-grid">
+            <!-- Opening Hours -->
+            <div class="contact-card hours-card-new">
+                <div class="contact-icon">🕐</div>
+                <div class="contact-content">
+                    <h3 class="contact-title" data-i18n="contact.hours-title">Godziny otwarcia</h3>
+                    <p class="contact-info" data-i18n="footer.hours-info">Pn-Nd: 12:00 - 22:00</p>
                 </div>
             </div>
-        </div>
 
-        <div class="contact-grid">
             <!-- Email -->
             <div class="contact-card email-card">
                 <div class="contact-icon">📧</div>

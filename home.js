@@ -3,7 +3,7 @@
 // Page-specific translations
 const pageTranslations = {
     pl: {
-        tagline: 'Najlepsze burgery w mieście',
+        tagline: 'Prawdziwy smak burgera',
         nav: {
             menu: 'Menu',
             'menu-desc': 'Zobacz naszą ofertę burgerów',
@@ -11,7 +11,7 @@ const pageTranslations = {
         }
     },
     en: {
-        tagline: 'Best burgers in town',
+        tagline: 'Real burger taste',
         nav: {
             menu: 'Menu',
             'menu-desc': 'Check out our burger selection',

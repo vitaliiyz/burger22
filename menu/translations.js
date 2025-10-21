@@ -24,23 +24,23 @@ const translations = {
         },
         burgers: {
             classic: {
-                name: 'Klasyczny',
+                name: 'Klasyczny Burger',
                 desc: 'Bułeczka brioche, musztarda, cebula, pomidor, cheddar, wołowina, sałata, ogórek kiszony, ketchup'
             },
             cheese: {
-                name: 'Serowy',
+                name: 'Serowy Burger',
                 desc: 'Bułeczka brioche, sos serowy x2, cebula prażona, pomidor, bekon smażony, mozzarella, cheddar topiony x2, wołowina, ogórek kiszony'
             },
             chicken: {
-                name: 'Kurczak',
+                name: 'Kurczak Burger',
                 desc: 'Bułeczka brioche, ketchup, cebula, pomidor, cheddar, kurczak, sałata, majonez'
             },
             bbq: {
-                name: 'BBQ',
+                name: 'BBQ Burger',
                 desc: 'Bułeczka brioche, sos BBQ x2, cebula, pomidor, bekon smażony, cheddar, wołowina, sałata, ogórek kiszony'
             },
             spicy: {
-                name: 'Ostry',
+                name: 'Ostry Burger',
                 desc: 'Bułeczka brioche, sos chili, jalapeño, bekon smażony, cheddar, wołowina, sałata, ogórek kiszony, smażona cebula, ostry sos'
             },
             egg: {
@@ -105,23 +105,23 @@ const translations = {
         },
         burgers: {
             classic: {
-                name: 'Classic',
+                name: 'Classic Burger',
                 desc: 'Brioche bun, mustard, onion, tomato, cheddar, beef, lettuce, pickled cucumber, ketchup'
             },
             cheese: {
-                name: 'Cheesy',
+                name: 'Cheesy Burger',
                 desc: 'Brioche bun, cheese sauce x2, roasted onion, tomato, fried bacon, mozzarella, melted cheddar x2, beef, pickled cucumber'
             },
             chicken: {
-                name: 'Chicken',
+                name: 'Chicken Burger',
                 desc: 'Brioche bun, ketchup, onion, tomato, cheddar, chicken, lettuce, mayo'
             },
             bbq: {
-                name: 'BBQ',
+                name: 'BBQ Burger',
                 desc: 'Brioche bun, BBQ sauce x2, onion, tomato, fried bacon, cheddar, beef, lettuce, pickled cucumber'
             },
             spicy: {
-                name: 'Spicy',
+                name: 'Spicy Burger',
                 desc: 'Brioche bun, chili sauce, jalapeño, fried bacon, cheddar, beef, lettuce, pickled cucumber, fried onion, hot sauce'
             },
             egg: {
