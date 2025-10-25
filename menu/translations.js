@@ -22,6 +22,17 @@ const translations = {
             drinks: 'Napoje zimne',
             extras: '🥓 Dodatki do burgera'
         },
+        sauces: {
+            ketchup: '🍅 Ketchup',
+            bbq: '🍖 BBQ',
+            chili: '🌶️ Chili',
+            american: '🔥 Amerykański (hot)',
+            cheese: '🧀 Serowy',
+            mayo: '🥚 Majonez',
+            thousandIsland: '🥗 Tysiąc wysp',
+            garlic: '🧄 Czosnkowy',
+            mustard: '🌭 Musztarda'
+        },
         burgers: {
             classic: {
                 name: 'Klasyczny Burger',
@@ -102,6 +113,17 @@ const translations = {
             hotDrinks: 'Hot Drinks',
             drinks: 'Cold Drinks',
             extras: '🥓 Burger Extras'
+        },
+        sauces: {
+            ketchup: '🍅 Ketchup',
+            bbq: '🍖 BBQ',
+            chili: '🌶️ Chili',
+            american: '🔥 American (hot)',
+            cheese: '🧀 Cheese',
+            mayo: '🥚 Mayo',
+            thousandIsland: '🥗 Thousand Island',
+            garlic: '🧄 Garlic',
+            mustard: '🌭 Mustard'
         },
         burgers: {
             classic: {
