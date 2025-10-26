@@ -6,6 +6,12 @@ const translations = {
         sauceIncluded: 'sos w cenie',
         sugarIncluded: 'cukier w cenie',
         withLemon: 'z cytryną',
+        doneness: {
+            title: 'Wybierz stopień wysmażenia',
+            medium: 'Medium',
+            wellDone: 'Well done',
+            addToCart: 'Dodaj do koszyka'
+        },
         nav: {
             burgers: '🍔 Burgery',
             sides: '🍟 Frytki i dodatki',
@@ -98,6 +104,12 @@ const translations = {
         sauceIncluded: 'sauce included',
         sugarIncluded: 'sugar included',
         withLemon: 'with lemon',
+        doneness: {
+            title: 'Choose doneness level',
+            medium: 'Medium',
+            wellDone: 'Well done',
+            addToCart: 'Add to Cart'
+        },
         nav: {
             burgers: '🍔 Burgers',
             sides: '🍟 Fries & Sides',
