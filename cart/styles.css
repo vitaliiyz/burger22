@@ -1,0 +1,444 @@
+/* Cart Page Styles - Burger 22 */
+/* Uses existing CSS variables from common.css */
+
+/* Container override for cart page */
+.container {
+    max-width: 1200px;
+}
+
+/* Empty Cart State */
+.empty-cart {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.empty-cart-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.empty-cart h2 {
+    font-size: 1.8em;
+    color: var(--graphite);
+    margin-bottom: 10px;
+}
+
+.empty-cart p {
+    color: var(--graphite-light);
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+/* Buttons */
+.btn-primary {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-orange), var(--warm-yellow));
+    color: white;
+    padding: 14px 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 165, 0, 0.3);
+}
+
+.btn-primary.btn-large {
+    width: 100%;
+    padding: 16px;
+    font-size: 1.1em;
+}
+
+.btn-text {
+    background: none;
+    border: none;
+    color: var(--primary-orange);
+    font-weight: 600;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-text:hover {
+    background: rgba(255, 165, 0, 0.1);
+}
+
+/* Section Headers */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.section-title {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--graphite);
+}
+
+/* Cart Content Layout */
+.cart-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+@media (min-width: 768px) {
+    .cart-content {
+        grid-template-columns: 1.5fr 1fr;
+    }
+}
+
+/* Cart Items */
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.cart-item {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 8px var(--shadow);
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 16px;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.cart-item:hover {
+    box-shadow: 0 4px 12px var(--shadow-hover);
+}
+
+.cart-item-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+    background: var(--off-white);
+}
+
+.cart-item-image.no-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+}
+
+.cart-item-details {
+    flex: 1;
+}
+
+.cart-item-name {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--graphite);
+    margin-bottom: 8px;
+}
+
+.cart-item-price {
+    color: var(--primary-orange);
+    font-weight: 600;
+    font-size: 1em;
+}
+
+.cart-item-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--off-white);
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.quantity-btn {
+    background: white;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    color: var(--primary-orange);
+    transition: all 0.2s ease;
+}
+
+.quantity-btn:hover {
+    background: var(--primary-orange);
+    color: white;
+}
+
+.quantity-value {
+    min-width: 30px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--graphite);
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    font-size: 0.9em;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.remove-btn:hover {
+    background: rgba(231, 76, 60, 0.1);
+}
+
+/* Cart Summary */
+.cart-summary {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px var(--shadow);
+    margin-top: 24px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    color: var(--graphite-light);
+}
+
+.summary-row.total {
+    border-top: 2px solid var(--off-white);
+    margin-top: 8px;
+    padding-top: 16px;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--graphite);
+}
+
+.summary-price {
+    font-weight: 600;
+    color: var(--primary-orange);
+}
+
+/* Checkout Form */
+.checkout-section {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px var(--shadow);
+    position: sticky;
+    top: 20px;
+}
+
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--graphite);
+    font-size: 0.95em;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-orange);
+    box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cart-item {
+        grid-template-columns: 60px 1fr;
+        gap: 12px;
+    }
+
+    .cart-item-image {
+        width: 60px;
+        height: 60px;
+    }
+
+    .cart-item-controls {
+        grid-column: 2;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .checkout-section {
+        position: static;
+    }
+
+    .section-title {
+        font-size: 1.5em;
+    }
+
+    .tagline {
+        font-size: 1.5em;
+    }
+}
+
+/* Loading State */
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: var(--graphite-light);
+}
+
+/* Home link */
+.home-link {
+    text-decoration: none;
+}
+
+/* Messenger Selection Buttons */
+.messenger-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.messenger-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: var(--graphite-light);
+}
+
+.messenger-btn svg {
+    width: 32px;
+    height: 32px;
+    color: var(--graphite-light);
+    transition: all 0.3s ease;
+}
+
+.messenger-btn:hover {
+    border-color: var(--primary-orange);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+.messenger-btn.active {
+    border-color: var(--primary-orange);
+    background: linear-gradient(135deg, rgba(255, 165, 0, 0.1), rgba(255, 184, 77, 0.1));
+    color: var(--primary-orange);
+}
+
+.messenger-btn.active svg {
+    color: var(--primary-orange);
+}
+
+/* Individual messenger colors */
+.messenger-btn[data-messenger="whatsapp"].active {
+    border-color: #25D366;
+    background: linear-gradient(135deg, rgba(37, 211, 102, 0.1), rgba(37, 211, 102, 0.05));
+    color: #25D366;
+}
+
+.messenger-btn[data-messenger="whatsapp"].active svg {
+    color: #25D366;
+}
+
+.messenger-btn[data-messenger="telegram"].active {
+    border-color: #0088cc;
+    background: linear-gradient(135deg, rgba(0, 136, 204, 0.1), rgba(0, 136, 204, 0.05));
+    color: #0088cc;
+}
+
+.messenger-btn[data-messenger="telegram"].active svg {
+    color: #0088cc;
+}
+
+.messenger-btn[data-messenger="facebook"].active {
+    border-color: #0084FF;
+    background: linear-gradient(135deg, rgba(0, 132, 255, 0.1), rgba(0, 132, 255, 0.05));
+    color: #0084FF;
+}
+
+.messenger-btn[data-messenger="facebook"].active svg {
+    color: #0084FF;
+}
+
+.messenger-btn[data-messenger="instagram"].active {
+    border-color: #E4405F;
+    background: linear-gradient(135deg, rgba(228, 64, 95, 0.1), rgba(228, 64, 95, 0.05));
+    color: #E4405F;
+}
+
+.messenger-btn[data-messenger="instagram"].active svg {
+    color: #E4405F;
+}
+
+@media (max-width: 480px) {
+    .messenger-buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .messenger-btn {
+        padding: 12px 8px;
+        font-size: 0.85em;
+    }
+
+    .messenger-btn svg {
+        width: 28px;
+        height: 28px;
+    }
+}
