@@ -224,7 +224,7 @@ function sendOrderViaWhatsApp(orderData) {
     }
 
     // WhatsApp phone number
-    const whatsappNumber = '48572669404'; // Format: country code + number (no + or spaces)
+    const whatsappNumber = '48573256526'; // Format: country code + number (no + or spaces)
 
     // Encode message for URL
     const encodedMessage = encodeURIComponent(message);
