@@ -7,11 +7,11 @@ export default {
     // Security: Check origin (optional but recommended)
     const origin = request.headers.get('Origin');
     const allowedOrigins = [
-      'https://burger22.pl',
-      'https://www.burger22.pl',
-      'http://localhost:8000',
+      'https://burger22.pl',                      // Основной домен
+      'https://www.burger22.pl',                  // С www
+      'https://vitaliiyz.github.io',              // GitHub Pages
+      'http://localhost:8000',                    // Локальное тестирование
       'http://127.0.0.1:8000',
-      // Добавь свой домен GitHub Pages если используешь
     ];
 
     // Handle CORS preflight
@@ -30,10 +30,10 @@ export default {
       return new Response('Method not allowed', { status: 405 });
     }
 
-    // Security: Verify origin (можно отключить для тестирования)
-    // if (origin && !allowedOrigins.includes(origin)) {
-    //   return new Response('Forbidden', { status: 403 });
-    // }
+    // Security: Verify origin - защита от запросов с чужих сайтов
+    if (origin && !allowedOrigins.includes(origin)) {
+      return new Response('Forbidden', { status: 403 });
+    }
 
     try {
       // Get order data from request
