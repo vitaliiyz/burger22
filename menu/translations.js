@@ -10,7 +10,9 @@ const translations = {
             title: 'Wybierz stopień wysmażenia',
             medium: 'Medium',
             wellDone: 'Well done',
-            addToCart: 'Dodaj do koszyka'
+            addToCart: 'Dodaj do koszyka',
+            comboOption: 'Z frytkami i sosem (+9 zł)',
+            comboShort: 'Zestaw'
         },
         nav: {
             burgers: '🍔 Burgery',
@@ -108,7 +110,9 @@ const translations = {
             title: 'Choose doneness level',
             medium: 'Medium',
             wellDone: 'Well done',
-            addToCart: 'Add to Cart'
+            addToCart: 'Add to Cart',
+            comboOption: 'With fries and sauce (+9 zł)',
+            comboShort: 'Combo'
         },
         nav: {
             burgers: '🍔 Burgers',

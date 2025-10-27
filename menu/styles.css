@@ -38,125 +38,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Burger Menu Button */
-.burger-menu-btn {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 1000;
-    width: 50px;
-    height: 50px;
-    background: transparent;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.burger-menu-btn:hover {
-    transform: scale(1.05);
-}
-
-.burger-menu-btn span {
-    display: block;
-    width: 24px;
-    height: 3px;
-    background: linear-gradient(135deg, var(--primary-orange), var(--warm-yellow));
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-.burger-menu-btn.active span:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
-    background: rgba(58, 58, 58, 0.8);
-}
-
-.burger-menu-btn.active span:nth-child(2) {
-    opacity: 0;
-    transform: translateX(-20px);
-}
-
-.burger-menu-btn.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
-    background: rgba(58, 58, 58, 0.8);
-}
-
-/* Burger Menu Overlay */
-.burger-menu-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--warm-yellow) 100%);
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.burger-menu-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.burger-menu-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    padding: 40px;
-}
-
-.burger-menu-item {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.5em;
-    font-weight: 900;
-    color: var(--white);
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    transition: all 0.3s ease;
-    transform: translateX(-50px);
-    opacity: 0;
-}
-
-.burger-menu-overlay.active .burger-menu-item {
-    transform: translateX(0);
-    opacity: 1;
-}
-
-.burger-menu-overlay.active .burger-menu-item:nth-child(1) {
-    transition-delay: 0.1s;
-}
-
-.burger-menu-overlay.active .burger-menu-item:nth-child(2) {
-    transition-delay: 0.2s;
-}
-
-.burger-menu-overlay.active .burger-menu-item:nth-child(3) {
-    transition-delay: 0.3s;
-}
-
-.burger-menu-item:hover {
-    transform: translateX(10px);
-    text-shadow: 3px 5px 12px rgba(0, 0, 0, 0.3);
-}
-
-.burger-menu-icon {
-    font-size: 1.2em;
-}
-
 .hero {
     background-image:
         linear-gradient(
@@ -1184,7 +1065,7 @@ html[lang="en"] .menu-item.unavailable .item-name::after {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .doneness-option {
@@ -1210,6 +1091,42 @@ html[lang="en"] .menu-item.unavailable .item-name::after {
 .doneness-option.selected {
     border-color: var(--primary-orange);
     background: linear-gradient(135deg, rgba(255, 165, 0, 0.15), rgba(255, 184, 77, 0.15));
+    color: var(--primary-orange);
+}
+
+/* Combo Option Styles */
+.combo-option-wrapper {
+    margin-bottom: 20px;
+    padding: 16px;
+    background: rgba(255, 165, 0, 0.05);
+    border-radius: 12px;
+    border: 2px dashed rgba(255, 165, 0, 0.3);
+}
+
+.combo-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.combo-checkbox {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    accent-color: var(--primary-orange);
+    flex-shrink: 0;
+}
+
+.combo-checkbox-text {
+    font-size: 1.05em;
+    font-weight: 600;
+    color: var(--graphite);
+    flex: 1;
+}
+
+.combo-checkbox-label:hover .combo-checkbox-text {
     color: var(--primary-orange);
 }
 

@@ -1,7 +1,10 @@
 // Cart Page Application Logic
 
 let cart = null;
-let selectedMessenger = 'whatsapp'; // Default messenger
+let selectedMessenger = 'telegram'; // Default messenger (via website)
+
+// ВАЖНО: Замени этот URL на свой Cloudflare Worker URL после настройки
+const CLOUDFLARE_WORKER_URL = 'YOUR_CLOUDFLARE_WORKER_URL_HERE';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Wait for cart to initialize
@@ -150,22 +153,13 @@ function handleCheckout(e) {
         total: cart.getTotalPrice()
     };
 
-    // Send order via selected messenger
-    switch (selectedMessenger) {
-        case 'whatsapp':
-            sendOrderViaWhatsApp(orderData);
-            break;
-        case 'telegram':
-            sendOrderViaTelegram(orderData);
-            break;
-        case 'facebook':
-            sendOrderViaFacebook(orderData);
-            break;
-        case 'instagram':
-            sendOrderViaInstagram(orderData);
-            break;
-        default:
-            sendOrderViaWhatsApp(orderData);
+    // Send order via selected method
+    if (selectedMessenger === 'phone') {
+        makePhoneCall(orderData);
+    } else if (selectedMessenger === 'telegram') {
+        sendOrderViaTelegram(orderData);
+    } else {
+        sendOrderViaWhatsApp(orderData);
     }
 }
 
@@ -248,114 +242,82 @@ function sendOrderViaWhatsApp(orderData) {
 function sendOrderViaTelegram(orderData) {
     const currentLang = getCurrentLang();
 
-    // Temporarily unavailable
-    alert(currentLang === 'pl' ?
-        'Zamówienia przez Telegram będą wkrótce dostępne. Proszę użyć WhatsApp lub Instagram.' :
-        'Telegram orders will be available soon. Please use WhatsApp or Instagram.');
-}
-
-function sendOrderViaFacebook(orderData) {
-    const currentLang = getCurrentLang();
-
-    // Temporarily unavailable
-    alert(currentLang === 'pl' ?
-        'Zamówienia przez Facebook Messenger będą wkrótce dostępne. Proszę użyć WhatsApp lub Instagram.' :
-        'Facebook Messenger orders will be available soon. Please use WhatsApp or Instagram.');
-}
-
-function sendOrderViaInstagram(orderData) {
-    const currentLang = getCurrentLang();
-
-    // Instagram username
-    const instagramUsername = 'burger22.pl';
-
-    // Instagram doesn't support pre-filled messages, so we'll just open DM
-    const instagramUrl = `https://ig.me/m/${instagramUsername}`;
-
-    // Show alert with order details to copy
-    const message = formatOrderMessage(orderData);
-
-    alert(currentLang === 'pl' ?
-        'Skopiuj szczegóły zamówienia i wyślij je w Instagram:\n\n' + message :
-        'Copy order details and send them via Instagram:\n\n' + message);
-
-    // Copy to clipboard
-    navigator.clipboard.writeText(message).catch(() => {
-        console.log('Could not copy to clipboard');
-    });
-
-    // Open Instagram
-    window.open(instagramUrl, '_blank');
-
-    handleOrderSent();
-}
-
-function formatOrderMessage(orderData) {
-    const currentLang = getCurrentLang();
-
-    const pickupTimeLabels = {
-        pl: {
-            asap: 'Jak najszybciej',
-            '15min': 'Za 15 minut',
-            '30min': 'Za 30 minut',
-            '45min': 'Za 45 minut',
-            '60min': 'Za 1 godzinę'
-        },
-        en: {
-            asap: 'As soon as possible',
-            '15min': 'In 15 minutes',
-            '30min': 'In 30 minutes',
-            '45min': 'In 45 minutes',
-            '60min': 'In 1 hour'
-        }
-    };
-
-    const paymentLabels = {
-        pl: {
-            cash: 'Gotówka',
-            card: 'Karta'
-        },
-        en: {
-            cash: 'Cash',
-            card: 'Card'
-        }
-    };
-
-    let message = currentLang === 'pl' ?
-        `🍔 NOWE ZAMÓWIENIE - Burger 22\n\n` :
-        `🍔 NEW ORDER - Burger 22\n\n`;
-
-    message += currentLang === 'pl' ? `Imię: ${orderData.name}\n` : `Name: ${orderData.name}\n`;
-    message += currentLang === 'pl' ? `Telefon: ${orderData.phone}\n` : `Phone: ${orderData.phone}\n`;
-    message += currentLang === 'pl' ? `Odbiór: ${pickupTimeLabels[currentLang][orderData.pickupTime]}\n` : `Pickup: ${pickupTimeLabels[currentLang][orderData.pickupTime]}\n`;
-    message += currentLang === 'pl' ? `Płatność: ${paymentLabels[currentLang][orderData.paymentMethod]}\n\n` : `Payment: ${paymentLabels[currentLang][orderData.paymentMethod]}\n\n`;
-
-    message += currentLang === 'pl' ? `Zamówienie:\n` : `Order:\n`;
-
-    orderData.items.forEach(item => {
-        message += `• ${item.name} x${item.quantity} = ${item.price * item.quantity} zł\n`;
-    });
-
-    message += `\n${currentLang === 'pl' ? 'RAZEM' : 'TOTAL'}: ${orderData.total} zł`;
-
-    if (orderData.comments) {
-        message += `\n\n${currentLang === 'pl' ? 'Uwagi' : 'Comments'}:\n${orderData.comments}`;
+    // Check if worker URL is configured
+    if (!CLOUDFLARE_WORKER_URL || CLOUDFLARE_WORKER_URL === 'YOUR_CLOUDFLARE_WORKER_URL_HERE') {
+        alert(currentLang === 'pl' ?
+            'Błąd konfiguracji. Skontaktuj się z administratorem.' :
+            'Configuration error. Please contact administrator.');
+        return;
     }
 
-    return message;
+    // Show loading message
+    const submitButton = document.querySelector('.btn-primary.btn-large');
+    const originalText = submitButton.textContent;
+    submitButton.disabled = true;
+    submitButton.textContent = currentLang === 'pl' ? 'Wysyłanie...' : 'Sending...';
+
+    // Add language to order data
+    orderData.lang = currentLang;
+
+    // Send to Cloudflare Worker
+    fetch(CLOUDFLARE_WORKER_URL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(orderData)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Success
+        alert(currentLang === 'pl' ?
+            '✅ Zamówienie wysłane! Skontaktujemy się wkrótce.' :
+            '✅ Order sent! We will contact you soon.');
+
+        // Clear cart
+        cart.clearCart();
+
+        // Reset button
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
+    })
+    .catch(error => {
+        console.error('Error sending order:', error);
+        alert(currentLang === 'pl' ?
+            '❌ Błąd wysyłania zamówienia. Spróbuj ponownie lub zadzwoń.' :
+            '❌ Error sending order. Please try again or call us.');
+
+        // Reset button
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
+    });
 }
 
-function handleOrderSent() {
+function makePhoneCall(orderData) {
     const currentLang = getCurrentLang();
+    const phoneNumber = '+48573256526';
 
-    // Clear cart after sending
+    // Show message to user
+    alert(currentLang === 'pl' ?
+        `Teraz zadzwonimy na numer: ${phoneNumber}\n\nPamiętaj o szczegółach zamówienia:\n- Imię: ${orderData.name}\n- Odbiór: ${orderData.pickupTime}\n- Płatność: ${orderData.paymentMethod}\n- Suma: ${orderData.total} zł` :
+        `We will now call: ${phoneNumber}\n\nRemember your order details:\n- Name: ${orderData.name}\n- Pickup: ${orderData.pickupTime}\n- Payment: ${orderData.paymentMethod}\n- Total: ${orderData.total} zł`);
+
+    // Initiate phone call
+    window.location.href = `tel:${phoneNumber}`;
+
+    // Clear cart after call
     setTimeout(() => {
         if (confirm(currentLang === 'pl' ?
-            'Zamówienie wysłane! Czy wyczyścić koszyk?' :
-            'Order sent! Clear cart?')) {
+            'Czy zamówienie zostało złożone telefonicznie? Wyczyścić koszyk?' :
+            'Was the order placed by phone? Clear cart?')) {
             cart.clearCart();
         }
-    }, 1000);
+    }, 2000);
 }
 
 function getCurrentLang() {

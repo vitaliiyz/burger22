@@ -148,6 +148,14 @@ function createDonenessModal() {
                     ${window.CommonUtils.getTranslation('doneness.wellDone', currentLang, translations)}
                 </div>
             </div>
+            <div class="combo-option-wrapper">
+                <label class="combo-checkbox-label">
+                    <input type="checkbox" class="combo-checkbox" id="comboCheckbox">
+                    <span class="combo-checkbox-text" data-i18n="doneness.comboOption">
+                        ${window.CommonUtils.getTranslation('doneness.comboOption', currentLang, translations)}
+                    </span>
+                </label>
+            </div>
             <div class="doneness-modal-buttons">
                 <button class="doneness-modal-btn doneness-cancel-btn">
                     ${currentLang === 'pl' ? 'Anuluj' : 'Cancel'}
@@ -182,11 +190,24 @@ function createDonenessModal() {
         if (selectedDoneness && currentBurgerData) {
             const currentLang = window.CommonUtils?.currentLang || 'pl';
             const donenessText = selectedDoneness === 'medium' ? 'Medium' : 'Well done';
+            const comboCheckbox = modal.querySelector('.combo-checkbox');
+            const isCombo = comboCheckbox.checked;
+
+            const translations = getMergedTranslations();
+            const comboText = window.CommonUtils.getTranslation('doneness.comboShort', currentLang, translations);
+
+            let itemName = `${currentBurgerData.item.name} (${donenessText})`;
+            if (isCombo) {
+                itemName = `${currentBurgerData.item.name} - ${comboText} (${donenessText})`;
+            }
 
             const item = {
                 ...currentBurgerData.item,
                 doneness: selectedDoneness,
-                name: `${currentBurgerData.item.name} (${donenessText})`
+                isCombo: isCombo,
+                price: isCombo ? currentBurgerData.item.price + 9 : currentBurgerData.item.price,
+                name: itemName,
+                id: isCombo ? `${currentBurgerData.item.id}-combo` : currentBurgerData.item.id
             };
 
             window.BurgerCart.addItem(item);
@@ -216,9 +237,13 @@ function showDonenessModal() {
         // Reset selection
         const options = donenessModal.querySelectorAll('.doneness-option');
         const confirmBtn = donenessModal.querySelector('.doneness-confirm-btn');
+        const comboCheckbox = donenessModal.querySelector('.combo-checkbox');
 
         options.forEach(opt => opt.classList.remove('selected'));
         confirmBtn.disabled = true;
+        if (comboCheckbox) {
+            comboCheckbox.checked = false;
+        }
 
         donenessModal.classList.add('active');
         document.body.style.overflow = 'hidden';
@@ -255,6 +280,12 @@ function updateModalTranslations() {
 
     if (wellDoneOption) {
         wellDoneOption.textContent = window.CommonUtils.getTranslation('doneness.wellDone', currentLang, translations);
+    }
+
+    // Update combo option text
+    const comboText = donenessModal.querySelector('.combo-checkbox-text');
+    if (comboText) {
+        comboText.textContent = window.CommonUtils.getTranslation('doneness.comboOption', currentLang, translations);
     }
 
     // Update buttons
