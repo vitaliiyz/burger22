@@ -3,8 +3,9 @@
 let cart = null;
 let selectedMessenger = 'telegram'; // Default messenger (via website)
 
-// ВАЖНО: Замени этот URL на свой Cloudflare Worker URL после настройки
-const CLOUDFLARE_WORKER_URL = 'YOUR_CLOUDFLARE_WORKER_URL_HERE';
+// Cloudflare Worker URL для отправки заказов
+// Это публичный endpoint - безопасно для GitHub (не содержит секретов)
+const CLOUDFLARE_WORKER_URL = 'https://burger22-orders.vz260198.workers.dev';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Wait for cart to initialize
