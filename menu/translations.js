@@ -6,6 +6,7 @@ const translations = {
         sauceIncluded: 'sos w cenie',
         sugarIncluded: 'cukier w cenie',
         withLemon: 'z cytryną',
+        packagingNotice: '📦 Cena nie zawiera opakowania na wynos (+1 zł)',
         nav: {
             burgers: '🍔 Burgery',
             sides: '🍟 Frytki i dodatki',
@@ -36,32 +37,32 @@ const translations = {
         burgers: {
             classic: {
                 name: 'Klasyczny Burger',
-                desc: 'Bułeczka brioche, musztarda, cebula, pomidor, cheddar, wołowina, sałata, ogórek kiszony, ketchup'
+                desc: 'Bułeczka brioche, 100% mięsa wołowego, ser cheddar, cebula, pomidor, sałata, ogórek kiszony, musztarda, ketchup'
             },
             cheese: {
                 name: 'Serowy Burger',
-                desc: 'Bułeczka brioche, sos serowy x2, cebula prażona, pomidor, bekon smażony, mozzarella, cheddar topiony x2, wołowina, ogórek kiszony'
+                desc: 'Bułeczka brioche, 100% mięsa wołowego, 2x cheddar topiony, ser mozzarella, 2x sos serowy, chrupiący bekon, cebula prażona, rukola, pomidor, ogórek kiszony'
             },
             chicken: {
                 name: 'Kurczak Burger',
-                desc: 'Bułeczka brioche, ketchup, cebula, pomidor, cheddar, kurczak, sałata, majonez'
+                desc: 'Bułeczka brioche, polędwiczki z kurczaka, ser cheddar, cebula, pomidor, sałata, ketchup, majonez'
             },
             bbq: {
                 name: 'BBQ Burger',
-                desc: 'Bułeczka brioche, sos BBQ x2, cebula, pomidor, bekon smażony, cheddar, wołowina, sałata, ogórek kiszony'
+                desc: 'Bułeczka brioche, 100% mięsa wołowego, 2x sos BBQ, ser cheddar, chrupiący bekon, cebula, pomidor, rukola, ogórek kiszony'
             },
             spicy: {
                 name: 'Ostry Burger',
-                desc: 'Bułeczka brioche, sos chili, jalapeño, bekon smażony, cheddar, wołowina, sałata, ogórek kiszony, smażona cebula, ostry sos'
+                desc: 'Bułeczka brioche, 100% mięsa wołowego, chrupiący bekon, ser cheddar, jalapeno, smażona cebula, sałata, ogórek kiszony, sos słodki chili, sos amerykański'
             },
             egg: {
                 name: 'Jaja Burger',
-                desc: 'Bułeczka brioche, majonez, bekon smażony, jajko, wołowina, ogórek kiszony, sałata, smażona cebula, sos BBQ'
+                desc: 'Bułeczka brioche, 100% mięsa wołowego, chrupiący bekon, jajko sadzone, smażona cebula, sałata, ogórek kiszony, sos majonez, sos BBQ'
             }
         },
         extras: {
             meat: '🥩 Mięso',
-            bacon: '🥓 Boczek',
+            bacon: '🥓 Bekon',
             cheese: '🧀 Ser',
             jalapeno: '🌶️ Jalapeño',
             vegetables: '🥗 Warzywa'
@@ -98,6 +99,7 @@ const translations = {
         sauceIncluded: 'sauce included',
         sugarIncluded: 'sugar included',
         withLemon: 'with lemon',
+        packagingNotice: '📦 Prices do not include takeaway packaging (+1 PLN)',
         nav: {
             burgers: '🍔 Burgers',
             sides: '🍟 Fries & Sides',
@@ -128,27 +130,27 @@ const translations = {
         burgers: {
             classic: {
                 name: 'Classic Burger',
-                desc: 'Brioche bun, mustard, onion, tomato, cheddar, beef, lettuce, pickled cucumber, ketchup'
+                desc: 'Brioche bun, 100% beef, cheddar cheese, onion, tomato, lettuce, pickled cucumber, mustard, ketchup'
             },
             cheese: {
                 name: 'Cheesy Burger',
-                desc: 'Brioche bun, cheese sauce x2, roasted onion, tomato, fried bacon, mozzarella, melted cheddar x2, beef, pickled cucumber'
+                desc: 'Brioche bun, 100% beef, 2x melted cheddar, mozzarella cheese, 2x cheese sauce, crispy bacon, roasted onion, arugula, tomato, pickled cucumber'
             },
             chicken: {
                 name: 'Chicken Burger',
-                desc: 'Brioche bun, ketchup, onion, tomato, cheddar, chicken, lettuce, mayo'
+                desc: 'Brioche bun, chicken tenders, cheddar cheese, onion, tomato, lettuce, ketchup, mayo'
             },
             bbq: {
                 name: 'BBQ Burger',
-                desc: 'Brioche bun, BBQ sauce x2, onion, tomato, fried bacon, cheddar, beef, lettuce, pickled cucumber'
+                desc: 'Brioche bun, 100% beef, 2x BBQ sauce, cheddar cheese, crispy bacon, onion, tomato, arugula, pickled cucumber'
             },
             spicy: {
                 name: 'Spicy Burger',
-                desc: 'Brioche bun, chili sauce, jalapeño, fried bacon, cheddar, beef, lettuce, pickled cucumber, fried onion, hot sauce'
+                desc: 'Brioche bun, 100% beef, crispy bacon, cheddar cheese, jalapeño, fried onion, lettuce, pickled cucumber, sweet chili sauce, american sauce'
             },
             egg: {
                 name: 'Egg Burger',
-                desc: 'Brioche bun, mayo, fried bacon, egg, beef, pickled cucumber, lettuce, fried onion, BBQ sauce'
+                desc: 'Brioche bun, 100% beef, crispy bacon, fried egg, fried onion, lettuce, pickled cucumber, mayo sauce, BBQ sauce'
             }
         },
         extras: {

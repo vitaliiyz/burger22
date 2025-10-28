@@ -433,6 +433,17 @@ h1 {
     margin: 0;
 }
 
+.packaging-notice {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85em;
+    color: var(--graphite-light);
+    font-weight: 400;
+    font-style: italic;
+    margin-top: 6px;
+    margin-bottom: 0;
+    padding: 0;
+}
+
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -901,6 +912,10 @@ html[lang="en"] .menu-item.unavailable .item-name::after {
     .section-title {
         font-size: 1.2em;
         letter-spacing: 1px;
+    }
+
+    .packaging-notice {
+        font-size: 0.8em;
     }
 
     .item-content {
