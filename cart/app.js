@@ -268,9 +268,11 @@ function sendOrderViaTelegram(orderData) {
         },
         body: JSON.stringify(orderData)
     })
-    .then(response => {
+    .then(async response => {
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            const errorText = await response.text();
+            console.error('Worker error:', response.status, errorText);
+            throw new Error(`Worker error: ${response.status} - ${errorText}`);
         }
         return response.json();
     })
