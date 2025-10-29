@@ -123,6 +123,10 @@ body {
         right: 15px;
     }
 
+    .cart-btn.scrolled {
+        top: 75px;
+    }
+
     .cart-btn svg {
         width: 22px;
         height: 22px;
@@ -233,7 +237,7 @@ body {
 .language-switcher {
     position: absolute;
     top: 15px;
-    right: 80px;
+    right: 120px;
     display: flex;
     gap: 12px;
     align-items: center;

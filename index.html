@@ -29,6 +29,7 @@
     <div class="container">
         <div class="main-nav">
             <a href="menu/index.html" class="main-nav-item">
+                <span class="takeaway-badge" data-i18n="nav.takeaway-badge">🛍️ Zamów wcześniej!</span>
                 <div class="nav-icon">📖</div>
                 <h2 class="nav-title" data-i18n="nav.menu">Menu</h2>
                 <p class="nav-description" data-i18n="nav.menu-desc">Zobacz naszą ofertę burgerów</p>
@@ -44,6 +45,8 @@
     <!-- Common Footer (loaded dynamically) -->
     <div id="common-footer"></div>
 
+    <!-- Cart system (must load before common.js) -->
+    <script src="common/cart.js"></script>
     <!-- Common JS (must load first) -->
     <script src="common/common.js"></script>
     <!-- Page-specific JS -->

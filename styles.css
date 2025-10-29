@@ -24,6 +24,35 @@
     justify-content: center;
     min-height: 220px;
     cursor: pointer;
+    position: relative;
+}
+
+.takeaway-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(135deg, #ff6b35, #ff8c42);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+    animation: pulse 2s ease-in-out infinite;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 16px rgba(255, 107, 53, 0.6);
+    }
 }
 
 .main-nav-item:hover {
@@ -93,6 +122,13 @@
     .nav-description {
         font-size: 1em;
     }
+
+    .takeaway-badge {
+        font-size: 0.8em;
+        padding: 6px 12px;
+        top: 12px;
+        right: 12px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -118,6 +154,13 @@
 
     .nav-description {
         font-size: 0.95em;
+    }
+
+    .takeaway-badge {
+        font-size: 0.75em;
+        padding: 5px 10px;
+        top: 10px;
+        right: 10px;
     }
 }
 

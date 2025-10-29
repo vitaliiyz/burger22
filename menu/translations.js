@@ -6,6 +6,13 @@ const translations = {
         sauceIncluded: 'sos w cenie',
         sugarIncluded: 'cukier w cenie',
         withLemon: 'z cytryną',
+        takeaway: {
+            title: 'Złóż przedzamówienie',
+            desc: 'Dodaj produkty do koszyka i wyślij zamówienie. Przygotujemy je przed Twoim przyjściem!',
+            trouble: 'Lub zadzwoń: +48 573 256 526',
+            copy: 'Kopiuj',
+            call: 'Zadzwoń'
+        },
         doneness: {
             title: 'Wybierz stopień wysmażenia',
             medium: 'Medium',
@@ -106,6 +113,13 @@ const translations = {
         sauceIncluded: 'sauce included',
         sugarIncluded: 'sugar included',
         withLemon: 'with lemon',
+        takeaway: {
+            title: 'Place Pre-order',
+            desc: 'Add items to cart and send your order. We\'ll have it ready before you arrive!',
+            trouble: 'Or call us: +48 573 256 526',
+            copy: 'Copy',
+            call: 'Call us'
+        },
         doneness: {
             title: 'Choose doneness level',
             medium: 'Medium',

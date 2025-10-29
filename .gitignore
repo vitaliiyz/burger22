@@ -62,3 +62,4 @@ desktop.ini
 .dev.vars
 .wrangler/
 worker/
+local-worker.js

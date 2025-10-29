@@ -5,7 +5,10 @@ let selectedMessenger = 'telegram'; // Default messenger (via website)
 
 // Cloudflare Worker URL для отправки заказов
 // Это публичный endpoint - безопасно для GitHub (не содержит секретов)
-const CLOUDFLARE_WORKER_URL = 'https://burger22-orders.vz260198.workers.dev';
+// Автоматически определяем локальное тестирование
+const CLOUDFLARE_WORKER_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://localhost:8787'  // Локальный Worker (wrangler dev)
+    : 'https://burger22-orders.vz260198.workers.dev';  // Production Worker
 
 document.addEventListener('DOMContentLoaded', () => {
     // Wait for cart to initialize

@@ -7,6 +7,7 @@ const pageTranslations = {
         nav: {
             menu: 'Menu',
             'menu-desc': 'Zobacz naszą ofertę burgerów',
+            'takeaway-badge': '🛍️ Zamów wcześniej!',
             contact: 'Kontakt'
         }
     },
@@ -15,6 +16,7 @@ const pageTranslations = {
         nav: {
             menu: 'Menu',
             'menu-desc': 'Check out our burger selection',
+            'takeaway-badge': '🛍️ Order ahead!',
             contact: 'Contact'
         }
     }

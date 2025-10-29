@@ -89,9 +89,23 @@ window.addEventListener('scroll', function() {
             if (scrollPosition >= navOffset) {
                 menuNav.classList.add('sticky');
                 navSpacer.classList.add('active');
+
+                // Move cart button down on mobile when nav is sticky
+                if (window.innerWidth <= 768) {
+                    const cartBtn = document.getElementById('cartBtn');
+                    if (cartBtn) {
+                        cartBtn.classList.add('scrolled');
+                    }
+                }
             } else {
                 menuNav.classList.remove('sticky');
                 navSpacer.classList.remove('active');
+
+                // Reset cart button position
+                const cartBtn = document.getElementById('cartBtn');
+                if (cartBtn) {
+                    cartBtn.classList.remove('scrolled');
+                }
             }
 
             ticking = false;
@@ -122,3 +136,41 @@ document.querySelectorAll('.nav-item').forEach(item => {
 });
 
 // Note: Burger menu functionality is now handled by common/common.js
+
+// Copy phone number functionality for takeaway info box
+document.addEventListener('DOMContentLoaded', () => {
+    const copyPhoneBtn = document.getElementById('copyPhoneBtn');
+
+    if (copyPhoneBtn) {
+        copyPhoneBtn.addEventListener('click', () => {
+            const phoneNumber = '+48 573 256 526';
+
+            navigator.clipboard.writeText(phoneNumber).then(() => {
+                // Change button appearance
+                copyPhoneBtn.classList.add('copied');
+                const iconSpan = copyPhoneBtn.querySelector('.btn-icon');
+                const textSpan = copyPhoneBtn.querySelector('span:last-child');
+
+                const originalIcon = iconSpan.textContent;
+                const originalText = textSpan.textContent;
+
+                iconSpan.textContent = '✓';
+                textSpan.textContent = getCurrentLang() === 'pl' ? 'Skopiowano!' : 'Copied!';
+
+                // Reset after 2 seconds
+                setTimeout(() => {
+                    copyPhoneBtn.classList.remove('copied');
+                    iconSpan.textContent = originalIcon;
+                    textSpan.textContent = originalText;
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+                alert('Nie udało się skopiować numeru: +48 573 256 526');
+            });
+        });
+    }
+});
+
+function getCurrentLang() {
+    return window.CommonUtils?.currentLang || 'pl';
+}
