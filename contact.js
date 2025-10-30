@@ -5,6 +5,7 @@ const pageTranslations = {
     pl: {
         tagline: 'Kontakt',
         contact: {
+            phone: 'Telefon',
             email: 'Email',
             address: 'Adres',
             map: 'Mapa',
@@ -16,6 +17,7 @@ const pageTranslations = {
     en: {
         tagline: 'Contact',
         contact: {
+            phone: 'Phone',
             email: 'Email',
             address: 'Address',
             map: 'Map',

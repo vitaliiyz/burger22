@@ -7,7 +7,11 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Burger 22 - Kontakt</title>
-    <link rel="icon" type="image/jpeg" href="common/images/favicon.jpg">
+    <!-- Favicon for Google and modern browsers -->
+    <link rel="icon" type="image/png" sizes="1080x1080" href="https://burger22.pl/common/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="180x180" href="https://burger22.pl/common/images/apple-touch-icon.png">
+    <!-- Apple devices -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://burger22.pl/common/images/apple-touch-icon.png">
     <link rel="stylesheet" href="common/common.css">
     <link rel="stylesheet" href="contact-styles.css">
 </head>
@@ -35,7 +39,24 @@
                 <div class="contact-icon">🕐</div>
                 <div class="contact-content">
                     <h3 class="contact-title" data-i18n="contact.hours-title">Godziny otwarcia</h3>
-                    <p class="contact-info" data-i18n="footer.hours-info">Pn-Nd: 12:00 - 22:00</p>
+                    <p class="contact-info" data-i18n="footer.hours-info">Wt-Nd: 12:00 - 22:00</p>
+                </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="contact-card phone-card">
+                <div class="contact-icon">📞</div>
+                <div class="contact-content">
+                    <h3 class="contact-title" data-i18n="contact.phone">Telefon</h3>
+                    <p class="contact-info">+48 573 256 526</p>
+                </div>
+                <div class="contact-buttons">
+                    <a href="tel:+48573256526" class="icon-btn" title="Zadzwoń">
+                        📞
+                    </a>
+                    <button class="icon-btn copy-icon-btn" data-copy="+48 573 256 526" title="Kopiuj">
+                        📋
+                    </button>
                 </div>
             </div>
 

@@ -4,20 +4,42 @@
 const pageTranslations = {
     pl: {
         tagline: 'Prawdziwy smak burgera',
+        badge: {
+            new: 'NOWOŚĆ'
+        },
         nav: {
+            delivery: 'Zamów do domu',
+            'delivery-desc': 'Wybierz serwis dostawy',
             menu: 'Menu',
             'menu-desc': 'Zobacz naszą ofertę burgerów',
             'takeaway-badge': '🛍️ Zamów wcześniej!',
             contact: 'Kontakt'
+        },
+        modal: {
+            title: 'Wybierz serwis dostawy',
+            description: 'Zamów nasze burgery z dostawą do domu',
+            'uber-desc': 'Szybka dostawa przez Uber',
+            disclaimer: '* Ceny w zewnętrznych serwisach dostawy mogą różnić się od cen w restauracji'
         }
     },
     en: {
         tagline: 'Real burger taste',
+        badge: {
+            new: 'NEW'
+        },
         nav: {
+            delivery: 'Order for delivery',
+            'delivery-desc': 'Choose delivery service',
             menu: 'Menu',
             'menu-desc': 'Check out our burger selection',
             'takeaway-badge': '🛍️ Order ahead!',
             contact: 'Contact'
+        },
+        modal: {
+            title: 'Choose delivery service',
+            description: 'Order our burgers with home delivery',
+            'uber-desc': 'Fast delivery via Uber',
+            disclaimer: '* Prices in third-party delivery services may differ from restaurant prices'
         }
     }
 };
@@ -52,5 +74,45 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.CommonUtils && window.CommonUtils.initLanguageButtons) {
             window.CommonUtils.initLanguageButtons();
         }
+
+        // Initialize delivery modal
+        initDeliveryModal();
     }, 100);
 });
+
+// Delivery modal functionality
+function initDeliveryModal() {
+    const deliveryBtn = document.getElementById('deliveryBtn');
+    const modal = document.getElementById('deliveryModal');
+    const closeBtn = document.querySelector('.modal-close');
+
+    if (!deliveryBtn || !modal || !closeBtn) return;
+
+    // Open modal
+    deliveryBtn.addEventListener('click', () => {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+
+    // Close modal via close button
+    closeBtn.addEventListener('click', () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+
+    // Close modal when clicking outside
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+}

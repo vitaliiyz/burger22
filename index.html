@@ -7,7 +7,11 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Burger 22</title>
-    <link rel="icon" type="image/jpeg" href="common/images/favicon.jpg">
+    <!-- Favicon for Google and modern browsers -->
+    <link rel="icon" type="image/png" sizes="1080x1080" href="https://burger22.pl/common/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="180x180" href="https://burger22.pl/common/images/apple-touch-icon.png">
+    <!-- Apple devices -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://burger22.pl/common/images/apple-touch-icon.png">
     <link rel="stylesheet" href="common/common.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -28,6 +32,13 @@
 
     <div class="container">
         <div class="main-nav">
+            <div class="main-nav-item delivery-item" id="deliveryBtn">
+                <span class="new-badge" data-i18n="badge.new">NOWOŚĆ</span>
+                <div class="nav-icon">🚚</div>
+                <h2 class="nav-title" data-i18n="nav.delivery">Zamów do domu</h2>
+                <p class="nav-description" data-i18n="nav.delivery-desc">Wybierz serwis dostawy</p>
+            </div>
+
             <a href="menu/index.html" class="main-nav-item">
                 <span class="takeaway-badge" data-i18n="nav.takeaway-badge">🛍️ Zamów wcześniej!</span>
                 <div class="nav-icon">📖</div>
@@ -39,6 +50,25 @@
                 <div class="nav-icon">📞</div>
                 <h2 class="nav-title" data-i18n="nav.contact">Kontakt</h2>
             </a>
+        </div>
+    </div>
+
+    <!-- Delivery Services Modal -->
+    <div id="deliveryModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2 class="modal-title" data-i18n="modal.title">Wybierz serwis dostawy</h2>
+            <p class="modal-description" data-i18n="modal.description">Zamów nasze burgery z dostawą do domu</p>
+            <div class="delivery-services">
+                <a href="https://www.ubereats.com/pl/store/burger-22-wroc%C5%82aw/8Lt7flYYTlyCxBVTWd_kqQ" class="delivery-service-item" target="_blank" rel="noopener noreferrer">
+                    <div class="service-icon">🚗</div>
+                    <div class="service-info">
+                        <h3 class="service-name">Uber Eats</h3>
+                        <p class="service-desc" data-i18n="modal.uber-desc">Szybka dostawa przez Uber</p>
+                    </div>
+                </a>
+            </div>
+            <p class="modal-disclaimer" data-i18n="modal.disclaimer">* Ceny w zewnętrznych serwisach dostawy mogą różnić się od cen w restauracji</p>
         </div>
     </div>
 
