@@ -1099,3 +1099,37 @@ html[lang="en"] .menu-item.unavailable .item-name::after {
         height: 18px;
     }
 }
+
+/* Disclaimer Section */
+.menu-disclaimer {
+    margin: 50px auto 30px;
+    padding: 12px 20px;
+    text-align: center;
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
+}
+
+.menu-disclaimer p {
+    font-size: 0.85em;
+    color: #666;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .menu-disclaimer {
+        margin: 40px 20px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-disclaimer {
+        margin: 30px 15px 20px;
+        padding: 10px 16px;
+    }
+
+    .menu-disclaimer p {
+        font-size: 0.8em;
+    }
+}

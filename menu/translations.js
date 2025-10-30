@@ -7,6 +7,7 @@ const translations = {
         sugarIncluded: 'cukier w cenie',
         withLemon: 'z cytryną',
         packagingNotice: '📦 Cena nie zawiera opakowania na wynos (+1 zł)',
+        disclaimer: 'Wygląd potrawy może się różnić od zdjęcia',
         nav: {
             burgers: '🍔 Burgery',
             sides: '🍟 Frytki i dodatki',
@@ -100,6 +101,7 @@ const translations = {
         sugarIncluded: 'sugar included',
         withLemon: 'with lemon',
         packagingNotice: '📦 Prices do not include takeaway packaging (+1 PLN)',
+        disclaimer: 'Actual product may differ from image',
         nav: {
             burgers: '🍔 Burgers',
             sides: '🍟 Fries & Sides',
