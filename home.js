@@ -18,6 +18,7 @@ const pageTranslations = {
             title: 'Wybierz serwis dostawy',
             description: 'Zamów nasze burgery z dostawą do domu',
             'uber-desc': 'Szybka dostawa przez Uber',
+            'glovo-desc': 'Szybka dostawa przez Glovo',
             disclaimer: '* Ceny w zewnętrznych serwisach dostawy mogą różnić się od cen w restauracji'
         }
     },
@@ -37,6 +38,7 @@ const pageTranslations = {
             title: 'Choose delivery service',
             description: 'Order our burgers with home delivery',
             'uber-desc': 'Fast delivery via Uber',
+            'glovo-desc': 'Fast delivery via Glovo',
             disclaimer: '* Prices in third-party delivery services may differ from restaurant prices'
         }
     }
