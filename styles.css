@@ -288,7 +288,7 @@
 .delivery-service-item {
     display: flex;
     align-items: center;
-    padding: 25px 30px;
+    padding: 18px 30px;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 20px;
     border: 2px solid rgba(255, 165, 0, 0.2);
@@ -359,7 +359,7 @@
     }
 
     .delivery-service-item {
-        padding: 20px 25px;
+        padding: 15px 25px;
     }
 
     .service-icon {
@@ -404,7 +404,7 @@
     }
 
     .delivery-service-item {
-        padding: 18px 20px;
+        padding: 14px 20px;
     }
 
     .service-icon {
