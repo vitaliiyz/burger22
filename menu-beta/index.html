@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Burger 22 - Menu</title>
+    <!-- Favicon for Google and modern browsers -->
+    <link rel="icon" type="image/png" sizes="1080x1080" href="https://burger22.pl/common/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="180x180" href="https://burger22.pl/common/images/apple-touch-icon.png">
+    <!-- Apple devices -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://burger22.pl/common/images/apple-touch-icon.png">
+    <link rel="stylesheet" href="../common/common.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Common Header (loaded dynamically) -->
+    <div id="common-header"></div>
+
+    <div class="hero">
+        <a href="../index.html" class="home-link">
+            <div class="hero-branding">
+                <img src="../common/images/logo_full.png" alt="Burger 22" class="logo-full-main">
+            </div>
+        </a>
+        <p class="tagline" data-i18n="tagline">Menu</p>
+        <div class="language-switcher">
+            <button class="lang-btn active" data-lang="pl">PL</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <nav class="menu-nav" id="menuNav">
+            <a href="#burgery" class="nav-item" data-section="burgery" data-i18n="nav.burgers">🍔 Burgery</a>
+            <a href="#dodatki-burgera" class="nav-item" data-section="dodatki-burgera" data-i18n="nav.extras">🥓 Dodatki do burgera</a>
+            <a href="#dodatki" class="nav-item" data-section="dodatki" data-i18n="nav.sides">🍟 Frytki i dodatki</a>
+            <a href="#sosy" class="nav-item" data-section="sosy" data-i18n="nav.sauces">🧂 Sosy</a>
+            <a href="#napoje-gorace" class="nav-item" data-section="napoje-gorace" data-i18n="nav.hotDrinks">☕ Napoje gorące</a>
+            <a href="#napoje" class="nav-item" data-section="napoje" data-i18n="nav.drinks">🥤 Napoje zimne</a>
+        </nav>
+        <div class="nav-spacer" id="navSpacer"></div>
+
+        <!-- Takeaway Info Box -->
+        <div class="takeaway-info-box">
+            <div class="takeaway-info-content">
+                <div class="takeaway-info-icon">🛍️</div>
+                <div class="takeaway-info-text">
+                    <h3 data-i18n="takeaway.title">Zamówienie na wynos</h3>
+                    <p data-i18n="takeaway.desc">Dodaj produkty do koszyka i wyślij zamówienie. Przygotujemy je przed Twoim przyjściem!</p>
+                </div>
+            </div>
+            <div class="takeaway-info-contact">
+                <span data-i18n="takeaway.trouble">Coś poszło nie tak?</span>
+                <div class="takeaway-buttons">
+                    <button class="takeaway-btn copy-btn" id="copyPhoneBtn">
+                        <span class="btn-icon">📋</span>
+                        <span data-i18n="takeaway.copy">Kopiuj numer</span>
+                    </button>
+                    <a href="tel:+48573256526" class="takeaway-btn call-btn">
+                        <span class="btn-icon">📞</span>
+                        <span data-i18n="takeaway.call">Zadzwoń</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section" id="burgery">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="sections.burgers">Burgery</h2>
+                <p class="packaging-notice" data-i18n="packagingNotice">📦 Cena nie zawiera opakowania na wynos (+1 zł)</p>
+            </div>
+            <div class="menu-grid">
+                <!-- 1. Klasyczny -->
+                <div class="menu-item">
+                    <img src="images/classic.jpeg" alt="Klasyczny burger" class="item-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="burgers.classic.name">Klasyczny Burger</h3>
+                        </div>
+                        <p class="item-description" data-i18n="burgers.classic.desc">
+                            Bułeczka brioche, 100% mięsa wołowego, ser cheddar, cebula, pomidor, sałata, ogórek kiszony, musztarda, ketchup
+                        </p>
+                        <div class="item-footer">
+                            <div>
+                                <div class="item-price">33 zł</div>
+                                <div class="zestaw-price">42 zł <span class="zestaw-label" data-i18n="combo">(zestaw: burger + frytki + sos)</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Serowy -->
+                <div class="menu-item">
+                    <img src="images/cheese.JPG" alt="Serowy burger" class="item-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="burgers.cheese.name">Serowy Burger</h3>
+                        </div>
+                        <p class="item-description" data-i18n="burgers.cheese.desc">
+                            Bułeczka brioche, 100% mięsa wołowego, 2x cheddar topiony, ser mozzarella, 2x sos serowy, chrupiący bekon, cebula prażona, rukola, pomidor, ogórek kiszony
+                        </p>
+                        <div class="item-footer">
+                            <div>
+                                <div class="item-price">40 zł</div>
+                                <div class="zestaw-price">49 zł <span class="zestaw-label" data-i18n="combo">(zestaw: burger + frytki + sos)</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Kurczak -->
+                <div class="menu-item">
+                    <img src="images/chicken.JPG" alt="Kurczak burger" class="item-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="burgers.chicken.name">Kurczak Burger</h3>
+                        </div>
+                        <p class="item-description" data-i18n="burgers.chicken.desc">
+                            Bułeczka brioche, polędwiczki z kurczaka, ser cheddar, cebula, pomidor, sałata, ketchup, majonez
+                        </p>
+                        <div class="item-footer">
+                            <div>
+                                <div class="item-price">37 zł</div>
+                                <div class="zestaw-price">46 zł <span class="zestaw-label" data-i18n="combo">(zestaw: burger + frytki + sos)</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. BBQ -->
+                <div class="menu-item">
+                    <img src="images/bbq.JPG" alt="BBQ burger" class="item-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="burgers.bbq.name">BBQ Burger</h3>
+                        </div>
+                        <p class="item-description" data-i18n="burgers.bbq.desc">
+                            Bułeczka brioche, 100% mięsa wołowego, 2x sos BBQ, ser cheddar, chrupiący bekon, cebula, pomidor, rukola, ogórek kiszony
+                        </p>
+                        <div class="item-footer">
+                            <div>
+                                <div class="item-price">36 zł</div>
+                                <div class="zestaw-price">45 zł <span class="zestaw-label" data-i18n="combo">(zestaw: burger + frytki + sos)</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Ostry -->
+                <div class="menu-item">
+                    <img src="images/hot.JPG" alt="Ostry burger" class="item-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="burgers.spicy.name">Ostry Burger</h3>
+                        </div>
+                        <p class="item-description" data-i18n="burgers.spicy.desc">
+                            Bułeczka brioche, 100% mięsa wołowego, chrupiący bekon, ser cheddar, jalapeno, smażona cebula, sałata, ogórek kiszony, sos słodki chili, sos amerykański
+                        </p>
+                        <div class="item-footer">
+                            <div>
+                                <div class="item-price">39 zł</div>
+                                <div class="zestaw-price">48 zł <span class="zestaw-label" data-i18n="combo">(zestaw: burger + frytki + sos)</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Jaja Burger -->
+                <div class="menu-item">
+                    <img src="images/egg.JPG" alt="Jaja burger" class="item-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="burgers.egg.name">Jaja Burger</h3>
+                        </div>
+                        <p class="item-description" data-i18n="burgers.egg.desc">
+                            Bułeczka brioche, 100% mięsa wołowego, chrupiący bekon, jajko sadzone, smażona cebula, sałata, ogórek kiszony, sos majonez, sos BBQ
+                        </p>
+                        <div class="item-footer">
+                            <div>
+                                <div class="item-price">38 zł</div>
+                                <div class="zestaw-price">47 zł <span class="zestaw-label" data-i18n="combo">(zestaw: burger + frytki + sos)</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section" id="dodatki-burgera">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="sections.extras">🥓 Dodatki do burgera</h2>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="extras.meat">🥩 Mięso</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">12 zł</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="extras.bacon">🥓 Bekon</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">4 zł</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="extras.cheese">🧀 Ser</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">2 zł</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="extras.jalapeno">🌶️ Jalapeño</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">2 zł</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="extras.vegetables">🥗 Warzywa</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">2 zł</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section" id="dodatki">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="sections.sides">Frytki i dodatki</h2>
+                <p class="packaging-notice" data-i18n="packagingNotice">📦 Cena nie zawiera opakowania na wynos (+1 zł)</p>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="sides.friesSmall">🍟 Frytki 150g</h3>
+                        </div>
+                        <div class="item-footer">
+                            <div>
+                                <span class="item-price">14 zł</span>
+                                <div class="addon-note" data-i18n="sauceIncluded">sos w cenie</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="sides.friesLarge">🍟 Frytki 300g</h3>
+                        </div>
+                        <div class="item-footer">
+                            <div>
+                                <span class="item-price">18 zł</span>
+                                <div class="addon-note" data-i18n="sauceIncluded">sos w cenie</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="sides.onionRingsSmall">🧅 Krążki cebulowe 6 szt</h3>
+                        </div>
+                        <div class="item-footer">
+                            <div>
+                                <span class="item-price">13 zł</span>
+                                <div class="addon-note" data-i18n="sauceIncluded">sos w cenie</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="sides.onionRingsLarge">🧅 Krążki cebulowe 12 szt</h3>
+                        </div>
+                        <div class="item-footer">
+                            <div>
+                                <span class="item-price">19 zł</span>
+                                <div class="addon-note" data-i18n="sauceIncluded">sos w cenie</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="sides.nuggetsSmall">🍗 Nuggetsy 6 szt</h3>
+                        </div>
+                        <div class="item-footer">
+                            <div>
+                                <span class="item-price">17 zł</span>
+                                <div class="addon-note" data-i18n="sauceIncluded">sos w cenie</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="sides.nuggetsLarge">🍗 Nuggetsy 12 szt</h3>
+                        </div>
+                        <div class="item-footer">
+                            <div>
+                                <span class="item-price">25 zł</span>
+                                <div class="addon-note" data-i18n="sauceIncluded">sos w cenie</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="sides.extraSauce">🧂 Sos dodatkowy</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">3 zł</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section" id="sosy">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="sections.sauces">Sosy na wybór</h2>
+            </div>
+            <div class="sauce-list">
+                <div class="sauce-column">
+                    <div class="sauce-item" data-i18n="sauces.ketchup">🍅 Ketchup</div>
+                    <div class="sauce-item" data-i18n="sauces.bbq">🍖 BBQ</div>
+                    <div class="sauce-item" data-i18n="sauces.chili">🌶️ Chili</div>
+                    <div class="sauce-item" data-i18n="sauces.american">🔥 Amerykański (hot)</div>
+                    <div class="sauce-item" data-i18n="sauces.cheese">🧀 Serowy</div>
+                </div>
+                <div class="sauce-column">
+                    <div class="sauce-item" data-i18n="sauces.mayo">🥚 Majonez</div>
+                    <div class="sauce-item" data-i18n="sauces.thousandIsland">🥗 Tysiąc wysp</div>
+                    <div class="sauce-item" data-i18n="sauces.garlic">🧄 Czosnkowy</div>
+                    <div class="sauce-item" data-i18n="sauces.mustard">🌭 Musztarda</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section" id="napoje-gorace">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="sections.hotDrinks">Napoje gorące</h2>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="hotDrinks.greenTea">☕ Herbata zielona</h3>
+                        </div>
+                        <div class="item-footer">
+                            <div>
+                                <div class="item-price">5 zł</div>
+                                <div class="zestaw-price">6 zł <span class="zestaw-label" data-i18n="withLemon">(z cytryną)</span></div>
+                                <div class="addon-note" data-i18n="sugarIncluded">cukier w cenie</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section" id="napoje">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="sections.drinks">Napoje zimne</h2>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="drinks.cola">🥤 Pepsi</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">9 zł</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="drinks.colaZero">🥤 Pepsi (zero)</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">9 zł</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image unavailable">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="drinks.sprite">🥤 Sprite</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">— zł</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image unavailable">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="drinks.fanta">🥤 Fanta</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">— zł</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="drinks.orangeJuice">🍊 Sok pomarańczowy</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">9 zł</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="drinks.appleJuice">🍎 Sok jabłkowy</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">9 zł</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="drinks.multiJuice">🍹 Sok multiwitamina</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">9 zł</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="drinks.tomatoJuice">🍅 Sok pomidorowy</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">9 zł</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="drinks.waterStill">💧 Woda niegazowana</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">6 zł</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="drinks.waterSparkling">💦 Woda gazowana</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">6 zł</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item no-image unavailable">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="drinks.beerNonAlcoholic">🍺 Piwo bezalkoholowe</h3>
+                        </div>
+                        <div class="item-footer">
+                            <span class="item-price">— zł</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Common Footer (loaded dynamically) -->
+    <div id="common-footer"></div>
+
+    <!-- Common JS (must load first) -->
+    <script src="../common/cart.js"></script>
+    <script src="../common/common.js"></script>
+    <!-- Translation system -->
+    <script src="translations.js"></script>
+    <!-- Main application logic -->
+    <script src="app.js"></script>
+    <!-- Menu cart integration -->
+    <script src="menu-cart.js"></script>
+
+    <!-- Initialize language buttons -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                if (window.CommonUtils && window.CommonUtils.initLanguageButtons) {
+                    window.CommonUtils.initLanguageButtons();
+                }
+            }, 100);
+        });
+    </script>
+</body>
+</html>

@@ -83,6 +83,81 @@ body {
     background: rgba(58, 58, 58, 0.8);
 }
 
+/* Shopping Cart Button */
+.cart-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    color: white;
+}
+
+.cart-btn:hover {
+    transform: scale(1.05);
+}
+
+.cart-btn svg {
+    fill: none;
+    transition: all 0.3s ease;
+    width: 24px;
+    height: 24px;
+}
+
+/* On mobile */
+@media (max-width: 768px) {
+    .cart-btn {
+        width: 45px;
+        height: 45px;
+        top: 15px;
+        right: 15px;
+    }
+
+    .cart-btn.scrolled {
+        top: 75px;
+    }
+
+    .cart-btn svg {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+.cart-count {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: linear-gradient(135deg, var(--primary-orange), var(--warm-yellow));
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.cart-count.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
 /* Burger Menu Overlay */
 .burger-menu-overlay {
     position: fixed;
@@ -145,6 +220,10 @@ body {
     transition-delay: 0.3s;
 }
 
+.burger-menu-overlay.active .burger-menu-item:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
 .burger-menu-item:hover {
     transform: translateX(10px);
     text-shadow: 3px 5px 12px rgba(0, 0, 0, 0.3);
@@ -158,9 +237,10 @@ body {
 .language-switcher {
     position: absolute;
     top: 15px;
-    right: 20px;
+    right: 120px;
     display: flex;
-    gap: 8px;
+    gap: 12px;
+    align-items: center;
     z-index: 10;
 }
 

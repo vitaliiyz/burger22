@@ -5,6 +5,22 @@
     <span></span>
 </button>
 
+<!-- Shopping Cart Button -->
+<a href="CART_PATH" class="cart-btn" id="cartBtn" aria-label="Cart">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <defs>
+            <linearGradient id="cartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#FFA500;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#FFB84D;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+        <circle cx="9" cy="21" r="1" stroke="url(#cartGradient)"></circle>
+        <circle cx="20" cy="21" r="1" stroke="url(#cartGradient)"></circle>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" stroke="url(#cartGradient)"></path>
+    </svg>
+    <span class="cart-count" id="cartCount">0</span>
+</a>
+
 <!-- Burger Menu Overlay -->
 <div class="burger-menu-overlay" id="burgerMenuOverlay">
     <nav class="burger-menu-nav">
@@ -15,6 +31,10 @@
         <a href="MENU_PATH" class="burger-menu-item">
             <span class="burger-menu-icon">📖</span>
             <span data-i18n="burger.menu">Menu</span>
+        </a>
+        <a href="CART_PATH" class="burger-menu-item">
+            <span class="burger-menu-icon">🛒</span>
+            <span data-i18n="burger.cart">Koszyk</span>
         </a>
         <a href="CONTACT_PATH" class="burger-menu-item">
             <span class="burger-menu-icon">📞</span>

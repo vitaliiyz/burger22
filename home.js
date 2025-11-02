@@ -5,13 +5,16 @@ const pageTranslations = {
     pl: {
         tagline: 'Prawdziwy smak burgera',
         badge: {
-            new: 'NOWOŚĆ'
+            new: 'NOWOŚĆ',
+            beta: 'BETA'
         },
         nav: {
             delivery: 'Zamów do domu',
             'delivery-desc': 'Wybierz serwis dostawy',
             menu: 'Menu',
             'menu-desc': 'Zobacz naszą ofertę burgerów',
+            takeaway: 'Zamówienie na wynos',
+            'takeaway-desc': 'Złóż zamówienie online',
             contact: 'Kontakt'
         },
         modal: {
@@ -26,13 +29,16 @@ const pageTranslations = {
     en: {
         tagline: 'Real burger taste',
         badge: {
-            new: 'NEW'
+            new: 'NEW',
+            beta: 'BETA'
         },
         nav: {
             delivery: 'Order for delivery',
             'delivery-desc': 'Choose delivery service',
             menu: 'Menu',
             'menu-desc': 'Check out our burger selection',
+            takeaway: 'Takeaway Order',
+            'takeaway-desc': 'Place your order online',
             contact: 'Contact'
         },
         modal: {

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Burger 22 - Koszyk</title>
+    <link rel="icon" type="image/jpeg" href="../common/images/favicon.jpg">
+    <link rel="stylesheet" href="../common/common.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Common Header (loaded dynamically) -->
+    <div id="common-header"></div>
+
+    <div class="hero">
+        <a href="../index.html" class="home-link">
+            <div class="hero-branding">
+                <img src="../common/images/logo_full.png" alt="Burger 22" class="logo-full-main">
+            </div>
+        </a>
+        <p class="tagline" data-i18n="title">Koszyk</p>
+        <div class="language-switcher">
+            <button class="lang-btn active" data-lang="pl">PL</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Empty cart state -->
+        <div class="empty-cart" id="emptyCart" style="display: none;">
+            <div class="empty-cart-icon">🛒</div>
+            <h2 data-i18n="emptyCart">Twój koszyk jest pusty</h2>
+            <p data-i18n="emptyCartDesc">Dodaj produkty z menu, aby złożyć zamówienie</p>
+            <a href="../menu-beta/index.html" class="btn-primary" data-i18n="goToMenu">Przejdź do menu</a>
+        </div>
+
+        <!-- Cart with items -->
+        <div class="cart-content" id="cartContent" style="display: none;">
+            <div class="cart-items-section">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="cartItems">Twoje zamówienie</h2>
+                    <div class="header-actions">
+                        <a href="../menu-beta/index.html" class="btn-text btn-back-to-menu" data-i18n="backToMenu">← Wróć do menu</a>
+                        <button class="btn-text" id="clearCartBtn" data-i18n="clearCart">Wyczyść koszyk</button>
+                    </div>
+                </div>
+
+                <div class="cart-items" id="cartItemsList">
+                    <!-- Cart items will be inserted here -->
+                </div>
+
+                <div class="cart-summary">
+                    <div class="summary-row">
+                        <span data-i18n="subtotal">Suma</span>
+                        <span class="summary-price" id="subtotalPrice">0 zł</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span data-i18n="totalAmount">Do zapłaty</span>
+                        <span class="summary-price" id="totalPrice">0 zł</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="checkout-section">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="orderDetails">Szczegóły zamówienia</h2>
+                </div>
+
+                <form class="checkout-form" id="checkoutForm">
+                    <div class="form-group">
+                        <label for="customerName" data-i18n="yourName">Twoje imię</label>
+                        <input
+                            type="text"
+                            id="customerName"
+                            name="customerName"
+                            required
+                            data-i18n-placeholder="namePlaceholder"
+                            placeholder="Wpisz swoje imię"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customerPhone" data-i18n="yourPhone">Numer telefonu</label>
+                        <input
+                            type="tel"
+                            id="customerPhone"
+                            name="customerPhone"
+                            required
+                            data-i18n-placeholder="phonePlaceholder"
+                            placeholder="np. +48 123 456 789"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pickupTime" data-i18n="pickupTime">Czas odbioru</label>
+                        <select id="pickupTime" name="pickupTime" required>
+                            <option value="asap" data-i18n="pickupTimeNow">Jak najszybciej</option>
+                            <option value="15min" data-i18n="pickupTime15">Za 15 minut</option>
+                            <option value="30min" data-i18n="pickupTime30">Za 30 minut</option>
+                            <option value="45min" data-i18n="pickupTime45">Za 45 minut</option>
+                            <option value="60min" data-i18n="pickupTime60">Za 1 godzinę</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="paymentMethod" data-i18n="paymentMethod">Sposób płatności</label>
+                        <select id="paymentMethod" name="paymentMethod" required>
+                            <option value="cash" data-i18n="paymentCash">Gotówka przy odbiorze</option>
+                            <option value="card" data-i18n="paymentCard">Karta przy odbiorze</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comments" data-i18n="comments">Uwagi do zamówienia (opcjonalnie)</label>
+                        <textarea
+                            id="comments"
+                            name="comments"
+                            rows="3"
+                            data-i18n-placeholder="commentsPlaceholder"
+                            placeholder="Dodatkowe informacje..."
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label data-i18n="sendVia">Wyślij zamówienie przez</label>
+                        <div class="messenger-buttons">
+                            <button type="button" class="messenger-btn active" data-messenger="telegram">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                </svg>
+                                <span data-i18n="sendViaSite">Wyślij przez stronę</span>
+                            </button>
+                            <button type="button" class="messenger-btn" data-messenger="phone">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                <span data-i18n="phoneCall">Zadzwoń</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary btn-large" data-i18n="submitOrder">
+                        Wyślij zamówienie
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Common Footer (loaded dynamically) -->
+    <div id="common-footer"></div>
+
+    <!-- Common JS (must load first) -->
+    <script src="../common/cart.js"></script>
+    <script src="../common/common.js"></script>
+    <!-- Translation system -->
+    <script src="translations.js"></script>
+    <!-- Cart page logic -->
+    <script src="app.js"></script>
+
+    <!-- Initialize language buttons -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                if (window.CommonUtils && window.CommonUtils.initLanguageButtons) {
+                    window.CommonUtils.initLanguageButtons();
+                }
+            }, 100);
+        });
+    </script>
+</body>
+</html>
