@@ -1,0 +1,12 @@
+# Cloudflare Worker Configuration
+# Этот файл безопасен для публичного репозитория - НЕ содержит секретов!
+
+name = "burger22-orders"
+main = "cloudflare-worker.js"
+compatibility_date = "2024-01-01"
+
+# Секреты НЕ здесь! Они в GitHub Secrets и добавляются автоматически через GitHub Actions
+# или вручную через Cloudflare Dashboard
+
+# Для локального тестирования создай файл .dev.vars (он в .gitignore)
+# и добавь туда: TELEGRAM_BOT_TOKEN=your_token_here
