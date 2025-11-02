@@ -1,6 +1,11 @@
 /* Cart Page Styles - Burger 22 */
 /* Uses existing CSS variables from common.css */
 
+/* Show cart button on cart page (overrides common.css) */
+.cart-btn {
+    display: flex !important;
+}
+
 /* Container override for cart page */
 .container {
     max-width: 1200px;

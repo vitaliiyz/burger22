@@ -214,8 +214,9 @@ async function initCommon() {
     // Determine paths based on current location
     const currentPath = window.location.pathname;
     const isInMenuFolder = currentPath.includes('/menu/');
+    const isInMenuBetaFolder = currentPath.includes('/menu-beta/');
     const isInCartFolder = currentPath.includes('/cart/');
-    const basePath = isInMenuFolder || isInCartFolder ? '../common/' : 'common/';
+    const basePath = isInMenuFolder || isInMenuBetaFolder || isInCartFolder ? '../common/' : 'common/';
 
     // Load header and footer
     await loadComponent('common-header', basePath + 'header.html');
