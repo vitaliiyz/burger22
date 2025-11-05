@@ -1638,3 +1638,36 @@ html[lang="en"] .menu-item.unavailable .item-name::after {
         padding: 7px 12px;
     }
 }
+
+/* Tea Modal Styles */
+.tea-option-section {
+    background: var(--off-white);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.tea-option-title {
+    font-size: 1em;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--graphite);
+}
+
+.tea-quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background: white;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.tea-quantity {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--primary-orange);
+    min-width: 40px;
+    text-align: center;
+}

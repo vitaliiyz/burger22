@@ -36,7 +36,17 @@ const translations = {
         commentsPlaceholder: 'Dodatkowe informacje...',
         orderSummary: 'Podsumowanie zamówienia',
         subtotal: 'Suma',
-        totalAmount: 'Do zapłaty'
+        totalAmount: 'Do zapłaty',
+        confirmOrder: 'Potwierdź zamówienie',
+        cancel: 'Anuluj',
+        confirmAndSend: 'Potwierdź i wyślij',
+        orderDetailsTitle: 'Szczegóły zamówienia',
+        orderError: 'Coś poszło nie tak',
+        errorMessage: 'Przepraszamy, ale nie udało się wysłać zamówienia przez stronę. Prosimy o kontakt telefoniczny.',
+        errorMessageTimeout: 'Wysyłanie zamówienia trwa zbyt długo. Sprawdź połączenie internetowe i spróbuj ponownie, lub zadzwoń do nas.',
+        callNow: 'Zadzwoń teraz',
+        tryAgain: 'Spróbuj ponownie',
+        saveOrderDetails: 'Zapisz szczegóły zamówienia'
     },
     en: {
         title: 'Cart',
@@ -74,7 +84,17 @@ const translations = {
         commentsPlaceholder: 'Additional information...',
         orderSummary: 'Order summary',
         subtotal: 'Subtotal',
-        totalAmount: 'Total amount'
+        totalAmount: 'Total amount',
+        confirmOrder: 'Confirm order',
+        cancel: 'Cancel',
+        confirmAndSend: 'Confirm and send',
+        orderDetailsTitle: 'Order details',
+        orderError: 'Something went wrong',
+        errorMessage: 'We apologize, but we were unable to send your order through the website. Please contact us by phone.',
+        errorMessageTimeout: 'Sending order is taking too long. Check your internet connection and try again, or call us.',
+        callNow: 'Call now',
+        tryAgain: 'Try again',
+        saveOrderDetails: 'Save order details'
     }
 };
 

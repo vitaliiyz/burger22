@@ -9,11 +9,16 @@ let selectedDoneness = null;
 let sidesModal = null;
 let currentSideData = null;
 
+// Variables for tea modal
+let teaModal = null;
+let currentTeaData = null;
+
 document.addEventListener('DOMContentLoaded', () => {
     // Wait for translations to load
     setTimeout(() => {
         createDonenessModal();
         createSidesModal();
+        createTeaModal();
         initMenuCartButtons();
     }, 200);
 });
@@ -101,10 +106,14 @@ function initMenuCartButtons() {
                 const isChicken = itemData.id === 'burger-chicken';
                 currentBurgerData = { item, button, isChicken };
                 showDonenessModal();
-            } else if (itemData.type === 'side' && (itemData.id.includes('fries') || itemData.id.includes('onion'))) {
-                // Show sides modal for fries and onion rings
+            } else if (itemData.type === 'side' && (itemData.id.includes('fries') || itemData.id.includes('onion') || itemData.id.includes('nuggets') || itemData.id === 'side-extra-sauce')) {
+                // Show sides modal for fries, onion rings, nuggets, and extra sauce
                 currentSideData = { item, button };
                 showSidesModal();
+            } else if (itemData.id === 'drink-green-tea') {
+                // Show tea customization modal
+                currentTeaData = { item, button };
+                showTeaModal();
             } else {
                 // Add directly for other items
                 window.BurgerCart.addItem(item);
@@ -621,8 +630,8 @@ function createDonenessModal() {
         const selectedExtras = [];
         let extrasPrice = 0;
 
-        // Handle main extras (not vegetables)
-        modal.querySelectorAll('.extra-item:not(.vegetable-item)').forEach(item => {
+        // Handle main extras (not vegetables, not sauces)
+        modal.querySelectorAll('.extra-item:not(.vegetable-item):not(.sauce-item)').forEach(item => {
             const quantity = parseInt(item.querySelector('.extra-quantity').textContent);
             if (quantity > 0) {
                 const extraType = item.dataset.extra;
@@ -1189,5 +1198,177 @@ function updateModalTranslations() {
 
     if (confirmBtn) {
         confirmBtn.textContent = window.CommonUtils.getTranslation('doneness.addToCart', currentLang, translations);
+    }
+}
+
+// Create tea customization modal
+function createTeaModal() {
+    const currentLang = window.CommonUtils?.currentLang || 'pl';
+    const translations = getMergedTranslations();
+
+    const modal = document.createElement('div');
+    modal.className = 'doneness-modal tea-modal';
+    modal.innerHTML = `
+        <div class="doneness-modal-content">
+            <h3 class="doneness-modal-title">
+                ${currentLang === 'pl' ? 'Personalizuj herbatę' : 'Customize your tea'}
+            </h3>
+
+            <!-- Sugar selection -->
+            <div class="tea-option-section">
+                <h5 class="tea-option-title">${currentLang === 'pl' ? '🍬 Cukier (max 5):' : '🍬 Sugar (max 5):'}</h5>
+                <div class="tea-quantity-controls">
+                    <button class="extra-btn tea-minus" type="button" data-item="sugar">−</button>
+                    <span class="tea-quantity" id="teaSugarQuantity">0</span>
+                    <button class="extra-btn tea-plus" type="button" data-item="sugar">+</button>
+                </div>
+            </div>
+
+            <!-- Lemon selection -->
+            <div class="tea-option-section">
+                <h5 class="tea-option-title">${currentLang === 'pl' ? '🍋 Cytryna (max 1):' : '🍋 Lemon (max 1):'}</h5>
+                <div class="tea-quantity-controls">
+                    <button class="extra-btn tea-minus" type="button" data-item="lemon">−</button>
+                    <span class="tea-quantity" id="teaLemonQuantity">0</span>
+                    <button class="extra-btn tea-plus" type="button" data-item="lemon">+</button>
+                </div>
+            </div>
+
+            <div class="doneness-modal-buttons">
+                <button class="doneness-modal-btn doneness-cancel-btn">
+                    ${currentLang === 'pl' ? 'Anuluj' : 'Cancel'}
+                </button>
+                <button class="doneness-modal-btn doneness-confirm-btn">
+                    ${currentLang === 'pl' ? 'Dodaj do koszyka' : 'Add to cart'}
+                </button>
+            </div>
+        </div>
+    `;
+
+    document.body.appendChild(modal);
+    teaModal = modal;
+
+    // Add event listeners
+    const confirmBtn = modal.querySelector('.doneness-confirm-btn');
+    const cancelBtn = modal.querySelector('.doneness-cancel-btn');
+
+    const sugarQuantity = modal.querySelector('#teaSugarQuantity');
+    const lemonQuantity = modal.querySelector('#teaLemonQuantity');
+
+    // Sugar controls
+    modal.querySelectorAll('.tea-plus[data-item="sugar"]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            let quantity = parseInt(sugarQuantity.textContent);
+            if (quantity < 5) {
+                sugarQuantity.textContent = quantity + 1;
+            }
+        });
+    });
+
+    modal.querySelectorAll('.tea-minus[data-item="sugar"]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            let quantity = parseInt(sugarQuantity.textContent);
+            if (quantity > 0) {
+                sugarQuantity.textContent = quantity - 1;
+            }
+        });
+    });
+
+    // Lemon controls
+    modal.querySelectorAll('.tea-plus[data-item="lemon"]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            let quantity = parseInt(lemonQuantity.textContent);
+            if (quantity < 1) {
+                lemonQuantity.textContent = quantity + 1;
+            }
+        });
+    });
+
+    modal.querySelectorAll('.tea-minus[data-item="lemon"]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            let quantity = parseInt(lemonQuantity.textContent);
+            if (quantity > 0) {
+                lemonQuantity.textContent = quantity - 1;
+            }
+        });
+    });
+
+    // Cancel button
+    cancelBtn.addEventListener('click', () => {
+        hideTeaModal();
+    });
+
+    // Close on background click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            hideTeaModal();
+        }
+    });
+
+    // Confirm button - add item to cart
+    confirmBtn.addEventListener('click', () => {
+        if (!currentTeaData) return;
+
+        const currentLang = window.CommonUtils?.currentLang || 'pl';
+        const sugar = parseInt(sugarQuantity.textContent);
+        const lemon = parseInt(lemonQuantity.textContent);
+
+        // Build item name with customization
+        let itemName = currentTeaData.item.name;
+        const customizations = [];
+
+        if (sugar > 0) {
+            const sugarText = currentLang === 'pl'
+                ? `${sugar} ${sugar === 1 ? 'cukier' : sugar < 5 ? 'cukry' : 'cukrów'}`
+                : `${sugar} sugar${sugar > 1 ? 's' : ''}`;
+            customizations.push(`🍬 ${sugarText}`);
+        }
+
+        if (lemon > 0) {
+            const lemonText = currentLang === 'pl' ? 'z cytryną' : 'with lemon';
+            customizations.push(`🍋 ${lemonText}`);
+        }
+
+        if (customizations.length > 0) {
+            itemName += ` (${customizations.join(', ')})`;
+        }
+
+        const item = {
+            ...currentTeaData.item,
+            name: itemName,
+            sugar: sugar,
+            lemon: lemon,
+            id: `${currentTeaData.item.id}-${Date.now()}`
+        };
+
+        window.BurgerCart.addItem(item);
+
+        // Visual feedback
+        const button = currentTeaData.button;
+        button.classList.add('added');
+        setTimeout(() => {
+            button.classList.remove('added');
+        }, 1000);
+
+        hideTeaModal();
+    });
+}
+
+function showTeaModal() {
+    if (teaModal) {
+        // Reset quantities
+        teaModal.querySelector('#teaSugarQuantity').textContent = '0';
+        teaModal.querySelector('#teaLemonQuantity').textContent = '0';
+
+        teaModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function hideTeaModal() {
+    if (teaModal) {
+        teaModal.classList.remove('active');
+        document.body.style.overflow = '';
+        currentTeaData = null;
     }
 }
