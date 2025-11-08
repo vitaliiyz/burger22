@@ -3,7 +3,6 @@
 
 let donenessModal = null;
 let currentBurgerData = null;
-let selectedDoneness = null;
 
 // Variables for sides modal
 let sidesModal = null;
@@ -103,8 +102,7 @@ function initMenuCartButtons() {
 
             // Show doneness modal for all burgers
             if (itemData.type === 'burger') {
-                const isChicken = itemData.id === 'burger-chicken';
-                currentBurgerData = { item, button, isChicken };
+                currentBurgerData = { item, button };
                 showDonenessModal();
             } else if (itemData.type === 'side' && (itemData.id.includes('fries') || itemData.id.includes('onion') || itemData.id.includes('nuggets') || itemData.id === 'side-extra-sauce')) {
                 // Show sides modal for fries, onion rings, nuggets, and extra sauce
@@ -160,14 +158,6 @@ function createDonenessModal() {
             <h3 class="doneness-modal-title" data-i18n="doneness.title">
                 ${window.CommonUtils.getTranslation('doneness.title', currentLang, translations)}
             </h3>
-            <div class="doneness-options">
-                <div class="doneness-option" data-doneness="medium" data-i18n="doneness.medium">
-                    ${window.CommonUtils.getTranslation('doneness.medium', currentLang, translations)}
-                </div>
-                <div class="doneness-option" data-doneness="wellDone" data-i18n="doneness.wellDone">
-                    ${window.CommonUtils.getTranslation('doneness.wellDone', currentLang, translations)}
-                </div>
-            </div>
             <div class="combo-option-wrapper">
                 <label class="combo-checkbox-label">
                     <input type="checkbox" class="combo-checkbox" id="comboCheckbox">
@@ -416,6 +406,11 @@ function createDonenessModal() {
                 </div>
             </div>
 
+            <div class="comment-section">
+                <label class="comment-label">${currentLang === 'pl' ? '💬 Dodatkowe uwagi (opcjonalnie):' : '💬 Additional comments (optional):'}</label>
+                <textarea class="comment-textarea" placeholder="${currentLang === 'pl' ? 'Np. bez pomidora, bez cebuli...' : 'E.g. no tomato, no onion...'}"></textarea>
+            </div>
+
             <div class="doneness-modal-buttons">
                 <button class="doneness-modal-btn doneness-cancel-btn">
                     ${currentLang === 'pl' ? 'Anuluj' : 'Cancel'}
@@ -431,18 +426,8 @@ function createDonenessModal() {
     donenessModal = modal;
 
     // Add event listeners
-    const options = modal.querySelectorAll('.doneness-option');
     const confirmBtn = modal.querySelector('.doneness-confirm-btn');
     const cancelBtn = modal.querySelector('.doneness-cancel-btn');
-
-    options.forEach(option => {
-        option.addEventListener('click', () => {
-            options.forEach(opt => opt.classList.remove('selected'));
-            option.classList.add('selected');
-            selectedDoneness = option.dataset.doneness;
-            confirmBtn.disabled = false;
-        });
-    });
 
     // Handle combo checkbox - show/hide sauce selection
     const comboCheckbox = modal.querySelector('.combo-checkbox');
@@ -596,11 +581,6 @@ function createDonenessModal() {
 
     confirmBtn.addEventListener('click', () => {
         if (!currentBurgerData) return;
-
-        const isChicken = currentBurgerData.isChicken || false;
-
-        // For non-chicken burgers, require doneness selection
-        if (!isChicken && !selectedDoneness) return;
 
         const currentLang = window.CommonUtils?.currentLang || 'pl';
         const comboCheckbox = modal.querySelector('.combo-checkbox');
@@ -764,22 +744,23 @@ function createDonenessModal() {
             comboTextWithSauce = `${comboText} ${withText} ${sauceName}`;
         }
 
-        if (isChicken) {
-            // Chicken: no doneness text
-            itemName = isCombo
-                ? `${currentBurgerData.item.name} - ${comboTextWithSauce}`
-                : currentBurgerData.item.name;
-        } else {
-            // Other burgers: include doneness
-            const donenessText = selectedDoneness === 'medium' ? 'Medium' : 'Well done';
-            itemName = isCombo
-                ? `${currentBurgerData.item.name} - ${comboTextWithSauce} (${donenessText})`
-                : `${currentBurgerData.item.name} (${donenessText})`;
-        }
+        // No doneness text for any burger
+        itemName = isCombo
+            ? `${currentBurgerData.item.name} - ${comboTextWithSauce}`
+            : currentBurgerData.item.name;
 
         // Add extras to name
         if (selectedExtras.length > 0) {
             itemName += ` + ${selectedExtras.join(' + ')}`;
+        }
+
+        // Get comment
+        const commentTextarea = modal.querySelector('.comment-textarea');
+        const comment = commentTextarea ? commentTextarea.value.trim() : '';
+
+        // Add comment to name if provided
+        if (comment) {
+            itemName += ` | 💬 ${comment}`;
         }
 
         // Calculate total price
@@ -789,9 +770,9 @@ function createDonenessModal() {
 
         const item = {
             ...currentBurgerData.item,
-            doneness: isChicken ? null : selectedDoneness,
             isCombo: isCombo,
             extras: selectedExtras,
+            comment: comment,
             price: totalPrice,
             name: itemName,
             id: `${currentBurgerData.item.id}-${Date.now()}`
@@ -873,6 +854,11 @@ function createSidesModal() {
                         </div>
                     `).join('')}
                 </div>
+            </div>
+
+            <div class="comment-section">
+                <label class="comment-label">${currentLang === 'pl' ? '💬 Dodatkowe uwagi (opcjonalnie):' : '💬 Additional comments (optional):'}</label>
+                <textarea class="comment-textarea" placeholder="${currentLang === 'pl' ? 'Np. bez soli, dobrze wysmażone...' : 'E.g. no salt, well fried...'}"></textarea>
             </div>
 
             <div class="doneness-modal-buttons">
@@ -1012,6 +998,15 @@ function createSidesModal() {
             itemName += ` + ${extraLabel}: ${extraSauces.join(', ')}`;
         }
 
+        // Get comment
+        const commentTextarea = modal.querySelector('.comment-textarea');
+        const comment = commentTextarea ? commentTextarea.value.trim() : '';
+
+        // Add comment to name if provided
+        if (comment) {
+            itemName += ` | 💬 ${comment}`;
+        }
+
         // Calculate total price
         const totalPrice = currentSideData.item.price + extraSaucesPrice;
 
@@ -1021,6 +1016,7 @@ function createSidesModal() {
             price: totalPrice,
             freeSauce: selectedFreeSauce.value,
             extraSauces: extraSauces,
+            comment: comment,
             id: `${currentSideData.item.id}-${Date.now()}`
         };
 
@@ -1063,6 +1059,12 @@ function showSidesModal() {
         const error = sidesModal.querySelector('.side-sauce-error');
         if (error) error.style.display = 'none';
 
+        // Reset comment
+        const commentTextarea = sidesModal.querySelector('.comment-textarea');
+        if (commentTextarea) {
+            commentTextarea.value = '';
+        }
+
         sidesModal.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
@@ -1079,14 +1081,9 @@ function hideSidesModal() {
 function showDonenessModal() {
     if (donenessModal) {
         // Reset selection
-        const options = donenessModal.querySelectorAll('.doneness-option');
         const confirmBtn = donenessModal.querySelector('.doneness-confirm-btn');
         const comboCheckbox = donenessModal.querySelector('.combo-checkbox');
-        const donenessTitle = donenessModal.querySelector('.doneness-modal-title');
-        const donenessOptionsContainer = donenessModal.querySelector('.doneness-options');
 
-        options.forEach(opt => opt.classList.remove('selected'));
-        selectedDoneness = null;
         if (comboCheckbox) {
             comboCheckbox.checked = false;
         }
@@ -1128,22 +1125,14 @@ function showDonenessModal() {
             saucesError.style.display = 'none';
         }
 
-        // Check if this is a chicken burger
-        const isChicken = currentBurgerData?.isChicken || false;
-
-        if (isChicken) {
-            // Hide doneness selection for chicken
-            if (donenessTitle) donenessTitle.style.display = 'none';
-            if (donenessOptionsContainer) donenessOptionsContainer.style.display = 'none';
-            // Enable confirm button immediately for chicken
-            confirmBtn.disabled = false;
-        } else {
-            // Show doneness selection for other burgers
-            if (donenessTitle) donenessTitle.style.display = 'block';
-            if (donenessOptionsContainer) donenessOptionsContainer.style.display = 'flex';
-            // Require doneness selection for other burgers
-            confirmBtn.disabled = true;
+        // Reset comment
+        const commentTextarea = donenessModal.querySelector('.comment-textarea');
+        if (commentTextarea) {
+            commentTextarea.value = '';
         }
+
+        // Enable confirm button (no doneness selection required)
+        confirmBtn.disabled = false;
 
         donenessModal.classList.add('active');
         document.body.style.overflow = 'hidden';
@@ -1232,6 +1221,11 @@ function createTeaModal() {
                     <span class="tea-quantity" id="teaLemonQuantity">0</span>
                     <button class="extra-btn tea-plus" type="button" data-item="lemon">+</button>
                 </div>
+            </div>
+
+            <div class="comment-section">
+                <label class="comment-label">${currentLang === 'pl' ? '💬 Dodatkowe uwagi (opcjonalnie):' : '💬 Additional comments (optional):'}</label>
+                <textarea class="comment-textarea" placeholder="${currentLang === 'pl' ? 'Np. mocna, słaba...' : 'E.g. strong, weak...'}"></textarea>
             </div>
 
             <div class="doneness-modal-buttons">
@@ -1333,11 +1327,21 @@ function createTeaModal() {
             itemName += ` (${customizations.join(', ')})`;
         }
 
+        // Get comment
+        const commentTextarea = modal.querySelector('.comment-textarea');
+        const comment = commentTextarea ? commentTextarea.value.trim() : '';
+
+        // Add comment to name if provided
+        if (comment) {
+            itemName += ` | 💬 ${comment}`;
+        }
+
         const item = {
             ...currentTeaData.item,
             name: itemName,
             sugar: sugar,
             lemon: lemon,
+            comment: comment,
             id: `${currentTeaData.item.id}-${Date.now()}`
         };
 
@@ -1359,6 +1363,12 @@ function showTeaModal() {
         // Reset quantities
         teaModal.querySelector('#teaSugarQuantity').textContent = '0';
         teaModal.querySelector('#teaLemonQuantity').textContent = '0';
+
+        // Reset comment
+        const commentTextarea = teaModal.querySelector('.comment-textarea');
+        if (commentTextarea) {
+            commentTextarea.value = '';
+        }
 
         teaModal.classList.add('active');
         document.body.style.overflow = 'hidden';

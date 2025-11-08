@@ -15,7 +15,7 @@ const translations = {
             call: 'Zadzwoń'
         },
         doneness: {
-            title: 'Wybierz stopień wysmażenia',
+            title: 'Personalizuj swojego burgera',
             medium: 'Medium',
             wellDone: 'Well done',
             addToCart: 'Dodaj do koszyka',
@@ -123,7 +123,7 @@ const translations = {
             call: 'Call us'
         },
         doneness: {
-            title: 'Choose doneness level',
+            title: 'Customize your burger',
             medium: 'Medium',
             wellDone: 'Well done',
             addToCart: 'Add to Cart',
