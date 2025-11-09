@@ -78,7 +78,12 @@ const translations = {
             extraSauce: '🧂 Sos dodatkowy'
         },
         hotDrinks: {
-            greenTea: '☕ Herbata zielona'
+            greenTea: '☕ Herbata zielona',
+            americano: '☕ Americano',
+            espresso: '☕ Espresso',
+            doubleEspresso: '☕ Podwójne Espresso',
+            cappuccino: '☕ Cappuccino',
+            latte: '☕ Latte'
         },
         drinks: {
             cola: '🥤 Pepsi',
@@ -172,7 +177,12 @@ const translations = {
             extraSauce: '🧂 Extra Sauce'
         },
         hotDrinks: {
-            greenTea: '☕ Green Tea'
+            greenTea: '☕ Green Tea',
+            americano: '☕ Americano',
+            espresso: '☕ Espresso',
+            doubleEspresso: '☕ Double Espresso',
+            cappuccino: '☕ Cappuccino',
+            latte: '☕ Latte'
         },
         drinks: {
             cola: '🥤 Pepsi',

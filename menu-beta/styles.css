@@ -33,13 +33,10 @@ body {
     background: var(--off-white);
     color: var(--graphite);
     line-height: 1.6;
-    padding-bottom: 40px;
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* Prevent content shift on mobile when address bar hides */
     min-height: 100dvh;
-    padding-bottom: calc(40px + env(safe-area-inset-bottom, 0));
     overflow-x: hidden;
 }
 
@@ -56,7 +53,7 @@ body {
     background-repeat: no-repeat;
     text-align: center;
     padding: 60px 20px 50px;
-    margin-bottom: 30px;
+    margin-bottom: 0;
     box-shadow: 0 4px 20px rgba(255, 165, 0, 0.3);
     position: relative;
     overflow: hidden;
@@ -676,6 +673,24 @@ html[lang="en"] .menu-item.unavailable .item-name::after {
 
 .lang-btn:active {
     transform: translateY(0);
+}
+
+/* Burger menu button scrolled state */
+@media (max-width: 768px) {
+    .burger-menu-btn {
+        width: 45px;
+        height: 45px;
+        top: 15px;
+        left: 15px;
+    }
+
+    .burger-menu-btn.scrolled {
+        top: 75px;
+    }
+
+    .burger-menu-btn span {
+        width: 22px;
+    }
 }
 
 /* Tablet responsive */

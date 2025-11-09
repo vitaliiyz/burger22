@@ -89,9 +89,23 @@ window.addEventListener('scroll', function() {
             if (scrollPosition >= navOffset) {
                 menuNav.classList.add('sticky');
                 navSpacer.classList.add('active');
+
+                // Move burger button down on mobile when nav is sticky
+                if (window.innerWidth <= 768) {
+                    const burgerBtn = document.getElementById('burgerMenuBtn');
+                    if (burgerBtn) {
+                        burgerBtn.classList.add('scrolled');
+                    }
+                }
             } else {
                 menuNav.classList.remove('sticky');
                 navSpacer.classList.remove('active');
+
+                // Reset burger button position
+                const burgerBtn = document.getElementById('burgerMenuBtn');
+                if (burgerBtn) {
+                    burgerBtn.classList.remove('scrolled');
+                }
             }
 
             ticking = false;

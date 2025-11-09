@@ -96,6 +96,10 @@ window.addEventListener('scroll', function() {
                     if (cartBtn) {
                         cartBtn.classList.add('scrolled');
                     }
+                    const burgerBtn = document.getElementById('burgerMenuBtn');
+                    if (burgerBtn) {
+                        burgerBtn.classList.add('scrolled');
+                    }
                 }
             } else {
                 menuNav.classList.remove('sticky');
@@ -105,6 +109,10 @@ window.addEventListener('scroll', function() {
                 const cartBtn = document.getElementById('cartBtn');
                 if (cartBtn) {
                     cartBtn.classList.remove('scrolled');
+                }
+                const burgerBtn = document.getElementById('burgerMenuBtn');
+                if (burgerBtn) {
+                    burgerBtn.classList.remove('scrolled');
                 }
             }
 
