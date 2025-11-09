@@ -11,7 +11,7 @@ const commonTranslations = {
         },
         footer: {
             hours: 'Godziny otwarcia',
-            'hours-info': 'Wt-Nd: 12:00 - 22:00',
+            'hours-info': 'Pn-Nd: 12:00 - 22:00',
             contact: 'Kontakt',
             social: 'Znajdź nas',
             rights: 'Wszelkie prawa zastrzeżone'
@@ -26,7 +26,7 @@ const commonTranslations = {
         },
         footer: {
             hours: 'Opening Hours',
-            'hours-info': 'Tue-Sun: 12:00 PM - 10:00 PM',
+            'hours-info': 'Mon-Sun: 12:00 PM - 10:00 PM',
             contact: 'Contact',
             social: 'Find Us',
             rights: 'All rights reserved'
