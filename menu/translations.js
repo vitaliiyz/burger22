@@ -86,8 +86,8 @@ const translations = {
             latte: '☕ Latte'
         },
         drinks: {
-            cola: '🥤 Pepsi',
-            colaZero: '🥤 Pepsi (zero)',
+            cola: '🥤 Pepsi/Cola',
+            colaZero: '🥤 Pepsi/Cola (zero)',
             sprite: '🥤 Sprite',
             fanta: '🥤 Fanta',
             orangeJuice: '🍊 Sok pomarańczowy',
@@ -185,8 +185,8 @@ const translations = {
             latte: '☕ Latte'
         },
         drinks: {
-            cola: '🥤 Pepsi',
-            colaZero: '🥤 Pepsi (zero)',
+            cola: '🥤 Pepsi/Cola',
+            colaZero: '🥤 Pepsi/Cola (zero)',
             sprite: '🥤 Sprite',
             fanta: '🥤 Fanta',
             orangeJuice: '🍊 Orange Juice',
