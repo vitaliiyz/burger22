@@ -752,14 +752,21 @@
     line-height: 1.6;
 }
 
-.phone-number {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+.phone-number-container {
     background: var(--off-white);
     padding: 16px;
     border-radius: 12px;
     margin: 16px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.phone-number {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     font-size: 1.2em;
     font-weight: 700;
     color: var(--primary-orange);
@@ -767,6 +774,53 @@
 
 .phone-number svg {
     color: var(--primary-orange);
+    flex-shrink: 0;
+}
+
+.phone-action-buttons {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.phone-action-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.7);
+    border: 2px solid rgba(255, 165, 0, 0.2);
+    border-radius: 8px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.phone-action-btn:hover {
+    background: var(--primary-orange);
+    border-color: var(--primary-orange);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 165, 0, 0.3);
+}
+
+.phone-action-btn:active {
+    transform: translateY(0);
+}
+
+.phone-action-btn.copied {
+    background: #4CAF50;
+    border-color: #4CAF50;
+    color: white;
+    position: relative;
+}
+
+.phone-action-btn.copied::after {
+    content: '✓';
+    position: absolute;
+    font-size: 1.5em;
+    color: white;
 }
 
 .btn-call {

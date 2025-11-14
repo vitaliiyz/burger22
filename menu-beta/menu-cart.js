@@ -35,37 +35,53 @@ function initMenuCartButtons() {
         { id: 'burger-spicy', name: 'burgers.spicy.name', price: 39, type: 'burger', image: 'images/hot.JPG', selector: 4 },
         { id: 'burger-egg', name: 'burgers.egg.name', price: 38, type: 'burger', image: 'images/egg.JPG', selector: 5 },
 
-        // Extras (dodatki do burgera)
-        { id: 'extra-meat', name: 'extras.meat', price: 12, type: 'extra', selector: 6 },
-        { id: 'extra-bacon', name: 'extras.bacon', price: 4, type: 'extra', selector: 7 },
-        { id: 'extra-cheese', name: 'extras.cheese', price: 2, type: 'extra', selector: 8 },
-        { id: 'extra-jalapeno', name: 'extras.jalapeno', price: 2, type: 'extra', selector: 9 },
-        { id: 'extra-vegetables', name: 'extras.vegetables', price: 2, type: 'extra', selector: 10 },
+        // Extras (dodatki do burgera) - removed from here, available only when ordering burgers
 
         // Sides
-        { id: 'side-fries-small', name: 'sides.friesSmall', price: 14, type: 'side', selector: 11 },
-        { id: 'side-fries-large', name: 'sides.friesLarge', price: 18, type: 'side', selector: 12 },
-        { id: 'side-onion-small', name: 'sides.onionRingsSmall', price: 13, type: 'side', selector: 13 },
-        { id: 'side-onion-large', name: 'sides.onionRingsLarge', price: 19, type: 'side', selector: 14 },
-        { id: 'side-nuggets-small', name: 'sides.nuggetsSmall', price: 17, type: 'side', selector: 15 },
-        { id: 'side-nuggets-large', name: 'sides.nuggetsLarge', price: 25, type: 'side', selector: 16 },
-        { id: 'side-extra-sauce', name: 'sides.extraSauce', price: 3, type: 'side', selector: 17 },
+        { id: 'side-fries-small', name: 'sides.friesSmall', price: 14, type: 'side', selector: 6 },
+        { id: 'side-fries-large', name: 'sides.friesLarge', price: 18, type: 'side', selector: 7 },
+        { id: 'side-onion-small', name: 'sides.onionRingsSmall', price: 13, type: 'side', selector: 8 },
+        { id: 'side-onion-large', name: 'sides.onionRingsLarge', price: 19, type: 'side', selector: 9 },
+        { id: 'side-chicken-strips-small', name: 'sides.chickenStripsSmall', price: 17, type: 'side', selector: 10 },
+        { id: 'side-chicken-strips-large', name: 'sides.chickenStripsLarge', price: 25, type: 'side', selector: 11 },
+        { id: 'side-nuggets-small', name: 'sides.nuggetsSmall', price: 17, type: 'side', selector: 12 },
+        { id: 'side-nuggets-large', name: 'sides.nuggetsLarge', price: 25, type: 'side', selector: 13 },
+        // Extra sauce removed - available only as paid add-on when ordering sides
 
         // Hot Drinks
-        { id: 'drink-green-tea', name: 'hotDrinks.greenTea', price: 5, type: 'drink', selector: 18 },
+        { id: 'drink-green-tea', name: 'hotDrinks.greenTea', price: 5, type: 'drink', selector: 14 },
+        { id: 'drink-americano', name: 'hotDrinks.americano', price: 7.90, type: 'drink', selector: 15 },
+        { id: 'drink-espresso', name: 'hotDrinks.espresso', price: 6.90, type: 'drink', selector: 16 },
+        { id: 'drink-double-espresso', name: 'hotDrinks.doubleEspresso', price: 9.90, type: 'drink', selector: 17 },
+        { id: 'drink-cappuccino', name: 'hotDrinks.cappuccino', price: 9.90, type: 'drink', selector: 18 },
+        { id: 'drink-latte', name: 'hotDrinks.latte', price: 9.90, type: 'drink', selector: 19 },
 
-        // Cold Drinks
-        { id: 'drink-cola', name: 'drinks.cola', price: 9, type: 'drink', selector: 19 },
-        { id: 'drink-cola-zero', name: 'drinks.colaZero', price: 9, type: 'drink', selector: 20 },
-        { id: 'drink-orange', name: 'drinks.orangeJuice', price: 9, type: 'drink', selector: 23 },
-        { id: 'drink-apple', name: 'drinks.appleJuice', price: 9, type: 'drink', selector: 24 },
-        { id: 'drink-multi', name: 'drinks.multiJuice', price: 9, type: 'drink', selector: 25 },
-        { id: 'drink-tomato', name: 'drinks.tomatoJuice', price: 9, type: 'drink', selector: 26 },
-        { id: 'drink-water-still', name: 'drinks.waterStill', price: 6, type: 'drink', selector: 27 },
-        { id: 'drink-water-sparkling', name: 'drinks.waterSparkling', price: 6, type: 'drink', selector: 28 }
+        // Cold Drinks (unavailable items like Sprite, Fanta, Beer are excluded)
+        { id: 'drink-cola', name: 'drinks.cola', price: 9, type: 'drink', selector: 20 },
+        { id: 'drink-cola-zero', name: 'drinks.colaZero', price: 9, type: 'drink', selector: 21 },
+        { id: 'drink-orange', name: 'drinks.orangeJuice', price: 9, type: 'drink', selector: 22 },
+        { id: 'drink-apple', name: 'drinks.appleJuice', price: 9, type: 'drink', selector: 23 },
+        { id: 'drink-multi', name: 'drinks.multiJuice', price: 9, type: 'drink', selector: 24 },
+        { id: 'drink-tomato', name: 'drinks.tomatoJuice', price: 9, type: 'drink', selector: 25 },
+        { id: 'drink-water-still', name: 'drinks.waterStill', price: 6, type: 'drink', selector: 26 },
+        { id: 'drink-water-sparkling', name: 'drinks.waterSparkling', price: 6, type: 'drink', selector: 27 }
     ];
 
-    const allMenuItems = document.querySelectorAll('.menu-item:not(.unavailable)');
+    // Exclude items that should not have add buttons:
+    // - Items from "dodatki-burgera" section (available only when ordering burgers)
+    // - Extra sauce item (available only as paid add-on with sides)
+    const extraSection = document.getElementById('dodatki-burgera');
+    const allMenuItemsNodeList = document.querySelectorAll('.menu-item:not(.unavailable)');
+    const allMenuItems = Array.from(allMenuItemsNodeList).filter(item => {
+        // Exclude burger extras section
+        if (extraSection.contains(item)) return false;
+
+        // Exclude extra sauce item by checking if it contains the extraSauce translation key
+        const extraSauceElement = item.querySelector('[data-i18n="sides.extraSauce"]');
+        if (extraSauceElement) return false;
+
+        return true;
+    });
 
     menuItems.forEach((itemData, index) => {
         const menuItemEl = allMenuItems[itemData.selector];
@@ -104,8 +120,8 @@ function initMenuCartButtons() {
             if (itemData.type === 'burger') {
                 currentBurgerData = { item, button };
                 showDonenessModal();
-            } else if (itemData.type === 'side' && (itemData.id.includes('fries') || itemData.id.includes('onion') || itemData.id.includes('nuggets') || itemData.id === 'side-extra-sauce')) {
-                // Show sides modal for fries, onion rings, nuggets, and extra sauce
+            } else if (itemData.type === 'side' && (itemData.id.includes('fries') || itemData.id.includes('onion') || itemData.id.includes('chicken-strips') || itemData.id.includes('nuggets'))) {
+                // Show sides modal for fries, onion rings, chicken strips, and nuggets
                 currentSideData = { item, button };
                 showSidesModal();
             } else if (itemData.id === 'drink-green-tea') {
@@ -117,6 +133,8 @@ function initMenuCartButtons() {
                 window.BurgerCart.addItem(item);
 
                 // Visual feedback
+                button.classList.remove('added'); // Remove any existing class first
+                void button.offsetWidth; // Force reflow to restart animation
                 button.classList.add('added');
                 setTimeout(() => {
                     button.classList.remove('added');
@@ -155,6 +173,7 @@ function createDonenessModal() {
     modal.className = 'doneness-modal';
     modal.innerHTML = `
         <div class="doneness-modal-content">
+            <button class="modal-close-btn" aria-label="Close">×</button>
             <h3 class="doneness-modal-title" data-i18n="doneness.title">
                 ${window.CommonUtils.getTranslation('doneness.title', currentLang, translations)}
             </h3>
@@ -740,7 +759,7 @@ function createDonenessModal() {
                 }
             };
             const sauceName = sauceNames[currentLang][selectedComboSauce];
-            const withText = currentLang === 'pl' ? 'z' : 'with';
+            const withText = currentLang === 'pl' ? 'z sosem' : 'with sauce';
             comboTextWithSauce = `${comboText} ${withText} ${sauceName}`;
         }
 
@@ -781,9 +800,13 @@ function createDonenessModal() {
         window.BurgerCart.addItem(item);
 
         // Visual feedback on button
-        currentBurgerData.button.classList.add('added');
+        const button = currentBurgerData.button;
+        button.classList.remove('added'); // Remove any existing class first
+        // Force reflow to restart animation
+        void button.offsetWidth;
+        button.classList.add('added');
         setTimeout(() => {
-            currentBurgerData.button.classList.remove('added');
+            button.classList.remove('added');
         }, 1000);
 
         hideDonenessModal();
@@ -797,6 +820,12 @@ function createDonenessModal() {
             hideDonenessModal();
         }
     });
+
+    // Close button handler
+    const closeBtn = modal.querySelector('.modal-close-btn');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', hideDonenessModal);
+    }
 }
 
 // Create sides sauce selection modal
@@ -808,6 +837,7 @@ function createSidesModal() {
     modal.className = 'doneness-modal sides-modal';
     modal.innerHTML = `
         <div class="doneness-modal-content">
+            <button class="modal-close-btn" aria-label="Close">×</button>
             <h3 class="doneness-modal-title">
                 ${currentLang === 'pl' ? 'Wybierz sosy' : 'Choose sauces'}
             </h3>
@@ -890,6 +920,12 @@ function createSidesModal() {
             hideSidesModal();
         }
     });
+
+    // Close button handler
+    const closeBtn = modal.querySelector('.modal-close-btn');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', hideSidesModal);
+    }
 
     // Handle paid sauces checkbox
     const saucesCheckbox = modal.querySelector('.sauces-main-checkbox');
@@ -1024,6 +1060,8 @@ function createSidesModal() {
 
         // Visual feedback
         const button = currentSideData.button;
+        button.classList.remove('added'); // Remove any existing class first
+        void button.offsetWidth; // Force reflow to restart animation
         button.classList.add('added');
         setTimeout(() => {
             button.classList.remove('added');
@@ -1067,6 +1105,12 @@ function showSidesModal() {
 
         sidesModal.classList.add('active');
         document.body.style.overflow = 'hidden';
+
+        // Reset scroll position to top
+        const modalContent = sidesModal.querySelector('.doneness-modal-content');
+        if (modalContent) {
+            modalContent.scrollTop = 0;
+        }
     }
 }
 
@@ -1086,6 +1130,21 @@ function showDonenessModal() {
 
         if (comboCheckbox) {
             comboCheckbox.checked = false;
+        }
+
+        // Hide combo sauce selection and reset combo sauce radios
+        const comboSauceSelection = donenessModal.querySelector('.combo-sauce-selection');
+        if (comboSauceSelection) {
+            comboSauceSelection.style.display = 'none';
+        }
+
+        // Uncheck all combo sauce radios and hide error
+        donenessModal.querySelectorAll('.combo-sauce-radio').forEach(radio => {
+            radio.checked = false;
+        });
+        const comboSauceError = donenessModal.querySelector('.combo-sauce-error');
+        if (comboSauceError) {
+            comboSauceError.style.display = 'none';
         }
 
         // Reset all quantities (extras and vegetables)
@@ -1136,6 +1195,12 @@ function showDonenessModal() {
 
         donenessModal.classList.add('active');
         document.body.style.overflow = 'hidden';
+
+        // Reset scroll position to top
+        const modalContent = donenessModal.querySelector('.doneness-modal-content');
+        if (modalContent) {
+            modalContent.scrollTop = 0;
+        }
     }
 }
 
@@ -1199,6 +1264,7 @@ function createTeaModal() {
     modal.className = 'doneness-modal tea-modal';
     modal.innerHTML = `
         <div class="doneness-modal-content">
+            <button class="modal-close-btn" aria-label="Close">×</button>
             <h3 class="doneness-modal-title">
                 ${currentLang === 'pl' ? 'Personalizuj herbatę' : 'Customize your tea'}
             </h3>
@@ -1299,6 +1365,12 @@ function createTeaModal() {
         }
     });
 
+    // Close button handler
+    const closeBtn = modal.querySelector('.modal-close-btn');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', hideTeaModal);
+    }
+
     // Confirm button - add item to cart
     confirmBtn.addEventListener('click', () => {
         if (!currentTeaData) return;
@@ -1349,6 +1421,8 @@ function createTeaModal() {
 
         // Visual feedback
         const button = currentTeaData.button;
+        button.classList.remove('added'); // Remove any existing class first
+        void button.offsetWidth; // Force reflow to restart animation
         button.classList.add('added');
         setTimeout(() => {
             button.classList.remove('added');
@@ -1372,6 +1446,12 @@ function showTeaModal() {
 
         teaModal.classList.add('active');
         document.body.style.overflow = 'hidden';
+
+        // Reset scroll position to top
+        const modalContent = teaModal.querySelector('.doneness-modal-content');
+        if (modalContent) {
+            modalContent.scrollTop = 0;
+        }
     }
 }
 

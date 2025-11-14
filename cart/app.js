@@ -289,16 +289,16 @@ function actualSendOrderViaTelegram(orderData) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(orderData)
+        })
+        .then(async response => {
+            if (!response.ok) {
+                // Don't log error details to avoid exposing sensitive info in DevTools
+                throw new Error('Failed to send order');
+            }
+            return response.json();
         }),
         timeoutPromise
     ])
-    .then(async response => {
-        if (!response.ok) {
-            // Don't log error details to avoid exposing sensitive info in DevTools
-            throw new Error('Failed to send order');
-        }
-        return response.json();
-    })
     .then(data => {
         // Success
         alert(currentLang === 'pl' ?
@@ -314,15 +314,16 @@ function actualSendOrderViaTelegram(orderData) {
         submitButton.classList.remove('loading');
     })
     .catch(error => {
-        // Don't log error details to avoid exposing sensitive info in DevTools
-
         // Reset button
         submitButton.disabled = false;
         submitButton.innerHTML = originalText;
         submitButton.classList.remove('loading');
 
+        // Determine if this is a timeout error
+        const isTimeout = error.message === 'Request timeout';
+
         // Show error modal with order details and phone number
-        showErrorModal(orderData, error.message === 'Request timeout');
+        showErrorModal(orderData, isTimeout);
     });
 }
 
@@ -518,11 +519,21 @@ function showErrorModal(orderData, isTimeout = false) {
 
     let html = `<div class="error-message">${errorMessage}</div>`;
 
-    html += `<div class="phone-number">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-        </svg>
-        <span>${phoneNumber}</span>
+    html += `<div class="phone-number-container">
+        <div class="phone-number">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span>${phoneNumber}</span>
+        </div>
+        <div class="phone-action-buttons">
+            <a href="tel:${phoneNumber}" class="phone-action-btn call-btn" title="${currentLang === 'pl' ? 'Zadzwoń' : 'Call'}">
+                📞
+            </a>
+            <button class="phone-action-btn copy-btn" data-copy="${phoneNumber}" title="${currentLang === 'pl' ? 'Kopiuj' : 'Copy'}">
+                📋
+            </button>
+        </div>
     </div>`;
 
     // Add order details
@@ -576,6 +587,25 @@ function showErrorModal(orderData, isTimeout = false) {
         });
     }
 
+    // Add copy button listener
+    const copyBtn = modal.querySelector('.copy-btn');
+    if (copyBtn) {
+        copyBtn.addEventListener('click', () => {
+            const textToCopy = copyBtn.getAttribute('data-copy');
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                const originalEmoji = copyBtn.textContent;
+                copyBtn.classList.add('copied');
+                copyBtn.textContent = '✅';
+                setTimeout(() => {
+                    copyBtn.classList.remove('copied');
+                    copyBtn.textContent = originalEmoji;
+                }, 1500);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+            });
+        });
+    }
+
     // Show modal
     modal.classList.add('show');
     document.body.style.overflow = 'hidden';
@@ -607,9 +637,11 @@ function initModalHandlers() {
     // Confirm order handler
     confirmBtn.addEventListener('click', () => {
         if (pendingOrder) {
+            // Save order data before closing modal (which clears pendingOrder)
+            const orderToSend = pendingOrder;
             closeOrderConfirmationModal();
             // Actually send the order
-            actualSendOrderViaTelegram(pendingOrder);
+            actualSendOrderViaTelegram(orderToSend);
         }
     });
 
