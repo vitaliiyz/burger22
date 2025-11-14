@@ -333,6 +333,17 @@ h1 {
     gap: 20px;
 }
 
+/* Sides section - 2 items per row on desktop */
+#dodatki .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 768px) {
+    #dodatki .menu-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .menu-item {
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(10px) saturate(150%);
@@ -1003,9 +1014,9 @@ html[lang="en"] .menu-item.unavailable .item-name::after {
 
 /* Add to Cart Button */
 .add-to-cart-btn {
-    background: linear-gradient(135deg, var(--primary-orange), var(--warm-yellow));
-    color: white;
-    border: none;
+    background: transparent;
+    color: var(--primary-orange);
+    border: 2px solid var(--primary-orange);
     padding: 8px 16px;
     border-radius: 8px;
     font-size: 14px;
@@ -1016,19 +1027,26 @@ html[lang="en"] .menu-item.unavailable .item-name::after {
     gap: 6px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     margin-top: 12px;
+    position: relative;
 }
 
-.add-to-cart-btn:hover {
+.add-to-cart-btn:not(.added):hover {
+    background: linear-gradient(135deg, var(--primary-orange), var(--warm-yellow));
+    color: white;
+    border-color: var(--primary-orange);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(255, 165, 0, 0.3);
 }
 
-.add-to-cart-btn:active {
+.add-to-cart-btn:not(.added):active {
     transform: translateY(0);
 }
 
+.menu-item .add-to-cart-btn.added,
 .add-to-cart-btn.added {
     background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: white;
+    border-color: #4CAF50;
     animation: addedPulse 0.5s ease;
 }
 
@@ -1083,6 +1101,33 @@ html[lang="en"] .menu-item.unavailable .item-name::after {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     transform: scale(0.9);
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: transparent;
+    border: none;
+    font-size: 32px;
+    line-height: 1;
+    color: var(--graphite);
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: all 0.2s ease;
+    opacity: 0.5;
+    z-index: 10;
+}
+
+.modal-close-btn:hover {
+    opacity: 1;
+    color: var(--primary-orange);
+    transform: scale(1.1);
+}
+
+.modal-close-btn:active {
+    transform: scale(0.95);
 }
 
 .doneness-modal.active .doneness-modal-content {
