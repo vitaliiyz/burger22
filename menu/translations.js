@@ -6,10 +6,17 @@ const translations = {
         sauceIncluded: 'sos w cenie',
         sugarIncluded: 'cukier w cenie',
         withLemon: 'z cytryną',
-        packagingNotice: '📦 Cena nie zawiera opakowania na wynos (+1 zł / +2 zł zestaw)',
+        packagingNotice: '📦 Cena nie zawiera opakowania na wynos (+1 zł)',
         cupNotice: '📦 Cena nie zawiera opakowania na wynos (+0,50 zł)',
         extrasNotice: 'Dodatki dostępne przy zamawianiu burgera',
         disclaimer: 'Wygląd potrawy może się różnić od zdjęcia',
+        takeaway: {
+            title: 'Złóż przedzamówienie',
+            desc: 'Zadzwoń i złóż zamówienie. Przygotujemy je przed Twoim przyjściem!',
+            trouble: '+48 573 256 526',
+            copy: 'Kopiuj',
+            call: 'Zadzwoń'
+        },
         nav: {
             burgers: '🍔 Burgery',
             sides: '🍟 Frytki i dodatki',
@@ -109,10 +116,17 @@ const translations = {
         sauceIncluded: 'sauce included',
         sugarIncluded: 'sugar included',
         withLemon: 'with lemon',
-        packagingNotice: '📦 Prices do not include takeaway packaging (+1 PLN / +2 PLN combo)',
+        packagingNotice: '📦 Prices do not include takeaway packaging (+1 PLN)',
         cupNotice: '📦 Prices do not include takeaway packaging (+0.50 PLN)',
         extrasNotice: 'Extras available when ordering a burger',
         disclaimer: 'Actual product may differ from image',
+        takeaway: {
+            title: 'Place Pre-order',
+            desc: 'Call us to place your order. We\'ll have it ready before you arrive!',
+            trouble: '+48 573 256 526',
+            copy: 'Copy',
+            call: 'Call'
+        },
         nav: {
             burgers: '🍔 Burgers',
             sides: '🍟 Fries & Sides',

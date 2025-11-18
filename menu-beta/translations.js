@@ -6,7 +6,7 @@ const translations = {
         sauceIncluded: 'sos w cenie',
         sugarIncluded: 'cukier w cenie',
         withLemon: 'z cytryną',
-        packagingNotice: '📦 Cena nie zawiera opakowania na wynos (+1 zł / +2 zł zestaw)',
+        packagingNotice: '📦 Cena nie zawiera opakowania na wynos (+1 zł)',
         cupNotice: '📦 Cena nie zawiera opakowania na wynos (+0,50 zł)',
         extrasNotice: 'Dodatki dostępne przy zamawianiu burgera',
         takeaway: {
@@ -123,7 +123,7 @@ const translations = {
         sauceIncluded: 'sauce included',
         sugarIncluded: 'sugar included',
         withLemon: 'with lemon',
-        packagingNotice: '📦 Prices do not include takeaway packaging (+1 PLN / +2 PLN combo)',
+        packagingNotice: '📦 Prices do not include takeaway packaging (+1 PLN)',
         cupNotice: '📦 Prices do not include takeaway packaging (+0.50 PLN)',
         extrasNotice: 'Extras available when ordering a burger',
         takeaway: {
@@ -131,7 +131,7 @@ const translations = {
             desc: 'Add items to cart and send your order. We\'ll have it ready before you arrive!',
             trouble: 'Or call us: +48 573 256 526',
             copy: 'Copy',
-            call: 'Call us'
+            call: 'Call'
         },
         doneness: {
             title: 'Customize your burger',

@@ -410,6 +410,108 @@ h1 {
     height: 100px;
 }
 
+/* Takeaway Info Box */
+.takeaway-info-box {
+    background: linear-gradient(135deg, rgba(255, 165, 0, 0.08), rgba(255, 200, 50, 0.08));
+    border: 1.5px solid rgba(255, 165, 0, 0.2);
+    border-radius: 16px;
+    padding: 20px;
+    margin: 20px 0 30px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.takeaway-info-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.takeaway-info-icon {
+    font-size: 2.5em;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.takeaway-info-text h3 {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: var(--graphite);
+    margin: 0 0 6px 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.takeaway-info-text p {
+    font-size: 0.95em;
+    color: var(--graphite-light);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.takeaway-info-contact {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 165, 0, 0.15);
+    flex-wrap: wrap;
+}
+
+.takeaway-info-contact > span {
+    font-size: 0.9em;
+    color: var(--graphite-light);
+    font-weight: 500;
+}
+
+.takeaway-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.takeaway-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-size: 0.9em;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+}
+
+.takeaway-btn .btn-icon {
+    font-size: 1.1em;
+    line-height: 1;
+}
+
+.copy-btn {
+    background: rgba(255, 165, 0, 0.15);
+    color: var(--primary-orange);
+    border: 1px solid rgba(255, 165, 0, 0.3);
+}
+
+.copy-btn:hover {
+    background: rgba(255, 165, 0, 0.25);
+    transform: translateY(-2px);
+}
+
+.call-btn {
+    background: linear-gradient(135deg, var(--primary-orange), var(--warm-yellow));
+    color: white;
+    border: 1px solid transparent;
+}
+
+.call-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 165, 0, 0.3);
+}
+
 .menu-section {
     margin-bottom: 50px;
     animation: fadeInUp 0.6s ease-out;
@@ -892,6 +994,43 @@ html[lang="en"] .menu-item.unavailable .item-name::after {
     .nav-spacer.active {
         height: 70px;
     }
+
+    .takeaway-info-box {
+        padding: 16px;
+    }
+
+    .takeaway-info-icon {
+        font-size: 2em;
+    }
+
+    .takeaway-info-text h3 {
+        font-size: 1em;
+    }
+
+    .takeaway-info-text p {
+        font-size: 0.9em;
+    }
+
+    .takeaway-info-contact {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .takeaway-info-contact > span {
+        text-align: center;
+    }
+
+    .takeaway-buttons {
+        width: 100%;
+        gap: 8px;
+    }
+
+    .takeaway-btn {
+        flex: 1;
+        justify-content: center;
+        padding: 10px 16px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -972,6 +1111,37 @@ html[lang="en"] .menu-item.unavailable .item-name::after {
     .menu-nav {
         padding: 10px;
         gap: 8px;
+    }
+
+    .takeaway-info-box {
+        padding: 14px;
+        gap: 14px;
+    }
+
+    .takeaway-info-content {
+        gap: 12px;
+    }
+
+    .takeaway-info-icon {
+        font-size: 1.8em;
+    }
+
+    .takeaway-info-text h3 {
+        font-size: 0.95em;
+    }
+
+    .takeaway-info-text p {
+        font-size: 0.85em;
+    }
+
+    .takeaway-info-contact > span {
+        font-size: 0.9em;
+        text-align: center;
+    }
+
+    .takeaway-btn {
+        font-size: 0.9em;
+        padding: 10px 14px;
     }
 
     .menu-nav.sticky {

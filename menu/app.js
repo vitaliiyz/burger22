@@ -136,3 +136,28 @@ document.querySelectorAll('.nav-item').forEach(item => {
 });
 
 // Note: Burger menu functionality is now handled by common/common.js
+
+// Copy phone number functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const copyPhoneBtn = document.getElementById('copyPhoneBtn');
+    if (copyPhoneBtn) {
+        copyPhoneBtn.addEventListener('click', async () => {
+            const phoneNumber = '+48573256526';
+            try {
+                await navigator.clipboard.writeText(phoneNumber);
+
+                // Visual feedback
+                const originalText = copyPhoneBtn.innerHTML;
+                copyPhoneBtn.innerHTML = '<span class="btn-icon">✓</span><span>Skopiowano!</span>';
+                copyPhoneBtn.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+
+                setTimeout(() => {
+                    copyPhoneBtn.innerHTML = originalText;
+                    copyPhoneBtn.style.background = '';
+                }, 2000);
+            } catch (err) {
+                console.error('Failed to copy:', err);
+            }
+        });
+    }
+});
