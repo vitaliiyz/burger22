@@ -6,7 +6,7 @@ const translations = {
         sauceIncluded: 'sos w cenie',
         sugarIncluded: 'cukier w cenie',
         withLemon: 'z cytryną',
-        packagingNotice: '📦 Cena nie zawiera opakowania na wynos (+1 zł)',
+        packagingNotice: '📦 Cena nie zawiera opakowania na wynos (+1 zł / +2 zł zestaw)',
         cupNotice: '📦 Cena nie zawiera opakowania na wynos (+0,50 zł)',
         extrasNotice: 'Dodatki dostępne przy zamawianiu burgera',
         takeaway: {
@@ -104,16 +104,16 @@ const translations = {
             latte: '☕ Latte'
         },
         drinks: {
-            cola: '🥤 Pepsi/Cola',
-            colaZero: '🥤 Pepsi/Cola (zero)',
-            sprite: '🥤 Sprite',
+            cola: '🥤 Pepsi 0,33 l',
+            colaZero: '🥤 Pepsi (zero) 0,33 l',
+            sprite: '🥤 Sprite 0,33 l',
             fanta: '🥤 Fanta',
-            orangeJuice: '🍊 Sok pomarańczowy',
-            appleJuice: '🍎 Sok jabłkowy',
-            multiJuice: '🍹 Sok multiwitamina',
-            tomatoJuice: '🍅 Sok pomidorowy',
-            waterStill: '💧 Woda niegazowana',
-            waterSparkling: '💦 Woda gazowana',
+            orangeJuice: '🍊 Sok pomarańczowy 0,3 l',
+            appleJuice: '🍎 Sok jabłkowy 0,3 l',
+            multiJuice: '🍹 Sok multiwitamina 0,3 l',
+            tomatoJuice: '🍅 Sok pomidorowy 0,3 l',
+            waterStill: '💧 Woda niegazowana 0,33 l',
+            waterSparkling: '💦 Woda gazowana 0,33 l',
             beerNonAlcoholic: '🍺 Piwo bezalkoholowe'
         }
     },
@@ -123,7 +123,7 @@ const translations = {
         sauceIncluded: 'sauce included',
         sugarIncluded: 'sugar included',
         withLemon: 'with lemon',
-        packagingNotice: '📦 Prices do not include takeaway packaging (+1 PLN)',
+        packagingNotice: '📦 Prices do not include takeaway packaging (+1 PLN / +2 PLN combo)',
         cupNotice: '📦 Prices do not include takeaway packaging (+0.50 PLN)',
         extrasNotice: 'Extras available when ordering a burger',
         takeaway: {
@@ -221,16 +221,16 @@ const translations = {
             latte: '☕ Latte'
         },
         drinks: {
-            cola: '🥤 Pepsi/Cola',
-            colaZero: '🥤 Pepsi/Cola (zero)',
-            sprite: '🥤 Sprite',
+            cola: '🥤 Pepsi 0.33 l',
+            colaZero: '🥤 Pepsi (zero) 0.33 l',
+            sprite: '🥤 Sprite 0.33 l',
             fanta: '🥤 Fanta',
-            orangeJuice: '🍊 Orange Juice',
-            appleJuice: '🍎 Apple Juice',
-            multiJuice: '🍹 Multivitamin Juice',
-            tomatoJuice: '🍅 Tomato Juice',
-            waterStill: '💧 Still Water',
-            waterSparkling: '💦 Sparkling Water',
+            orangeJuice: '🍊 Orange Juice 0.3 l',
+            appleJuice: '🍎 Apple Juice 0.3 l',
+            multiJuice: '🍹 Multivitamin Juice 0.3 l',
+            tomatoJuice: '🍅 Tomato Juice 0.3 l',
+            waterStill: '💧 Still Water 0.33 l',
+            waterSparkling: '💦 Sparkling Water 0.33 l',
             beerNonAlcoholic: '🍺 Non-Alcoholic Beer'
         }
     }
