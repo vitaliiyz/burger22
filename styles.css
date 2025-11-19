@@ -282,15 +282,15 @@
 .delivery-services {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
 }
 
 .delivery-service-item {
     display: flex;
     align-items: center;
-    padding: 18px 30px;
+    padding: 14px 22px;
     background: rgba(255, 255, 255, 0.9);
-    border-radius: 20px;
+    border-radius: 16px;
     border: 2px solid rgba(255, 165, 0, 0.2);
     text-decoration: none;
     transition: all 0.3s ease;
@@ -305,8 +305,8 @@
 }
 
 .service-icon {
-    font-size: 3em;
-    margin-right: 25px;
+    font-size: 2.4em;
+    margin-right: 18px;
     transition: transform 0.3s ease;
 }
 
@@ -320,16 +320,16 @@
 
 .service-name {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.8em;
+    font-size: 1.4em;
     font-weight: 800;
     color: var(--graphite);
-    margin-bottom: 5px;
-    letter-spacing: 1px;
+    margin-bottom: 4px;
+    letter-spacing: 0.8px;
 }
 
 .service-desc {
     font-family: 'Inter', sans-serif;
-    font-size: 1em;
+    font-size: 0.9em;
     color: var(--graphite-light);
     font-weight: 500;
 }
