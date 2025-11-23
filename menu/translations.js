@@ -64,7 +64,7 @@ const translations = {
             },
             spicy: {
                 name: 'Ostry Burger',
-                desc: 'Bułeczka brioche, 100% mięsa wołowego, chrupiący bekon, ser cheddar, jalapeno, smażona cebula, sałata, ogórek kiszony, sos słodki chili, sos amerykański'
+                desc: 'Bułeczka brioche, 100% mięsa wołowego, chrupiący bekon, ser cheddar, jalapeno, smażona cebula, sałata, ogórek kiszony, sos słodki chili, sos ostry'
             },
             egg: {
                 name: 'Jaja Burger',
@@ -175,7 +175,7 @@ const translations = {
             },
             spicy: {
                 name: 'Spicy Burger',
-                desc: 'Brioche bun, 100% beef, crispy bacon, cheddar cheese, jalapeño, fried onion, lettuce, pickled cucumber, sweet chili sauce, american sauce'
+                desc: 'Brioche bun, 100% beef, crispy bacon, cheddar cheese, jalapeño, fried onion, lettuce, pickled cucumber, sweet chili sauce, spicy sauce'
             },
             egg: {
                 name: 'Egg Burger',
