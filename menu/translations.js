@@ -56,7 +56,7 @@ const translations = {
             },
             chicken: {
                 name: 'Kurczak Burger',
-                desc: 'Bułeczka brioche, polędwiczki z kurczaka, ser cheddar, cebula, pomidor, sałata, ketchup, majonez'
+                desc: 'Bułeczka brioche, panierowany filet z kurczaka, ser cheddar, cebula, pomidor, sałata, ketchup, majonez'
             },
             bbq: {
                 name: 'BBQ Burger',
@@ -167,7 +167,7 @@ const translations = {
             },
             chicken: {
                 name: 'Chicken Burger',
-                desc: 'Brioche bun, chicken tenders, cheddar cheese, onion, tomato, lettuce, ketchup, mayo'
+                desc: 'Brioche bun, breaded chicken fillet, cheddar cheese, onion, tomato, lettuce, ketchup, mayo'
             },
             bbq: {
                 name: 'BBQ Burger',
