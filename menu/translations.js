@@ -83,8 +83,6 @@ const translations = {
             friesLarge: '🍟 Frytki 300g',
             onionRingsSmall: '🧅 Krążki cebulowe 6 szt',
             onionRingsLarge: '🧅 Krążki cebulowe 12 szt',
-            chickenStripsSmall: '🍗 Stripsy z kurczaka 3 szt',
-            chickenStripsLarge: '🍗 Stripsy z kurczaka 6 szt',
             nuggetsSmall: '🍗 Nuggetsy 6 szt',
             nuggetsLarge: '🍗 Nuggetsy 12 szt',
             extraSauce: '🧂 Sos dodatkowy'
@@ -194,8 +192,6 @@ const translations = {
             friesLarge: '🍟 Fries 300g',
             onionRingsSmall: '🧅 Onion Rings 6 pcs',
             onionRingsLarge: '🧅 Onion Rings 12 pcs',
-            chickenStripsSmall: '🍗 Chicken Strips 3 pcs',
-            chickenStripsLarge: '🍗 Chicken Strips 6 pcs',
             nuggetsSmall: '🍗 Nuggets 6 pcs',
             nuggetsLarge: '🍗 Nuggets 12 pcs',
             extraSauce: '🧂 Extra Sauce'

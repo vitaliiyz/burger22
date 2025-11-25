@@ -42,29 +42,27 @@ function initMenuCartButtons() {
         { id: 'side-fries-large', name: 'sides.friesLarge', price: 18, type: 'side', selector: 7 },
         { id: 'side-onion-small', name: 'sides.onionRingsSmall', price: 13, type: 'side', selector: 8 },
         { id: 'side-onion-large', name: 'sides.onionRingsLarge', price: 19, type: 'side', selector: 9 },
-        { id: 'side-chicken-strips-small', name: 'sides.chickenStripsSmall', price: 17, type: 'side', selector: 10 },
-        { id: 'side-chicken-strips-large', name: 'sides.chickenStripsLarge', price: 25, type: 'side', selector: 11 },
-        { id: 'side-nuggets-small', name: 'sides.nuggetsSmall', price: 17, type: 'side', selector: 12 },
-        { id: 'side-nuggets-large', name: 'sides.nuggetsLarge', price: 25, type: 'side', selector: 13 },
+        { id: 'side-nuggets-small', name: 'sides.nuggetsSmall', price: 17, type: 'side', selector: 10 },
+        { id: 'side-nuggets-large', name: 'sides.nuggetsLarge', price: 25, type: 'side', selector: 11 },
         // Extra sauce removed - available only as paid add-on when ordering sides
 
         // Hot Drinks
-        { id: 'drink-green-tea', name: 'hotDrinks.greenTea', price: 5, type: 'drink', selector: 14 },
-        { id: 'drink-americano', name: 'hotDrinks.americano', price: 7.90, type: 'drink', selector: 15 },
-        { id: 'drink-espresso', name: 'hotDrinks.espresso', price: 6.90, type: 'drink', selector: 16 },
-        { id: 'drink-double-espresso', name: 'hotDrinks.doubleEspresso', price: 9.90, type: 'drink', selector: 17 },
-        { id: 'drink-cappuccino', name: 'hotDrinks.cappuccino', price: 9.90, type: 'drink', selector: 18 },
-        { id: 'drink-latte', name: 'hotDrinks.latte', price: 9.90, type: 'drink', selector: 19 },
+        { id: 'drink-green-tea', name: 'hotDrinks.greenTea', price: 5, type: 'drink', selector: 12 },
+        { id: 'drink-americano', name: 'hotDrinks.americano', price: 7.90, type: 'drink', selector: 13 },
+        { id: 'drink-espresso', name: 'hotDrinks.espresso', price: 6.90, type: 'drink', selector: 14 },
+        { id: 'drink-double-espresso', name: 'hotDrinks.doubleEspresso', price: 9.90, type: 'drink', selector: 15 },
+        { id: 'drink-cappuccino', name: 'hotDrinks.cappuccino', price: 9.90, type: 'drink', selector: 16 },
+        { id: 'drink-latte', name: 'hotDrinks.latte', price: 9.90, type: 'drink', selector: 17 },
 
         // Cold Drinks (unavailable items like Sprite, Fanta, Beer are excluded)
-        { id: 'drink-cola', name: 'drinks.cola', price: 9, type: 'drink', selector: 20 },
-        { id: 'drink-cola-zero', name: 'drinks.colaZero', price: 9, type: 'drink', selector: 21 },
-        { id: 'drink-orange', name: 'drinks.orangeJuice', price: 9, type: 'drink', selector: 22 },
-        { id: 'drink-apple', name: 'drinks.appleJuice', price: 9, type: 'drink', selector: 23 },
-        { id: 'drink-multi', name: 'drinks.multiJuice', price: 9, type: 'drink', selector: 24 },
-        { id: 'drink-tomato', name: 'drinks.tomatoJuice', price: 9, type: 'drink', selector: 25 },
-        { id: 'drink-water-still', name: 'drinks.waterStill', price: 6, type: 'drink', selector: 26 },
-        { id: 'drink-water-sparkling', name: 'drinks.waterSparkling', price: 6, type: 'drink', selector: 27 }
+        { id: 'drink-cola', name: 'drinks.cola', price: 9, type: 'drink', selector: 18 },
+        { id: 'drink-cola-zero', name: 'drinks.colaZero', price: 9, type: 'drink', selector: 19 },
+        { id: 'drink-orange', name: 'drinks.orangeJuice', price: 9, type: 'drink', selector: 20 },
+        { id: 'drink-apple', name: 'drinks.appleJuice', price: 9, type: 'drink', selector: 21 },
+        { id: 'drink-multi', name: 'drinks.multiJuice', price: 9, type: 'drink', selector: 22 },
+        { id: 'drink-tomato', name: 'drinks.tomatoJuice', price: 9, type: 'drink', selector: 23 },
+        { id: 'drink-water-still', name: 'drinks.waterStill', price: 6, type: 'drink', selector: 24 },
+        { id: 'drink-water-sparkling', name: 'drinks.waterSparkling', price: 6, type: 'drink', selector: 25 }
     ];
 
     // Exclude items that should not have add buttons:
@@ -120,8 +118,8 @@ function initMenuCartButtons() {
             if (itemData.type === 'burger') {
                 currentBurgerData = { item, button };
                 showDonenessModal();
-            } else if (itemData.type === 'side' && (itemData.id.includes('fries') || itemData.id.includes('onion') || itemData.id.includes('chicken-strips') || itemData.id.includes('nuggets'))) {
-                // Show sides modal for fries, onion rings, chicken strips, and nuggets
+            } else if (itemData.type === 'side' && (itemData.id.includes('fries') || itemData.id.includes('onion') || itemData.id.includes('nuggets'))) {
+                // Show sides modal for fries, onion rings, and nuggets
                 currentSideData = { item, button };
                 showSidesModal();
             } else if (itemData.id === 'drink-green-tea') {
