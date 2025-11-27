@@ -21,6 +21,7 @@ const pageTranslations = {
             'glovo-desc': 'Szybka dostawa przez Glovo',
             'wolt-desc': 'Szybka dostawa przez Wolt',
             'pyszne-desc': 'Szybka dostawa przez Pyszne',
+            'bolt-desc': 'Szybka dostawa przez Bolt',
             disclaimer: '* Ceny w zewnętrznych serwisach dostawy mogą różnić się od cen w restauracji'
         }
     },
@@ -43,6 +44,7 @@ const pageTranslations = {
             'glovo-desc': 'Fast delivery via Glovo',
             'wolt-desc': 'Fast delivery via Wolt',
             'pyszne-desc': 'Fast delivery via Pyszne',
+            'bolt-desc': 'Fast delivery via Bolt',
             disclaimer: '* Prices in third-party delivery services may differ from restaurant prices'
         }
     }
