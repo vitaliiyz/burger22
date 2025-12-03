@@ -15,6 +15,9 @@ const commonTranslations = {
             contact: 'Kontakt',
             social: 'Znajdź nas',
             rights: 'Wszelkie prawa zastrzeżone'
+        },
+        closure: {
+            message: 'Będziemy zamknięci cały dzień 4 grudnia. Czekami na Was w piątek 5 grudnia. Przepraszamy za niedogodności.'
         }
     },
     en: {
@@ -30,6 +33,9 @@ const commonTranslations = {
             contact: 'Contact',
             social: 'Find Us',
             rights: 'All rights reserved'
+        },
+        closure: {
+            message: 'We will be closed all day on December 4th. We look forward to seeing you on Friday, December 5th. We apologize for the inconvenience.'
         }
     }
 };
