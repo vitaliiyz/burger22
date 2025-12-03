@@ -17,7 +17,7 @@ const commonTranslations = {
             rights: 'Wszelkie prawa zastrzeżone'
         },
         closure: {
-            message: 'Będziemy zamknięci cały dzień 4 grudnia. Czekami na Was w piątek 5 grudnia. Przepraszamy za niedogodności.'
+            message: 'Będziemy zamknięci przez cały dzień 4 grudnia. Czekamy na Was w piątek, 5 grudnia. Przepraszamy za niedogodności.'
         }
     },
     en: {
