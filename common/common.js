@@ -123,7 +123,12 @@ function applyTranslations(translations) {
         const key = element.getAttribute('data-i18n');
         const value = getTranslation(key, currentLang, translations);
         if (value && value !== key) {
-            element.textContent = value;
+            // Use innerHTML for descriptions that may contain HTML tags
+            if (element.classList.contains('item-description')) {
+                element.innerHTML = value;
+            } else {
+                element.textContent = value;
+            }
         }
     });
 

@@ -4,6 +4,7 @@
 const pageTranslations = {
     pl: {
         tagline: 'Prawdziwy smak burgera',
+        newItem: 'NOWOŚĆ',
         badge: {
             new: 'NOWOŚĆ'
         },
@@ -27,6 +28,7 @@ const pageTranslations = {
     },
     en: {
         tagline: 'Real burger taste',
+        newItem: 'NEW',
         badge: {
             new: 'NEW'
         },
