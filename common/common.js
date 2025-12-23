@@ -3,6 +3,10 @@
 // Common translations (burger menu and footer)
 const commonTranslations = {
     pl: {
+        notice: {
+            title: 'Zamknięte 24-25 grudnia',
+            message: 'Wracamy 26 grudnia. Wesołych Świąt!'
+        },
         burger: {
             home: 'Strona główna',
             menu: 'Menu',
@@ -18,6 +22,10 @@ const commonTranslations = {
         }
     },
     en: {
+        notice: {
+            title: 'Closed December 24-25',
+            message: 'We\'ll be back on December 26. Merry Christmas!'
+        },
         burger: {
             home: 'Home',
             menu: 'Menu',
