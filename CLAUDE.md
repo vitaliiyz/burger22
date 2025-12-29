@@ -462,6 +462,12 @@ notice: {
     title: 'Przerwa techniczna',
     message: 'Zamknięte 15-17 stycznia na remont'
 }
+
+// Новогодний график (с HTML-тегом для переноса строки)
+notice: {
+    title: 'Sylwester i Nowy Rok - Zmienione godziny',
+    message: '31.12: 12:00-17:00 | 01.01: Zamknięte<br>Szczęśliwego Nowego Roku!'
+}
 ```
 
 **Примеры иконок (эмодзи):**
@@ -477,6 +483,7 @@ notice: {
 **Важно:**
 - Баннер отображается на ВСЕХ страницах сайта
 - Переводы находятся в `common/common.js`, а не в page-specific translations
+- В поле `message` можно использовать HTML-теги (например `<br>` для переноса строки)
 - Стили адаптивны для мобильных устройств
 - Баннер имеет анимацию появления (slideInDown) и пульсирующую иконку
 

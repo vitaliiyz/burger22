@@ -4,8 +4,8 @@
 const commonTranslations = {
     pl: {
         notice: {
-            title: 'Zamknięte 24-25 grudnia',
-            message: 'Wracamy 26 grudnia. Wesołych Świąt!'
+            title: 'Sylwester i Nowy Rok - Zmienione godziny',
+            message: '31.12: 12:00-17:00 | 01.01: Zamknięte<br>Szczęśliwego Nowego Roku!'
         },
         burger: {
             home: 'Strona główna',
@@ -23,8 +23,8 @@ const commonTranslations = {
     },
     en: {
         notice: {
-            title: 'Closed December 24-25',
-            message: 'We\'ll be back on December 26. Merry Christmas!'
+            title: 'New Year - Modified Hours',
+            message: 'Dec 31: 12:00-17:00 | Jan 1: Closed<br>Happy New Year!'
         },
         burger: {
             home: 'Home',
@@ -131,8 +131,8 @@ function applyTranslations(translations) {
         const key = element.getAttribute('data-i18n');
         const value = getTranslation(key, currentLang, translations);
         if (value && value !== key) {
-            // Use innerHTML for descriptions that may contain HTML tags
-            if (element.classList.contains('item-description')) {
+            // Use innerHTML for descriptions and announcements that may contain HTML tags
+            if (element.classList.contains('item-description') || element.classList.contains('announcement-banner-message')) {
                 element.innerHTML = value;
             } else {
                 element.textContent = value;
