@@ -4,8 +4,8 @@
 const commonTranslations = {
     pl: {
         notice: {
-            title: 'Sylwester i Nowy Rok - Zmienione godziny',
-            message: '31.12: 12:00-17:00 | 01.01: Zamknięte<br>Szczęśliwego Nowego Roku!'
+            title: 'Czwartek 8 stycznia — nieczynne',
+            message: 'W czwartek 8 stycznia lokal jest zamknięty. Przepraszamy za utrudnienia.'
         },
         burger: {
             home: 'Strona główna',
@@ -23,8 +23,8 @@ const commonTranslations = {
     },
     en: {
         notice: {
-            title: 'New Year - Modified Hours',
-            message: 'Dec 31: 12:00-17:00 | Jan 1: Closed<br>Happy New Year!'
+            title: 'Thursday, January 8 — Closed',
+            message: 'We are closed on Thursday, January 8. Sorry for the inconvenience.'
         },
         burger: {
             home: 'Home',
