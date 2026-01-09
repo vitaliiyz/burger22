@@ -54,7 +54,7 @@ function initMenuCartButtons() {
         { id: 'drink-cappuccino', name: 'hotDrinks.cappuccino', price: 9.90, type: 'drink', selector: 16 },
         { id: 'drink-latte', name: 'hotDrinks.latte', price: 9.90, type: 'drink', selector: 17 },
 
-        // Cold Drinks (unavailable items like Sprite, Fanta, Beer are excluded)
+        // Cold Drinks (unavailable items like Sprite, Beer are excluded)
         { id: 'drink-cola', name: 'drinks.cola', price: 9, type: 'drink', selector: 18 },
         { id: 'drink-cola-zero', name: 'drinks.colaZero', price: 9, type: 'drink', selector: 19 },
         { id: 'drink-orange', name: 'drinks.orangeJuice', price: 9, type: 'drink', selector: 20 },
@@ -187,7 +187,7 @@ function createDonenessModal() {
             <div class="combo-sauce-selection" style="display: none;">
                 <h5 class="combo-sauce-title">${currentLang === 'pl' ? 'Wybierz sos do zestawu:' : 'Choose combo sauce:'}</h5>
                 <div class="combo-sauce-options">
-                    ${['ketchup', 'bbq', 'chili', 'american', 'cheese', 'mayo', 'thousandIsland', 'garlic', 'mustard'].map(sauce => `
+                    ${['ketchup', 'bbq', 'chili', 'cheese', 'mayo', 'garlic', 'mustard'].map(sauce => `
                         <label class="combo-sauce-radio-label">
                             <input type="radio" name="comboSauce" class="combo-sauce-radio" value="${sauce}">
                             <span>${window.CommonUtils.getTranslation('sauces.' + sauce, currentLang, translations)}</span>
@@ -350,17 +350,6 @@ function createDonenessModal() {
                                 </div>
                             </div>
                         </div>
-                        <div class="extra-item sauce-item" data-sauce="american" data-price="3">
-                            <span class="extra-name">${window.CommonUtils.getTranslation('sauces.american', currentLang, translations)}</span>
-                            <div class="extra-controls">
-                                <span class="extra-price">3 zł</span>
-                                <div class="extra-quantity-controls">
-                                    <button class="extra-btn extra-minus" type="button">−</button>
-                                    <span class="extra-quantity sauce-quantity">0</span>
-                                    <button class="extra-btn extra-plus" type="button">+</button>
-                                </div>
-                            </div>
-                        </div>
                         <div class="extra-item sauce-item" data-sauce="cheese" data-price="3">
                             <span class="extra-name">${window.CommonUtils.getTranslation('sauces.cheese', currentLang, translations)}</span>
                             <div class="extra-controls">
@@ -374,17 +363,6 @@ function createDonenessModal() {
                         </div>
                         <div class="extra-item sauce-item" data-sauce="mayo" data-price="3">
                             <span class="extra-name">${window.CommonUtils.getTranslation('sauces.mayo', currentLang, translations)}</span>
-                            <div class="extra-controls">
-                                <span class="extra-price">3 zł</span>
-                                <div class="extra-quantity-controls">
-                                    <button class="extra-btn extra-minus" type="button">−</button>
-                                    <span class="extra-quantity sauce-quantity">0</span>
-                                    <button class="extra-btn extra-plus" type="button">+</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="extra-item sauce-item" data-sauce="thousandIsland" data-price="3">
-                            <span class="extra-name">${window.CommonUtils.getTranslation('sauces.thousandIsland', currentLang, translations)}</span>
                             <div class="extra-controls">
                                 <span class="extra-price">3 zł</span>
                                 <div class="extra-quantity-controls">
@@ -696,13 +674,13 @@ function createDonenessModal() {
             const sauceNames = {
                 pl: {
                     ketchup: 'Ketchup', bbq: 'BBQ', chili: 'Chili',
-                    american: 'Amerykański', cheese: 'Serowy', mayo: 'Majonez',
-                    thousandIsland: 'Tysiąc wysp', garlic: 'Czosnkowy', mustard: 'Musztarda'
+                    cheese: 'Serowy', mayo: 'Majonez',
+                    garlic: 'Czosnkowy', mustard: 'Musztarda'
                 },
                 en: {
                     ketchup: 'Ketchup', bbq: 'BBQ', chili: 'Chili',
-                    american: 'American', cheese: 'Cheese', mayo: 'Mayo',
-                    thousandIsland: 'Thousand Island', garlic: 'Garlic', mustard: 'Mustard'
+                    cheese: 'Cheese', mayo: 'Mayo',
+                    garlic: 'Garlic', mustard: 'Mustard'
                 }
             };
 
@@ -747,13 +725,13 @@ function createDonenessModal() {
             const sauceNames = {
                 pl: {
                     ketchup: 'Ketchup', bbq: 'BBQ', chili: 'Chili',
-                    american: 'Amerykański', cheese: 'Serowy', mayo: 'Majonez',
-                    thousandIsland: 'Tysiąc wysp', garlic: 'Czosnkowy', mustard: 'Musztarda'
+                    cheese: 'Serowy', mayo: 'Majonez',
+                    garlic: 'Czosnkowy', mustard: 'Musztarda'
                 },
                 en: {
                     ketchup: 'Ketchup', bbq: 'BBQ', chili: 'Chili',
-                    american: 'American', cheese: 'Cheese', mayo: 'Mayo',
-                    thousandIsland: 'Thousand Island', garlic: 'Garlic', mustard: 'Mustard'
+                    cheese: 'Cheese', mayo: 'Mayo',
+                    garlic: 'Garlic', mustard: 'Mustard'
                 }
             };
             const sauceName = sauceNames[currentLang][selectedComboSauce];
@@ -844,7 +822,7 @@ function createSidesModal() {
             <div class="combo-sauce-selection" style="display: block;">
                 <h5 class="combo-sauce-title">${currentLang === 'pl' ? 'Wybierz sos (1 gratis):' : 'Choose sauce (1 free):'}</h5>
                 <div class="combo-sauce-options">
-                    ${['ketchup', 'bbq', 'chili', 'american', 'cheese', 'mayo', 'thousandIsland', 'garlic', 'mustard'].map(sauce => `
+                    ${['ketchup', 'bbq', 'chili', 'cheese', 'mayo', 'garlic', 'mustard'].map(sauce => `
                         <label class="combo-sauce-radio-label">
                             <input type="radio" name="sideSauce" class="combo-sauce-radio side-sauce-radio" value="${sauce}">
                             <span>${window.CommonUtils.getTranslation('sauces.' + sauce, currentLang, translations)}</span>
@@ -868,7 +846,7 @@ function createSidesModal() {
             <div class="sauces-submenu" style="display: none; margin-top: 12px;">
                 <h5 class="sauces-title">${currentLang === 'pl' ? 'Wybierz dodatkowe sosy:' : 'Choose extra sauces:'}</h5>
                 <div class="sauces-options">
-                    ${['ketchup', 'bbq', 'chili', 'american', 'cheese', 'mayo', 'thousandIsland', 'garlic', 'mustard'].map(sauce => `
+                    ${['ketchup', 'bbq', 'chili', 'cheese', 'mayo', 'garlic', 'mustard'].map(sauce => `
                         <div class="extra-item sauce-item" data-sauce="${sauce}" data-price="3">
                             <span class="extra-name">${window.CommonUtils.getTranslation('sauces.' + sauce, currentLang, translations)}</span>
                             <div class="extra-controls">
@@ -994,13 +972,13 @@ function createSidesModal() {
         const sauceNames = {
             pl: {
                 ketchup: 'Ketchup', bbq: 'BBQ', chili: 'Chili',
-                american: 'Amerykański', cheese: 'Serowy', mayo: 'Majonez',
-                thousandIsland: 'Tysiąc wysp', garlic: 'Czosnkowy', mustard: 'Musztarda'
+                cheese: 'Serowy', mayo: 'Majonez',
+                garlic: 'Czosnkowy', mustard: 'Musztarda'
             },
             en: {
                 ketchup: 'Ketchup', bbq: 'BBQ', chili: 'Chili',
-                american: 'American', cheese: 'Cheese', mayo: 'Mayo',
-                thousandIsland: 'Thousand Island', garlic: 'Garlic', mustard: 'Mustard'
+                cheese: 'Cheese', mayo: 'Mayo',
+                garlic: 'Garlic', mustard: 'Mustard'
             }
         };
 
