@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap');
 
-/* Show cart button on menu-beta page (overrides common.css) */
-.cart-btn {
-    display: flex !important;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -38,6 +33,143 @@ body {
     -moz-osx-font-smoothing: grayscale;
     min-height: 100dvh;
     overflow-x: hidden;
+}
+
+/* Burger Menu Button */
+.burger-menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.burger-menu-btn:hover {
+    transform: scale(1.05);
+}
+
+.burger-menu-btn span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: linear-gradient(135deg, var(--primary-orange), var(--warm-yellow));
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.burger-menu-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+    background: rgba(58, 58, 58, 0.8);
+}
+
+.burger-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.burger-menu-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+    background: rgba(58, 58, 58, 0.8);
+}
+
+/* Burger menu button scrolled state */
+@media (max-width: 768px) {
+    .burger-menu-btn {
+        width: 45px;
+        height: 45px;
+        top: 15px;
+        left: 15px;
+    }
+
+    .burger-menu-btn.scrolled {
+        top: 75px;
+    }
+
+    .burger-menu-btn span {
+        width: 22px;
+    }
+}
+
+/* Burger Menu Overlay */
+.burger-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--warm-yellow) 100%);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.burger-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.burger-menu-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px;
+}
+
+.burger-menu-item {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5em;
+    font-weight: 900;
+    color: var(--white);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.3s ease;
+    transform: translateX(-50px);
+    opacity: 0;
+}
+
+.burger-menu-overlay.active .burger-menu-item {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.burger-menu-overlay.active .burger-menu-item:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.burger-menu-overlay.active .burger-menu-item:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.burger-menu-overlay.active .burger-menu-item:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.burger-menu-item:hover {
+    transform: translateX(10px);
+    text-shadow: 3px 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+.burger-menu-icon {
+    font-size: 1.2em;
 }
 
 .hero {
@@ -278,6 +410,108 @@ h1 {
     height: 100px;
 }
 
+/* Takeaway Info Box */
+.takeaway-info-box {
+    background: linear-gradient(135deg, rgba(255, 165, 0, 0.08), rgba(255, 200, 50, 0.08));
+    border: 1.5px solid rgba(255, 165, 0, 0.2);
+    border-radius: 16px;
+    padding: 20px;
+    margin: 20px 0 30px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.takeaway-info-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.takeaway-info-icon {
+    font-size: 2.5em;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.takeaway-info-text h3 {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: var(--graphite);
+    margin: 0 0 6px 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.takeaway-info-text p {
+    font-size: 0.95em;
+    color: var(--graphite-light);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.takeaway-info-contact {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 165, 0, 0.15);
+    flex-wrap: wrap;
+}
+
+.takeaway-info-contact > span {
+    font-size: 0.9em;
+    color: var(--graphite-light);
+    font-weight: 500;
+}
+
+.takeaway-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.takeaway-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-size: 0.9em;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+}
+
+.takeaway-btn .btn-icon {
+    font-size: 1.1em;
+    line-height: 1;
+}
+
+.copy-btn {
+    background: rgba(255, 165, 0, 0.15);
+    color: var(--primary-orange);
+    border: 1px solid rgba(255, 165, 0, 0.3);
+}
+
+.copy-btn:hover {
+    background: rgba(255, 165, 0, 0.25);
+    transform: translateY(-2px);
+}
+
+.call-btn {
+    background: linear-gradient(135deg, var(--primary-orange), var(--warm-yellow));
+    color: white;
+    border: 1px solid transparent;
+}
+
+.call-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 165, 0, 0.3);
+}
+
 .menu-section {
     margin-bottom: 50px;
     animation: fadeInUp 0.6s ease-out;
@@ -359,6 +593,18 @@ h1 {
     position: relative;
 }
 
+.menu-item.new-item-highlight {
+    border: 2px solid #FF6B6B;
+    box-shadow: 0 4px 20px rgba(255, 107, 107, 0.25), 0 2px 8px rgba(255, 71, 87, 0.15);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 250, 250, 0.95) 100%);
+}
+
+.menu-item.new-item-highlight:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(255, 107, 107, 0.35), 0 4px 12px rgba(255, 71, 87, 0.2);
+    border-color: #FF4757;
+}
+
 .menu-item:hover {
     transform: translateY(-8px);
     background: rgba(255, 255, 255, 0.95);
@@ -431,6 +677,57 @@ h1 {
     letter-spacing: 0.5px;
 }
 
+.new-badge {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65em;
+    font-weight: 800;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #FF6B6B, #FF4757);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
+    animation: pulse 2s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.popular-badge {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65em;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+}
+
+.popular-1 {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
+}
+
+.popular-2 {
+    background: linear-gradient(135deg, #C0C0C0, #A8A8A8);
+    box-shadow: 0 2px 8px rgba(192, 192, 192, 0.4);
+}
+
+.popular-3 {
+    background: linear-gradient(135deg, #CD7F32, #B8860B);
+    box-shadow: 0 2px 8px rgba(205, 127, 50, 0.4);
+}
+
 .item-description {
     font-family: 'Inter', sans-serif;
     color: var(--graphite-light);
@@ -439,6 +736,11 @@ h1 {
     margin-bottom: 16px;
     flex: 1;
     letter-spacing: 0.2px;
+}
+
+.item-description strong {
+    color: var(--graphite);
+    font-weight: 600;
 }
 
 .item-footer {
@@ -647,7 +949,7 @@ html[lang="en"] .menu-item.unavailable .item-name::after {
 .language-switcher {
     position: absolute;
     top: 15px;
-    right: 120px;
+    right: 20px;
     display: flex;
     gap: 8px;
     z-index: 10;
@@ -684,24 +986,6 @@ html[lang="en"] .menu-item.unavailable .item-name::after {
 
 .lang-btn:active {
     transform: translateY(0);
-}
-
-/* Burger menu button scrolled state */
-@media (max-width: 768px) {
-    .burger-menu-btn {
-        width: 45px;
-        height: 45px;
-        top: 15px;
-        left: 15px;
-    }
-
-    .burger-menu-btn.scrolled {
-        top: 75px;
-    }
-
-    .burger-menu-btn span {
-        width: 22px;
-    }
 }
 
 /* Tablet responsive */
@@ -777,6 +1061,43 @@ html[lang="en"] .menu-item.unavailable .item-name::after {
 
     .nav-spacer.active {
         height: 70px;
+    }
+
+    .takeaway-info-box {
+        padding: 16px;
+    }
+
+    .takeaway-info-icon {
+        font-size: 2em;
+    }
+
+    .takeaway-info-text h3 {
+        font-size: 1em;
+    }
+
+    .takeaway-info-text p {
+        font-size: 0.9em;
+    }
+
+    .takeaway-info-contact {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .takeaway-info-contact > span {
+        text-align: center;
+    }
+
+    .takeaway-buttons {
+        width: 100%;
+        gap: 8px;
+    }
+
+    .takeaway-btn {
+        flex: 1;
+        justify-content: center;
+        padding: 10px 16px;
     }
 }
 
@@ -858,6 +1179,37 @@ html[lang="en"] .menu-item.unavailable .item-name::after {
     .menu-nav {
         padding: 10px;
         gap: 8px;
+    }
+
+    .takeaway-info-box {
+        padding: 14px;
+        gap: 14px;
+    }
+
+    .takeaway-info-content {
+        gap: 12px;
+    }
+
+    .takeaway-info-icon {
+        font-size: 1.8em;
+    }
+
+    .takeaway-info-text h3 {
+        font-size: 0.95em;
+    }
+
+    .takeaway-info-text p {
+        font-size: 0.85em;
+    }
+
+    .takeaway-info-contact > span {
+        font-size: 0.9em;
+        text-align: center;
+    }
+
+    .takeaway-btn {
+        font-size: 0.9em;
+        padding: 10px 14px;
     }
 
     .menu-nav.sticky {
@@ -1010,6 +1362,86 @@ html[lang="en"] .menu-item.unavailable .item-name::after {
         width: 18px;
         height: 18px;
     }
+}
+
+/* Disclaimer Section */
+.menu-disclaimer {
+    margin: 50px auto 30px;
+    padding: 12px 20px;
+    text-align: center;
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
+}
+
+.menu-disclaimer p {
+    font-size: 0.85em;
+    color: #666;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .menu-disclaimer {
+        margin: 40px 20px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-disclaimer {
+        margin: 30px 15px 20px;
+        padding: 10px 16px;
+    }
+
+    .menu-disclaimer p {
+        font-size: 0.8em;
+    }
+}
+
+/* Menu beta overrides for online ordering */
+.cart-btn {
+    display: flex !important;
+}
+
+.language-switcher {
+    right: 120px;
+}
+
+@media (max-width: 768px) {
+    .language-switcher {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin-top: 15px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .language-switcher {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin-top: 15px;
+        justify-content: center;
+    }
+}
+
+.copy-btn.copied {
+    background: rgba(34, 197, 94, 0.15);
+    color: #22c55e;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.copy-btn.copied .btn-icon {
+    display: inline-block;
+    animation: checkmark 0.5s ease;
+}
+
+@keyframes checkmark {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
 }
 
 /* Add to Cart Button */
@@ -1342,7 +1774,7 @@ html[lang="en"] .menu-item.unavailable .item-name::after {
     transition: all 0.2s ease;
 }
 
-.extra-item:has(.extra-quantity:not(:contains("0"))) {
+.extra-item.has-quantity {
     background: rgba(255, 165, 0, 0.1);
     border-color: rgba(255, 165, 0, 0.3);
 }
@@ -1551,198 +1983,6 @@ html[lang="en"] .menu-item.unavailable .item-name::after {
 .comment-textarea::placeholder {
     color: var(--graphite-light);
     opacity: 0.7;
-}
-
-/* Takeaway Info Box */
-.takeaway-info-box {
-    background: linear-gradient(135deg, rgba(255, 165, 0, 0.08), rgba(255, 200, 50, 0.08));
-    border: 1.5px solid rgba(255, 165, 0, 0.2);
-    border-radius: 16px;
-    padding: 20px;
-    margin: 20px 0 30px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.takeaway-info-content {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-}
-
-.takeaway-info-icon {
-    font-size: 2.5em;
-    flex-shrink: 0;
-    line-height: 1;
-}
-
-.takeaway-info-text h3 {
-    font-size: 1.1em;
-    font-weight: 700;
-    color: var(--graphite);
-    margin: 0 0 6px 0;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.takeaway-info-text p {
-    font-size: 0.95em;
-    color: var(--graphite-light);
-    margin: 0;
-    line-height: 1.5;
-}
-
-.takeaway-info-contact {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding-top: 12px;
-    border-top: 1px solid rgba(255, 165, 0, 0.15);
-    flex-wrap: wrap;
-}
-
-.takeaway-info-contact > span {
-    font-size: 0.9em;
-    color: var(--graphite-light);
-    font-weight: 500;
-}
-
-.takeaway-buttons {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.takeaway-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 16px;
-    border-radius: 10px;
-    font-size: 0.9em;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    font-family: 'Inter', sans-serif;
-}
-
-.takeaway-btn .btn-icon {
-    font-size: 1.1em;
-    line-height: 1;
-}
-
-.copy-btn {
-    background: rgba(255, 165, 0, 0.15);
-    color: var(--primary-orange);
-    border: 1px solid rgba(255, 165, 0, 0.3);
-}
-
-.copy-btn:hover {
-    background: rgba(255, 165, 0, 0.25);
-    transform: translateY(-2px);
-}
-
-.copy-btn.copied {
-    background: rgba(34, 197, 94, 0.15);
-    color: #22c55e;
-    border-color: rgba(34, 197, 94, 0.3);
-}
-
-.copy-btn.copied .btn-icon {
-    display: inline-block;
-    animation: checkmark 0.5s ease;
-}
-
-@keyframes checkmark {
-    0% { transform: scale(0); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
-}
-
-.call-btn {
-    background: linear-gradient(135deg, var(--primary-orange), var(--warm-yellow));
-    color: white;
-    border: 1px solid transparent;
-}
-
-.call-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 165, 0, 0.3);
-}
-
-/* Responsive styles for takeaway box */
-@media (max-width: 768px) {
-    .takeaway-info-box {
-        padding: 16px;
-    }
-
-    .takeaway-info-icon {
-        font-size: 2em;
-    }
-
-    .takeaway-info-text h3 {
-        font-size: 1em;
-    }
-
-    .takeaway-info-text p {
-        font-size: 0.9em;
-    }
-
-    .takeaway-info-contact {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 12px;
-    }
-
-    .takeaway-info-contact > span {
-        text-align: center;
-    }
-
-    .takeaway-buttons {
-        width: 100%;
-        gap: 8px;
-    }
-
-    .takeaway-btn {
-        flex: 1;
-        justify-content: center;
-        padding: 10px 16px;
-    }
-}
-
-@media (max-width: 480px) {
-    .takeaway-info-box {
-        padding: 14px;
-        gap: 14px;
-    }
-
-    .takeaway-info-content {
-        gap: 12px;
-    }
-
-    .takeaway-info-icon {
-        font-size: 1.8em;
-    }
-
-    .takeaway-info-text h3 {
-        font-size: 0.95em;
-    }
-
-    .takeaway-info-text p {
-        font-size: 0.85em;
-    }
-
-    .takeaway-info-contact > span {
-        font-size: 0.9em;
-        text-align: center;
-    }
-
-    .takeaway-btn {
-        font-size: 0.9em;
-        padding: 10px 14px;
-    }
 }
 
 /* Tea Modal Styles */

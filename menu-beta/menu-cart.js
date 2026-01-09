@@ -12,6 +12,21 @@ let currentSideData = null;
 let teaModal = null;
 let currentTeaData = null;
 
+function updateExtraItemState(item) {
+    if (!item) return;
+    const quantitySpan = item.querySelector('.extra-quantity');
+    if (!quantitySpan) return;
+    const quantity = parseInt(quantitySpan.textContent, 10) || 0;
+    item.classList.toggle('has-quantity', quantity > 0);
+}
+
+function resetExtraItemStates(container) {
+    if (!container) return;
+    container.querySelectorAll('.extra-item').forEach(item => {
+        item.classList.remove('has-quantity');
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // Wait for translations to load
     setTimeout(() => {
@@ -28,41 +43,42 @@ function initMenuCartButtons() {
     // Define menu items with prices (matching the HTML)
     const menuItems = [
         // Burgers
-        { id: 'burger-classic', name: 'burgers.classic.name', price: 33, type: 'burger', image: 'images/classic.jpeg', selector: 0 },
-        { id: 'burger-cheese', name: 'burgers.cheese.name', price: 40, type: 'burger', image: 'images/cheese.JPG', selector: 1 },
-        { id: 'burger-chicken', name: 'burgers.chicken.name', price: 37, type: 'burger', image: 'images/chicken.JPG', selector: 2 },
-        { id: 'burger-bbq', name: 'burgers.bbq.name', price: 36, type: 'burger', image: 'images/bbq.JPG', selector: 3 },
-        { id: 'burger-spicy', name: 'burgers.spicy.name', price: 39, type: 'burger', image: 'images/hot.JPG', selector: 4 },
-        { id: 'burger-egg', name: 'burgers.egg.name', price: 38, type: 'burger', image: 'images/egg.JPG', selector: 5 },
+        { id: 'burger-camemburger', name: 'burgers.camemburger.name', price: 43, type: 'burger', image: '../menu/images/camemburger.jpg', selector: 0 },
+        { id: 'burger-classic', name: 'burgers.classic.name', price: 33, type: 'burger', image: '../menu/images/classic.jpg', selector: 1 },
+        { id: 'burger-cheese', name: 'burgers.cheese.name', price: 40, type: 'burger', image: '../menu/images/cheese.jpg', selector: 2 },
+        { id: 'burger-chicken', name: 'burgers.chicken.name', price: 37, type: 'burger', image: '../menu/images/chicken.jpg', selector: 3 },
+        { id: 'burger-bbq', name: 'burgers.bbq.name', price: 36, type: 'burger', image: '../menu/images/bbq.jpg', selector: 4 },
+        { id: 'burger-spicy', name: 'burgers.spicy.name', price: 39, type: 'burger', image: '../menu/images/hot.jpg', selector: 5 },
+        { id: 'burger-egg', name: 'burgers.egg.name', price: 38, type: 'burger', image: '../menu/images/egg.jpg', selector: 6 },
 
         // Extras (dodatki do burgera) - removed from here, available only when ordering burgers
 
         // Sides
-        { id: 'side-fries-small', name: 'sides.friesSmall', price: 14, type: 'side', selector: 6 },
-        { id: 'side-fries-large', name: 'sides.friesLarge', price: 18, type: 'side', selector: 7 },
-        { id: 'side-onion-small', name: 'sides.onionRingsSmall', price: 13, type: 'side', selector: 8 },
-        { id: 'side-onion-large', name: 'sides.onionRingsLarge', price: 19, type: 'side', selector: 9 },
-        { id: 'side-nuggets-small', name: 'sides.nuggetsSmall', price: 17, type: 'side', selector: 10 },
-        { id: 'side-nuggets-large', name: 'sides.nuggetsLarge', price: 25, type: 'side', selector: 11 },
+        { id: 'side-fries-small', name: 'sides.friesSmall', price: 14, type: 'side', selector: 7 },
+        { id: 'side-fries-large', name: 'sides.friesLarge', price: 18, type: 'side', selector: 8 },
+        { id: 'side-onion-small', name: 'sides.onionRingsSmall', price: 13, type: 'side', selector: 9 },
+        { id: 'side-onion-large', name: 'sides.onionRingsLarge', price: 19, type: 'side', selector: 10 },
+        { id: 'side-nuggets-small', name: 'sides.nuggetsSmall', price: 17, type: 'side', selector: 11 },
+        { id: 'side-nuggets-large', name: 'sides.nuggetsLarge', price: 25, type: 'side', selector: 12 },
         // Extra sauce removed - available only as paid add-on when ordering sides
 
         // Hot Drinks
-        { id: 'drink-green-tea', name: 'hotDrinks.greenTea', price: 5, type: 'drink', selector: 12 },
-        { id: 'drink-americano', name: 'hotDrinks.americano', price: 7.90, type: 'drink', selector: 13 },
-        { id: 'drink-espresso', name: 'hotDrinks.espresso', price: 6.90, type: 'drink', selector: 14 },
-        { id: 'drink-double-espresso', name: 'hotDrinks.doubleEspresso', price: 9.90, type: 'drink', selector: 15 },
-        { id: 'drink-cappuccino', name: 'hotDrinks.cappuccino', price: 9.90, type: 'drink', selector: 16 },
-        { id: 'drink-latte', name: 'hotDrinks.latte', price: 9.90, type: 'drink', selector: 17 },
+        { id: 'drink-green-tea', name: 'hotDrinks.greenTea', price: 5, type: 'drink', selector: 13 },
+        { id: 'drink-americano', name: 'hotDrinks.americano', price: 7.90, type: 'drink', selector: 14 },
+        { id: 'drink-espresso', name: 'hotDrinks.espresso', price: 6.90, type: 'drink', selector: 15 },
+        { id: 'drink-double-espresso', name: 'hotDrinks.doubleEspresso', price: 9.90, type: 'drink', selector: 16 },
+        { id: 'drink-cappuccino', name: 'hotDrinks.cappuccino', price: 9.90, type: 'drink', selector: 17 },
+        { id: 'drink-latte', name: 'hotDrinks.latte', price: 9.90, type: 'drink', selector: 18 },
 
         // Cold Drinks (unavailable items like Sprite, Beer are excluded)
-        { id: 'drink-cola', name: 'drinks.cola', price: 9, type: 'drink', selector: 18 },
-        { id: 'drink-cola-zero', name: 'drinks.colaZero', price: 9, type: 'drink', selector: 19 },
-        { id: 'drink-orange', name: 'drinks.orangeJuice', price: 9, type: 'drink', selector: 20 },
-        { id: 'drink-apple', name: 'drinks.appleJuice', price: 9, type: 'drink', selector: 21 },
-        { id: 'drink-multi', name: 'drinks.multiJuice', price: 9, type: 'drink', selector: 22 },
-        { id: 'drink-tomato', name: 'drinks.tomatoJuice', price: 9, type: 'drink', selector: 23 },
-        { id: 'drink-water-still', name: 'drinks.waterStill', price: 6, type: 'drink', selector: 24 },
-        { id: 'drink-water-sparkling', name: 'drinks.waterSparkling', price: 6, type: 'drink', selector: 25 }
+        { id: 'drink-cola', name: 'drinks.cola', price: 9, type: 'drink', selector: 19 },
+        { id: 'drink-cola-zero', name: 'drinks.colaZero', price: 9, type: 'drink', selector: 20 },
+        { id: 'drink-orange', name: 'drinks.orangeJuice', price: 9, type: 'drink', selector: 21 },
+        { id: 'drink-apple', name: 'drinks.appleJuice', price: 9, type: 'drink', selector: 22 },
+        { id: 'drink-multi', name: 'drinks.multiJuice', price: 9, type: 'drink', selector: 23 },
+        { id: 'drink-tomato', name: 'drinks.tomatoJuice', price: 9, type: 'drink', selector: 24 },
+        { id: 'drink-water-still', name: 'drinks.waterStill', price: 6, type: 'drink', selector: 25 },
+        { id: 'drink-water-sparkling', name: 'drinks.waterSparkling', price: 6, type: 'drink', selector: 26 }
     ];
 
     // Exclude items that should not have add buttons:
@@ -472,6 +488,7 @@ function createDonenessModal() {
             if (quantity < maxQuantity) {
                 quantity++;
                 quantitySpan.textContent = quantity;
+                updateExtraItemState(item);
             }
         });
 
@@ -480,6 +497,7 @@ function createDonenessModal() {
             if (quantity > 0) {
                 quantity--;
                 quantitySpan.textContent = quantity;
+                updateExtraItemState(item);
             }
         });
     });
@@ -498,6 +516,9 @@ function createDonenessModal() {
                 modal.querySelectorAll('.vegetable-quantity').forEach(span => {
                     span.textContent = '0';
                 });
+                modal.querySelectorAll('.vegetable-item').forEach(item => {
+                    updateExtraItemState(item);
+                });
                 if (vegetablesError) vegetablesError.style.display = 'none';
             }
         });
@@ -514,6 +535,7 @@ function createDonenessModal() {
             if (quantity < 5) {
                 quantity++;
                 quantitySpan.textContent = quantity;
+                updateExtraItemState(item);
                 // Hide error if any vegetable is selected
                 if (vegetablesError) vegetablesError.style.display = 'none';
             }
@@ -524,6 +546,7 @@ function createDonenessModal() {
             if (quantity > 0) {
                 quantity--;
                 quantitySpan.textContent = quantity;
+                updateExtraItemState(item);
             }
         });
     });
@@ -543,6 +566,9 @@ function createDonenessModal() {
                 modal.querySelectorAll('.sauce-quantity').forEach(span => {
                     span.textContent = '0';
                 });
+                modal.querySelectorAll('.sauce-item').forEach(item => {
+                    updateExtraItemState(item);
+                });
                 if (saucesError) saucesError.style.display = 'none';
             }
         });
@@ -560,6 +586,7 @@ function createDonenessModal() {
             if (quantity < 5) {
                 quantity++;
                 quantitySpan.textContent = quantity;
+                updateExtraItemState(item);
                 // Hide error if any sauce is selected
                 if (saucesError) saucesError.style.display = 'none';
             }
@@ -570,6 +597,7 @@ function createDonenessModal() {
             if (quantity > 0) {
                 quantity--;
                 quantitySpan.textContent = quantity;
+                updateExtraItemState(item);
             }
         });
     });
@@ -915,6 +943,9 @@ function createSidesModal() {
                 modal.querySelectorAll('.sauce-quantity').forEach(span => {
                     span.textContent = '0';
                 });
+                modal.querySelectorAll('.sauce-item').forEach(item => {
+                    updateExtraItemState(item);
+                });
             }
         });
     }
@@ -931,6 +962,7 @@ function createSidesModal() {
             if (quantity < 5) {
                 quantity++;
                 quantitySpan.textContent = quantity;
+                updateExtraItemState(item);
             }
         });
 
@@ -939,6 +971,7 @@ function createSidesModal() {
             if (quantity > 0) {
                 quantity--;
                 quantitySpan.textContent = quantity;
+                updateExtraItemState(item);
             }
         });
     });
@@ -1068,6 +1101,7 @@ function showSidesModal() {
         sidesModal.querySelectorAll('.sauce-quantity').forEach(span => {
             span.textContent = '0';
         });
+        resetExtraItemStates(sidesModal);
 
         // Hide errors
         const error = sidesModal.querySelector('.side-sauce-error');
@@ -1127,6 +1161,7 @@ function showDonenessModal() {
         donenessModal.querySelectorAll('.extra-quantity').forEach(span => {
             span.textContent = '0';
         });
+        resetExtraItemStates(donenessModal);
 
         // Reset vegetables checkbox
         const vegetablesCheckbox = donenessModal.querySelector('.vegetables-main-checkbox');
