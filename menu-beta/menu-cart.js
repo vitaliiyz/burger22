@@ -436,6 +436,14 @@ function createDonenessModal() {
     document.body.appendChild(modal);
     donenessModal = modal;
 
+    modal.addEventListener('click', (e) => {
+        const btn = e.target.closest('.extra-btn');
+        if (!btn) return;
+        const item = btn.closest('.extra-item');
+        if (!item) return;
+        setTimeout(() => updateExtraItemState(item), 0);
+    });
+
     // Add event listeners
     const confirmBtn = modal.querySelector('.doneness-confirm-btn');
     const cancelBtn = modal.querySelector('.doneness-cancel-btn');
@@ -908,6 +916,14 @@ function createSidesModal() {
 
     document.body.appendChild(modal);
     sidesModal = modal;
+
+    modal.addEventListener('click', (e) => {
+        const btn = e.target.closest('.extra-btn');
+        if (!btn) return;
+        const item = btn.closest('.extra-item');
+        if (!item) return;
+        setTimeout(() => updateExtraItemState(item), 0);
+    });
 
     // Add event listeners
     const confirmBtn = modal.querySelector('.doneness-confirm-btn');
