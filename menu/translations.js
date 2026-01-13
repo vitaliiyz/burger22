@@ -50,6 +50,7 @@ const translations = {
         burgers: {
             camemburger: {
                 name: 'Camemburger',
+                badge: 'Zimowa edycja',
                 desc: 'Puszysta bułeczka <strong>brioche</strong> skrywa soczystą <strong>wołowinę</strong>, chrupiący <strong>bekon</strong> i kremowy <strong>camembert</strong>, który rozpływa się przy każdym kęsie. Słodycz <strong>żurawiny</strong> przełamuje intensywność sera, tworząc idealny kontrast, a świeża <strong>rukola</strong> dodaje lekkości i aromatu. Całość dopełnia aksamitny <strong>sos miodowo-musztardowy</strong>, który łączy wszystkie smaki w harmonijną, wykwintną kompozycję.'
             },
             classic: {
@@ -79,6 +80,7 @@ const translations = {
         },
         extras: {
             meat: '🥩 Mięso',
+            friedCamembert: '🧀 Ser Camembert Smażony',
             bacon: '🥓 Bekon',
             cheese: '🧀 Ser',
             jalapeno: '🌶️ Jalapeño',
@@ -164,6 +166,7 @@ const translations = {
         burgers: {
             camemburger: {
                 name: 'Camemburger',
+                badge: 'Winter edition',
                 desc: 'A fluffy <strong>brioche bun</strong> conceals juicy <strong>beef</strong>, crispy <strong>bacon</strong>, and creamy <strong>camembert</strong> that melts with every bite. The sweetness of <strong>cranberry</strong> breaks through the intensity of the cheese, creating the perfect contrast, while fresh <strong>arugula</strong> adds lightness and aroma. Everything is complemented by a velvety <strong>honey-mustard sauce</strong> that brings all the flavors together in a harmonious, exquisite composition.'
             },
             classic: {
@@ -193,6 +196,7 @@ const translations = {
         },
         extras: {
             meat: '🥩 Meat',
+            friedCamembert: '🧀 Fried Camembert Cheese',
             bacon: '🥓 Bacon',
             cheese: '🧀 Cheese',
             jalapeno: '🌶️ Jalapeño',

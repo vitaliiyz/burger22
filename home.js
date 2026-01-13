@@ -4,10 +4,6 @@
 const pageTranslations = {
     pl: {
         tagline: 'Prawdziwy smak burgera',
-        newItem: 'NOWOŚĆ',
-        badge: {
-            new: 'NOWOŚĆ'
-        },
         nav: {
             delivery: 'Zamów do domu',
             'delivery-desc': 'Wybierz serwis dostawy',
@@ -28,10 +24,6 @@ const pageTranslations = {
     },
     en: {
         tagline: 'Real burger taste',
-        newItem: 'NEW',
-        badge: {
-            new: 'NEW'
-        },
         nav: {
             delivery: 'Order for delivery',
             'delivery-desc': 'Choose delivery service',
