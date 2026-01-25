@@ -119,7 +119,6 @@ const translations = {
             orangeJuice: '🍊 Sok pomarańczowy 0,3 l',
             appleJuice: '🍎 Sok jabłkowy 0,3 l',
             multiJuice: '🍹 Sok multiwitamina 0,3 l',
-            tomatoJuice: '🍅 Sok pomidorowy 0,3 l',
             waterStill: '💧 Woda niegazowana 0,33 l',
             waterSparkling: '💦 Woda gazowana 0,33 l',
             beerNonAlcoholic: '🍺 Piwo bezalkoholowe'
@@ -244,7 +243,6 @@ const translations = {
             orangeJuice: '🍊 Orange Juice 0.3 l',
             appleJuice: '🍎 Apple Juice 0.3 l',
             multiJuice: '🍹 Multivitamin Juice 0.3 l',
-            tomatoJuice: '🍅 Tomato Juice 0.3 l',
             waterStill: '💧 Still Water 0.33 l',
             waterSparkling: '💦 Sparkling Water 0.33 l',
             beerNonAlcoholic: '🍺 Non-Alcoholic Beer'
