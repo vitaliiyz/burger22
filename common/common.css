@@ -153,6 +153,37 @@ body {
     background: rgba(58, 58, 58, 0.8);
 }
 
+/* Header logo */
+.header-logo-link {
+    position: absolute;
+    top: 18px;
+    left: 86px;
+    z-index: 900;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.header-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.35));
+}
+
+.header-logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em;
+    font-weight: 900;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.35), 0 0 8px rgba(255, 165, 0, 0.2);
+    transform: scaleX(0.84);
+    transform-origin: left center;
+}
+
 /* Shopping Cart Button */
 /* TODO: Remove display: none when ready to show cart button on all pages */
 .cart-btn {
@@ -201,6 +232,42 @@ body {
     .cart-btn svg {
         width: 22px;
         height: 22px;
+    }
+
+    .header-logo-link {
+        top: 15px;
+        left: 72px;
+        gap: 8px;
+    }
+
+    .header-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .header-logo-text {
+        font-size: 0.98em;
+        letter-spacing: 1.2px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-logo-link {
+        top: 12px;
+        left: 64px;
+        gap: 6px;
+    }
+
+    .header-logo {
+        width: 56px;
+        height: 56px;
+    }
+
+    .header-logo-text {
+        display: inline;
+        font-size: 22px;
+        letter-spacing: 1px;
+        line-height: 1;
     }
 }
 

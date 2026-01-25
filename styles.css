@@ -1,5 +1,206 @@
 /* Home page specific styles - Burger 22 */
 
+.hero-home {
+    background-image:
+        radial-gradient(circle at top left, rgba(255, 209, 102, 0.35), transparent 55%),
+        linear-gradient(120deg, rgba(15, 15, 15, 0.6), rgba(0, 0, 0, 0.3)),
+        url('./common/images/header.jpeg');
+    padding: 80px 20px 70px;
+}
+
+.hero-home::after {
+    content: none;
+}
+
+.hero-home::before {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.hero-home-inner {
+    width: min(820px, 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    align-items: center;
+}
+
+.hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.4em;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--white);
+    margin: 0;
+    text-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.hero-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+.hero-note {
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+.hero-note-secondary {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.hero-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    max-width: 520px;
+}
+
+.hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.hero-btn {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 14px 26px;
+    border-radius: 999px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-btn-primary {
+    background: linear-gradient(135deg, var(--primary-orange), var(--warm-yellow));
+    color: var(--graphite);
+    box-shadow: 0 10px 20px rgba(255, 165, 0, 0.35);
+}
+
+.hero-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 26px rgba(255, 165, 0, 0.45);
+}
+
+.hero-btn-secondary {
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.hero-btn-secondary:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.hero-service {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95em;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 6px 0 0;
+}
+
+.hero-home .logo-full-main {
+    height: 2.2em;
+}
+
+.balance-section {
+    padding: 50px 20px 20px;
+    background: radial-gradient(circle at top right, rgba(255, 165, 0, 0.08), transparent 60%);
+}
+
+.balance-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 30px;
+    align-items: start;
+    background: var(--white);
+    border-radius: 24px;
+    padding: 32px 36px;
+    box-shadow: 0 12px 30px rgba(58, 58, 58, 0.08);
+}
+
+.balance-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em;
+    font-weight: 900;
+    color: var(--graphite);
+    margin: 0 0 12px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.balance-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05em;
+    color: var(--graphite-light);
+    margin: 0;
+    line-height: 1.7;
+}
+
+.balance-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 14px;
+}
+
+.balance-list li {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--graphite);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.balance-list li::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-orange), var(--warm-yellow));
+    box-shadow: 0 4px 10px rgba(255, 165, 0, 0.35);
+    flex-shrink: 0;
+}
+
 .main-nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -73,6 +274,54 @@
 
 /* Tablet responsive */
 @media (max-width: 768px) {
+    .hero-home {
+        padding: 60px 20px 60px;
+    }
+
+    .hero-home-inner {
+        gap: 32px;
+    }
+
+    .hero-title {
+        font-size: 2em;
+    }
+
+    .hero-subtitle {
+        font-size: 1em;
+    }
+
+
+    .hero-description {
+        font-size: 1em;
+    }
+
+    .balance-section {
+        padding: 40px 20px 10px;
+    }
+
+    .balance-inner {
+        grid-template-columns: 1fr;
+        padding: 28px;
+    }
+
+    .balance-title {
+        font-size: 1.7em;
+        text-align: center;
+    }
+
+    .balance-description {
+        text-align: center;
+    }
+
+    .balance-list {
+        justify-items: center;
+    }
+
+    .balance-list li {
+        justify-content: center;
+        text-align: center;
+    }
+
     .main-nav {
         gap: 20px;
     }
@@ -97,6 +346,46 @@
 }
 
 @media (max-width: 480px) {
+    .hero-home {
+        padding: 50px 16px 50px;
+    }
+
+    .hero-title {
+        font-size: 1.7em;
+        letter-spacing: 0.6px;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95em;
+    }
+
+
+    .hero-btn {
+        width: 100%;
+    }
+
+    .hero-service {
+        font-size: 0.85em;
+    }
+
+    .balance-section {
+        padding: 32px 16px 0;
+    }
+
+    .balance-inner {
+        padding: 24px 20px;
+    }
+
+    .balance-title {
+        font-size: 1.4em;
+        letter-spacing: 0.4px;
+    }
+
+    .balance-list li {
+        font-size: 0.85em;
+        letter-spacing: 0.4px;
+    }
+
     .main-nav {
         gap: 16px;
         grid-template-columns: 1fr;
