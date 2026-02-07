@@ -87,12 +87,18 @@ const translations = {
             vegetables: '🥗 Warzywa'
         },
         sides: {
-            friesSmall: '🍟 Frytki 150g',
-            friesLarge: '🍟 Frytki 300g',
-            onionRingsSmall: '🧅 Krążki cebulowe 6 szt',
-            onionRingsLarge: '🧅 Krążki cebulowe 12 szt',
-            nuggetsSmall: '🍗 Nuggetsy 6 szt',
-            nuggetsLarge: '🍗 Nuggetsy 12 szt',
+            friesSmall: '🍟 Frytki S',
+            friesLarge: '🍟 Frytki L',
+            onionRingsSmall: '🧅 Krążki cebulowe S',
+            onionRingsLarge: '🧅 Krążki cebulowe L',
+            nuggetsSmall: '🍗 Nuggetsy S',
+            nuggetsLarge: '🍗 Nuggetsy L',
+            friesSmallNote: '150g · sos w cenie',
+            friesLargeNote: '250g · sos w cenie',
+            onionRingsSmallNote: '6 szt · sos w cenie',
+            onionRingsLargeNote: '12 szt · sos w cenie',
+            nuggetsSmallNote: '6 szt · sos w cenie',
+            nuggetsLargeNote: '12 szt · sos w cenie',
             extraSauce: '🧂 Sos dodatkowy'
         },
         hotDrinks: {
@@ -202,12 +208,18 @@ const translations = {
             vegetables: '🥗 Vegetables'
         },
         sides: {
-            friesSmall: '🍟 Fries 150g',
-            friesLarge: '🍟 Fries 300g',
-            onionRingsSmall: '🧅 Onion Rings 6 pcs',
-            onionRingsLarge: '🧅 Onion Rings 12 pcs',
-            nuggetsSmall: '🍗 Nuggets 6 pcs',
-            nuggetsLarge: '🍗 Nuggets 12 pcs',
+            friesSmall: '🍟 Fries S',
+            friesLarge: '🍟 Fries L',
+            onionRingsSmall: '🧅 Onion Rings S',
+            onionRingsLarge: '🧅 Onion Rings L',
+            nuggetsSmall: '🍗 Nuggets S',
+            nuggetsLarge: '🍗 Nuggets L',
+            friesSmallNote: '150g · sauce included',
+            friesLargeNote: '250g · sauce included',
+            onionRingsSmallNote: '6 pcs · sauce included',
+            onionRingsLargeNote: '12 pcs · sauce included',
+            nuggetsSmallNote: '6 pcs · sauce included',
+            nuggetsLargeNote: '12 pcs · sauce included',
             extraSauce: '🧂 Extra Sauce'
         },
         hotDrinks: {
