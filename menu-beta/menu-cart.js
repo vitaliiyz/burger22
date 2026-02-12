@@ -76,9 +76,8 @@ function initMenuCartButtons() {
         { id: 'drink-orange', name: 'drinks.orangeJuice', price: 9, type: 'drink', selector: 21 },
         { id: 'drink-apple', name: 'drinks.appleJuice', price: 9, type: 'drink', selector: 22 },
         { id: 'drink-multi', name: 'drinks.multiJuice', price: 9, type: 'drink', selector: 23 },
-        { id: 'drink-tomato', name: 'drinks.tomatoJuice', price: 9, type: 'drink', selector: 24 },
-        { id: 'drink-water-still', name: 'drinks.waterStill', price: 6, type: 'drink', selector: 25 },
-        { id: 'drink-water-sparkling', name: 'drinks.waterSparkling', price: 6, type: 'drink', selector: 26 }
+        { id: 'drink-water-still', name: 'drinks.waterStill', price: 6, type: 'drink', selector: 24 },
+        { id: 'drink-water-sparkling', name: 'drinks.waterSparkling', price: 6, type: 'drink', selector: 25 }
     ];
 
     // Exclude items that should not have add buttons:
