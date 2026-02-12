@@ -117,7 +117,6 @@ const translations = {
             orangeJuice: '🍊 Sok pomarańczowy',
             appleJuice: '🍎 Sok jabłkowy',
             multiJuice: '🍹 Sok multiwitamina',
-            tomatoJuice: '🍅 Sok pomidorowy',
             waterStill: '💧 Woda niegazowana',
             waterSparkling: '💦 Woda gazowana',
             colaNote: '330 ml',
@@ -126,7 +125,6 @@ const translations = {
             orangeJuiceNote: '300 ml',
             appleJuiceNote: '300 ml',
             multiJuiceNote: '300 ml',
-            tomatoJuiceNote: '300 ml',
             waterStillNote: '500 ml',
             waterSparklingNote: '500 ml',
             beerNonAlcoholic: '🍺 Piwo bezalkoholowe'
@@ -249,7 +247,6 @@ const translations = {
             orangeJuice: '🍊 Orange Juice',
             appleJuice: '🍎 Apple Juice',
             multiJuice: '🍹 Multivitamin Juice',
-            tomatoJuice: '🍅 Tomato Juice',
             waterStill: '💧 Still Water',
             waterSparkling: '💦 Sparkling Water',
             colaNote: '330 ml',
@@ -258,7 +255,6 @@ const translations = {
             orangeJuiceNote: '300 ml',
             appleJuiceNote: '300 ml',
             multiJuiceNote: '300 ml',
-            tomatoJuiceNote: '300 ml',
             waterStillNote: '500 ml',
             waterSparklingNote: '500 ml',
             beerNonAlcoholic: '🍺 Non-Alcoholic Beer'
