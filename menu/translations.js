@@ -56,27 +56,27 @@ const translations = {
                 desc: 'Puszysta bułeczka <strong>brioche</strong> skrywa soczystą <strong>wołowinę</strong>, chrupiący <strong>bekon</strong> i kremowy <strong>camembert</strong>, który rozpływa się przy każdym kęsie. Słodycz <strong>żurawiny</strong> przełamuje intensywność sera, tworząc idealny kontrast, a świeża <strong>rukola</strong> dodaje lekkości i aromatu. Całość dopełnia aksamitny <strong>sos miodowo-musztardowy</strong>, który łączy wszystkie smaki w harmonijną, wykwintną kompozycję.'
             },
             classic: {
-                name: 'Klasyczny Burger',
+                name: 'Klasyczny cheeseburger z wołowiną i cheddarem',
                 desc: 'Puszysta bułeczka <strong>brioche</strong> kryje w sobie soczystą <strong>wołowinę</strong> otuloną aromatycznym serem <strong>cheddar</strong>. Świeże warzywa — chrupiąca <strong>sałata</strong>, soczysty <strong>pomidor</strong>, delikatna <strong>cebula</strong> i wyrazisty <strong>ogórek kiszony</strong> — dodają lekkości i równowagi. Całość podkreślają klasyczne akcenty <strong>musztardy</strong> i <strong>ketchupu</strong>, tworząc ponadczasowy smak, który zawsze zachwyca.'
             },
             cheese: {
-                name: 'Serowy Burger',
+                name: 'Burger Serowy z potrójnym serem i bekonem',
                 desc: 'Puszysta bułeczka <strong>brioche</strong> kryje w sobie soczystą <strong>wołowinę</strong>, otuloną podwójnym <strong>topionym cheddarem</strong> i delikatną <strong>mozzarellą</strong>. Chrupiący <strong>bekon</strong> i aromatyczna <strong>cebula prażona</strong> dodają głębi smaku, a świeża <strong>rukola</strong>, soczysty <strong>pomidor</strong> i wyrazisty <strong>ogórek kiszony</strong> równoważą całość. Wszystko wzbogacają dwie porcje aksamitnego <strong>sosu serowego</strong>, tworząc prawdziwie serową eksplozję smaku, której nie da się zapomnieć.'
             },
             chicken: {
-                name: 'Kurczak Burger',
+                name: 'Burger z chrupiącym kurczakiem i cheddarem',
                 desc: 'Puszysta bułeczka <strong>brioche</strong> skrywa chrupiący, <strong>panierowany filet z kurczaka</strong>, otulony aromatycznym serem <strong>cheddar</strong>. Świeże warzywa — <strong>sałata</strong>, soczysty <strong>pomidor</strong> i delikatna <strong>cebula</strong> — dodają lekkości i świeżości, a klasyczne połączenie <strong>ketchupu</strong> i <strong>majonezu</strong> dopełnia smak w idealnie zbalansowaną, apetyczną kompozycję.'
             },
             bbq: {
-                name: 'BBQ Burger',
+                name: 'BBQ burger z bekonem i cheddarem',
                 desc: 'Puszysta bułeczka <strong>brioche</strong> kryje w sobie soczystą <strong>wołowinę</strong>, otuloną aromatycznym <strong>cheddarem</strong> i chrupiącym <strong>bekonem</strong>. Soczysty <strong>pomidor</strong>, świeża <strong>rukola</strong>, wyrazisty <strong>ogórek kiszony</strong> i aromatyczna <strong>cebula</strong> tworzą idealną równowagę, a dwie porcje <strong>sosu BBQ</strong> dopełniają całość, nadając burgerowi intensywny, dymny smak, którego nie da się zapomnieć.'
             },
             spicy: {
-                name: 'Ostry Burger',
+                name: 'Ostry burger z bekonem i jalapeño',
                 desc: 'Puszysta bułeczka <strong>brioche</strong> kryje w sobie soczystą <strong>wołowinę</strong>, otuloną aromatycznym <strong>cheddarem</strong> i chrupiącym <strong>bekonem</strong>. Soczysta <strong>sałata</strong>, wyrazisty <strong>ogórek kiszony</strong> oraz <strong>smażona cebula</strong> dodają świeżości, a pikantne <strong>jalapeño</strong> w połączeniu ze <strong>słodkim chili</strong> i <strong>ostrym sosem</strong> tworzą wybuchową mieszankę smaków dla odważnych smakoszy.'
             },
             egg: {
-                name: 'Jaja Burger',
+                name: 'Burger z jajkiem sadzonym i bekonem',
                 desc: 'Puszysta bułeczka <strong>brioche</strong> kryje w sobie soczystą <strong>wołowinę</strong>, chrupiący <strong>bekon</strong> i idealnie usmażone <strong>jajko sadzone</strong>. Soczysta <strong>sałata</strong>, wyrazisty <strong>ogórek kiszony</strong> oraz aromatyczna <strong>smażona cebula</strong> dodają świeżości, a <strong>sos majonez</strong> i <strong>sos BBQ</strong> łączą wszystkie smaki w harmonijną, apetyczną całość, tworząc burger pełen kontrastów i przyjemnej intensywności.'
             }
         },
@@ -200,27 +200,27 @@ const translations = {
                 desc: 'A fluffy <strong>brioche bun</strong> conceals juicy <strong>beef</strong>, crispy <strong>bacon</strong>, and creamy <strong>camembert</strong> that melts with every bite. The sweetness of <strong>cranberry</strong> breaks through the intensity of the cheese, creating the perfect contrast, while fresh <strong>arugula</strong> adds lightness and aroma. Everything is complemented by a velvety <strong>honey-mustard sauce</strong> that brings all the flavors together in a harmonious, exquisite composition.'
             },
             classic: {
-                name: 'Classic Burger',
+                name: 'Classic Cheeseburger',
                 desc: 'A fluffy <strong>brioche bun</strong> conceals juicy <strong>beef</strong> wrapped in aromatic <strong>cheddar cheese</strong>. Fresh vegetables — crispy <strong>lettuce</strong>, juicy <strong>tomato</strong>, delicate <strong>onion</strong>, and distinctive <strong>pickled cucumber</strong> — add lightness and balance. Classic touches of <strong>mustard</strong> and <strong>ketchup</strong> complete the composition, creating a timeless flavor that always delights.'
             },
             cheese: {
-                name: 'Cheesy Burger',
+                name: 'Triple Cheese Bacon',
                 desc: 'A fluffy <strong>brioche bun</strong> conceals juicy <strong>beef</strong>, wrapped in double <strong>melted cheddar</strong> and delicate <strong>mozzarella</strong>. Crispy <strong>bacon</strong> and aromatic <strong>roasted onion</strong> add depth of flavor, while fresh <strong>arugula</strong>, juicy <strong>tomato</strong>, and distinctive <strong>pickled cucumber</strong> balance everything out. Two portions of velvety <strong>cheese sauce</strong> enrich it all, creating a truly cheesy flavor explosion that you won\'t forget.'
             },
             chicken: {
-                name: 'Chicken Burger',
+                name: 'Crispy Chicken',
                 desc: 'A fluffy <strong>brioche bun</strong> conceals crispy, <strong>breaded chicken fillet</strong>, wrapped in aromatic <strong>cheddar cheese</strong>. Fresh vegetables — <strong>lettuce</strong>, juicy <strong>tomato</strong>, and delicate <strong>onion</strong> — add lightness and freshness, while the classic combination of <strong>ketchup</strong> and <strong>mayo</strong> completes the flavor in a perfectly balanced, appetizing composition.'
             },
             bbq: {
-                name: 'BBQ Burger',
+                name: 'BBQ Bacon',
                 desc: 'A fluffy <strong>brioche bun</strong> conceals juicy <strong>beef</strong>, wrapped in aromatic <strong>cheddar</strong> and crispy <strong>bacon</strong>. Juicy <strong>tomato</strong>, fresh <strong>arugula</strong>, distinctive <strong>pickled cucumber</strong>, and aromatic <strong>onion</strong> create the perfect balance, while two portions of <strong>BBQ sauce</strong> complete everything, giving the burger an intense, smoky flavor that you won\'t forget.'
             },
             spicy: {
-                name: 'Spicy Burger',
+                name: 'Spicy Bacon Jalapeño',
                 desc: 'A fluffy <strong>brioche bun</strong> conceals juicy <strong>beef</strong>, wrapped in aromatic <strong>cheddar</strong> and crispy <strong>bacon</strong>. Juicy <strong>lettuce</strong>, distinctive <strong>pickled cucumber</strong>, and <strong>fried onion</strong> add freshness, while spicy <strong>jalapeño</strong> combined with <strong>sweet chili</strong> and <strong>spicy sauce</strong> create an explosive mix of flavors for bold food lovers.'
             },
             egg: {
-                name: 'Egg Burger',
+                name: 'Bacon Egg',
                 desc: 'A fluffy <strong>brioche bun</strong> conceals juicy <strong>beef</strong>, crispy <strong>bacon</strong>, and perfectly <strong>fried egg</strong>. Juicy <strong>lettuce</strong>, distinctive <strong>pickled cucumber</strong>, and aromatic <strong>fried onion</strong> add freshness, while <strong>mayo sauce</strong> and <strong>BBQ sauce</strong> bring all the flavors together in a harmonious, appetizing whole, creating a burger full of contrasts and pleasant intensity.'
             }
         },
