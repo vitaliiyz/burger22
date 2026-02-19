@@ -567,9 +567,27 @@ h1 {
     gap: 20px;
 }
 
-/* Sides section - 2 items per row on desktop */
+/* Sides section - 3 items per row on desktop */
 #dodatki .menu-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#dodatki .item-image img {
+    object-position: center 58%;
+}
+
+#dodatki .item-image {
+    aspect-ratio: 16 / 10;
+}
+
+#dodatki .item-footer {
+    margin-top: auto;
+}
+
+@media (max-width: 1200px) {
+    #dodatki .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
