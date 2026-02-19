@@ -858,6 +858,20 @@ h1 {
     transform: translateX(5px);
 }
 
+.extras-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.extras-price {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95em;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
 .sauce-item.unavailable {
     opacity: 0.4;
     cursor: not-allowed;
