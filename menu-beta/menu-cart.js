@@ -44,12 +44,12 @@ function initMenuCartButtons() {
     const menuItems = [
         // Burgers
         { id: 'burger-camemburger', name: 'burgers.camemburger.name', price: 43, type: 'burger', image: '../menu/images/winter_ed_square.png', selector: 0 },
-        { id: 'burger-classic', name: 'burgers.classic.name', price: 33, type: 'burger', image: '../menu/images/classic.jpg', selector: 1 },
-        { id: 'burger-cheese', name: 'burgers.cheese.name', price: 40, type: 'burger', image: '../menu/images/cheese.jpg', selector: 2 },
-        { id: 'burger-chicken', name: 'burgers.chicken.name', price: 37, type: 'burger', image: '../menu/images/chicken.jpg', selector: 3 },
-        { id: 'burger-bbq', name: 'burgers.bbq.name', price: 36, type: 'burger', image: '../menu/images/bbq.jpg', selector: 4 },
-        { id: 'burger-spicy', name: 'burgers.spicy.name', price: 39, type: 'burger', image: '../menu/images/hot.jpg', selector: 5 },
-        { id: 'burger-egg', name: 'burgers.egg.name', price: 38, type: 'burger', image: '../menu/images/egg.jpg', selector: 6 },
+        { id: 'burger-classic', name: 'burgers.classic.name', price: 33, type: 'burger', image: '../menu/images/classic.jpeg', selector: 1 },
+        { id: 'burger-cheese', name: 'burgers.cheese.name', price: 40, type: 'burger', image: '../menu/images/cheesy.jpeg', selector: 2 },
+        { id: 'burger-chicken', name: 'burgers.chicken.name', price: 37, type: 'burger', image: '../menu/images/chicken.jpeg', selector: 3 },
+        { id: 'burger-bbq', name: 'burgers.bbq.name', price: 36, type: 'burger', image: '../menu/images/bbq.jpeg', selector: 4 },
+        { id: 'burger-spicy', name: 'burgers.spicy.name', price: 39, type: 'burger', image: '../menu/images/hot.jpeg', selector: 5 },
+        { id: 'burger-egg', name: 'burgers.egg.name', price: 38, type: 'burger', image: '../menu/images/egg.jpeg', selector: 6 },
 
         // Extras (dodatki do burgera) - removed from here, available only when ordering burgers
 
