@@ -3,6 +3,9 @@ const translations = {
     pl: {
         tagline: 'Menu',
         combo: 'zestaw: burger + frytki + sos',
+        comboTitle: 'Zestaw:',
+        comboClassicOption: 'Klasyczne frytki z sosem:+10zł',
+        comboWedgesOption: 'Łódeczki ziemniaczane z sosem:+14zł',
         sauceIncluded: 'sos w cenie',
         sugarIncluded: 'cukier w cenie',
         withLemon: 'z cytryną',
@@ -151,6 +154,9 @@ const translations = {
     en: {
         tagline: 'Menu',
         combo: 'combo: burger + fries + sauce',
+        comboTitle: 'Combo (for burger):',
+        comboClassicOption: 'Classic fries with sauce:+10 PLN',
+        comboWedgesOption: 'Potato wedges with skin + sauce:+14 PLN',
         sauceIncluded: 'sauce included',
         sugarIncluded: 'sugar included',
         withLemon: 'with lemon',

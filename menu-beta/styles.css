@@ -612,15 +612,8 @@ h1 {
 }
 
 .menu-item.new-item-highlight {
-    border: 2px solid #FF6B6B;
-    box-shadow: 0 4px 20px rgba(255, 107, 107, 0.25), 0 2px 8px rgba(255, 71, 87, 0.15);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 250, 250, 0.95) 100%);
-}
-
-.menu-item.new-item-highlight:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 30px rgba(255, 107, 107, 0.35), 0 4px 12px rgba(255, 71, 87, 0.2);
-    border-color: #FF4757;
+    box-shadow: 0 4px 15px var(--shadow), 0 1px 3px rgba(0, 0, 0, 0.05);
+    background: rgba(255, 255, 255, 0.9);
 }
 
 .menu-item:hover {
@@ -660,11 +653,11 @@ h1 {
 }
 
 /* Camemburger uses wrapper .item-image + nested img, keep same square size as other burgers */
-#burgery .menu-item:first-child .item-image {
+#burgery .menu-item.new-item-highlight .item-image {
     aspect-ratio: 1 / 1;
 }
 
-#burgery .menu-item:first-child .item-image img {
+#burgery .menu-item.new-item-highlight .item-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -814,20 +807,29 @@ h1 {
 }
 
 .zestaw-price {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.15em;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9em;
     color: var(--graphite);
-    font-weight: 700;
+    font-weight: 500;
+    line-height: 1.35;
     margin-top: 6px;
-    letter-spacing: 0.5px;
+    letter-spacing: 0;
 }
 
 .zestaw-label {
     font-family: 'Inter', sans-serif;
-    font-size: 0.7em;
+    display: inline-block;
+    margin-bottom: 2px;
+    font-size: 0.82em;
+    color: var(--graphite);
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+}
+
+.zestaw-price span:not(.zestaw-label) {
     color: var(--graphite-light);
-    font-weight: 400;
-    letter-spacing: 0.3px;
+    font-weight: 500;
 }
 
 .addon-note {
@@ -1293,7 +1295,7 @@ html[lang="en"] .menu-item.unavailable .item-name::after {
     }
 
     .zestaw-price {
-        font-size: 1.05em;
+        font-size: 0.84em;
     }
 
     .menu-grid {
