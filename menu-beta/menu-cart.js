@@ -61,21 +61,17 @@ function initMenuCartButtons() {
         // Extra sauce removed - available only as paid add-on when ordering sides
 
         // Hot Drinks
-        { id: 'drink-green-tea', name: 'hotDrinks.greenTea', price: 5, type: 'drink', selector: 11 },
-        { id: 'drink-americano', name: 'hotDrinks.americano', price: 7.90, type: 'drink', selector: 12 },
-        { id: 'drink-espresso', name: 'hotDrinks.espresso', price: 6.90, type: 'drink', selector: 13 },
-        { id: 'drink-double-espresso', name: 'hotDrinks.doubleEspresso', price: 9.90, type: 'drink', selector: 14 },
-        { id: 'drink-cappuccino', name: 'hotDrinks.cappuccino', price: 9.90, type: 'drink', selector: 15 },
-        { id: 'drink-latte', name: 'hotDrinks.latte', price: 9.90, type: 'drink', selector: 16 },
+        { id: 'drink-green-tea', name: 'hotDrinks.greenTea', price: 5, type: 'drink', selector: 'drink-green-tea' },
+        { id: 'drink-americano', name: 'hotDrinks.americano', price: 7.90, type: 'drink', selector: 'drink-americano' },
+        { id: 'drink-espresso', name: 'hotDrinks.espresso', price: 6.90, type: 'drink', selector: 'drink-espresso' },
+        { id: 'drink-double-espresso', name: 'hotDrinks.doubleEspresso', price: 9.90, type: 'drink', selector: 'drink-double-espresso' },
+        { id: 'drink-cappuccino', name: 'hotDrinks.cappuccino', price: 9.90, type: 'drink', selector: 'drink-cappuccino' },
+        { id: 'drink-latte', name: 'hotDrinks.latte', price: 9.90, type: 'drink', selector: 'drink-latte' },
 
-        // Cold Drinks (unavailable items like Sprite, Beer are excluded)
-        { id: 'drink-cola', name: 'drinks.cola', price: 9, type: 'drink', selector: 17 },
-        { id: 'drink-cola-zero', name: 'drinks.colaZero', price: 9, type: 'drink', selector: 18 },
-        { id: 'drink-orange', name: 'drinks.orangeJuice', price: 9, type: 'drink', selector: 19 },
-        { id: 'drink-apple', name: 'drinks.appleJuice', price: 9, type: 'drink', selector: 20 },
-        { id: 'drink-multi', name: 'drinks.multiJuice', price: 9, type: 'drink', selector: 21 },
-        { id: 'drink-water-still', name: 'drinks.waterStill', price: 6, type: 'drink', selector: 22 },
-        { id: 'drink-water-sparkling', name: 'drinks.waterSparkling', price: 6, type: 'drink', selector: 23 }
+        // Cold Drinks
+        { id: 'drink-soda', name: 'drinks.sodaMix', price: 9, type: 'drink', selector: 'drink-soda' },
+        { id: 'drink-juice', name: 'drinks.juiceMix', price: 9, type: 'drink', selector: 'drink-juice' },
+        { id: 'drink-water', name: 'drinks.waterMix', price: 6, type: 'drink', selector: 'drink-water' }
     ];
 
     // Exclude items that should not have add buttons:
@@ -95,7 +91,9 @@ function initMenuCartButtons() {
     });
 
     menuItems.forEach((itemData, index) => {
-        const menuItemEl = allMenuItems[itemData.selector];
+        const menuItemEl = typeof itemData.selector === 'number'
+            ? allMenuItems[itemData.selector]
+            : document.querySelector(`[data-cart-item="${itemData.selector}"]`);
         if (!menuItemEl) return;
 
         // Get translated name
@@ -154,9 +152,9 @@ function initMenuCartButtons() {
         });
 
         // Find item-footer and add button
-        const itemFooter = menuItemEl.querySelector('.item-footer');
-        if (itemFooter) {
-            itemFooter.appendChild(button);
+        const itemActionContainer = menuItemEl.querySelector('.item-footer, .drink-item-meta');
+        if (itemActionContainer) {
+            itemActionContainer.appendChild(button);
         }
     });
 }

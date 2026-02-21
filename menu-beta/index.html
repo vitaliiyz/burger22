@@ -38,8 +38,7 @@
             <a href="#dodatki-burgera" class="nav-item" data-section="dodatki-burgera" data-i18n="nav.extras">🥓 Dodatki do burgera</a>
             <a href="#dodatki" class="nav-item" data-section="dodatki" data-i18n="nav.sides">🍟 Frytki i dodatki</a>
             <a href="#sosy" class="nav-item" data-section="sosy" data-i18n="nav.sauces">🧂 Sosy</a>
-            <a href="#napoje-gorace" class="nav-item" data-section="napoje-gorace" data-i18n="nav.hotDrinks">☕ Napoje gorące</a>
-            <a href="#napoje" class="nav-item" data-section="napoje" data-i18n="nav.drinks">🥤 Napoje zimne</a>
+            <a href="#napoje" class="nav-item" data-section="napoje" data-i18n="nav.drinks">🥤 Napoje</a>
         </nav>
         <div class="nav-spacer" id="navSpacer"></div>
 
@@ -337,224 +336,97 @@
             </div>
         </div>
 
-        <div class="menu-section" id="napoje-gorace">
-            <div class="section-header">
-                <h2 class="section-title" data-i18n="sections.hotDrinks">Napoje gorące</h2>
-                <p class="packaging-notice" data-i18n="cupNotice">📦 Cena nie zawiera opakowania na wynos (+0,50 zł)</p>
-            </div>
-            <div class="menu-grid">
-                <div class="menu-item no-image">
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3 class="item-name" data-i18n="hotDrinks.greenTea">☕ Herbata zielona</h3>
-                        </div>
-                        <div class="item-footer">
-                            <div>
-                                <div class="item-price">5 zł</div>
-                                <div class="zestaw-price">6 zł <span class="zestaw-label" data-i18n="withLemon">(z cytryną)</span></div>
-                                <div class="addon-note" data-i18n="sugarIncluded">cukier w cenie</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="menu-item no-image">
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3 class="item-name" data-i18n="hotDrinks.americano">☕ Americano</h3>
-                        </div>
-                        <div class="item-footer">
-                            <div>
-                                <div class="item-price">7,90 zł</div>
-                                <div class="addon-note" data-i18n="sugarIncluded">cukier w cenie</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="menu-item no-image">
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3 class="item-name" data-i18n="hotDrinks.espresso">☕ Espresso</h3>
-                        </div>
-                        <div class="item-footer">
-                            <div>
-                                <div class="item-price">6,90 zł</div>
-                                <div class="addon-note" data-i18n="sugarIncluded">cukier w cenie</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="menu-item no-image">
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3 class="item-name" data-i18n="hotDrinks.doubleEspresso">☕ Podwójne Espresso</h3>
-                        </div>
-                        <div class="item-footer">
-                            <div>
-                                <div class="item-price">9,90 zł</div>
-                                <div class="addon-note" data-i18n="sugarIncluded">cukier w cenie</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="menu-item no-image">
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3 class="item-name" data-i18n="hotDrinks.cappuccino">☕ Cappuccino</h3>
-                        </div>
-                        <div class="item-footer">
-                            <div>
-                                <div class="item-price">9,90 zł</div>
-                                <div class="addon-note" data-i18n="sugarIncluded">cukier w cenie</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="menu-item no-image">
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3 class="item-name" data-i18n="hotDrinks.latte">☕ Latte</h3>
-                        </div>
-                        <div class="item-footer">
-                            <div>
-                                <div class="item-price">9,90 zł</div>
-                                <div class="addon-note" data-i18n="sugarIncluded">cukier w cenie</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div class="menu-section" id="napoje">
             <div class="section-header">
-                <h2 class="section-title" data-i18n="sections.drinks">Napoje zimne</h2>
+                <h2 class="section-title" data-i18n="sections.drinks">Napoje</h2>
+                <p class="packaging-notice" data-i18n="cupNotice">📦 Cena nie zawiera opakowania na wynos (+0,50 zł)</p>
                 <p class="packaging-notice" data-i18n="depositNotice">♻️ Cena nie zawiera kaucji za butelkę zwrotną (+0,50 zł)</p>
             </div>
-            <div class="menu-grid">
-                <div class="menu-item no-image">
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3 class="item-name" data-i18n="drinks.cola">🥤 Pepsi</h3>
+            <div class="sauce-list extras-list drinks-list">
+                <div class="sauce-column">
+                    <div class="sauce-item drinks-group-title" data-i18n="sections.hotDrinks">Napoje gorące</div>
+                    <div class="sauce-item extras-item drinks-item" data-cart-item="drink-green-tea">
+                        <div class="drink-item-content">
+                            <span data-i18n="hotDrinks.greenTea">☕ Herbata zielona</span>
+                            <span class="addon-note"><span data-i18n="withLemon">z cytryną</span>: +1 zł</span>
                         </div>
-                        <div class="item-footer">
-                            <div>
-                                <span class="item-price">9 zł</span>
-                                <div class="addon-note" data-i18n="drinks.colaNote">330 ml</div>
-                            </div>
+                        <div class="drink-item-meta">
+                            <span class="extras-price">5 zł</span>
+                        </div>
+                    </div>
+                    <div class="sauce-item extras-item drinks-item" data-cart-item="drink-americano">
+                        <div class="drink-item-content">
+                            <span data-i18n="hotDrinks.americano">☕ Americano</span>
+                        </div>
+                        <div class="drink-item-meta">
+                            <span class="extras-price">7,90 zł</span>
+                        </div>
+                    </div>
+                    <div class="sauce-item extras-item drinks-item" data-cart-item="drink-espresso">
+                        <div class="drink-item-content">
+                            <span data-i18n="hotDrinks.espresso">☕ Espresso</span>
+                        </div>
+                        <div class="drink-item-meta">
+                            <span class="extras-price">6,90 zł</span>
+                        </div>
+                    </div>
+                    <div class="sauce-item extras-item drinks-item" data-cart-item="drink-double-espresso">
+                        <div class="drink-item-content">
+                            <span data-i18n="hotDrinks.doubleEspresso">☕ Podwójne Espresso</span>
+                        </div>
+                        <div class="drink-item-meta">
+                            <span class="extras-price">9,90 zł</span>
+                        </div>
+                    </div>
+                    <div class="sauce-item extras-item drinks-item" data-cart-item="drink-cappuccino">
+                        <div class="drink-item-content">
+                            <span data-i18n="hotDrinks.cappuccino">☕ Cappuccino</span>
+                        </div>
+                        <div class="drink-item-meta">
+                            <span class="extras-price">9,90 zł</span>
+                        </div>
+                    </div>
+                    <div class="sauce-item extras-item drinks-item" data-cart-item="drink-latte">
+                        <div class="drink-item-content">
+                            <span data-i18n="hotDrinks.latte">☕ Latte</span>
+                        </div>
+                        <div class="drink-item-meta">
+                            <span class="extras-price">9,90 zł</span>
                         </div>
                     </div>
                 </div>
-
-                <div class="menu-item no-image">
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3 class="item-name" data-i18n="drinks.colaZero">🥤 Pepsi (zero)</h3>
+                <div class="sauce-column">
+                    <div class="sauce-item drinks-group-title" data-i18n="sections.drinksCold">Napoje zimne</div>
+                    <div class="sauce-item extras-item drinks-item" data-cart-item="drink-soda">
+                        <div class="drink-item-content">
+                            <span data-i18n="drinks.sodaMix">🥤 Pepsi/Cola/Sprite</span>
+                            <span class="addon-note" data-i18n="drinks.sodaMixNote">330 ml</span>
                         </div>
-                        <div class="item-footer">
-                            <div>
-                                <span class="item-price">9 zł</span>
-                                <div class="addon-note" data-i18n="drinks.colaZeroNote">330 ml</div>
-                            </div>
+                        <div class="drink-item-meta">
+                            <span class="extras-price">9 zł</span>
                         </div>
                     </div>
-                </div>
-
-                <div class="menu-item no-image">
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3 class="item-name" data-i18n="drinks.sprite">🥤 Sprite</h3>
+                    <div class="sauce-item extras-item drinks-item" data-cart-item="drink-juice">
+                        <div class="drink-item-content">
+                            <span data-i18n="drinks.juiceMix">🍹 Sok</span>
+                            <span class="addon-note" data-i18n="drinks.juiceOptionOrange">pomarańczowy</span>
+                            <span class="addon-note" data-i18n="drinks.juiceOptionApple">jabłkowy</span>
+                            <span class="addon-note" data-i18n="drinks.juiceOptionMulti">multiwitamina</span>
+                            <span class="addon-note" data-i18n="drinks.juiceMixNote">300 ml</span>
                         </div>
-                        <div class="item-footer">
-                            <div>
-                                <span class="item-price">9 zł</span>
-                                <div class="addon-note" data-i18n="drinks.spriteNote">330 ml</div>
-                            </div>
+                        <div class="drink-item-meta">
+                            <span class="extras-price">9 zł</span>
                         </div>
                     </div>
-                </div>
-
-                <div class="menu-item no-image">
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3 class="item-name" data-i18n="drinks.orangeJuice">🍊 Sok pomarańczowy</h3>
+                    <div class="sauce-item extras-item drinks-item" data-cart-item="drink-water">
+                        <div class="drink-item-content">
+                            <span data-i18n="drinks.waterMix">💧 Woda</span>
+                            <span class="addon-note" data-i18n="drinks.waterOptionStill">niegazowana</span>
+                            <span class="addon-note" data-i18n="drinks.waterOptionSparkling">gazowana</span>
+                            <span class="addon-note" data-i18n="drinks.waterMixNote">500 ml</span>
                         </div>
-                        <div class="item-footer">
-                            <div>
-                                <span class="item-price">9 zł</span>
-                                <div class="addon-note" data-i18n="drinks.orangeJuiceNote">300 ml</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="menu-item no-image">
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3 class="item-name" data-i18n="drinks.appleJuice">🍎 Sok jabłkowy</h3>
-                        </div>
-                        <div class="item-footer">
-                            <div>
-                                <span class="item-price">9 zł</span>
-                                <div class="addon-note" data-i18n="drinks.appleJuiceNote">300 ml</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="menu-item no-image">
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3 class="item-name" data-i18n="drinks.multiJuice">🍹 Sok multiwitamina</h3>
-                        </div>
-                        <div class="item-footer">
-                            <div>
-                                <span class="item-price">9 zł</span>
-                                <div class="addon-note" data-i18n="drinks.multiJuiceNote">300 ml</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="menu-item no-image">
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3 class="item-name" data-i18n="drinks.waterStill">💧 Woda niegazowana</h3>
-                        </div>
-                        <div class="item-footer">
-                            <div>
-                                <span class="item-price">6 zł</span>
-                                <div class="addon-note" data-i18n="drinks.waterStillNote">500 ml</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="menu-item no-image">
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3 class="item-name" data-i18n="drinks.waterSparkling">💦 Woda gazowana</h3>
-                        </div>
-                        <div class="item-footer">
-                            <div>
-                                <span class="item-price">6 zł</span>
-                                <div class="addon-note" data-i18n="drinks.waterSparklingNote">500 ml</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="menu-item no-image unavailable">
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3 class="item-name" data-i18n="drinks.beerNonAlcoholic">🍺 Piwo bezalkoholowe</h3>
-                        </div>
-                        <div class="item-footer">
-                            <span class="item-price">— zł</span>
+                        <div class="drink-item-meta">
+                            <span class="extras-price">6 zł</span>
                         </div>
                     </div>
                 </div>

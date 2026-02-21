@@ -27,7 +27,7 @@ const translations = {
             sides: '🍟 Frytki i dodatki',
             sauces: '🧂 Sosy',
             hotDrinks: '☕ Napoje gorące',
-            drinks: '🥤 Napoje zimne',
+            drinks: '🥤 Napoje',
             extras: '🥓 Dodatki do burgera'
         },
         sections: {
@@ -35,7 +35,8 @@ const translations = {
             sides: 'Frytki i dodatki',
             sauces: 'Sosy na wybór',
             hotDrinks: 'Napoje gorące',
-            drinks: 'Napoje zimne',
+            drinks: 'Napoje',
+            drinksCold: 'Napoje zimne',
             extras: '🥓 Dodatki do burgera'
         },
         sauces: {
@@ -125,23 +126,17 @@ const translations = {
             latte: '☕ Latte'
         },
         drinks: {
-            cola: '🥤 Pepsi',
-            colaZero: '🥤 Pepsi (zero)',
-            sprite: '🥤 Sprite',
-            orangeJuice: '🍊 Sok pomarańczowy',
-            appleJuice: '🍎 Sok jabłkowy',
-            multiJuice: '🍹 Sok multiwitamina',
-            waterStill: '💧 Woda niegazowana',
-            waterSparkling: '💦 Woda gazowana',
-            colaNote: '330 ml',
-            colaZeroNote: '330 ml',
-            spriteNote: '330 ml',
-            orangeJuiceNote: '300 ml',
-            appleJuiceNote: '300 ml',
-            multiJuiceNote: '300 ml',
-            waterStillNote: '500 ml',
-            waterSparklingNote: '500 ml',
-            beerNonAlcoholic: '🍺 Piwo bezalkoholowe'
+            sodaMix: '🥤 Pepsi/Cola/Sprite',
+            juiceMix: '🍹 Sok',
+            juiceOptionOrange: 'pomarańczowy',
+            juiceOptionApple: 'jabłkowy',
+            juiceOptionMulti: 'multiwitamina',
+            waterMix: '💧 Woda',
+            waterOptionStill: 'niegazowana',
+            waterOptionSparkling: 'gazowana',
+            sodaMixNote: '330 ml',
+            juiceMixNote: '300 ml',
+            waterMixNote: '500 ml'
         }
     },
     en: {
@@ -171,7 +166,7 @@ const translations = {
             sides: '🍟 Fries & Sides',
             sauces: '🧂 Sauces',
             hotDrinks: '☕ Hot Drinks',
-            drinks: '🥤 Cold Drinks',
+            drinks: '🥤 Drinks',
             extras: '🥓 Burger Extras'
         },
         sections: {
@@ -179,7 +174,8 @@ const translations = {
             sides: 'Fries & Sides',
             sauces: 'Choice of Sauces',
             hotDrinks: 'Hot Drinks',
-            drinks: 'Cold Drinks',
+            drinks: 'Drinks',
+            drinksCold: 'Cold Drinks',
             extras: '🥓 Burger Extras'
         },
         sauces: {
@@ -269,23 +265,17 @@ const translations = {
             latte: '☕ Latte'
         },
         drinks: {
-            cola: '🥤 Pepsi',
-            colaZero: '🥤 Pepsi (zero)',
-            sprite: '🥤 Sprite',
-            orangeJuice: '🍊 Orange Juice',
-            appleJuice: '🍎 Apple Juice',
-            multiJuice: '🍹 Multivitamin Juice',
-            waterStill: '💧 Still Water',
-            waterSparkling: '💦 Sparkling Water',
-            colaNote: '330 ml',
-            colaZeroNote: '330 ml',
-            spriteNote: '330 ml',
-            orangeJuiceNote: '300 ml',
-            appleJuiceNote: '300 ml',
-            multiJuiceNote: '300 ml',
-            waterStillNote: '500 ml',
-            waterSparklingNote: '500 ml',
-            beerNonAlcoholic: '🍺 Non-Alcoholic Beer'
+            sodaMix: '🥤 Pepsi/Cola/Sprite',
+            juiceMix: '🍹 Juice',
+            juiceOptionOrange: 'orange',
+            juiceOptionApple: 'apple',
+            juiceOptionMulti: 'multivitamin',
+            waterMix: '💧 Water',
+            waterOptionStill: 'still',
+            waterOptionSparkling: 'sparkling',
+            sodaMixNote: '330 ml',
+            juiceMixNote: '300 ml',
+            waterMixNote: '500 ml'
         }
     }
 };

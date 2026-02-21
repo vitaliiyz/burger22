@@ -29,6 +29,11 @@
   - Switch PL/EN and validate translations.
   - Submit a test order via the Worker (if configured).
 
+## Responsive Design Priority
+- Responsive behavior is critical for this project: most users visit from mobile devices with different screen sizes.
+- Treat mobile UX as a primary requirement for every UI change.
+- Validate layouts on small, medium, and large mobile widths (including narrow screens) and ensure no text, buttons, or prices overflow the viewport.
+
 ## Commit & Pull Request Guidelines
 - Commit messages are short, imperative English (e.g., “Add …”, “Remove …”).
 - PRs should include a clear summary and screenshots for UI changes.
