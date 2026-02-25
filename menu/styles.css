@@ -470,6 +470,21 @@ h1 {
     flex-wrap: wrap;
 }
 
+.takeaway-or {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.9em;
+    color: var(--graphite-light);
+    font-weight: 600;
+}
+
+.takeaway-preorder-group {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
+
 .takeaway-btn {
     display: inline-flex;
     align-items: center;
@@ -510,6 +525,24 @@ h1 {
 .call-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(255, 165, 0, 0.3);
+}
+
+.preorder-btn {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+    border: 1px solid transparent;
+}
+
+.preorder-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+.takeaway-preorder-note {
+    margin: 0;
+    font-size: 0.85em;
+    color: var(--graphite-light);
+    line-height: 1.45;
 }
 
 .menu-section {

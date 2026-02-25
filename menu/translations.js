@@ -23,7 +23,10 @@ const translations = {
             desc: 'Zadzwoń i złóż zamówienie. Przygotujemy je przed Twoim przyjściem!',
             trouble: '+48 573 256 526',
             copy: 'Kopiuj',
-            call: 'Zadzwoń'
+            call: 'Zadzwoń',
+            or: 'lub',
+            preorder: 'Zrób przedzamówienie',
+            preorderNote: 'Wybierz „na wynos” i dopisz w komentarzu: „na miejscu”.'
         },
         nav: {
             burgers: '🍔 Burgery',
@@ -165,7 +168,10 @@ const translations = {
             desc: 'Call us to place your order. We\'ll have it ready before you arrive!',
             trouble: '+48 573 256 526',
             copy: 'Copy',
-            call: 'Call'
+            call: 'Call',
+            or: 'or',
+            preorder: 'Place pre-order',
+            preorderNote: 'Choose “takeaway” and add in comment: “on-site”.'
         },
         nav: {
             burgers: '🍔 Burgers',

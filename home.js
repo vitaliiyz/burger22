@@ -14,6 +14,11 @@ const pageTranslations = {
         modal: {
             title: 'Wybierz serwis dostawy',
             description: 'Zamów nasze burgery z dostawą do domu',
+            recommended: 'Rekomendowany serwis',
+            'other-services': 'Inne serwisy dostawy',
+            'direct-title': 'Zamów z dostawą / na wynos',
+            'direct-desc': 'Szybka dostawa przez kurierów Wolt',
+            'restaurant-price': 'Ceny jak w restauracji',
             'uber-desc': 'Szybka dostawa przez Uber',
             'glovo-desc': 'Szybka dostawa przez Glovo',
             'wolt-desc': 'Szybka dostawa przez Wolt',
@@ -34,6 +39,11 @@ const pageTranslations = {
         modal: {
             title: 'Choose delivery service',
             description: 'Order our burgers with home delivery',
+            recommended: 'Recommended service',
+            'other-services': 'Other delivery services',
+            'direct-title': 'Order delivery / takeaway',
+            'direct-desc': 'Fast delivery by Wolt couriers',
+            'restaurant-price': 'Restaurant pricing',
             'uber-desc': 'Fast delivery via Uber',
             'glovo-desc': 'Fast delivery via Glovo',
             'wolt-desc': 'Fast delivery via Wolt',

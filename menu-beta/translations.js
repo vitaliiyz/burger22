@@ -24,7 +24,10 @@ const translations = {
             desc: 'Dodaj produkty do koszyka i wyślij zamówienie. Przygotujemy je przed Twoim przyjściem!',
             trouble: 'Lub zadzwoń: +48 573 256 526',
             copy: 'Kopiuj',
-            call: 'Zadzwoń'
+            call: 'Zadzwoń',
+            or: 'lub',
+            preorder: 'Zrób przedzamówienie',
+            preorderNote: 'Wybierz „na wynos” i dopisz w komentarzu: „na miejscu”.'
         },
         doneness: {
             title: 'Personalizuj swojego burgera',
@@ -175,7 +178,10 @@ const translations = {
             desc: 'Add items to cart and send your order. We\'ll have it ready before you arrive!',
             trouble: 'Or call us: +48 573 256 526',
             copy: 'Copy',
-            call: 'Call'
+            call: 'Call',
+            or: 'or',
+            preorder: 'Place pre-order',
+            preorderNote: 'Choose “takeaway” and add in comment: “on-site”.'
         },
         doneness: {
             title: 'Customize your burger',
