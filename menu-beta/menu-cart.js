@@ -43,7 +43,7 @@ function initMenuCartButtons() {
     // Define menu items with prices (matching the HTML)
     const menuItems = [
         // Burgers
-        { id: 'burger-camemburger', name: 'burgers.camemburger.name', price: 44, type: 'burger', image: '../menu/images/winter_ed_square.png', selector: 4 },
+        { id: 'burger-camemburger', name: 'burgers.camemburger.name', price: 44, type: 'burger', image: '../menu/images/camemburger.png', selector: 4 },
         { id: 'burger-classic', name: 'burgers.classic.name', price: 34, type: 'burger', image: '../menu/images/classic.jpeg', selector: 0 },
         { id: 'burger-cheese', name: 'burgers.cheese.name', price: 41, type: 'burger', image: '../menu/images/cheesy.jpeg', selector: 1 },
         { id: 'burger-chicken', name: 'burgers.chicken.name', price: 37, type: 'burger', image: '../menu/images/chicken.jpeg', selector: 2 },
