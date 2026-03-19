@@ -649,6 +649,16 @@ h1 {
     background: rgba(255, 255, 255, 0.9);
 }
 
+.menu-item.featured-new-burger {
+    border-color: rgba(255, 107, 107, 0.4);
+    box-shadow: 0 10px 30px rgba(255, 107, 107, 0.18), 0 0 0 1px rgba(255, 165, 0, 0.14);
+    animation: featuredCardGlow 2.8s ease-in-out infinite;
+}
+
+.menu-item.featured-new-burger:hover {
+    box-shadow: 0 16px 36px rgba(255, 107, 107, 0.24), 0 0 0 1px rgba(255, 165, 0, 0.22);
+}
+
 .menu-item:hover {
     transform: translateY(-8px);
     background: rgba(255, 255, 255, 0.95);
@@ -769,6 +779,16 @@ h1 {
         transform: scale(1.05);
     }
 }
+
+@keyframes featuredCardGlow {
+    0%, 100% {
+        box-shadow: 0 10px 30px rgba(255, 107, 107, 0.18), 0 0 0 1px rgba(255, 165, 0, 0.14);
+    }
+    50% {
+        box-shadow: 0 14px 34px rgba(255, 107, 107, 0.28), 0 0 0 1px rgba(255, 165, 0, 0.26);
+    }
+}
+
 
 .popular-badge {
     font-family: 'Montserrat', sans-serif;

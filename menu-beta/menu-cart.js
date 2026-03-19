@@ -43,21 +43,22 @@ function initMenuCartButtons() {
     // Define menu items with prices (matching the HTML)
     const menuItems = [
         // Burgers
-        { id: 'burger-camemburger', name: 'burgers.camemburger.name', price: 44, type: 'burger', image: '../menu/images/camemburger.png', selector: 4 },
-        { id: 'burger-classic', name: 'burgers.classic.name', price: 34, type: 'burger', image: '../menu/images/classic.jpeg', selector: 0 },
-        { id: 'burger-cheese', name: 'burgers.cheese.name', price: 41, type: 'burger', image: '../menu/images/cheesy.jpeg', selector: 1 },
-        { id: 'burger-chicken', name: 'burgers.chicken.name', price: 37, type: 'burger', image: '../menu/images/chicken.jpeg', selector: 2 },
-        { id: 'burger-bbq', name: 'burgers.bbq.name', price: 37, type: 'burger', image: '../menu/images/bbq.jpeg', selector: 3 },
-        { id: 'burger-spicy', name: 'burgers.spicy.name', price: 40, type: 'burger', image: '../menu/images/hot.jpeg', selector: 6 },
-        { id: 'burger-egg', name: 'burgers.egg.name', price: 39, type: 'burger', image: '../menu/images/egg.jpeg', selector: 5 },
+        { id: 'burger-berry-good', name: 'burgers.berryGood.name', price: 43, type: 'burger', image: '../menu/images/berrygood.png', selector: 0 },
+        { id: 'burger-classic', name: 'burgers.classic.name', price: 34, type: 'burger', image: '../menu/images/classic.jpeg', selector: 1 },
+        { id: 'burger-cheese', name: 'burgers.cheese.name', price: 41, type: 'burger', image: '../menu/images/cheesy.jpeg', selector: 2 },
+        { id: 'burger-chicken', name: 'burgers.chicken.name', price: 37, type: 'burger', image: '../menu/images/chicken.jpeg', selector: 3 },
+        { id: 'burger-bbq', name: 'burgers.bbq.name', price: 37, type: 'burger', image: '../menu/images/bbq.jpeg', selector: 4 },
+        { id: 'burger-camemburger', name: 'burgers.camemburger.name', price: 44, type: 'burger', image: '../menu/images/camemburger.png', selector: 5 },
+        { id: 'burger-egg', name: 'burgers.egg.name', price: 39, type: 'burger', image: '../menu/images/egg.jpeg', selector: 6 },
+        { id: 'burger-spicy', name: 'burgers.spicy.name', price: 40, type: 'burger', image: '../menu/images/hot.jpeg', selector: 7 },
 
         // Extras (dodatki do burgera) - removed from here, available only when ordering burgers
 
         // Sides
-        { id: 'side-fries', name: 'sides.fries', price: 14, type: 'side', selector: 7 },
-        { id: 'side-potato-wedges', name: 'sides.potatoWedges', price: 17, type: 'side', selector: 8 },
-        { id: 'side-onion-rings', name: 'sides.onionRings', price: 13, type: 'side', selector: 9 },
-        { id: 'side-nuggets', name: 'sides.nuggets', price: 17, type: 'side', selector: 10 },
+        { id: 'side-fries', name: 'sides.fries', price: 14, type: 'side', selector: 8 },
+        { id: 'side-potato-wedges', name: 'sides.potatoWedges', price: 17, type: 'side', selector: 9 },
+        { id: 'side-onion-rings', name: 'sides.onionRings', price: 13, type: 'side', selector: 10 },
+        { id: 'side-nuggets', name: 'sides.nuggets', price: 17, type: 'side', selector: 11 },
         // Extra sauce removed - available only as paid add-on when ordering sides
 
         // Hot Drinks

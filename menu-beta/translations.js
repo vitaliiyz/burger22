@@ -71,6 +71,10 @@ const translations = {
                 badge: 'Zimowa edycja',
                 desc: 'Puszysta bułeczka <strong>brioche</strong> skrywa soczystą <strong>wołowinę</strong>, chrupiący <strong>bekon</strong> i kremowy <strong>camembert</strong>, który rozpływa się przy każdym kęsie. Słodycz <strong>żurawiny</strong> przełamuje intensywność sera, tworząc idealny kontrast, a świeża <strong>rukola</strong> dodaje lekkości i aromatu. Całość dopełnia aksamitny <strong>sos miodowo-musztardowy</strong>, który łączy wszystkie smaki w harmonijną, wykwintną kompozycję.'
             },
+            berryGood: {
+                name: 'Berry Good',
+                desc: 'Puszysta bułeczka <strong>brioche</strong> kryje w sobie soczystą <strong>wołowinę</strong>, podwójną porcję <strong>wędzonej goudy</strong> i wyrazistą <strong>borówkę brusznicę</strong>. Delikatny <strong>sos mayo</strong> łagodzi całość, a świeża <strong>rukola</strong> dodaje lekkości i balansu. Słodko-wytrawne połączenie smaków tworzy burger, który zaskakuje przy każdym kęsie.'
+            },
             classic: {
                 name: 'Klasyczny cheeseburger z wołowiną i cheddarem',
                 desc: 'Puszysta bułeczka <strong>brioche</strong> kryje w sobie soczystą <strong>wołowinę</strong> otuloną aromatycznym serem <strong>cheddar</strong>. Świeże warzywa — chrupiąca <strong>sałata</strong>, soczysty <strong>pomidor</strong>, delikatna <strong>cebula</strong> i wyrazisty <strong>ogórek kiszony</strong> — dodają lekkości i równowagi. Całość podkreślają klasyczne akcenty <strong>musztardy</strong> i <strong>ketchupu</strong>, tworząc ponadczasowy smak, który zawsze zachwyca.'
@@ -224,6 +228,10 @@ const translations = {
                 name: 'Camemburger',
                 badge: 'Winter edition',
                 desc: 'A fluffy <strong>brioche bun</strong> conceals juicy <strong>beef</strong>, crispy <strong>bacon</strong>, and creamy <strong>camembert</strong> that melts with every bite. The sweetness of <strong>cranberry</strong> breaks through the intensity of the cheese, creating the perfect contrast, while fresh <strong>arugula</strong> adds lightness and aroma. Everything is complemented by a velvety <strong>honey-mustard sauce</strong> that brings all the flavors together in a harmonious, exquisite composition.'
+            },
+            berryGood: {
+                name: 'Berry Good',
+                desc: 'A fluffy <strong>brioche bun</strong> holds juicy <strong>beef</strong>, a double portion of <strong>smoked gouda</strong>, and bold <strong>lingonberry</strong>. Delicate <strong>mayo sauce</strong> softens the whole composition, while fresh <strong>arugula</strong> adds lightness and balance. This sweet-savory combination creates a burger that surprises with every bite.'
             },
             classic: {
                 name: 'Classic Cheeseburger',
