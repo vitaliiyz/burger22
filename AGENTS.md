@@ -42,6 +42,7 @@
 ## Operational Notes
 - Online ordering via the site is not production-ready yet. Do not make it the primary CTA until it is tested and validated.
 - Keep `menu-beta/` products, descriptions, and base styles in sync with `menu/`; update both when menu content changes.
+- This is a static site and Safari/mobile browsers may keep stale CSS/JS aggressively. When changing visible UI, translations, or frontend logic, update the corresponding asset version query in HTML (`styles.css?v=...`, `translations.js?v=...`, `app.js?v=...`, shared `common/*.css/js`) so users reliably receive fresh files without manual cache clearing.
 
 ## Security & Configuration Tips
 - Do not commit secrets. Use `.dev.vars` locally and Cloudflare/Wrangler secrets in production.
