@@ -3,9 +3,7 @@
 ## Project Structure & Module Organization
 - `index.html`, `styles.css`, `home.js`: main landing page and entry navigation.
 - `menu/`: primary menu experience (`index.html`, `app.js`, `styles.css`, `translations.js`).
-- `menu-beta/`: beta menu with online ordering enhancements; content should mirror `menu/`.
-- `cart/`: cart and checkout flow (`index.html`, `app.js`, `styles.css`, `translations.js`).
-- `common/`: shared UI and logic (`common.js`, `cart.js`, `common.css`, `header.html`, `footer.html`, `images/`).
+- `common/`: shared UI and logic (`common.js`, `common.css`, `header.html`, `footer.html`, `images/`).
 - `cloudflare-worker.js` and `wrangler.toml`: serverless order handler (Telegram integration).
 - Assets: product and brand images in `menu/images/` and `common/images/`.
 
@@ -25,7 +23,6 @@
 ## Testing Guidelines
 - There are no automated tests in this repo.
 - Manual checks:
-  - Add/remove items in cart and verify totals.
   - Switch PL/EN and validate translations.
   - Submit a test order via the Worker (if configured).
 
@@ -41,7 +38,6 @@
 
 ## Operational Notes
 - Online ordering via the site is not production-ready yet. Do not make it the primary CTA until it is tested and validated.
-- Keep `menu-beta/` products, descriptions, and base styles in sync with `menu/`; update both when menu content changes.
 - This is a static site and Safari/mobile browsers may keep stale CSS/JS aggressively. When changing visible UI, translations, or frontend logic, update the corresponding asset version query in HTML (`styles.css?v=...`, `translations.js?v=...`, `app.js?v=...`, shared `common/*.css/js`) so users reliably receive fresh files without manual cache clearing.
 
 ## Security & Configuration Tips
