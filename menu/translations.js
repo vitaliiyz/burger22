@@ -85,10 +85,6 @@ const translations = {
             spicy: {
                 name: 'Ostry burger z bekonem i jalapeño',
                 desc: 'Puszysta bułeczka <strong>brioche</strong> kryje w sobie soczystą <strong>wołowinę</strong>, otuloną aromatycznym <strong>cheddarem</strong> i chrupiącym <strong>bekonem</strong>. Soczysta <strong>sałata</strong>, wyrazisty <strong>ogórek kiszony</strong> oraz <strong>smażona cebula</strong> dodają świeżości, a pikantne <strong>jalapeño</strong> w połączeniu ze <strong>słodkim chili</strong> i <strong>ostrym sosem</strong> tworzą wybuchową mieszankę smaków dla odważnych smakoszy.'
-            },
-            egg: {
-                name: 'Burger z jajkiem sadzonym i bekonem',
-                desc: 'Puszysta bułeczka <strong>brioche</strong> kryje w sobie soczystą <strong>wołowinę</strong>, chrupiący <strong>bekon</strong> i idealnie usmażone <strong>jajko sadzone</strong>. Soczysta <strong>sałata</strong>, wyrazisty <strong>ogórek kiszony</strong> oraz aromatyczna <strong>smażona cebula</strong> dodają świeżości, a <strong>sos majonez</strong> i <strong>sos BBQ</strong> łączą wszystkie smaki w harmonijną, apetyczną całość, tworząc burger pełen kontrastów i przyjemnej intensywności.'
             }
         },
         extras: {
@@ -234,10 +230,6 @@ const translations = {
             spicy: {
                 name: 'Spicy Bacon Jalapeño',
                 desc: 'A fluffy <strong>brioche bun</strong> conceals juicy <strong>beef</strong>, wrapped in aromatic <strong>cheddar</strong> and crispy <strong>bacon</strong>. Juicy <strong>lettuce</strong>, distinctive <strong>pickled cucumber</strong>, and <strong>fried onion</strong> add freshness, while spicy <strong>jalapeño</strong> combined with <strong>sweet chili</strong> and <strong>spicy sauce</strong> create an explosive mix of flavors for bold food lovers.'
-            },
-            egg: {
-                name: 'Bacon Egg',
-                desc: 'A fluffy <strong>brioche bun</strong> conceals juicy <strong>beef</strong>, crispy <strong>bacon</strong>, and perfectly <strong>fried egg</strong>. Juicy <strong>lettuce</strong>, distinctive <strong>pickled cucumber</strong>, and aromatic <strong>fried onion</strong> add freshness, while <strong>mayo sauce</strong> and <strong>BBQ sauce</strong> bring all the flavors together in a harmonious, appetizing whole, creating a burger full of contrasts and pleasant intensity.'
             }
         },
         extras: {
