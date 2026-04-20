@@ -81,10 +81,6 @@ const translations = {
             bbq: {
                 name: 'BBQ burger z bekonem i cheddarem',
                 desc: 'Puszysta bułeczka <strong>brioche</strong> kryje w sobie soczystą <strong>wołowinę</strong>, otuloną aromatycznym <strong>cheddarem</strong> i chrupiącym <strong>bekonem</strong>. Soczysty <strong>pomidor</strong>, świeża <strong>rukola</strong>, wyrazisty <strong>ogórek kiszony</strong> i aromatyczna <strong>cebula</strong> tworzą idealną równowagę, a dwie porcje <strong>sosu BBQ</strong> dopełniają całość, nadając burgerowi intensywny, dymny smak, którego nie da się zapomnieć.'
-            },
-            spicy: {
-                name: 'Ostry burger z bekonem i jalapeño',
-                desc: 'Puszysta bułeczka <strong>brioche</strong> kryje w sobie soczystą <strong>wołowinę</strong>, otuloną aromatycznym <strong>cheddarem</strong> i chrupiącym <strong>bekonem</strong>. Soczysta <strong>sałata</strong>, wyrazisty <strong>ogórek kiszony</strong> oraz <strong>smażona cebula</strong> dodają świeżości, a pikantne <strong>jalapeño</strong> w połączeniu ze <strong>słodkim chili</strong> i <strong>ostrym sosem</strong> tworzą wybuchową mieszankę smaków dla odważnych smakoszy.'
             }
         },
         extras: {
@@ -226,10 +222,6 @@ const translations = {
             bbq: {
                 name: 'BBQ Bacon',
                 desc: 'A fluffy <strong>brioche bun</strong> conceals juicy <strong>beef</strong>, wrapped in aromatic <strong>cheddar</strong> and crispy <strong>bacon</strong>. Juicy <strong>tomato</strong>, fresh <strong>arugula</strong>, distinctive <strong>pickled cucumber</strong>, and aromatic <strong>onion</strong> create the perfect balance, while two portions of <strong>BBQ sauce</strong> complete everything, giving the burger an intense, smoky flavor that you won\'t forget.'
-            },
-            spicy: {
-                name: 'Spicy Bacon Jalapeño',
-                desc: 'A fluffy <strong>brioche bun</strong> conceals juicy <strong>beef</strong>, wrapped in aromatic <strong>cheddar</strong> and crispy <strong>bacon</strong>. Juicy <strong>lettuce</strong>, distinctive <strong>pickled cucumber</strong>, and <strong>fried onion</strong> add freshness, while spicy <strong>jalapeño</strong> combined with <strong>sweet chili</strong> and <strong>spicy sauce</strong> create an explosive mix of flavors for bold food lovers.'
             }
         },
         extras: {
