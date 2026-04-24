@@ -68,7 +68,7 @@ const translations = {
             },
             classic: {
                 name: 'Klasyczny cheeseburger z wołowiną i cheddarem',
-                desc: 'Puszysta bułeczka <strong>brioche</strong> kryje w sobie soczystą <strong>wołowinę</strong> otuloną aromatycznym serem <strong>cheddar</strong>. Świeże warzywa — chrupiąca <strong>sałata</strong>, soczysty <strong>pomidor</strong>, delikatna <strong>cebula</strong> i wyrazisty <strong>ogórek kiszony</strong> — dodają lekkości i równowagi. Całość podkreślają klasyczne akcenty <strong>musztardy</strong> i <strong>ketchupu</strong>, tworząc ponadczasowy smak, który zawsze zachwyca.'
+                desc: 'Puszysta bułeczka <strong>brioche</strong> kryje w sobie soczystą <strong>wołowinę</strong> otuloną aromatycznym serem <strong>cheddar</strong>. Świeże warzywa — chrupiąca <strong>sałata</strong>, soczysty <strong>pomidor</strong>, delikatna <strong>cebula</strong> i wyrazisty <strong>ogórek kiszony</strong> — dodają lekkości i równowagi. Całość dopełnia <strong>firmowy sos Burger22</strong>, tworząc ponadczasowy smak, który zawsze zachwyca.'
             },
             cheese: {
                 name: 'Burger Serowy z potrójnym serem i bekonem',
@@ -76,7 +76,7 @@ const translations = {
             },
             chicken: {
                 name: 'Burger z chrupiącym kurczakiem i cheddarem',
-                desc: 'Puszysta bułeczka <strong>brioche</strong> skrywa chrupiący, <strong>panierowany filet z kurczaka</strong>, otulony aromatycznym serem <strong>cheddar</strong>. Świeże warzywa — <strong>sałata</strong>, soczysty <strong>pomidor</strong> i delikatna <strong>cebula</strong> — dodają lekkości i świeżości, a klasyczne połączenie <strong>ketchupu</strong> i <strong>majonezu</strong> dopełnia smak w idealnie zbalansowaną, apetyczną kompozycję.'
+                desc: 'Puszysta bułeczka <strong>brioche</strong> skrywa chrupiący, <strong>panierowany filet z kurczaka</strong>, otulony aromatycznym serem <strong>cheddar</strong>. Świeże warzywa — <strong>sałata</strong>, soczysty <strong>pomidor</strong> i delikatna <strong>cebula</strong> — dodają lekkości i świeżości, a <strong>firmowy sos Burger22</strong> dopełnia smak w idealnie zbalansowaną, apetyczną kompozycję.'
             },
             bbq: {
                 name: 'BBQ burger z bekonem i cheddarem',
@@ -209,7 +209,7 @@ const translations = {
             },
             classic: {
                 name: 'Classic Cheeseburger',
-                desc: 'A fluffy <strong>brioche bun</strong> conceals juicy <strong>beef</strong> wrapped in aromatic <strong>cheddar cheese</strong>. Fresh vegetables — crispy <strong>lettuce</strong>, juicy <strong>tomato</strong>, delicate <strong>onion</strong>, and distinctive <strong>pickled cucumber</strong> — add lightness and balance. Classic touches of <strong>mustard</strong> and <strong>ketchup</strong> complete the composition, creating a timeless flavor that always delights.'
+                desc: 'A fluffy <strong>brioche bun</strong> conceals juicy <strong>beef</strong> wrapped in aromatic <strong>cheddar cheese</strong>. Fresh vegetables — crispy <strong>lettuce</strong>, juicy <strong>tomato</strong>, delicate <strong>onion</strong>, and distinctive <strong>pickled cucumber</strong> — add lightness and balance. <strong>Burger22 signature sauce</strong> completes the composition, creating a timeless flavor that always delights.'
             },
             cheese: {
                 name: 'Triple Cheese Bacon',
@@ -217,7 +217,7 @@ const translations = {
             },
             chicken: {
                 name: 'Crispy Chicken',
-                desc: 'A fluffy <strong>brioche bun</strong> conceals crispy, <strong>breaded chicken fillet</strong>, wrapped in aromatic <strong>cheddar cheese</strong>. Fresh vegetables — <strong>lettuce</strong>, juicy <strong>tomato</strong>, and delicate <strong>onion</strong> — add lightness and freshness, while the classic combination of <strong>ketchup</strong> and <strong>mayo</strong> completes the flavor in a perfectly balanced, appetizing composition.'
+                desc: 'A fluffy <strong>brioche bun</strong> conceals crispy, <strong>breaded chicken fillet</strong>, wrapped in aromatic <strong>cheddar cheese</strong>. Fresh vegetables — <strong>lettuce</strong>, juicy <strong>tomato</strong>, and delicate <strong>onion</strong> — add lightness and freshness, while <strong>Burger22 signature sauce</strong> completes the flavor in a perfectly balanced, appetizing composition.'
             },
             bbq: {
                 name: 'BBQ Bacon',
