@@ -72,7 +72,7 @@ const translations = {
             },
             cheese: {
                 name: 'Burger Serowy z potrójnym serem i bekonem',
-                desc: 'Puszysta bułeczka <strong>brioche</strong> kryje w sobie soczystą <strong>wołowinę</strong>, otuloną podwójnym <strong>topionym cheddarem</strong> i delikatną <strong>mozzarellą</strong>. Chrupiący <strong>bekon</strong> i aromatyczna <strong>cebula prażona</strong> dodają głębi smaku, a świeża <strong>rukola</strong>, soczysty <strong>pomidor</strong> i wyrazisty <strong>ogórek kiszony</strong> równoważą całość. Wszystko wzbogacają dwie porcje aksamitnego <strong>sosu serowego</strong>, tworząc prawdziwie serową eksplozję smaku, której nie da się zapomnieć.'
+                desc: 'Puszysta bułeczka <strong>brioche</strong> kryje w sobie soczystą <strong>wołowinę</strong>, otuloną podwójnym <strong>topionym cheddarem</strong> i delikatną <strong>mozzarellą</strong>. Chrupiący <strong>bekon</strong> dodaje głębi smaku, a świeża <strong>rukola</strong>, soczysty <strong>pomidor</strong> i wyrazisty <strong>ogórek kiszony</strong> równoważą całość. Wszystko wzbogacają dwie porcje aksamitnego <strong>sosu serowego</strong>, tworząc prawdziwie serową eksplozję smaku, której nie da się zapomnieć.'
             },
             chicken: {
                 name: 'Burger z chrupiącym kurczakiem i cheddarem',
@@ -213,7 +213,7 @@ const translations = {
             },
             cheese: {
                 name: 'Triple Cheese Bacon',
-                desc: 'A fluffy <strong>brioche bun</strong> conceals juicy <strong>beef</strong>, wrapped in double <strong>melted cheddar</strong> and delicate <strong>mozzarella</strong>. Crispy <strong>bacon</strong> and aromatic <strong>roasted onion</strong> add depth of flavor, while fresh <strong>arugula</strong>, juicy <strong>tomato</strong>, and distinctive <strong>pickled cucumber</strong> balance everything out. Two portions of velvety <strong>cheese sauce</strong> enrich it all, creating a truly cheesy flavor explosion that you won\'t forget.'
+                desc: 'A fluffy <strong>brioche bun</strong> conceals juicy <strong>beef</strong>, wrapped in double <strong>melted cheddar</strong> and delicate <strong>mozzarella</strong>. Crispy <strong>bacon</strong> adds depth of flavor, while fresh <strong>arugula</strong>, juicy <strong>tomato</strong>, and distinctive <strong>pickled cucumber</strong> balance everything out. Two portions of velvety <strong>cheese sauce</strong> enrich it all, creating a truly cheesy flavor explosion that you won\'t forget.'
             },
             chicken: {
                 name: 'Crispy Chicken',
