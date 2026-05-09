@@ -53,8 +53,7 @@ const translations = {
             cheddarTopiony: '🧀 Cheddar Topiony',
             spicy: '🔥 Ostry',
             mayo: '🥚 Majonez',
-            garlic: '🧄 Czosnkowy',
-            mustard: '🌭 Musztarda'
+            garlic: '🧄 Czosnkowy'
         },
         burgers: {
             camemburger: {
@@ -194,8 +193,7 @@ const translations = {
             cheddarTopiony: '🧀 Melted Cheddar',
             spicy: '🔥 Spicy',
             mayo: '🥚 Mayo',
-            garlic: '🧄 Garlic',
-            mustard: '🌭 Mustard'
+            garlic: '🧄 Garlic'
         },
         burgers: {
             camemburger: {
