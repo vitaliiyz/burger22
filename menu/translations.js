@@ -64,6 +64,10 @@ const translations = {
                 name: 'Berry Good',
                 desc: 'Puszysta bułeczka <strong>brioche</strong> kryje w sobie soczystą <strong>wołowinę</strong>, podwójną porcję <strong>wędzonej goudy</strong> i wyrazistą <strong>borówkę brusznicę</strong>. Delikatny <strong>sos mayo</strong> łagodzi całość, a świeża <strong>rukola</strong> dodaje lekkości i balansu. Słodko-wytrawne połączenie smaków tworzy burger, który zaskakuje przy każdym kęsie.'
             },
+            jalapenoBacon: {
+                name: 'Jalapeño Bacon',
+                desc: 'Puszysta <strong>bułeczka brioche</strong> skrywa soczystą <strong>100% wołowinę</strong>, roztopiony <strong>ser cheddar</strong> i <strong>podwójny bekon</strong>, które nadają burgerowi pełny, wyrazisty smak. <strong>Jalapeño</strong> dodaje pikantnego charakteru, a <strong>świeża cebula</strong> i <strong>sałata</strong> wprowadzają lekkość i świeżość. Całość dopełnia <strong>firmowy pikantny sos Burger 22</strong>, tworząc pikantną, ale dobrze zbalansowaną kompozycję.'
+            },
             classic: {
                 name: 'Klasyczny cheeseburger z wołowiną i cheddarem',
                 desc: 'Puszysta bułeczka <strong>brioche</strong> kryje w sobie soczystą <strong>wołowinę</strong> otuloną aromatycznym serem <strong>cheddar</strong>. Świeże warzywa — chrupiąca <strong>sałata</strong>, soczysty <strong>pomidor</strong>, delikatna <strong>cebula</strong> i wyrazisty <strong>ogórek kiszony</strong> — dodają lekkości i równowagi. Całość dopełnia <strong>firmowy sos Burger22</strong>, tworząc ponadczasowy smak, który zawsze zachwyca.'
@@ -202,6 +206,10 @@ const translations = {
             berryGood: {
                 name: 'Berry Good',
                 desc: 'A fluffy <strong>brioche bun</strong> holds juicy <strong>beef</strong>, a double portion of <strong>smoked gouda</strong>, and bold <strong>lingonberry</strong>. Delicate <strong>mayo sauce</strong> softens the whole composition, while fresh <strong>arugula</strong> adds lightness and balance. This sweet-savory combination creates a burger that surprises with every bite.'
+            },
+            jalapenoBacon: {
+                name: 'Jalapeño Bacon',
+                desc: 'A fluffy <strong>brioche bun</strong> hides juicy <strong>100% beef</strong>, melted <strong>cheddar cheese</strong>, and <strong>double bacon</strong>, giving the burger a full, bold flavor. <strong>Jalapeño</strong> adds a spicy character, while <strong>fresh onion</strong> and <strong>lettuce</strong> bring lightness and freshness. Everything is completed by <strong>Burger 22 signature spicy sauce</strong>, creating a spicy but well-balanced composition.'
             },
             classic: {
                 name: 'Classic Cheeseburger',

@@ -13,7 +13,7 @@
     <!-- Apple devices -->
     <link rel="apple-touch-icon" sizes="180x180" href="https://burger22.pl/common/images/apple-touch-icon.png">
     <link rel="stylesheet" href="../common/common.css?v=20260420-1">
-    <link rel="stylesheet" href="styles.css?v=20260420-1">
+    <link rel="stylesheet" href="styles.css?v=20260606-1">
 </head>
 <body>
     <!-- Common Header (loaded dynamically) -->
@@ -81,11 +81,8 @@
             </div>
             <div class="menu-grid">
                 <!-- 0. Berry Good -->
-                <div class="menu-item new-item-highlight featured-new-burger">
-                    <span class="new-badge" data-i18n="newItem">NOWOŚĆ</span>
-                    <div class="item-image">
-                        <img src="images/berrygood.png" alt="Berry Good burger">
-                    </div>
+                <div class="menu-item">
+                    <img src="images/berrygood.png" alt="Berry Good burger" class="item-image">
                     <div class="item-content">
                         <div class="item-header">
                             <h3 class="item-name" data-i18n="burgers.berryGood.name">Berry Good</h3>
@@ -105,7 +102,33 @@
                     </div>
                 </div>
 
-                <!-- 1. Klasyczny -->
+                <!-- 1. Jalapeño Bacon -->
+                <div class="menu-item new-item-highlight featured-new-burger">
+                    <span class="new-badge" data-i18n="newItem">NOWOŚĆ</span>
+                    <div class="item-image">
+                        <img src="images/jalapeno.png?v=20260606-1" alt="Jalapeño Bacon burger">
+                    </div>
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="burgers.jalapenoBacon.name">Jalapeño Bacon</h3>
+                        </div>
+                        <p class="item-description" data-i18n="burgers.jalapenoBacon.desc">
+                            Puszysta <strong>bułeczka brioche</strong> skrywa soczystą <strong>100% wołowinę</strong>, roztopiony <strong>ser cheddar</strong> i <strong>podwójny bekon</strong>, które nadają burgerowi pełny, wyrazisty smak. <strong>Jalapeño</strong> dodaje pikantnego charakteru, a <strong>świeża cebula</strong> i <strong>sałata</strong> wprowadzają lekkość i świeżość. Całość dopełnia <strong>firmowy pikantny sos Burger 22</strong>, tworząc pikantną, ale dobrze zbalansowaną kompozycję.
+                        </p>
+                        <div class="item-footer">
+                            <div>
+                                <div class="item-price">42 zł</div>
+                                <div class="zestaw-price">
+                                    <span class="zestaw-label" data-i18n="comboTitle">Zestaw:</span><br>
+                                    <span data-i18n="comboClassicOption">Klasyczne frytki z sosem:+10zł</span><br>
+                                    <span data-i18n="comboWedgesOption">Łódeczki ziemniaczane z sosem:+14zł</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Klasyczny -->
                 <div class="menu-item">
                     <img src="images/classic.jpeg" alt="Klasyczny burger" class="item-image">
                     <div class="item-content">
@@ -128,7 +151,7 @@
                     </div>
                 </div>
 
-                <!-- 2. Serowy -->
+                <!-- 3. Serowy -->
                 <div class="menu-item">
                     <img src="images/cheesy.jpeg" alt="Serowy burger" class="item-image">
                     <div class="item-content">
@@ -151,7 +174,7 @@
                     </div>
                 </div>
 
-                <!-- 3. Kurczak -->
+                <!-- 4. Kurczak -->
                 <div class="menu-item">
                     <img src="images/chicken.png?v=20260605-1" alt="Kurczak burger" class="item-image">
                     <div class="item-content">
@@ -174,7 +197,7 @@
                     </div>
                 </div>
 
-                <!-- 4. BBQ -->
+                <!-- 5. BBQ -->
                 <div class="menu-item">
                     <img src="images/bbq.jpeg" alt="BBQ burger" class="item-image">
                     <div class="item-content">
@@ -459,7 +482,7 @@
     <!-- Common JS (must load first) -->
     <script src="../common/common.js?v=20260420-1"></script>
     <!-- Translation system -->
-    <script src="translations.js?v=20260524-1"></script>
+    <script src="translations.js?v=20260606-1"></script>
     <!-- Main application logic -->
     <script src="app.js?v=20260420-2"></script>
 
