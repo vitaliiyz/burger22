@@ -12,8 +12,8 @@
     <link rel="icon" type="image/png" sizes="180x180" href="https://burger22.pl/common/images/apple-touch-icon.png">
     <!-- Apple devices -->
     <link rel="apple-touch-icon" sizes="180x180" href="https://burger22.pl/common/images/apple-touch-icon.png">
-    <link rel="stylesheet" href="common/common.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="common/common.css?v=20260413-1">
+    <link rel="stylesheet" href="styles.css?v=20260319-1">
 </head>
 <body>
     <!-- Common Header (loaded dynamically) -->
@@ -63,7 +63,8 @@
                 <p class="nav-description" data-i18n="nav.delivery-desc">Wybierz serwis dostawy</p>
             </div>
 
-            <a href="menu/index.html" class="main-nav-item">
+            <a href="menu/index.html" class="main-nav-item menu-item-with-badge">
+                <span class="home-new-badge" data-i18n="newItem">NOWOŚĆ</span>
                 <div class="nav-icon">📖</div>
                 <h2 class="nav-title" data-i18n="nav.menu">Menu</h2>
                 <p class="nav-description" data-i18n="nav.menu-desc">Zobacz naszą ofertę burgerów</p>
@@ -83,6 +84,18 @@
             <h2 class="modal-title" data-i18n="modal.title">Wybierz serwis dostawy</h2>
             <p class="modal-description" data-i18n="modal.description">Zamów nasze burgery z dostawą do domu</p>
             <div class="delivery-services">
+                <p class="delivery-group-title recommended" data-i18n="modal.recommended">Rekomendowany serwis</p>
+                <a href="https://order.site/burger-22" class="delivery-service-item featured-delivery-item" target="_blank" rel="noopener noreferrer">
+                    <div class="service-icon">⚡</div>
+                    <div class="service-info">
+                        <h3 class="service-name" data-i18n="modal.direct-title">Zamów z dostawą / na wynos</h3>
+                        <p class="service-desc">
+                            <span data-i18n="modal.direct-desc">Szybka dostawa przez kurierów Wolt</span>
+                            <span class="price-highlight" data-i18n="modal.restaurant-price">Ceny jak w restauracji</span>
+                        </p>
+                    </div>
+                </a>
+                <p class="delivery-group-title" data-i18n="modal.other-services">Inne serwisy dostawy</p>
                 <a href="https://www.pyszne.pl/en/menu/burger-3" class="delivery-service-item" target="_blank" rel="noopener noreferrer">
                     <div class="service-icon">🍔</div>
                     <div class="service-info">
@@ -126,10 +139,8 @@
     <!-- Common Footer (loaded dynamically) -->
     <div id="common-footer"></div>
 
-    <!-- Cart system (must load before common.js) -->
-    <script src="common/cart.js"></script>
     <!-- Common JS (must load first) -->
-    <script src="common/common.js"></script>
+    <script src="common/common.js?v=20260413-1"></script>
     <!-- Page-specific JS -->
     <script src="home.js"></script>
 </body>

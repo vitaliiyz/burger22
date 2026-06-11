@@ -63,54 +63,21 @@ async function loadComponent(elementId, filePath) {
 function fixHeaderPaths() {
     const currentPath = window.location.pathname;
     const isInMenuFolder = currentPath.includes('/menu/');
-    const isInMenuBetaFolder = currentPath.includes('/menu-beta/');
-    const isInCartFolder = currentPath.includes('/cart/');
 
     const header = document.getElementById('common-header');
     if (!header) return;
 
     // Set correct paths based on location
-    if (isInMenuBetaFolder) {
+    if (isInMenuFolder) {
         header.innerHTML = header.innerHTML
             .replace(/INDEX_PATH/g, '../index.html')
             .replace(/MENU_PATH/g, 'index.html')
-            .replace(/CONTACT_PATH/g, '../contact.html')
-            .replace(/CART_PATH/g, '../cart/index.html');
-    } else if (isInMenuFolder) {
-        header.innerHTML = header.innerHTML
-            .replace(/INDEX_PATH/g, '../index.html')
-            .replace(/MENU_PATH/g, 'index.html')
-            .replace(/CONTACT_PATH/g, '../contact.html')
-            .replace(/CART_PATH/g, '../cart/index.html');
-    } else if (isInCartFolder) {
-        header.innerHTML = header.innerHTML
-            .replace(/INDEX_PATH/g, '../index.html')
-            .replace(/MENU_PATH/g, '../menu/index.html')
-            .replace(/CONTACT_PATH/g, '../contact.html')
-            .replace(/CART_PATH/g, 'index.html');
+            .replace(/CONTACT_PATH/g, '../contact.html');
     } else {
         header.innerHTML = header.innerHTML
             .replace(/INDEX_PATH/g, 'index.html')
             .replace(/MENU_PATH/g, 'menu/index.html')
-            .replace(/CONTACT_PATH/g, 'contact.html')
-            .replace(/CART_PATH/g, 'cart/index.html');
-    }
-}
-
-// Function to update cart count badge
-function updateCartCount() {
-    const cartCountEl = document.getElementById('cartCount');
-    if (!cartCountEl) return;
-
-    if (window.BurgerCart) {
-        const count = window.BurgerCart.getTotalCount();
-        cartCountEl.textContent = count;
-
-        if (count > 0) {
-            cartCountEl.classList.add('visible');
-        } else {
-            cartCountEl.classList.remove('visible');
-        }
+            .replace(/CONTACT_PATH/g, 'contact.html');
     }
 }
 
@@ -227,9 +194,7 @@ async function initCommon() {
     // Determine paths based on current location
     const currentPath = window.location.pathname;
     const isInMenuFolder = currentPath.includes('/menu/');
-    const isInMenuBetaFolder = currentPath.includes('/menu-beta/');
-    const isInCartFolder = currentPath.includes('/cart/');
-    const basePath = isInMenuFolder || isInMenuBetaFolder || isInCartFolder ? '../common/' : 'common/';
+    const basePath = isInMenuFolder ? '../common/' : 'common/';
 
     // Load header and footer
     await loadComponent('common-header', basePath + 'header.html');
@@ -240,12 +205,6 @@ async function initCommon() {
 
     // Initialize burger menu
     initBurgerMenu();
-
-    // Initialize cart counter
-    updateCartCount();
-
-    // Listen for cart updates
-    window.addEventListener('cartUpdated', updateCartCount);
 
     // NOTE: Language buttons are initialized by page-specific scripts
     // to avoid conflicts and ensure proper timing

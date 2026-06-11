@@ -470,6 +470,21 @@ h1 {
     flex-wrap: wrap;
 }
 
+.takeaway-or {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.9em;
+    color: var(--graphite-light);
+    font-weight: 600;
+}
+
+.takeaway-preorder-group {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
+
 .takeaway-btn {
     display: inline-flex;
     align-items: center;
@@ -510,6 +525,24 @@ h1 {
 .call-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(255, 165, 0, 0.3);
+}
+
+.preorder-btn {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+    border: 1px solid transparent;
+}
+
+.preorder-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+.takeaway-preorder-note {
+    margin: 0;
+    font-size: 0.85em;
+    color: var(--graphite-light);
+    line-height: 1.45;
 }
 
 .menu-section {
@@ -567,9 +600,27 @@ h1 {
     gap: 20px;
 }
 
-/* Sides section - 2 items per row on desktop */
+/* Sides section - 3 items per row on desktop */
 #dodatki .menu-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#dodatki .item-image img {
+    object-position: center 58%;
+}
+
+#dodatki .item-image {
+    aspect-ratio: 16 / 10;
+}
+
+#dodatki .item-footer {
+    margin-top: auto;
+}
+
+@media (max-width: 1200px) {
+    #dodatki .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -594,15 +645,18 @@ h1 {
 }
 
 .menu-item.new-item-highlight {
-    border: 2px solid #FF6B6B;
-    box-shadow: 0 4px 20px rgba(255, 107, 107, 0.25), 0 2px 8px rgba(255, 71, 87, 0.15);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 250, 250, 0.95) 100%);
+    box-shadow: 0 4px 15px var(--shadow), 0 1px 3px rgba(0, 0, 0, 0.05);
+    background: rgba(255, 255, 255, 0.9);
 }
 
-.menu-item.new-item-highlight:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 30px rgba(255, 107, 107, 0.35), 0 4px 12px rgba(255, 71, 87, 0.2);
-    border-color: #FF4757;
+.menu-item.featured-new-burger {
+    border-color: rgba(255, 107, 107, 0.4);
+    box-shadow: 0 10px 30px rgba(255, 107, 107, 0.18), 0 0 0 1px rgba(255, 165, 0, 0.14);
+    animation: featuredCardGlow 2.8s ease-in-out infinite;
+}
+
+.menu-item.featured-new-burger:hover {
+    box-shadow: 0 16px 36px rgba(255, 107, 107, 0.24), 0 0 0 1px rgba(255, 165, 0, 0.22);
 }
 
 .menu-item:hover {
@@ -631,6 +685,27 @@ h1 {
     overflow: hidden;
     position: relative;
     border-radius: 12px 12px 0 0;
+}
+
+/* Burger cards use direct <img class="item-image">, keep square photos undistorted */
+#burgery img.item-image {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Camemburger uses wrapper .item-image + nested img, keep same square size as other burgers */
+#burgery .menu-item.new-item-highlight .item-image {
+    aspect-ratio: 1 / 1;
+}
+
+#burgery .menu-item.new-item-highlight .item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
 .item-image::before {
@@ -705,6 +780,16 @@ h1 {
     }
 }
 
+@keyframes featuredCardGlow {
+    0%, 100% {
+        box-shadow: 0 10px 30px rgba(255, 107, 107, 0.18), 0 0 0 1px rgba(255, 165, 0, 0.14);
+    }
+    50% {
+        box-shadow: 0 14px 34px rgba(255, 107, 107, 0.28), 0 0 0 1px rgba(255, 165, 0, 0.26);
+    }
+}
+
+
 .popular-badge {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.65em;
@@ -775,20 +860,29 @@ h1 {
 }
 
 .zestaw-price {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.15em;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9em;
     color: var(--graphite);
-    font-weight: 700;
+    font-weight: 500;
+    line-height: 1.35;
     margin-top: 6px;
-    letter-spacing: 0.5px;
+    letter-spacing: 0;
 }
 
 .zestaw-label {
     font-family: 'Inter', sans-serif;
-    font-size: 0.7em;
+    display: inline-block;
+    margin-bottom: 2px;
+    font-size: 0.82em;
+    color: var(--graphite);
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+}
+
+.zestaw-price span:not(.zestaw-label) {
     color: var(--graphite-light);
-    font-weight: 400;
-    letter-spacing: 0.3px;
+    font-weight: 500;
 }
 
 .addon-note {
@@ -838,6 +932,78 @@ h1 {
     background: linear-gradient(135deg, var(--warm-yellow) 0%, var(--primary-orange) 100%);
     color: var(--white);
     transform: translateX(5px);
+}
+
+.extras-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.extras-price {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95em;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.drinks-list .sauce-column {
+    gap: 14px;
+}
+
+.drinks-group-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95em;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    background: rgba(255, 165, 0, 0.12);
+}
+
+.drinks-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: flex-start;
+    column-gap: 12px;
+}
+
+.drink-item-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.drink-item-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    flex: 0 0 auto;
+    min-width: max-content;
+}
+
+.drinks-item .addon-note {
+    margin-top: 0;
+}
+
+.drink-item-content > span:first-child {
+    display: block;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+@media (max-width: 420px) {
+    .drinks-item {
+        grid-template-columns: 1fr;
+        row-gap: 8px;
+    }
+
+    .drink-item-meta {
+        align-items: flex-start;
+        min-width: 0;
+    }
 }
 
 .sauce-item.unavailable {
@@ -1173,7 +1339,7 @@ html[lang="en"] .menu-item.unavailable .item-name::after {
     }
 
     .zestaw-price {
-        font-size: 1.05em;
+        font-size: 0.84em;
     }
 
     .menu-grid {
