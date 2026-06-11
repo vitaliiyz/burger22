@@ -138,9 +138,13 @@ const translations = {
             waterMix: '💧 Woda',
             waterOptionStill: 'niegazowana',
             waterOptionSparkling: 'gazowana',
+            zeroBeerMix: '🍺 Piwo 0%',
+            zeroBeerOptionClassic: 'klasyczne',
+            zeroBeerOptionFlavored: 'smakowe',
             sodaMixNote: '330 ml',
             juiceMixNote: '300 ml',
-            waterMixNote: '500 ml'
+            waterMixNote: '500 ml',
+            zeroBeerMixNote: '330 ml'
         }
     },
     en: {
@@ -281,9 +285,13 @@ const translations = {
             waterMix: '💧 Water',
             waterOptionStill: 'still',
             waterOptionSparkling: 'sparkling',
+            zeroBeerMix: '🍺 Beer 0%',
+            zeroBeerOptionClassic: 'classic',
+            zeroBeerOptionFlavored: 'flavored',
             sodaMixNote: '330 ml',
             juiceMixNote: '300 ml',
-            waterMixNote: '500 ml'
+            waterMixNote: '500 ml',
+            zeroBeerMixNote: '330 ml'
         }
     }
 };
