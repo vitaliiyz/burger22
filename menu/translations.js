@@ -88,7 +88,7 @@ const translations = {
         extras: {
             meat: '🥩 Mięso',
             friedCamembert: '🧀 Ser Camembert Smażony',
-            bacon: '🥓 Bekon',
+            bacon: '🥓 Bekon / Bekon x2',
             cheese: '🧀 Ser',
             jalapeno: '🌶️ Jalapeño',
             vegetables: '🥗 Warzywa'
@@ -235,7 +235,7 @@ const translations = {
         extras: {
             meat: '🥩 Meat',
             friedCamembert: '🧀 Fried Camembert Cheese',
-            bacon: '🥓 Bacon',
+            bacon: '🥓 Bacon / Bacon x2',
             cheese: '🧀 Cheese',
             jalapeno: '🌶️ Jalapeño',
             vegetables: '🥗 Vegetables'
