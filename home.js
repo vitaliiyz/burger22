@@ -1,6 +1,7 @@
 // Home page specific logic - Burger 22
 
 const commonPhoneNational = window.CommonUtils.config.phone.display.replace(/^\+48\s*/, '');
+const DIRECT_ORDER_URL = 'https://order.site/burger-22';
 
 // Page-specific translations
 const pageTranslations = {
@@ -24,6 +25,14 @@ const pageTranslations = {
                 tested: 'Każdy burger dopracowany i przetestowany'
             }
         },
+        reviews: {
+            title: 'Co mówią nasi goście',
+            summary: 'Krótkie fragmenty prawdziwych opinii opublikowanych w Google.',
+            button: 'Zobacz opinie w Google',
+            rating: 'w Google',
+            count: 'opinii',
+            translation: ''
+        },
         nav: {
             delivery: 'Zamów do domu',
             'delivery-desc': 'Wybierz serwis dostawy',
@@ -34,18 +43,17 @@ const pageTranslations = {
         modal: {
             title: 'Wybierz serwis dostawy',
             description: 'Zamów nasze burgery z dostawą do domu',
-            recommended: 'Rekomendowany serwis',
-            'other-services': 'Inne serwisy dostawy',
-            'direct-title': 'Zamów z dostawą / na wynos',
-            'direct-desc': 'Szybka dostawa przez kurierów Wolt',
-            'restaurant-price': 'Ceny jak w restauracji',
+            'other-services': 'Inne opcje zamówienia:',
+            'direct-title': 'Zamów bezpośrednio',
+            'restaurant-price': 'Ceny jak w lokalu',
             'uber-desc': 'Szybka dostawa przez Uber',
             'glovo-desc': 'Szybka dostawa przez Glovo',
             'wolt-desc': 'Szybka dostawa przez Wolt',
             'pyszne-desc': 'Szybka dostawa przez Pyszne',
             'bolt-desc': 'Szybka dostawa przez Bolt',
             disclaimer: '* Ceny w zewnętrznych serwisach dostawy mogą różnić się od cen w restauracji'
-        }
+        },
+        'mobile-order': 'Zamów online'
     },
     en: {
         tagline: 'Real burger taste',
@@ -67,6 +75,14 @@ const pageTranslations = {
                 tested: 'Every burger refined and tested'
             }
         },
+        reviews: {
+            title: 'What our guests say',
+            summary: 'Short excerpts from real reviews published on Google.',
+            button: 'See reviews on Google',
+            rating: 'on Google',
+            count: 'reviews',
+            translation: 'Translated from Polish'
+        },
         nav: {
             delivery: 'Order for delivery',
             'delivery-desc': 'Choose delivery service',
@@ -77,18 +93,17 @@ const pageTranslations = {
         modal: {
             title: 'Choose delivery service',
             description: 'Order our burgers with home delivery',
-            recommended: 'Recommended service',
-            'other-services': 'Other delivery services',
-            'direct-title': 'Order delivery / takeaway',
-            'direct-desc': 'Fast delivery by Wolt couriers',
-            'restaurant-price': 'Restaurant pricing',
+            'other-services': 'Other ordering options:',
+            'direct-title': 'Order directly',
+            'restaurant-price': 'Same prices as in-store',
             'uber-desc': 'Fast delivery via Uber',
             'glovo-desc': 'Fast delivery via Glovo',
             'wolt-desc': 'Fast delivery via Wolt',
             'pyszne-desc': 'Fast delivery via Pyszne',
             'bolt-desc': 'Fast delivery via Bolt',
             disclaimer: '* Prices in third-party delivery services may differ from restaurant prices'
-        }
+        },
+        'mobile-order': 'Order online'
     }
 };
 
@@ -105,6 +120,71 @@ function getMergedTranslations() {
 function applyAllTranslations() {
     const mergedTranslations = getMergedTranslations();
     window.CommonUtils.applyTranslations(mergedTranslations);
+    renderGoogleReviews();
+}
+
+function renderGoogleReviews() {
+    const reviewsData = window.BURGER22_GOOGLE_REVIEWS;
+    if (!reviewsData) return;
+
+    const lang = window.CommonUtils.currentLang === 'en' ? 'en' : 'pl';
+    const translations = pageTranslations[lang].reviews;
+    const locale = lang === 'pl' ? 'pl-PL' : 'en-GB';
+    const rating = reviewsData.rating.toLocaleString(locale, {
+        minimumFractionDigits: 1,
+        maximumFractionDigits: 1
+    });
+    const reviewCount = reviewsData.reviewCount.toLocaleString(locale);
+
+    document.querySelectorAll('[data-google-reviews-link]').forEach((link) => {
+        link.href = reviewsData.reviewsUrl;
+    });
+
+    document.querySelectorAll('[data-google-rating]').forEach((element) => {
+        element.textContent = `${rating} ${translations.rating}`;
+    });
+
+    document.querySelectorAll('[data-google-review-count]').forEach((element) => {
+        element.textContent = `${reviewCount} ${translations.count}`;
+    });
+
+    const ratingLine = document.querySelector('.google-rating-line');
+    if (ratingLine) {
+        ratingLine.setAttribute('aria-label', `${rating} ${translations.rating}, ${reviewCount} ${translations.count}`);
+    }
+
+    const cards = document.querySelector('[data-google-review-cards]');
+    if (!cards) return;
+
+    cards.replaceChildren();
+    reviewsData.reviews.forEach((review) => {
+        const article = document.createElement('article');
+        article.className = 'review-card';
+
+        const stars = document.createElement('div');
+        stars.className = 'review-stars';
+        stars.setAttribute('aria-label', `${review.rating} / 5`);
+        stars.textContent = '★★★★★';
+
+        const quote = document.createElement('blockquote');
+        quote.className = 'review-quote';
+        quote.textContent = review.text[lang];
+
+        const author = document.createElement('p');
+        author.className = 'review-author';
+        author.textContent = review.author;
+
+        article.append(stars, quote, author);
+
+        if (translations.translation) {
+            const note = document.createElement('p');
+            note.className = 'review-translation-note';
+            note.textContent = translations.translation;
+            article.append(note);
+        }
+
+        cards.append(article);
+    });
 }
 
 // Listen for language changes
@@ -114,6 +194,10 @@ window.addEventListener('languageChanged', () => {
 
 // Initialize page-specific functionality
 document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('[data-direct-order]').forEach((link) => {
+        link.href = DIRECT_ORDER_URL;
+    });
+
     // Apply translations after a short delay to ensure common components are loaded
     setTimeout(() => {
         applyAllTranslations();

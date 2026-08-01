@@ -115,6 +115,34 @@
     color: var(--warm-yellow);
 }
 
+.google-rating-line {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 7px;
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-shadow: 0 3px 14px rgba(0, 0, 0, 0.75);
+    transition: color 0.2s ease;
+}
+
+.google-rating-line:hover {
+    color: var(--warm-yellow);
+}
+
+.google-rating-stars,
+.review-stars {
+    color: var(--warm-yellow);
+    letter-spacing: 2px;
+}
+
+.google-rating-separator {
+    color: rgba(255, 255, 255, 0.65);
+}
+
 .hero-btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 14px 26px rgba(255, 165, 0, 0.45);
@@ -178,6 +206,116 @@
     color: var(--graphite-light);
     margin: 0;
     line-height: 1.7;
+}
+
+.reviews-section {
+    padding: 30px 20px 70px;
+    background: radial-gradient(circle at bottom left, rgba(255, 165, 0, 0.09), transparent 55%);
+}
+
+.reviews-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+}
+
+.reviews-heading {
+    max-width: 700px;
+    text-align: center;
+}
+
+.reviews-eyebrow {
+    margin: 0 0 8px;
+    color: #c46b00;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.reviews-title {
+    margin: 0 0 12px;
+    color: var(--graphite);
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 900;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.reviews-summary {
+    margin: 0;
+    color: var(--graphite-light);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.reviews-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.review-card {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    background: var(--white);
+    border: 1px solid rgba(255, 165, 0, 0.16);
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(58, 58, 58, 0.08);
+}
+
+.review-stars {
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+}
+
+.review-quote {
+    flex: 1;
+    margin: 0 0 20px;
+    color: var(--graphite);
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+}
+
+.review-quote::before {
+    content: '“';
+}
+
+.review-quote::after {
+    content: '”';
+}
+
+.review-author {
+    margin: 0;
+    color: var(--graphite-light);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+.review-translation-note {
+    margin: 6px 0 0;
+    color: var(--graphite-light);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-style: italic;
+    opacity: 0.75;
+}
+
+.reviews-button {
+    text-align: center;
 }
 
 .balance-list {
@@ -658,78 +796,62 @@
     color: var(--graphite-light);
 }
 
-.delivery-group-title.recommended {
-    color: #c46b00;
-}
-
-.delivery-service-item {
+.direct-order-button {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    padding: 12px 18px;
-    background: rgba(255, 255, 255, 0.9);
+    gap: 4px;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, var(--primary-orange), var(--warm-yellow));
     border-radius: 14px;
-    border: 2px solid rgba(255, 165, 0, 0.2);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.delivery-service-item:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary-orange);
-    box-shadow: 0 8px 25px rgba(255, 165, 0, 0.3);
-    background: rgba(255, 255, 255, 1);
-}
-
-.featured-delivery-item {
-    border-color: rgba(255, 153, 0, 0.5);
-    background: linear-gradient(135deg, rgba(255, 176, 32, 0.16), rgba(255, 255, 255, 0.96));
-    box-shadow: 0 6px 18px rgba(255, 153, 0, 0.22);
-}
-
-.featured-delivery-item:hover {
-    border-color: #ff9800;
-    box-shadow: 0 10px 28px rgba(255, 153, 0, 0.28);
-    background: linear-gradient(135deg, rgba(255, 193, 7, 0.2), rgba(255, 255, 255, 1));
-}
-
-.service-icon {
-    font-size: 2em;
-    margin-right: 14px;
-    transition: transform 0.3s ease;
-}
-
-.delivery-service-item:hover .service-icon {
-    transform: scale(1.1) rotate(-5deg);
-}
-
-.service-info {
-    flex: 1;
-}
-
-.service-name {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.2em;
-    font-weight: 800;
     color: var(--graphite);
-    margin-bottom: 3px;
-    letter-spacing: 0.7px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.12em;
+    font-weight: 900;
+    letter-spacing: 0.6px;
+    text-decoration: none;
+    box-shadow: 0 8px 22px rgba(255, 165, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.service-desc {
+.direct-order-button small {
     font-family: 'Inter', sans-serif;
-    font-size: 0.85em;
-    color: var(--graphite-light);
-    font-weight: 500;
+    font-size: 0.78em;
+    font-weight: 700;
 }
 
-.price-highlight {
-    font-weight: 800;
-    color: #c46b00;
-    background: rgba(255, 193, 7, 0.22);
-    border-radius: 6px;
-    padding: 1px 6px;
-    white-space: nowrap;
+.direct-order-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(255, 165, 0, 0.4);
+}
+
+.delivery-service-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.delivery-service-link {
+    padding: 8px 12px;
+    border: 1px solid rgba(58, 58, 58, 0.2);
+    border-radius: 999px;
+    background: rgba(58, 58, 58, 0.04);
+    color: var(--graphite-light);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.82em;
+    font-weight: 700;
+    text-decoration: none;
+    transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.delivery-service-link:hover {
+    border-color: var(--primary-orange);
+    background: rgba(255, 165, 0, 0.08);
+    color: var(--graphite);
+}
+
+.mobile-order-button {
+    display: none;
 }
 
 .modal-disclaimer {
@@ -744,6 +866,45 @@
 
 /* Modal mobile responsive */
 @media (max-width: 768px) {
+    body {
+        padding-bottom: calc(76px + env(safe-area-inset-bottom));
+    }
+
+    .reviews-section {
+        padding: 24px 16px 50px;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .review-card {
+        padding: 22px;
+    }
+
+    .mobile-order-button {
+        position: fixed;
+        z-index: 900;
+        right: 16px;
+        bottom: calc(12px + env(safe-area-inset-bottom));
+        left: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 52px;
+        padding: 10px 20px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--primary-orange), var(--warm-yellow));
+        color: var(--graphite);
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        letter-spacing: 0.8px;
+        text-decoration: none;
+        text-transform: uppercase;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+    }
+
     .modal-content {
         padding: 40px 30px;
         max-height: 90vh;
@@ -758,23 +919,6 @@
         font-size: 1em;
     }
 
-    .delivery-service-item {
-        padding: 15px 25px;
-    }
-
-    .service-icon {
-        font-size: 2.5em;
-        margin-right: 20px;
-    }
-
-    .service-name {
-        font-size: 1.5em;
-    }
-
-    .service-desc {
-        font-size: 0.95em;
-    }
-
     .modal-disclaimer {
         font-size: 0.8em;
         margin-top: 20px;
@@ -782,6 +926,23 @@
 }
 
 @media (max-width: 480px) {
+    .google-rating-line {
+        gap: 5px;
+        font-size: 0.88rem;
+    }
+
+    .google-rating-stars {
+        width: 100%;
+    }
+
+    .reviews-title {
+        font-size: 1.55rem;
+    }
+
+    .reviews-button {
+        width: 100%;
+    }
+
     .modal-content {
         padding: 35px 25px;
         width: 95%;
@@ -805,21 +966,9 @@
         margin-bottom: 25px;
     }
 
-    .delivery-service-item {
-        padding: 14px 20px;
-    }
-
-    .service-icon {
-        font-size: 2.2em;
-        margin-right: 15px;
-    }
-
-    .service-name {
-        font-size: 1.3em;
-    }
-
-    .service-desc {
-        font-size: 0.9em;
+    .delivery-service-link {
+        flex: 1 1 calc(50% - 4px);
+        text-align: center;
     }
 
     .modal-disclaimer {

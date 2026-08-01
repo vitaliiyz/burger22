@@ -1,45 +1,87 @@
 # Repository Guidelines
 
-## Project Structure & Module Organization
-- `index.html`, `styles.css`, `home.js`: main landing page and entry navigation.
-- `menu/`: primary menu experience (`index.html`, `app.js`, `styles.css`, `translations.js`).
-- `common/`: shared UI and logic (`common.js`, `common.css`, `header.html`, `footer.html`, `images/`).
-- `cloudflare-worker.js` and `wrangler.toml`: serverless order handler (Telegram integration).
-- Assets: product and brand images in `menu/images/` and `common/images/`.
+## Project Overview
 
-## Build, Test, and Development Commands
-- No build step is required; this is a static site.
-- Local preview (static): `python3 -m http.server` from the repo root.
-- Worker development (optional): `wrangler dev` (requires Wrangler installed and `.dev.vars` for secrets).
+Burger 22 is a bilingual (Polish/English), mobile-first static website for the Burger 22 restaurant in Wrocław. It uses plain HTML, CSS, and JavaScript without a frontend build step.
 
-## Coding Style & Naming Conventions
-- Indentation: 4 spaces in HTML/CSS/JS.
-- JavaScript: vanilla ES6+, event-driven patterns, globals exposed on `window`.
-- CSS: BEM-like class naming (e.g., `.nav-item`, `.burger-menu-btn`), mobile-first.
-- i18n: all translatable strings use `data-i18n` and page-specific `translations.js`.
-- Storage: `localStorage` access should be wrapped in `try/catch`.
-- Constants: UPPERCASE for configuration values.
+The public pages are:
 
-## Testing Guidelines
-- There are no automated tests in this repo.
-- Manual checks:
-  - Switch PL/EN and validate translations.
-  - Submit a test order via the Worker (if configured).
+- `/` — landing page, Google review excerpts, and online-order options.
+- `/menu/` — menu, prices, takeaway information, and section navigation.
+- `/contact.html` — opening hours, contact details, social links, and map.
+- `/order/` — redirect to the external ordering service at `order.site/burger-22`.
 
-## Responsive Design Priority
-- Responsive behavior is critical for this project: most users visit from mobile devices with different screen sizes.
-- Treat mobile UX as a primary requirement for every UI change.
-- Validate layouts on small, medium, and large mobile widths (including narrow screens) and ensure no text, buttons, or prices overflow the viewport.
+A Cloudflare Worker remains in the repository for Telegram order handling, but the current public UI sends customers to the external ordering service. Do not reintroduce the removed cart or make the Worker the primary ordering flow unless explicitly requested.
 
-## Commit & Pull Request Guidelines
-- Commit messages are short, imperative English (e.g., “Add …”, “Remove …”).
-- PRs should include a clear summary and screenshots for UI changes.
-- Note any updates to translations and assets in the PR description.
+## Project Structure
 
-## Operational Notes
-- Online ordering via the site is not production-ready yet. Do not make it the primary CTA until it is tested and validated.
-- This is a static site and Safari/mobile browsers may keep stale CSS/JS aggressively. When changing visible UI, translations, or frontend logic, update the corresponding asset version query in HTML (`styles.css?v=...`, `translations.js?v=...`, `app.js?v=...`, shared `common/*.css/js`) so users reliably receive fresh files without manual cache clearing.
+- `index.html`, `styles.css`, `home.js` — landing page and delivery modal.
+- `reviews-data.js` — manually verified Google rating and selected review excerpts displayed on the landing page.
+- `menu/index.html`, `menu/styles.css`, `menu/app.js`, `menu/translations.js` — menu page.
+- `contact.html`, `contact-styles.css`, `contact.js` — contact page.
+- `common/common.js`, `common/common.css` — shared config, translations, generated header/footer, navigation, and styles.
+- `common/images/`, `menu/images/` — shared and menu assets.
+- `order/index.html`, `_redirects` — browser and hosting redirects to the external ordering service.
+- `cloudflare-worker.js`, `wrangler.toml` — legacy/currently non-primary Telegram order endpoint.
+- `.github/workflows/deploy-worker.yml` — Worker deployment workflow.
 
-## Security & Configuration Tips
-- Do not commit secrets. Use `.dev.vars` locally and Cloudflare/Wrangler secrets in production.
-- Ensure allowed origins and rate limits remain intact in `cloudflare-worker.js`.
+The shared header and footer are generated directly by `common/common.js`. There are no `common/header.html` or `common/footer.html` templates.
+
+## Development Commands
+
+- No install or build step is required.
+- Run the site locally from the repository root:
+  `python3 -m http.server 8000`
+- Open `http://localhost:8000/` and test page navigation over HTTP; opening HTML files directly does not represent production behavior reliably.
+- Optional Worker development: `wrangler dev` (requires Wrangler and a local `.dev.vars`).
+
+## Coding Conventions
+
+- Use 4-space indentation in HTML, CSS, and frontend JavaScript. Preserve a file's existing style in Worker code.
+- Keep the frontend dependency-free and compatible with modern mobile Safari and Chrome.
+- Treat responsive behavior as a primary requirement. Validate narrow, medium, and large mobile widths plus desktop.
+- Use `data-i18n` for user-facing Polish/English text. Keep both languages in sync.
+- Shared restaurant data belongs in `common/common.js`; page-specific translations stay in `home.js`, `contact.js`, or `menu/translations.js`.
+- Wrap `localStorage` access in `try/catch`.
+- Prefer safe DOM APIs such as `textContent` for untrusted or externally maintained content. Only use `innerHTML` for controlled translations that intentionally contain markup.
+- Keep external links using `target="_blank"` paired with `rel="noopener noreferrer"`.
+
+## Important Data Flows
+
+- Language is stored under `burgerLang`; default language is Polish.
+- `window.CommonUtils` owns shared config, translation helpers, header/footer rendering, and language switching.
+- `languageChanged` notifies page scripts to reapply their translations.
+- Direct-order links use `https://order.site/burger-22`. Keep `home.js`, `menu/index.html`, `order/index.html`, and `_redirects` consistent when changing it.
+- Google review content is rendered from `window.BURGER22_GOOGLE_REVIEWS` in `reviews-data.js`. Update `lastVerified`, rating, count, URL, and excerpts only from a newly checked public source.
+
+## Cache Busting
+
+Mobile Safari and other browsers may keep stale CSS and JavaScript aggressively. After changing a visible stylesheet, translation file, data file, or script, update its `?v=...` query in every HTML file that loads it. Shared `common/common.css` and `common/common.js` versions must stay aligned across all pages.
+
+## Validation Checklist
+
+There are no automated tests. For relevant changes, manually verify:
+
+- Home, menu, contact, and `/order/` routes load without console errors.
+- PL/EN switching updates the current page and persists across navigation.
+- Header, footer, mobile menu, phone/copy actions, and external links work.
+- Landing-page review cards and the delivery modal render correctly.
+- Menu section navigation, prices, translations, and images match.
+- Layout has no overflow at narrow, medium, and large mobile widths.
+- Changed assets are cache-busted in the corresponding HTML.
+
+Also run `git diff --check` before committing.
+
+## Git and Deployment
+
+- Preserve unrelated working-tree changes.
+- Use short imperative English commit messages.
+- Include screenshots for visible UI changes and mention translation/assets updates in PR descriptions.
+- The Worker workflow deploys on changes to its source/config on the branches listed in `.github/workflows/deploy-worker.yml`; verify the workflow before describing deployment behavior.
+- The static site's hosting/deployment pipeline is not configured in this repository, so do not claim a specific host without external confirmation.
+
+## Security
+
+- Never commit secrets. Store local Worker secrets in `.dev.vars` and deployment secrets in the configured CI/Cloudflare secret store.
+- Preserve the Worker's origin checks, validation, escaping, and rate limiting unless a task explicitly changes them.
+- Do not expose Telegram or Cloudflare credentials in documentation, code, logs, or screenshots.
