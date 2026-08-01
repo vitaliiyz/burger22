@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const copyPhoneBtn = document.getElementById('copyPhoneBtn');
     if (copyPhoneBtn) {
         copyPhoneBtn.addEventListener('click', async () => {
-            const phoneNumber = '+48573256526';
+            const phoneNumber = window.CommonUtils.config.phone.href.replace('tel:', '');
             try {
                 await navigator.clipboard.writeText(phoneNumber);
 

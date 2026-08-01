@@ -12,11 +12,11 @@
     <link rel="icon" type="image/png" sizes="180x180" href="https://burger22.pl/common/images/apple-touch-icon.png">
     <!-- Apple devices -->
     <link rel="apple-touch-icon" sizes="180x180" href="https://burger22.pl/common/images/apple-touch-icon.png">
-    <link rel="stylesheet" href="common/common.css?v=20260413-1">
-    <link rel="stylesheet" href="styles.css?v=20260319-1">
+    <link rel="stylesheet" href="common/common.css?v=20260801-2">
+    <link rel="stylesheet" href="styles.css?v=20260801-3">
 </head>
 <body>
-    <!-- Common Header (loaded dynamically) -->
+    <!-- Common Header -->
     <div id="common-header"></div>
 
     <div class="hero hero-home">
@@ -26,15 +26,14 @@
         </div>
         <div class="hero-home-inner">
             <div class="hero-copy">
-                <h1 class="hero-title" data-i18n="hero.title">Punkt równowagi smaku</h1>
-                <p class="hero-subtitle" data-i18n="hero.subtitle">Mniej kombinowania, więcej smaku</p>
-                <p class="hero-note" data-i18n="hero.note">Burgery robione na bieżąco we Wrocławiu</p>
-                <p class="hero-note hero-note-secondary" data-i18n="hero.note2">Na miejscu, na wynos lub z dostawą</p>
+                <img class="hero-logo" src="common/images/logo_full.png" alt="Burger 22">
+                <h1 class="hero-title" data-i18n="hero.title">Burgery na Probusa 11</h1>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">Soczysta wołowina, bułka brioche i autorskie kompozycje smaków. Na miejscu, na wynos i z dostawą.</p>
                 <div class="hero-cta">
-                    <button class="hero-btn hero-btn-primary" type="button" data-delivery-open data-i18n="hero.cta-order">Zamów teraz</button>
+                    <button class="hero-btn hero-btn-primary" type="button" data-delivery-open data-i18n="hero.cta-order">Zamów online</button>
                     <a class="hero-btn hero-btn-secondary" href="menu/index.html" data-i18n="hero.cta-menu">Zobacz menu</a>
                 </div>
-                <p class="hero-service" data-i18n="hero.service">Na miejscu • Na wynos • Dostawa</p>
+                <a class="hero-phone" href="#" data-common-href="phone" data-i18n="hero.phone">Zadzwoń i odbierz</a>
             </div>
         </div>
     </div>
@@ -54,28 +53,6 @@
             </ul>
         </div>
     </section>
-
-    <div class="container">
-        <div class="main-nav">
-            <div class="main-nav-item delivery-item" id="deliveryBtn">
-                <div class="nav-icon">🚚</div>
-                <h2 class="nav-title" data-i18n="nav.delivery">Zamów do domu</h2>
-                <p class="nav-description" data-i18n="nav.delivery-desc">Wybierz serwis dostawy</p>
-            </div>
-
-            <a href="menu/index.html" class="main-nav-item menu-item-with-badge">
-                <span class="home-new-badge" data-i18n="newItem">NOWOŚĆ</span>
-                <div class="nav-icon">📖</div>
-                <h2 class="nav-title" data-i18n="nav.menu">Menu</h2>
-                <p class="nav-description" data-i18n="nav.menu-desc">Zobacz naszą ofertę burgerów</p>
-            </a>
-
-            <a href="contact.html" class="main-nav-item">
-                <div class="nav-icon">📞</div>
-                <h2 class="nav-title" data-i18n="nav.contact">Kontakt</h2>
-            </a>
-        </div>
-    </div>
 
     <!-- Delivery Services Modal -->
     <div id="deliveryModal" class="modal">
@@ -136,12 +113,12 @@
         </div>
     </div>
 
-    <!-- Common Footer (loaded dynamically) -->
+    <!-- Common Footer -->
     <div id="common-footer"></div>
 
     <!-- Common JS (must load first) -->
-    <script src="common/common.js?v=20260413-1"></script>
+    <script src="common/common.js?v=20260801-2"></script>
     <!-- Page-specific JS -->
-    <script src="home.js"></script>
+    <script src="home.js?v=20260801-3"></script>
 </body>
 </html>

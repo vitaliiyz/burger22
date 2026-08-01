@@ -1,17 +1,17 @@
 // Home page specific logic - Burger 22
 
+const commonPhoneNational = window.CommonUtils.config.phone.display.replace(/^\+48\s*/, '');
+
 // Page-specific translations
 const pageTranslations = {
     pl: {
         tagline: 'Prawdziwy smak burgera',
         hero: {
-            title: 'Punkt równowagi smaku',
-            subtitle: 'Mniej kombinowania, więcej smaku',
-            note: 'Burgery robione na bieżąco we Wrocławiu',
-            note2: 'Na miejscu, na wynos lub z dostawą',
-            'cta-order': 'Zamów teraz',
+            title: 'Burgery na Probusa 11',
+            subtitle: 'Soczysta wołowina, bułka brioche i autorskie kompozycje smaków. Na miejscu, na wynos i z dostawą.',
+            'cta-order': 'Zamów online',
             'cta-menu': 'Zobacz menu',
-            service: 'Na miejscu • Na wynos • Dostawa'
+            phone: `Zadzwoń i odbierz: ${commonPhoneNational}`
         },
         balance: {
             title: 'Wyważony smak od pierwszego kęsa',
@@ -50,13 +50,11 @@ const pageTranslations = {
     en: {
         tagline: 'Real burger taste',
         hero: {
-            title: 'The balance of flavor',
-            subtitle: 'Less fuss, more flavor',
-            note: 'Burgers made fresh to order in Wroclaw',
-            note2: 'Dine in, takeaway, or delivery',
-            'cta-order': 'Order now',
+            title: 'Burgers at Probusa 11',
+            subtitle: 'Juicy beef, brioche buns, and original flavor combinations. Dine in, takeaway, or delivery.',
+            'cta-order': 'Order online',
             'cta-menu': 'View menu',
-            service: 'Dine in • Takeaway • Delivery'
+            phone: `Call and collect: ${commonPhoneNational}`
         },
         balance: {
             title: 'Balanced flavor from the first bite',
@@ -132,12 +130,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Delivery modal functionality
 function initDeliveryModal() {
-    const deliveryBtn = document.getElementById('deliveryBtn');
     const heroOrderBtn = document.querySelector('[data-delivery-open]');
     const modal = document.getElementById('deliveryModal');
     const closeBtn = document.querySelector('.modal-close');
 
-    if (!deliveryBtn || !modal || !closeBtn) return;
+    if (!heroOrderBtn || !modal || !closeBtn) return;
 
     function openModal() {
         modal.classList.add('active');
@@ -145,10 +142,7 @@ function initDeliveryModal() {
     }
 
     // Open modal
-    deliveryBtn.addEventListener('click', openModal);
-    if (heroOrderBtn) {
-        heroOrderBtn.addEventListener('click', openModal);
-    }
+    heroOrderBtn.addEventListener('click', openModal);
 
     // Close modal via close button
     closeBtn.addEventListener('click', () => {

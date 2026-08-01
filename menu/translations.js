@@ -1,4 +1,6 @@
 // Translation system for Burger 22 Menu
+const commonPhoneDisplay = window.CommonUtils.config.phone.display;
+
 const translations = {
     pl: {
         tagline: 'Menu',
@@ -21,7 +23,7 @@ const translations = {
         takeaway: {
             title: 'Złóż przedzamówienie',
             desc: 'Zadzwoń i złóż zamówienie. Przygotujemy je przed Twoim przyjściem!',
-            trouble: '+48 573 256 526',
+            trouble: commonPhoneDisplay,
             copy: 'Kopiuj',
             call: 'Zadzwoń',
             or: 'lub',
@@ -168,7 +170,7 @@ const translations = {
         takeaway: {
             title: 'Place Pre-order',
             desc: 'Call us to place your order. We\'ll have it ready before you arrive!',
-            trouble: '+48 573 256 526',
+            trouble: commonPhoneDisplay,
             copy: 'Copy',
             call: 'Call',
             or: 'or',

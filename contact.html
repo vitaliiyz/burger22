@@ -12,11 +12,11 @@
     <link rel="icon" type="image/png" sizes="180x180" href="https://burger22.pl/common/images/apple-touch-icon.png">
     <!-- Apple devices -->
     <link rel="apple-touch-icon" sizes="180x180" href="https://burger22.pl/common/images/apple-touch-icon.png">
-    <link rel="stylesheet" href="common/common.css?v=20260413-1">
-    <link rel="stylesheet" href="contact-styles.css">
+    <link rel="stylesheet" href="common/common.css?v=20260801-2">
+    <link rel="stylesheet" href="contact-styles.css?v=20260801-1">
 </head>
 <body>
-    <!-- Common Header (loaded dynamically) -->
+    <!-- Common Header -->
     <div id="common-header"></div>
 
     <div class="hero">
@@ -48,13 +48,13 @@
                 <div class="contact-icon">📞</div>
                 <div class="contact-content">
                     <h3 class="contact-title" data-i18n="contact.phone">Telefon</h3>
-                    <p class="contact-info">+48 573 256 526</p>
+                    <p class="contact-info" data-common-value="phone"></p>
                 </div>
                 <div class="contact-buttons">
-                    <a href="tel:+48573256526" class="icon-btn" title="Zadzwoń">
+                    <a href="#" data-common-href="phone" class="icon-btn" title="Zadzwoń">
                         📞
                     </a>
-                    <button class="icon-btn copy-icon-btn" data-copy="+48 573 256 526" title="Kopiuj">
+                    <button class="icon-btn copy-icon-btn" data-common-copy="phone" data-copy="" title="Kopiuj">
                         📋
                     </button>
                 </div>
@@ -65,13 +65,13 @@
                 <div class="contact-icon">📧</div>
                 <div class="contact-content">
                     <h3 class="contact-title" data-i18n="contact.email">Email</h3>
-                    <p class="contact-info">burger22.wroclaw@gmail.com</p>
+                    <p class="contact-info" data-common-value="email"></p>
                 </div>
                 <div class="contact-buttons">
-                    <a href="mailto:burger22.wroclaw@gmail.com" class="icon-btn" title="Napisz">
+                    <a href="#" data-common-href="email" class="icon-btn" title="Napisz">
                         ✉️
                     </a>
-                    <button class="icon-btn copy-icon-btn" data-copy="burger22.wroclaw@gmail.com" title="Kopiuj">
+                    <button class="icon-btn copy-icon-btn" data-common-copy="email" data-copy="" title="Kopiuj">
                         📋
                     </button>
                 </div>
@@ -86,13 +86,13 @@
                 </div>
                 <div class="contact-content">
                     <h3 class="contact-title">Instagram</h3>
-                    <p class="contact-info">@burger22.pl</p>
+                    <p class="contact-info" data-common-value="instagramLabel"></p>
                 </div>
                 <div class="contact-buttons">
-                    <a href="https://www.instagram.com/burger22.pl" target="_blank" rel="noopener noreferrer" class="icon-btn" title="Otwórz">
+                    <a href="#" data-common-href="instagram" target="_blank" rel="noopener noreferrer" class="icon-btn" title="Otwórz">
                         👆
                     </a>
-                    <button class="icon-btn copy-icon-btn" data-copy="https://www.instagram.com/burger22.pl" title="Kopiuj">
+                    <button class="icon-btn copy-icon-btn" data-common-copy="instagram" data-copy="" title="Kopiuj">
                         📋
                     </button>
                 </div>
@@ -107,13 +107,13 @@
                 </div>
                 <div class="contact-content">
                     <h3 class="contact-title">Facebook</h3>
-                    <p class="contact-info">Burger 22</p>
+                    <p class="contact-info" data-common-value="facebookLabel"></p>
                 </div>
                 <div class="contact-buttons">
-                    <a href="https://www.facebook.com/share/14Jwx2EtbrD" target="_blank" rel="noopener noreferrer" class="icon-btn" title="Otwórz">
+                    <a href="#" data-common-href="facebook" target="_blank" rel="noopener noreferrer" class="icon-btn" title="Otwórz">
                         👆
                     </a>
-                    <button class="icon-btn copy-icon-btn" data-copy="https://www.facebook.com/share/14Jwx2EtbrD" title="Kopiuj">
+                    <button class="icon-btn copy-icon-btn" data-common-copy="facebook" data-copy="" title="Kopiuj">
                         📋
                     </button>
                 </div>
@@ -124,10 +124,10 @@
                 <div class="contact-icon">📍</div>
                 <div class="contact-content">
                     <h3 class="contact-title" data-i18n="contact.address">Adres</h3>
-                    <p class="contact-info">Henryka Probusa 11<br>50-242 Wrocław</p>
+                    <p class="contact-info" data-common-value="address"></p>
                 </div>
                 <div class="contact-buttons">
-                    <button class="icon-btn copy-icon-btn" data-copy="Henryka Probusa 11, 50-242 Wrocław" title="Kopiuj">
+                    <button class="icon-btn copy-icon-btn" data-common-copy="address" data-copy="" title="Kopiuj">
                         📋
                     </button>
                 </div>
@@ -168,11 +168,11 @@
         </div>
     </div>
 
-    <!-- Common Footer (loaded dynamically) -->
+    <!-- Common Footer -->
     <div id="common-footer"></div>
 
     <!-- Common JS (must load first) -->
-    <script src="common/common.js?v=20260413-1"></script>
+    <script src="common/common.js?v=20260801-2"></script>
     <!-- Page-specific JS -->
     <script src="contact.js"></script>
 </body>
