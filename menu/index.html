@@ -12,8 +12,8 @@
     <link rel="icon" type="image/png" sizes="180x180" href="https://burger22.pl/common/images/apple-touch-icon.png">
     <!-- Apple devices -->
     <link rel="apple-touch-icon" sizes="180x180" href="https://burger22.pl/common/images/apple-touch-icon.png">
-    <link rel="stylesheet" href="../common/common.css?v=20260420-1">
-    <link rel="stylesheet" href="styles.css?v=20260606-1">
+    <link rel="stylesheet" href="../common/common.css?v=20260811-1">
+    <link rel="stylesheet" href="styles.css?v=20260811-2">
 </head>
 <body>
     <!-- Common Header (loaded dynamically) -->
@@ -82,7 +82,7 @@
             <div class="menu-grid">
                 <!-- 0. Berry Good -->
                 <div class="menu-item">
-                    <img src="images/berrygood.png" alt="Berry Good burger" class="item-image">
+                    <img src="images/berry-good.webp?v=20260811-1" alt="Berry Good burger" class="item-image" loading="lazy" decoding="async">
                     <div class="item-content">
                         <div class="item-header">
                             <h3 class="item-name" data-i18n="burgers.berryGood.name">Berry Good</h3>
@@ -103,11 +103,8 @@
                 </div>
 
                 <!-- 1. Jalapeño Bacon -->
-                <div class="menu-item new-item-highlight featured-new-burger">
-                    <span class="new-badge" data-i18n="newItem">NOWOŚĆ</span>
-                    <div class="item-image">
-                        <img src="images/jalapeno.png?v=20260606-1" alt="Jalapeño Bacon burger">
-                    </div>
+                <div class="menu-item">
+                    <img src="images/jalapeno.webp?v=20260811-1" alt="Jalapeño Bacon burger" class="item-image" loading="lazy" decoding="async">
                     <div class="item-content">
                         <div class="item-header">
                             <h3 class="item-name" data-i18n="burgers.jalapenoBacon.name">Jalapeño Bacon</h3>
@@ -130,7 +127,7 @@
 
                 <!-- 2. Klasyczny -->
                 <div class="menu-item">
-                    <img src="images/classic.jpeg" alt="Klasyczny burger" class="item-image">
+                    <img src="images/classic.webp?v=20260811-1" alt="Klasyczny burger" class="item-image" loading="lazy" decoding="async">
                     <div class="item-content">
                         <div class="item-header">
                             <h3 class="item-name" data-i18n="burgers.classic.name">Klasyczny cheeseburger z wołowiną i cheddarem</h3>
@@ -153,7 +150,7 @@
 
                 <!-- 3. Serowy -->
                 <div class="menu-item">
-                    <img src="images/cheesy.jpeg" alt="Serowy burger" class="item-image">
+                    <img src="images/cheese.webp?v=20260811-1" alt="Serowy burger" class="item-image" loading="lazy" decoding="async">
                     <div class="item-content">
                         <div class="item-header">
                             <h3 class="item-name" data-i18n="burgers.cheese.name">Burger Serowy z potrójnym serem i bekonem</h3>
@@ -176,7 +173,7 @@
 
                 <!-- 4. Kurczak -->
                 <div class="menu-item">
-                    <img src="images/chicken.png?v=20260605-1" alt="Kurczak burger" class="item-image">
+                    <img src="images/chicken.webp?v=20260811-1" alt="Kurczak burger" class="item-image" loading="lazy" decoding="async">
                     <div class="item-content">
                         <div class="item-header">
                             <h3 class="item-name" data-i18n="burgers.chicken.name">Burger z chrupiącym kurczakiem i cheddarem</h3>
@@ -199,7 +196,7 @@
 
                 <!-- 5. BBQ -->
                 <div class="menu-item">
-                    <img src="images/bbq.jpeg" alt="BBQ burger" class="item-image">
+                    <img src="images/bbq.webp?v=20260811-1" alt="BBQ burger" class="item-image" loading="lazy" decoding="async">
                     <div class="item-content">
                         <div class="item-header">
                             <h3 class="item-name" data-i18n="burgers.bbq.name">BBQ burger z bekonem i cheddarem</h3>
@@ -223,7 +220,7 @@
                 <!-- 0. Camemburger - Zimowa edycja -->
                 <div class="menu-item new-item-highlight">
                     <div class="item-image">
-                        <img src="images/camemburger.png" alt="Camemburger">
+                        <img src="images/camemburger.webp?v=20260811-1" alt="Camemburger" loading="lazy" decoding="async">
                     </div>
                     <div class="item-content">
                         <div class="item-header">
@@ -234,6 +231,32 @@
                         <div class="item-footer">
                             <div>
                                 <div class="item-price">44 zł</div>
+                                <div class="zestaw-price">
+                                    <span class="zestaw-label" data-i18n="comboTitle">Zestaw:</span><br>
+                                    <span data-i18n="comboClassicOption">Klasyczne frytki z sosem:+10zł</span><br>
+                                    <span data-i18n="comboWedgesOption">Łódeczki ziemniaczane z sosem:+14zł</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Vege Camemburger -->
+                <div class="menu-item new-item-highlight featured-new-burger">
+                    <span class="new-badge" data-i18n="newItem">NOWOŚĆ</span>
+                    <div class="item-image">
+                        <img src="images/cam_vege.webp?v=20260811-1" alt="Vege Camemburger" loading="lazy" decoding="async">
+                    </div>
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-name" data-i18n="burgers.vegeCamemburger.name">VEGE CAMEMBURGER 🌱</h3>
+                        </div>
+                        <p class="item-description" data-i18n="burgers.vegeCamemburger.desc">
+                            Bułeczka brioche, smażony camembert, firmowy sos czosnkowy, rukola, pomidor
+                        </p>
+                        <div class="item-footer">
+                            <div>
+                                <div class="item-price">37 zł</div>
                                 <div class="zestaw-price">
                                     <span class="zestaw-label" data-i18n="comboTitle">Zestaw:</span><br>
                                     <span data-i18n="comboClassicOption">Klasyczne frytki z sosem:+10zł</span><br>
@@ -291,7 +314,7 @@
             </div>
             <div class="menu-grid">
                 <div class="menu-item">
-                    <img src="images/fries.jpeg" alt="Frytki S/L" class="item-image">
+                    <img src="images/fries.webp?v=20260811-1" alt="Frytki S/L" class="item-image" loading="lazy" decoding="async">
                     <div class="item-content">
                         <div class="item-header">
                             <h3 class="item-name" data-i18n="sides.fries">🍟 Frytki S/L</h3>
@@ -306,7 +329,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="images/wedges.png" alt="Łódeczki ziemniaczane ze skórką" class="item-image">
+                    <img src="images/wedges.webp?v=20260811-1" alt="Łódeczki ziemniaczane ze skórką" class="item-image" loading="lazy" decoding="async">
                     <div class="item-content">
                         <div class="item-header">
                             <h3 class="item-name" data-i18n="sides.potatoWedges">🥔 Łódeczki ziemniaczane ze skórką</h3>
@@ -321,7 +344,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="images/rings.jpeg" alt="Krążki cebulowe S/L" class="item-image">
+                    <img src="images/rings.webp?v=20260811-1" alt="Krążki cebulowe S/L" class="item-image" loading="lazy" decoding="async">
                     <div class="item-content">
                         <div class="item-header">
                             <h3 class="item-name" data-i18n="sides.onionRings">🧅 Krążki cebulowe S/L</h3>
@@ -336,7 +359,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="images/nuggets.jpeg" alt="Nuggetsy S/L" class="item-image">
+                    <img src="images/nuggets.webp?v=20260811-1" alt="Nuggetsy S/L" class="item-image" loading="lazy" decoding="async">
                     <div class="item-content">
                         <div class="item-header">
                             <h3 class="item-name" data-i18n="sides.nuggets">🍗 Nuggetsy S/L</h3>
@@ -493,7 +516,7 @@
     <!-- Common JS (must load first) -->
     <script src="../common/common.js?v=20260420-1"></script>
     <!-- Translation system -->
-    <script src="translations.js?v=20260715-1"></script>
+    <script src="translations.js?v=20260811-1"></script>
     <!-- Main application logic -->
     <script src="app.js?v=20260420-2"></script>
 

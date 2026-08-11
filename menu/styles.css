@@ -179,7 +179,7 @@ body {
             rgba(255, 165, 0, 0.5) 0%,
             rgba(255, 184, 77, 0.5) 100%
         ),
-        url('../common/images/header.jpeg');
+        url('../common/images/header.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -605,7 +605,9 @@ h1 {
     grid-template-columns: repeat(3, 1fr);
 }
 
+#dodatki img.item-image,
 #dodatki .item-image img {
+    object-fit: cover;
     object-position: center 58%;
 }
 

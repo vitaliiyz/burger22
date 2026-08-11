@@ -60,6 +60,10 @@ const translations = {
                 badge: 'Zimowa edycja',
                 desc: 'Puszysta bułeczka <strong>brioche</strong> skrywa soczystą <strong>wołowinę</strong>, chrupiący <strong>bekon</strong> i kremowy <strong>camembert</strong>, który rozpływa się przy każdym kęsie. Słodycz <strong>żurawiny</strong> przełamuje intensywność sera, tworząc idealny kontrast, a świeża <strong>rukola</strong> dodaje lekkości i aromatu. Całość dopełnia aksamitny <strong>sos miodowo-musztardowy</strong>, który łączy wszystkie smaki w harmonijną, wykwintną kompozycję.'
             },
+            vegeCamemburger: {
+                name: 'VEGE CAMEMBURGER 🌱',
+                desc: 'Puszysta <strong>bułeczka brioche</strong> skrywa chrupiący, <strong>smażony camembert</strong>. Świeża <strong>rukola</strong> i soczysty <strong>pomidor</strong> dodają lekkości, a całość dopełnia <strong>firmowy sos czosnkowy Burger 22</strong>.'
+            },
             berryGood: {
                 name: 'Berry Good',
                 desc: 'Puszysta bułeczka <strong>brioche</strong> kryje w sobie soczystą <strong>wołowinę</strong>, podwójną porcję <strong>wędzonej goudy</strong> i wyrazistą <strong>borówkę brusznicę</strong>. Delikatny <strong>sos mayo</strong> łagodzi całość, a świeża <strong>rukola</strong> dodaje lekkości i balansu. Słodko-wytrawne połączenie smaków tworzy burger, który zaskakuje przy każdym kęsie.'
@@ -206,6 +210,10 @@ const translations = {
                 name: 'Camemburger',
                 badge: 'Winter edition',
                 desc: 'A fluffy <strong>brioche bun</strong> conceals juicy <strong>beef</strong>, crispy <strong>bacon</strong>, and creamy <strong>camembert</strong> that melts with every bite. The sweetness of <strong>cranberry</strong> breaks through the intensity of the cheese, creating the perfect contrast, while fresh <strong>arugula</strong> adds lightness and aroma. Everything is complemented by a velvety <strong>honey-mustard sauce</strong> that brings all the flavors together in a harmonious, exquisite composition.'
+            },
+            vegeCamemburger: {
+                name: 'VEGE CAMEMBURGER 🌱',
+                desc: 'A fluffy <strong>brioche bun</strong> holds crispy <strong>fried camembert</strong>. Fresh <strong>arugula</strong> and juicy <strong>tomato</strong> add lightness, while <strong>Burger 22 signature garlic sauce</strong> completes the composition.'
             },
             berryGood: {
                 name: 'Berry Good',
