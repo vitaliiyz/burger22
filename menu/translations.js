@@ -50,7 +50,6 @@ const translations = {
             bbq: '🍖 BBQ',
             chili: '🌶️ Słodki Chili',
             cheddarTopiony: '🧀 Cheddar Topiony',
-            spicy: '🔥 Ostry',
             mayo: '🥚 Majonez',
             garlic: '🧄 Czosnkowy'
         },
@@ -201,7 +200,6 @@ const translations = {
             bbq: '🍖 BBQ',
             chili: '🌶️ Sweet Chili',
             cheddarTopiony: '🧀 Melted Cheddar',
-            spicy: '🔥 Spicy',
             mayo: '🥚 Mayo',
             garlic: '🧄 Garlic'
         },
