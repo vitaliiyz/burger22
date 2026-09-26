@@ -1,60 +1,97 @@
-// Home page specific logic - Burger 22
-
-// Page-specific translations
+// Homepage translations and language handling
 const pageTranslations = {
     pl: {
-        tagline: 'Prawdziwy smak burgera',
-        nav: {
-            delivery: 'Zamów do domu',
-            'delivery-desc': 'Wybierz serwis dostawy',
-            menu: 'Menu',
-            'menu-desc': 'Zobacz naszą ofertę burgerów',
-            contact: 'Kontakt'
+        hero: {
+            eyebrow: 'Henryka Probusa 11 · Wrocław',
+            title: 'Prawdziwy smak burgera.'
         },
-        modal: {
-            title: 'Wybierz serwis dostawy',
-            description: 'Zamów nasze burgery z dostawą do domu',
-            recommended: 'Rekomendowany serwis',
-            'other-services': 'Inne serwisy dostawy',
-            'direct-title': 'Zamów z dostawą / na wynos',
-            'direct-desc': 'Szybka dostawa przez kurierów Wolt',
-            'restaurant-price': 'Ceny jak w restauracji',
-            'uber-desc': 'Szybka dostawa przez Uber',
-            'glovo-desc': 'Szybka dostawa przez Glovo',
-            'wolt-desc': 'Szybka dostawa przez Wolt',
-            'pyszne-desc': 'Szybka dostawa przez Pyszne',
-            'bolt-desc': 'Szybka dostawa przez Bolt',
-            disclaimer: '* Ceny w zewnętrznych serwisach dostawy mogą różnić się od cen w restauracji'
+        actions: {
+            order: 'Zamów online',
+            menu: 'Zobacz menu',
+            allBurgers: 'Wszystkie burgery',
+            fullMenu: 'Zobacz całe menu',
+            map: 'Otwórz mapę'
+        },
+        popular: {
+            eyebrow: 'Wybierz swojego',
+            title: 'Najpopularniejsze',
+            berryGood: 'Wołowina, 2× wędzona gouda, borówka brusznica, sos mayo, rukola.',
+            jalapeno: 'Wołowina, cheddar, podwójny bekon, jalapeño, cebula, sałata, pikantny sos Burger 22.',
+            classicName: 'Klasyczny',
+            classic: 'Wołowina, cheddar, cebula, pomidor, sałata, ogórek kiszony, firmowy sos Burger 22.',
+            cheeseName: 'Serowy',
+            cheese: 'Wołowina, cheddar, mozzarella, sos serowy, bekon, rukola, pomidor, ogórek kiszony.'
+        },
+        menuTeaser: {
+            eyebrow: 'Pełne menu',
+            title: 'Wybierz dokładnie to, na co masz ochotę.'
+        },
+        categories: {
+            burgers: 'Burgery',
+            sides: 'Dodatki',
+            sauces: 'Sosy',
+            drinks: 'Napoje'
+        },
+        order: {
+            eyebrow: 'Bez zbędnych kroków',
+            title: 'Burger 22 prosto do Ciebie.',
+            description: 'Zamów z dostawą lub wybierz odbiór osobisty.',
+            alternatives: 'Dostępni jesteśmy także tutaj',
+            note: 'Ceny w zewnętrznych serwisach mogą różnić się od cen w restauracji.'
+        },
+        location: {
+            eyebrow: 'Nasz lokal',
+            hoursLabel: 'Godziny',
+            contactLabel: 'Kontakt'
         }
     },
     en: {
-        tagline: 'Real burger taste',
-        nav: {
-            delivery: 'Order for delivery',
-            'delivery-desc': 'Choose delivery service',
-            menu: 'Menu',
-            'menu-desc': 'Check out our burger selection',
-            contact: 'Contact'
+        hero: {
+            eyebrow: 'Henryka Probusa 11 · Wrocław',
+            title: 'The real taste of a burger.'
         },
-        modal: {
-            title: 'Choose delivery service',
-            description: 'Order our burgers with home delivery',
-            recommended: 'Recommended service',
-            'other-services': 'Other delivery services',
-            'direct-title': 'Order delivery / takeaway',
-            'direct-desc': 'Fast delivery by Wolt couriers',
-            'restaurant-price': 'Restaurant pricing',
-            'uber-desc': 'Fast delivery via Uber',
-            'glovo-desc': 'Fast delivery via Glovo',
-            'wolt-desc': 'Fast delivery via Wolt',
-            'pyszne-desc': 'Fast delivery via Pyszne',
-            'bolt-desc': 'Fast delivery via Bolt',
-            disclaimer: '* Prices in third-party delivery services may differ from restaurant prices'
+        actions: {
+            order: 'Order online',
+            menu: 'See the menu',
+            allBurgers: 'All burgers',
+            fullMenu: 'See the full menu',
+            map: 'Open map'
+        },
+        popular: {
+            eyebrow: 'Pick yours',
+            title: 'Most popular',
+            berryGood: 'Beef, double smoked gouda, lingonberry, mayo sauce, arugula.',
+            jalapeno: 'Beef, cheddar, double bacon, jalapeño, onion, lettuce, Burger 22 spicy sauce.',
+            classicName: 'Classic',
+            classic: 'Beef, cheddar, onion, tomato, lettuce, pickles, Burger 22 signature sauce.',
+            cheeseName: 'Cheese',
+            cheese: 'Beef, cheddar, mozzarella, cheese sauce, bacon, arugula, tomato, pickles.'
+        },
+        menuTeaser: {
+            eyebrow: 'Full menu',
+            title: 'Choose exactly what you are craving.'
+        },
+        categories: {
+            burgers: 'Burgers',
+            sides: 'Sides',
+            sauces: 'Sauces',
+            drinks: 'Drinks'
+        },
+        order: {
+            eyebrow: 'No extra steps',
+            title: 'Burger 22 straight to you.',
+            description: 'Order delivery or choose takeaway.',
+            alternatives: 'You can also find us here',
+            note: 'Prices on third-party delivery platforms may differ from restaurant prices.'
+        },
+        location: {
+            eyebrow: 'Our restaurant',
+            hoursLabel: 'Hours',
+            contactLabel: 'Contact'
         }
     }
 };
 
-// Merge common and page-specific translations
 function getMergedTranslations() {
     const common = window.CommonUtils.commonTranslations;
     return {
@@ -63,66 +100,32 @@ function getMergedTranslations() {
     };
 }
 
-// Apply all translations
-function applyAllTranslations() {
-    const mergedTranslations = getMergedTranslations();
-    window.CommonUtils.applyTranslations(mergedTranslations);
+function applyHomeTranslations() {
+    window.CommonUtils.applyTranslations(getMergedTranslations());
+    document.title = window.CommonUtils.currentLang === 'en'
+        ? 'Burger 22 — Wrocław'
+        : 'Burger 22 — Wrocław';
 }
 
-// Listen for language changes
-window.addEventListener('languageChanged', () => {
-    applyAllTranslations();
-});
+let homeInitialized = false;
 
-// Initialize page-specific functionality
-document.addEventListener('DOMContentLoaded', () => {
-    // Apply translations after a short delay to ensure common components are loaded
-    setTimeout(() => {
-        applyAllTranslations();
+function initHome() {
+    const siteHeader = document.querySelector('.site-header');
+    if (homeInitialized || !siteHeader) {
+        return;
+    }
 
-        // Initialize language buttons
-        if (window.CommonUtils && window.CommonUtils.initLanguageButtons) {
-            window.CommonUtils.initLanguageButtons();
-        }
+    homeInitialized = true;
+    siteHeader.hidden = false;
+    applyHomeTranslations();
+    window.CommonUtils.initLanguageButtons();
+}
 
-        // Initialize delivery modal
-        initDeliveryModal();
-    }, 100);
-});
+window.addEventListener('languageChanged', applyHomeTranslations);
+window.addEventListener('commonReady', initHome, { once: true });
 
-// Delivery modal functionality
-function initDeliveryModal() {
-    const deliveryBtn = document.getElementById('deliveryBtn');
-    const modal = document.getElementById('deliveryModal');
-    const closeBtn = document.querySelector('.modal-close');
-
-    if (!deliveryBtn || !modal || !closeBtn) return;
-
-    // Open modal
-    deliveryBtn.addEventListener('click', () => {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    });
-
-    // Close modal via close button
-    closeBtn.addEventListener('click', () => {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-    });
-
-    // Close modal when clicking outside
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    });
-
-    // Close modal with Escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('active')) {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    });
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHome, { once: true });
+} else {
+    initHome();
 }

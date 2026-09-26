@@ -13,6 +13,9 @@ const commonTranslations = {
             cart: 'Koszyk',
             contact: 'Kontakt'
         },
+        header: {
+            order: 'Zamów online'
+        },
         footer: {
             hours: 'Godziny otwarcia',
             'hours-info': 'Pn-Nd: 12:00 - 22:00',
@@ -31,6 +34,9 @@ const commonTranslations = {
             menu: 'Menu',
             cart: 'Cart',
             contact: 'Contact'
+        },
+        header: {
+            order: 'Order online'
         },
         footer: {
             hours: 'Opening Hours',
@@ -78,6 +84,13 @@ function fixHeaderPaths() {
             .replace(/INDEX_PATH/g, 'index.html')
             .replace(/MENU_PATH/g, 'menu/index.html')
             .replace(/CONTACT_PATH/g, 'contact.html');
+    }
+
+    const logo = header.querySelector('[data-site-logo]');
+    if (logo) {
+        logo.src = isInMenuFolder
+            ? '../common/images/logo_full.png'
+            : 'common/images/logo_full.png';
     }
 }
 
@@ -197,7 +210,7 @@ async function initCommon() {
     const basePath = isInMenuFolder ? '../common/' : 'common/';
 
     // Load header and footer
-    await loadComponent('common-header', basePath + 'header.html');
+    await loadComponent('common-header', basePath + 'header.html?v=20260926-3');
     await loadComponent('common-footer', basePath + 'footer.html');
 
     // Fix header paths after loading
@@ -211,6 +224,8 @@ async function initCommon() {
 
     // Apply common translations
     applyTranslations(commonTranslations);
+
+    window.dispatchEvent(new CustomEvent('commonReady'));
 }
 
 // Export functions for use in page-specific scripts
