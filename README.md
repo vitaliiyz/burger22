@@ -21,10 +21,11 @@ installation.
 │   ├── common.css
 │   ├── header.html
 │   ├── footer.html
+│   ├── menu-data.js            # Burger names, descriptions, prices, and images for both pages
 │   └── images/                # Shared hero, logos, and icons
 ├── menu/
-│   ├── index.html              # Menu content and prices
-│   ├── translations.js         # Polish and English menu copy
+│   ├── index.html              # Menu layout and menu-only items
+│   ├── translations.js         # Polish and English menu interface and menu-only copy
 │   ├── app.js
 │   ├── styles.css
 │   └── images/                # Optimized WebP product photos
@@ -48,19 +49,21 @@ HTML files directly because shared header and footer fragments are loaded with `
 
 ## Content and translations
 
-- Landing-page text: `home.js`
-- Menu items and prices: `menu/index.html`
-- Polish and English menu text: `menu/translations.js`
+- Landing-page text and featured burger order: `home.js`
+- Burger names, descriptions, prices, and images in both languages: `common/menu-data.js`
+- Menu-only items and prices: `menu/index.html`; their translated text: `menu/translations.js`
 - Contact-page text: `contact.js`
 - Shared navigation, footer translations, hours, and contact details: `common/common.js` and the
   shared HTML fragments
 
-The selected language is stored in `localStorage` under `burgerLang`. Translatable elements use
-`data-i18n`, and page scripts react to the shared `languageChanged` event.
+The selected language is stored in `localStorage` under `burgerLang`. Static translatable elements
+use `data-i18n`; burger cards read localized records from `common/menu-data.js`. Page scripts react
+to the shared `languageChanged` event.
 
-When changing menu content, keep the Polish and English variants synchronized. Prices are normally
-stored in `menu/index.html`, while translated names and descriptions are stored in
-`menu/translations.js`.
+For burgers, update `common/menu-data.js` once. Each record keeps the existing full menu copy and,
+where featured, the shorter homepage copy. `home.js` only selects the four featured burger IDs.
+Keep Polish and English variants synchronized. The homepage, menu, and contact page load the same
+`common/header.html` and `common/footer.html`; page styles control the footer layout.
 
 ## Images
 

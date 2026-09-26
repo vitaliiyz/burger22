@@ -599,6 +599,16 @@
     text-align: left;
 }
 
+.home-page .home-copyright-mark {
+    display: inline;
+}
+
+.home-page .footer-section:not(.footer-social),
+.home-page .footer-social h3,
+.home-page .footer-bottom {
+    display: none;
+}
+
 .home-page .footer-copyright {
     color: var(--home-muted);
     font-size: 0.875rem;

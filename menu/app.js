@@ -1,5 +1,50 @@
 // Main application logic for Burger 22 menu
 
+function renderBurgers() {
+    const grid = document.getElementById('burgerGrid');
+    const lang = window.CommonUtils.currentLang;
+    const copy = translations[lang];
+
+    grid.replaceChildren(...window.MenuData.burgers.map(burger => {
+        const isCamembert = burger.id === 'camemburger' || burger.id === 'vegeCamemburger';
+        const card = document.createElement('div');
+        card.className = 'menu-item';
+        if (isCamembert) card.classList.add('new-item-highlight');
+        if (burger.id === 'vegeCamemburger') card.classList.add('featured-new-burger');
+        card.innerHTML = `
+            ${burger.id === 'vegeCamemburger' ? '<span class="new-badge"></span>' : ''}
+            ${isCamembert ? '<div class="item-image"><img loading="lazy" decoding="async"></div>' : '<img class="item-image" loading="lazy" decoding="async">'}
+            <div class="item-content">
+                <div class="item-header"><h3 class="item-name"></h3></div>
+                <p class="item-description"></p>
+                <div class="item-footer">
+                    <div>
+                        <div class="item-price"></div>
+                        <div class="zestaw-price">
+                            <span class="zestaw-label"></span><br>
+                            <span class="combo-classic"></span><br>
+                            <span class="combo-wedges"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+        const image = card.querySelector('img');
+        image.src = '../' + burger.image;
+        image.alt = burger.menuAlt;
+        card.querySelector('.item-name').textContent = burger.text[lang].name;
+        card.querySelector('.item-description').innerHTML = burger.text[lang].description;
+        card.querySelector('.item-price').textContent = burger.price;
+        card.querySelector('.zestaw-label').textContent = copy.comboTitle;
+        card.querySelector('.combo-classic').textContent = copy.comboClassicOption;
+        card.querySelector('.combo-wedges').textContent = copy.comboWedgesOption;
+        if (burger.id === 'vegeCamemburger') card.querySelector('.new-badge').textContent = copy.newItem;
+        return card;
+    }));
+}
+
+renderBurgers();
+window.addEventListener('languageChanged', renderBurgers);
+
 const menuNav = document.getElementById('menuNav');
 const navSpacer = document.getElementById('navSpacer');
 const sections = document.querySelectorAll('.menu-section');

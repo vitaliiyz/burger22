@@ -14,13 +14,7 @@ const pageTranslations = {
         },
         popular: {
             eyebrow: 'Wybierz swojego',
-            title: 'Polecamy',
-            berryGood: 'Wołowina, 2× wędzona gouda, borówka brusznica, sos mayo, rukola.',
-            jalapeno: 'Wołowina, cheddar, podwójny bekon, jalapeño, cebula, sałata, pikantny sos Burger 22.',
-            classicName: 'Klasyczny',
-            classic: 'Wołowina, cheddar, cebula, pomidor, sałata, ogórek kiszony, firmowy sos Burger 22.',
-            cheeseName: 'Serowy',
-            cheese: 'Wołowina, cheddar, mozzarella, sos serowy, bekon, rukola, pomidor, ogórek kiszony.'
+            title: 'Polecamy'
         },
         menuTeaser: {
             eyebrow: 'Pełne menu',
@@ -59,13 +53,7 @@ const pageTranslations = {
         },
         popular: {
             eyebrow: 'Pick yours',
-            title: 'Recommended',
-            berryGood: 'Beef, double smoked gouda, lingonberry, mayo sauce, arugula.',
-            jalapeno: 'Beef, cheddar, double bacon, jalapeño, onion, lettuce, Burger 22 spicy sauce.',
-            classicName: 'Classic',
-            classic: 'Beef, cheddar, onion, tomato, lettuce, pickles, Burger 22 signature sauce.',
-            cheeseName: 'Cheese',
-            cheese: 'Beef, cheddar, mozzarella, cheese sauce, bacon, arugula, tomato, pickles.'
+            title: 'Recommended'
         },
         menuTeaser: {
             eyebrow: 'Full menu',
@@ -92,6 +80,40 @@ const pageTranslations = {
     }
 };
 
+const FEATURED_BURGER_IDS = ['classic', 'cheese', 'berryGood', 'jalapenoBacon'];
+
+function renderFeaturedBurgers() {
+    const grid = document.querySelector('.product-grid');
+    if (!grid) return;
+
+    const burgers = window.MenuData.burgers;
+    const lang = window.CommonUtils.currentLang;
+    grid.replaceChildren(...FEATURED_BURGER_IDS.map(id => {
+        const burger = burgers.find(item => item.id === id);
+        const copy = burger.text[lang];
+        const card = document.createElement('article');
+        card.className = 'product-card';
+        card.innerHTML = `
+            <a class="product-card__image" href="menu/index.html#burgery">
+                <img loading="lazy" decoding="async">
+            </a>
+            <div class="product-card__heading">
+                <h3></h3>
+                <p class="product-card__price"></p>
+            </div>
+            <p class="product-card__description"></p>`;
+        const link = card.querySelector('a');
+        link.setAttribute('aria-label', burger.featuredLinkLabel || burger.featuredAlt);
+        const image = card.querySelector('img');
+        image.src = burger.image;
+        image.alt = burger.featuredAlt;
+        card.querySelector('h3').textContent = copy.featuredName;
+        card.querySelector('.product-card__price').textContent = burger.price;
+        card.querySelector('.product-card__description').textContent = copy.featuredDescription;
+        return card;
+    }));
+}
+
 function getMergedTranslations() {
     const common = window.CommonUtils.commonTranslations;
     return {
@@ -117,6 +139,7 @@ function initHome() {
 
     homeInitialized = true;
     siteHeader.hidden = false;
+    renderFeaturedBurgers();
     applyHomeTranslations();
     window.CommonUtils.initLanguageButtons();
 
@@ -131,7 +154,10 @@ function initHome() {
     }
 }
 
-window.addEventListener('languageChanged', applyHomeTranslations);
+window.addEventListener('languageChanged', () => {
+    renderFeaturedBurgers();
+    applyHomeTranslations();
+});
 window.addEventListener('commonReady', initHome, { once: true });
 
 if (document.readyState === 'loading') {

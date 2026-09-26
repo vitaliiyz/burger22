@@ -290,6 +290,10 @@ body {
     margin-bottom: 30px;
 }
 
+.home-copyright-mark {
+    display: none;
+}
+
 .footer-section h3 {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.2em;
