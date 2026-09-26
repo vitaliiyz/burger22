@@ -119,6 +119,16 @@ function initHome() {
     siteHeader.hidden = false;
     applyHomeTranslations();
     window.CommonUtils.initLanguageButtons();
+
+    const hero = document.querySelector('.home-hero');
+    const mobileOrderCta = document.querySelector('.mobile-order-cta');
+    if (hero && mobileOrderCta && 'IntersectionObserver' in window) {
+        mobileOrderCta.classList.add('is-waiting');
+        const observer = new IntersectionObserver(([entry]) => {
+            mobileOrderCta.classList.toggle('is-waiting', entry.isIntersecting);
+        });
+        observer.observe(hero);
+    }
 }
 
 window.addEventListener('languageChanged', applyHomeTranslations);

@@ -12,7 +12,7 @@
     <link rel="icon" type="image/png" sizes="180x180" href="https://burger22.pl/common/images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="https://burger22.pl/common/images/apple-touch-icon.png">
     <link rel="stylesheet" href="common/common.css?v=20260811-1">
-    <link rel="stylesheet" href="styles.css?v=20260926-2">
+    <link rel="stylesheet" href="styles.css?v=20260926-3">
 </head>
 <body class="home-page">
     <div id="common-header"></div>
@@ -29,7 +29,6 @@
             </div>
             <div class="home-hero__media" aria-hidden="true">
                 <img src="common/images/header.webp" alt="" fetchpriority="high">
-                <span class="home-hero__stamp">B22</span>
             </div>
         </section>
 
@@ -40,7 +39,7 @@
                 <a class="text-link" href="menu/index.html#burgery" data-i18n="actions.allBurgers">Wszystkie burgery</a>
             </div>
 
-            <div class="product-grid">
+            <div class="product-grid" role="region" aria-labelledby="popular-title" tabindex="0">
                 <article class="product-card">
                     <a class="product-card__image" href="menu/index.html#burgery" aria-label="Berry Good">
                         <img src="menu/images/berry-good.webp?v=20260811-1" alt="Berry Good burger" loading="lazy" decoding="async">
@@ -122,13 +121,12 @@
         </section>
 
         <section class="location" aria-labelledby="location-title">
-            <div class="location__image">
-                <img src="common/images/header.webp" alt="Burgery Burger 22" loading="lazy" decoding="async">
-            </div>
             <div class="location__content">
-                <p class="eyebrow" data-i18n="location.eyebrow">Nasz lokal</p>
-                <h2 id="location-title">Henryka Probusa 11</h2>
-                <p class="location__city">50-242 Wrocław</p>
+                <div class="location__address">
+                    <p class="eyebrow" data-i18n="location.eyebrow">Nasz lokal</p>
+                    <h2 id="location-title">Henryka Probusa 11</h2>
+                    <p class="location__city">50-242 Wrocław</p>
+                </div>
 
                 <dl class="location__details">
                     <div>
@@ -156,6 +154,6 @@
     <div id="common-footer"></div>
 
     <script src="common/common.js?v=20260926-3"></script>
-    <script src="home.js?v=20260926-1"></script>
+    <script src="home.js?v=20260926-2"></script>
 </body>
 </html>
