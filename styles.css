@@ -656,6 +656,12 @@
         height: clamp(260px, 75vw, 420px);
     }
 
+    .home-hero__media::after {
+        background:
+            linear-gradient(to top, var(--home-black), transparent 40px),
+            linear-gradient(to bottom, var(--home-black) 0%, transparent 24%);
+    }
+
     .section {
         padding-top: 56px;
         padding-bottom: 56px;
