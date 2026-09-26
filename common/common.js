@@ -211,7 +211,10 @@ async function initCommon() {
 
     // Load header and footer
     await loadComponent('common-header', basePath + 'header.html?v=20260926-3');
-    await loadComponent('common-footer', basePath + 'footer.html');
+    const footerFile = document.body.classList.contains('home-page')
+        ? 'footer-home.html?v=20260926-1'
+        : 'footer.html';
+    await loadComponent('common-footer', basePath + footerFile);
 
     // Fix header paths after loading
     fixHeaderPaths();

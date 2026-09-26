@@ -366,8 +366,8 @@
 .product-card__description {
     margin-top: 10px;
     color: var(--home-muted);
-    font-size: 0.92rem;
-    line-height: 1.55;
+    font-size: 0.96rem;
+    line-height: 1.65;
 }
 
 .menu-teaser {
@@ -491,7 +491,8 @@
 .order-section__note {
     margin-top: 18px;
     color: var(--home-muted);
-    font-size: 0.78rem;
+    font-size: 0.875rem;
+    line-height: 1.65;
 }
 
 .location {
@@ -582,36 +583,32 @@
 
 .home-page .footer {
     margin-top: 0;
-    padding: 40px 0 22px;
+    padding: 20px 0;
     background: var(--home-black);
     border-top: 1px solid var(--home-line);
 }
 
 .home-page .footer-content {
     max-width: 1360px;
-    margin-bottom: 26px;
-    gap: 28px;
+    margin-bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 24px;
     text-align: left;
 }
 
-.home-page .footer-section h3 {
-    margin-bottom: 10px;
-    color: var(--home-yellow);
-    font-size: 0.74rem;
-    font-weight: 800;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-}
-
-.home-page .footer-section p {
-    margin-bottom: 4px;
+.home-page .footer-copyright {
     color: var(--home-muted);
-    font-size: 0.82rem;
-    line-height: 1.55;
+    font-size: 0.875rem;
+    line-height: 1.6;
 }
 
 .home-page .social-links {
+    margin-top: 0;
     justify-content: flex-start;
+    flex-shrink: 0;
 }
 
 .home-page .social-icon {
@@ -627,17 +624,6 @@
     background: var(--home-yellow);
     color: var(--home-black);
     box-shadow: none;
-}
-
-.home-page .footer-bottom {
-    max-width: 1360px;
-    padding: 20px;
-    text-align: left;
-}
-
-.home-page .footer-bottom p {
-    color: var(--home-muted);
-    font-size: 0.72rem;
 }
 
 .home-page :focus-visible {
@@ -718,36 +704,6 @@
 
     .location__links {
         margin-top: 24px;
-    }
-
-    .home-page .footer {
-        padding: 32px 0 12px;
-    }
-
-    .home-page .footer-content {
-        gap: 22px;
-        margin-bottom: 22px;
-    }
-
-    .home-page .footer-section p {
-        font-size: 0.9rem;
-        line-height: 1.65;
-        opacity: 1;
-        overflow-wrap: anywhere;
-    }
-
-    .home-page .footer-section h3 {
-        font-size: 0.78rem;
-        margin-bottom: 8px;
-    }
-
-    .home-page .footer-bottom {
-        padding: 16px 20px;
-    }
-
-    .home-page .footer-bottom p {
-        font-size: 0.78rem;
-        opacity: 1;
     }
 }
 
@@ -950,12 +906,7 @@
     }
 
     .home-page .footer-content {
-        grid-template-columns: 0.85fr 1.4fr 0.65fr;
         padding: 0 40px;
-    }
-
-    .home-page .footer-bottom {
-        padding: 20px 40px 0;
     }
 }
 
