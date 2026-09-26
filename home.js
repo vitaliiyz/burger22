@@ -14,7 +14,7 @@ const pageTranslations = {
         },
         popular: {
             eyebrow: 'Wybierz swojego',
-            title: 'Najpopularniejsze',
+            title: 'Polecamy',
             berryGood: 'Wołowina, 2× wędzona gouda, borówka brusznica, sos mayo, rukola.',
             jalapeno: 'Wołowina, cheddar, podwójny bekon, jalapeño, cebula, sałata, pikantny sos Burger 22.',
             classicName: 'Klasyczny',
@@ -59,7 +59,7 @@ const pageTranslations = {
         },
         popular: {
             eyebrow: 'Pick yours',
-            title: 'Most popular',
+            title: 'Recommended',
             berryGood: 'Beef, double smoked gouda, lingonberry, mayo sauce, arugula.',
             jalapeno: 'Beef, cheddar, double bacon, jalapeño, onion, lettuce, Burger 22 spicy sauce.',
             classicName: 'Classic',
