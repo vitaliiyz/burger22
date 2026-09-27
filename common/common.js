@@ -16,6 +16,12 @@ const commonTranslations = {
         header: {
             order: 'Zamów online'
         },
+        location: {
+            eyebrow: 'Nasz lokal',
+            hoursLabel: 'Godziny',
+            contactLabel: 'Kontakt',
+            map: 'Otwórz mapę'
+        },
         footer: {
             hours: 'Godziny otwarcia',
             'hours-info': 'Pn-Nd: 12:00 - 22:00',
@@ -37,6 +43,12 @@ const commonTranslations = {
         },
         header: {
             order: 'Order online'
+        },
+        location: {
+            eyebrow: 'Our restaurant',
+            hoursLabel: 'Hours',
+            contactLabel: 'Contact',
+            map: 'Open map'
         },
         footer: {
             hours: 'Opening Hours',
@@ -209,8 +221,11 @@ async function initCommon() {
     const isInMenuFolder = currentPath.includes('/menu/');
     const basePath = isInMenuFolder ? '../common/' : 'common/';
 
-    // Load header and footer
+    // Load shared page components
     await loadComponent('common-header', basePath + 'header.html?v=20260926-3');
+    if (document.getElementById('common-location')) {
+        await loadComponent('common-location', basePath + 'location.html?v=20260927-1');
+    }
     await loadComponent('common-footer', basePath + 'footer.html?v=20260926-1');
     if (!document.body.classList.contains('home-page')) {
         const footer = document.getElementById('common-footer');

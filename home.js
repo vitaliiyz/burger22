@@ -9,8 +9,7 @@ const pageTranslations = {
             order: 'Zamów online',
             menu: 'Zobacz menu',
             allBurgers: 'Wszystkie burgery',
-            fullMenu: 'Zobacz całe menu',
-            map: 'Otwórz mapę'
+            fullMenu: 'Zobacz całe menu'
         },
         popular: {
             eyebrow: 'Wybierz swojego',
@@ -32,11 +31,6 @@ const pageTranslations = {
             description: 'Zamów z dostawą lub wybierz odbiór osobisty.',
             alternatives: 'Dostępni jesteśmy także tutaj',
             note: 'Ceny w zewnętrznych serwisach mogą różnić się od cen w restauracji.'
-        },
-        location: {
-            eyebrow: 'Nasz lokal',
-            hoursLabel: 'Godziny',
-            contactLabel: 'Kontakt'
         }
     },
     en: {
@@ -48,8 +42,7 @@ const pageTranslations = {
             order: 'Order online',
             menu: 'See the menu',
             allBurgers: 'All burgers',
-            fullMenu: 'See the full menu',
-            map: 'Open map'
+            fullMenu: 'See the full menu'
         },
         popular: {
             eyebrow: 'Pick yours',
@@ -71,11 +64,6 @@ const pageTranslations = {
             description: 'Order delivery or choose takeaway.',
             alternatives: 'You can also find us here',
             note: 'Prices on third-party delivery platforms may differ from restaurant prices.'
-        },
-        location: {
-            eyebrow: 'Our restaurant',
-            hoursLabel: 'Hours',
-            contactLabel: 'Contact'
         }
     }
 };
