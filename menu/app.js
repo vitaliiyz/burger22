@@ -1,163 +1,119 @@
-// Main application logic for Burger 22 menu
+function renderBurgers() {
+    const grid = document.getElementById('burgerGrid');
+    const lang = window.CommonUtils.currentLang;
+    const copy = translations[lang];
+
+    grid.replaceChildren(...window.MenuData.burgers.map((burger, index) => {
+        const card = document.createElement('article');
+        card.className = 'menu-item';
+        card.innerHTML = `
+            <img class="item-image" loading="lazy" decoding="async">
+            <div class="item-content">
+                <span class="new-badge" hidden></span>
+                <div class="item-header">
+                    <h3 class="item-name"></h3>
+                    <span class="item-price"></span>
+                </div>
+                <p class="item-description"></p>
+                <div class="item-footer">
+                    <p class="zestaw-price">
+                        <span class="zestaw-label"></span><br>
+                        <span class="combo-classic"></span><br>
+                        <span class="combo-wedges"></span>
+                    </p>
+                </div>
+            </div>`;
+        const image = card.querySelector('.item-image');
+        const aboveFold = index === 0 || (index === 1 && window.matchMedia('(min-width: 900px)').matches);
+        if (aboveFold) {
+            image.loading = 'eager';
+            image.fetchPriority = 'high';
+        }
+        image.src = '../' + burger.image;
+        image.alt = burger.menuAlt;
+
+        card.querySelector('.item-name').textContent = burger.text[lang].name;
+        card.querySelector('.item-price').textContent = burger.price;
+        card.querySelector('.item-description').innerHTML = burger.text[lang].description;
+        card.querySelector('.zestaw-label').textContent = copy.comboTitle;
+        card.querySelector('.combo-classic').textContent = copy.comboClassicOption;
+        card.querySelector('.combo-wedges').textContent = copy.comboWedgesOption;
+
+        if (burger.id === 'vegeCamemburger') {
+            const badge = card.querySelector('.new-badge');
+            badge.hidden = false;
+            badge.textContent = copy.newItem;
+        }
+        return card;
+    }));
+}
 
 const menuNav = document.getElementById('menuNav');
-const navSpacer = document.getElementById('navSpacer');
-const sections = document.querySelectorAll('.menu-section');
-const allNavItems = document.querySelectorAll('.nav-item');
+const navItems = [...menuNav.querySelectorAll('.nav-item')];
+const sections = [...document.querySelectorAll('.menu-section')];
+let activeSection = '';
 
-let navOffset = 0;
-
-// Calculate initial offset
-function calculateNavOffset() {
-    navOffset = menuNav.offsetTop;
-}
-
-// Recalculate offset on load and resize
-window.addEventListener('load', calculateNavOffset);
-window.addEventListener('resize', calculateNavOffset);
-
-// Initial calculation
-calculateNavOffset();
-
-// Use Intersection Observer for better performance
-const observerOptions = {
-    root: null,
-    rootMargin: '-20% 0px -70% 0px',
-    threshold: 0
-};
-
-let currentActiveSection = '';
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const sectionId = entry.target.getAttribute('id');
-
-            if (sectionId !== currentActiveSection) {
-                currentActiveSection = sectionId;
-
-                // Remove active from all nav items
-                allNavItems.forEach(item => {
-                    item.classList.remove('active');
-                });
-
-                // Add active to current section
-                const activeNavItem = document.querySelector(`.nav-item[data-section="${sectionId}"]`);
-                if (activeNavItem) {
-                    activeNavItem.classList.add('active');
-
-                    // Auto-scroll navigation on mobile
-                    if (window.innerWidth <= 768) {
-                        scrollNavToActiveItem(activeNavItem);
-                    }
-                }
-            }
+function setActiveSection(id) {
+    if (id === activeSection) return;
+    activeSection = id;
+    navItems.forEach(item => {
+        const isActive = item.dataset.section === id;
+        item.classList.toggle('active', isActive);
+        if (isActive) {
+            item.setAttribute('aria-current', 'location');
+            const left = item.offsetLeft - (menuNav.clientWidth - item.offsetWidth) / 2;
+            menuNav.scrollTo({ left, behavior: 'smooth' });
+        } else {
+            item.removeAttribute('aria-current');
         }
     });
-}, observerOptions);
-
-// Observe all sections
-sections.forEach(section => {
-    observer.observe(section);
-});
-
-// Function to scroll navigation to active item (for mobile horizontal scroll)
-function scrollNavToActiveItem(activeItem) {
-    if (window.innerWidth <= 768) {
-        const navContainer = menuNav;
-        const itemLeft = activeItem.offsetLeft;
-        const itemWidth = activeItem.offsetWidth;
-        const navWidth = navContainer.offsetWidth;
-        const scrollLeft = itemLeft - (navWidth / 2) + (itemWidth / 2);
-
-        navContainer.scrollTo({
-            left: scrollLeft,
-            behavior: 'smooth'
-        });
-    }
 }
 
-// Handle sticky navigation class (for styling changes only)
-let ticking = false;
+function updateActiveSection() {
+    const threshold = menuNav.getBoundingClientRect().bottom + 24;
+    let current = sections[0].id;
+    sections.forEach(section => {
+        if (section.getBoundingClientRect().top <= threshold) current = section.id;
+    });
+    setActiveSection(current);
+}
 
-window.addEventListener('scroll', function() {
-    if (!ticking) {
-        window.requestAnimationFrame(function() {
-            const scrollPosition = window.pageYOffset;
-
-            // Sticky navigation styling
-            if (scrollPosition >= navOffset) {
-                menuNav.classList.add('sticky');
-                navSpacer.classList.add('active');
-
-                // Move burger button down on mobile when nav is sticky
-                if (window.innerWidth <= 768) {
-                    const burgerBtn = document.getElementById('burgerMenuBtn');
-                    if (burgerBtn) {
-                        burgerBtn.classList.add('scrolled');
-                    }
-                }
-            } else {
-                menuNav.classList.remove('sticky');
-                navSpacer.classList.remove('active');
-
-                // Reset burger button position
-                const burgerBtn = document.getElementById('burgerMenuBtn');
-                if (burgerBtn) {
-                    burgerBtn.classList.remove('scrolled');
-                }
-            }
-
-            ticking = false;
-        });
-
-        ticking = true;
-    }
+let scrollQueued = false;
+window.addEventListener('scroll', () => {
+    if (scrollQueued) return;
+    scrollQueued = true;
+    requestAnimationFrame(() => {
+        updateActiveSection();
+        scrollQueued = false;
+    });
 }, { passive: true });
+window.addEventListener('resize', updateActiveSection);
+navItems.forEach(item => item.addEventListener('click', () => {
+    setActiveSection(item.dataset.section);
+}));
 
-// Smooth scroll to sections with sticky nav offset
-document.querySelectorAll('.nav-item').forEach(item => {
-    item.addEventListener('click', function(e) {
-        e.preventDefault();
+function initMenuHeader() {
+    const siteHeader = document.querySelector('.site-header');
+    if (!siteHeader || !siteHeader.hidden) return;
+    siteHeader.hidden = false;
+    window.CommonUtils.initLanguageButtons();
+    applyAllTranslations();
+}
 
-        const targetId = this.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetId);
-
-        if (targetSection) {
-            const navHeight = menuNav.offsetHeight;
-            const targetPosition = targetSection.offsetTop - navHeight - 20;
-
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// Note: Burger menu functionality is now handled by common/common.js
-
-// Copy phone number functionality
-document.addEventListener('DOMContentLoaded', () => {
-    const copyPhoneBtn = document.getElementById('copyPhoneBtn');
-    if (copyPhoneBtn) {
-        copyPhoneBtn.addEventListener('click', async () => {
-            const phoneNumber = '+48573256526';
-            try {
-                await navigator.clipboard.writeText(phoneNumber);
-
-                // Visual feedback
-                const originalText = copyPhoneBtn.innerHTML;
-                copyPhoneBtn.innerHTML = '<span class="btn-icon">✓</span><span>Skopiowano!</span>';
-                copyPhoneBtn.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
-
-                setTimeout(() => {
-                    copyPhoneBtn.innerHTML = originalText;
-                    copyPhoneBtn.style.background = '';
-                }, 2000);
-            } catch (err) {
-                console.error('Failed to copy:', err);
-            }
-        });
+const copyPhoneBtn = document.getElementById('copyPhoneBtn');
+copyPhoneBtn.addEventListener('click', async () => {
+    try {
+        await navigator.clipboard.writeText('+48573256526');
+        copyPhoneBtn.textContent = translations[window.CommonUtils.currentLang].takeaway.copied;
+        setTimeout(() => {
+            copyPhoneBtn.textContent = translations[window.CommonUtils.currentLang].takeaway.copy;
+        }, 2000);
+    } catch (error) {
+        console.error('Failed to copy phone number:', error);
     }
 });
+
+window.addEventListener('languageChanged', renderBurgers);
+window.addEventListener('commonReady', initMenuHeader, { once: true });
+renderBurgers();
+updateActiveSection();

@@ -10,8 +10,16 @@ const commonTranslations = {
         burger: {
             home: 'Strona główna',
             menu: 'Menu',
-            cart: 'Koszyk',
             contact: 'Kontakt'
+        },
+        header: {
+            order: 'Zamów online'
+        },
+        location: {
+            eyebrow: 'Nasz lokal',
+            hoursLabel: 'Godziny',
+            contactLabel: 'Kontakt',
+            map: 'Otwórz mapę'
         },
         footer: {
             hours: 'Godziny otwarcia',
@@ -29,8 +37,16 @@ const commonTranslations = {
         burger: {
             home: 'Home',
             menu: 'Menu',
-            cart: 'Cart',
             contact: 'Contact'
+        },
+        header: {
+            order: 'Order online'
+        },
+        location: {
+            eyebrow: 'Our restaurant',
+            hoursLabel: 'Hours',
+            contactLabel: 'Contact',
+            map: 'Open map'
         },
         footer: {
             hours: 'Opening Hours',
@@ -71,13 +87,18 @@ function fixHeaderPaths() {
     if (isInMenuFolder) {
         header.innerHTML = header.innerHTML
             .replace(/INDEX_PATH/g, '../index.html')
-            .replace(/MENU_PATH/g, 'index.html')
-            .replace(/CONTACT_PATH/g, '../contact.html');
+            .replace(/MENU_PATH/g, 'index.html');
     } else {
         header.innerHTML = header.innerHTML
             .replace(/INDEX_PATH/g, 'index.html')
-            .replace(/MENU_PATH/g, 'menu/index.html')
-            .replace(/CONTACT_PATH/g, 'contact.html');
+            .replace(/MENU_PATH/g, 'menu/index.html');
+    }
+
+    const logo = header.querySelector('[data-site-logo]');
+    if (logo) {
+        logo.src = isInMenuFolder
+            ? '../common/images/logo_full.png'
+            : 'common/images/logo_full.png';
     }
 }
 
@@ -109,6 +130,16 @@ function applyTranslations(translations) {
 
     // Update HTML lang attribute
     document.documentElement.setAttribute('lang', currentLang);
+}
+
+function updatePageMetadata(title, description) {
+    document.title = title;
+    for (const selector of ['meta[name="description"]', 'meta[property="og:description"]', 'meta[name="twitter:description"]']) {
+        document.querySelector(selector)?.setAttribute('content', description);
+    }
+    for (const selector of ['meta[property="og:title"]', 'meta[name="twitter:title"]']) {
+        document.querySelector(selector)?.setAttribute('content', title);
+    }
 }
 
 // Function to switch language
@@ -196,9 +227,16 @@ async function initCommon() {
     const isInMenuFolder = currentPath.includes('/menu/');
     const basePath = isInMenuFolder ? '../common/' : 'common/';
 
-    // Load header and footer
-    await loadComponent('common-header', basePath + 'header.html');
-    await loadComponent('common-footer', basePath + 'footer.html');
+    // Load shared page components
+    await loadComponent('common-header', basePath + 'header.html?v=20260927-2');
+    if (document.getElementById('common-location')) {
+        await loadComponent('common-location', basePath + 'location.html?v=20260927-2');
+    }
+    await loadComponent('common-footer', basePath + 'footer.html?v=20260926-1');
+    if (!document.body.classList.contains('home-page')) {
+        const footer = document.getElementById('common-footer');
+        footer.querySelector('.footer-bottom').append(footer.querySelector('.footer-copyright'));
+    }
 
     // Fix header paths after loading
     fixHeaderPaths();
@@ -211,6 +249,12 @@ async function initCommon() {
 
     // Apply common translations
     applyTranslations(commonTranslations);
+
+    if (window.location.hash === '#kontakt') {
+        requestAnimationFrame(() => document.getElementById('kontakt')?.scrollIntoView());
+    }
+
+    window.dispatchEvent(new CustomEvent('commonReady'));
 }
 
 // Export functions for use in page-specific scripts
@@ -218,6 +262,7 @@ window.CommonUtils = {
     get currentLang() { return currentLang; },
     getTranslation,
     applyTranslations,
+    updatePageMetadata,
     commonTranslations,
     switchLanguage,
     initLanguageButtons

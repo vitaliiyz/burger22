@@ -1,40 +1,38 @@
 // Translation system for Burger 22 Menu
 const translations = {
     pl: {
+        metadata: {
+            title: 'Menu — Burger 22 Wrocław',
+            description: 'Menu Burger 22 we Wrocławiu: burgery, dodatki, sosy i napoje. Sprawdź menu i zamów online.'
+        },
         tagline: 'Menu',
-        combo: 'zestaw: burger + frytki + sos',
+        categoryNavLabel: 'Kategorie menu',
+        orderLabel: 'Zamówienie',
         comboTitle: 'Zestaw:',
         comboClassicOption: 'Klasyczne frytki z sosem:+10zł',
         comboWedgesOption: 'Łódeczki ziemniaczane z sosem:+14zł',
-        sauceIncluded: 'sos w cenie',
-        sugarIncluded: 'cukier w cenie',
         withLemon: 'z cytryną',
         newItem: 'NOWOŚĆ',
-        popular1: '⭐ #1',
-        popular2: '⭐ #2',
-        popular3: '⭐ #3',
-        packagingNotice: '📦 Cena nie zawiera opakowania na wynos (+1 zł)',
-        cupNotice: '📦 Cena nie zawiera opakowania na wynos (+0,50 zł)',
-        depositNotice: '♻️ Cena nie zawiera kaucji za butelkę zwrotną (+0,50 zł)',
-        sauceExtraNote: '🧂 Sos dodatkowy: od 3 zł',
+        packagingNotice: 'Cena nie zawiera opakowania na wynos (+1 zł)',
+        cupNotice: 'Cena nie zawiera opakowania na wynos (+0,50 zł)',
+        depositNotice: 'Cena nie zawiera kaucji za butelkę zwrotną (+0,50 zł)',
+        sauceExtraNote: 'Sos dodatkowy: od 3 zł',
         disclaimer: 'Wygląd potrawy może się różnić od zdjęcia',
         takeaway: {
             title: 'Złóż przedzamówienie',
             desc: 'Zadzwoń i złóż zamówienie. Przygotujemy je przed Twoim przyjściem!',
             trouble: '+48 573 256 526',
-            copy: 'Kopiuj',
+            copy: 'Kopiuj numer',
+            copied: 'Skopiowano',
             call: 'Zadzwoń',
-            or: 'lub',
-            preorder: 'Zrób przedzamówienie',
             preorderNote: 'Wybierz „na wynos” i dopisz w komentarzu: „na miejscu”.'
         },
         nav: {
-            burgers: '🍔 Burgery',
-            sides: '🍟 Frytki i dodatki',
-            sauces: '🧂 Sosy',
-            hotDrinks: '☕ Napoje gorące',
-            drinks: '🥤 Napoje',
-            extras: '🥓 Dodatki do burgera'
+            burgers: 'Burgery',
+            sides: 'Frytki i dodatki',
+            sauces: 'Sosy',
+            drinks: 'Napoje',
+            extras: 'Dodatki do burgera'
         },
         sections: {
             burgers: 'Burgery',
@@ -43,105 +41,56 @@ const translations = {
             hotDrinks: 'Napoje gorące',
             drinks: 'Napoje',
             drinksCold: 'Napoje zimne',
-            extras: '🥓 Dodatki do burgera'
+            extras: 'Dodatki do burgera'
         },
         sauces: {
-            ketchup: '🍅 Ketchup',
-            bbq: '🍖 BBQ',
-            chili: '🌶️ Słodki Chili',
-            cheddarTopiony: '🧀 Cheddar Topiony',
-            mayo: '🥚 Majonez',
-            garlic: '🧄 Czosnkowy'
-        },
-        burgers: {
-            camemburger: {
-                name: 'Camemburger',
-                badge: 'Zimowa edycja',
-                desc: 'Puszysta bułeczka <strong>brioche</strong> skrywa soczystą <strong>wołowinę</strong>, chrupiący <strong>bekon</strong> i kremowy <strong>camembert</strong>, który rozpływa się przy każdym kęsie. Słodycz <strong>żurawiny</strong> przełamuje intensywność sera, tworząc idealny kontrast, a świeża <strong>rukola</strong> dodaje lekkości i aromatu. Całość dopełnia aksamitny <strong>sos miodowo-musztardowy</strong>, który łączy wszystkie smaki w harmonijną, wykwintną kompozycję.'
-            },
-            vegeCamemburger: {
-                name: 'VEGE CAMEMBURGER 🌱',
-                desc: 'Puszysta <strong>bułeczka brioche</strong> skrywa chrupiący, <strong>smażony camembert</strong>. Świeża <strong>rukola</strong> i soczysty <strong>pomidor</strong> dodają lekkości, a całość dopełnia <strong>firmowy sos czosnkowy Burger 22</strong>.'
-            },
-            berryGood: {
-                name: 'Berry Good',
-                desc: 'Puszysta bułeczka <strong>brioche</strong> kryje w sobie soczystą <strong>wołowinę</strong>, podwójną porcję <strong>wędzonej goudy</strong> i wyrazistą <strong>borówkę brusznicę</strong>. Delikatny <strong>sos mayo</strong> łagodzi całość, a świeża <strong>rukola</strong> dodaje lekkości i balansu. Słodko-wytrawne połączenie smaków tworzy burger, który zaskakuje przy każdym kęsie.'
-            },
-            jalapenoBacon: {
-                name: 'Jalapeño Bacon',
-                desc: 'Puszysta <strong>bułeczka brioche</strong> skrywa soczystą <strong>100% wołowinę</strong>, roztopiony <strong>ser cheddar</strong> i <strong>podwójny bekon</strong>, które nadają burgerowi pełny, wyrazisty smak. <strong>Jalapeño</strong> dodaje pikantnego charakteru, a <strong>świeża cebula</strong> i <strong>sałata</strong> wprowadzają lekkość i świeżość. Całość dopełnia <strong>firmowy pikantny sos Burger 22</strong>, tworząc pikantną, ale dobrze zbalansowaną kompozycję.'
-            },
-            classic: {
-                name: 'Klasyczny cheeseburger z wołowiną i cheddarem',
-                desc: 'Puszysta bułeczka <strong>brioche</strong> kryje w sobie soczystą <strong>wołowinę</strong> otuloną aromatycznym serem <strong>cheddar</strong>. Świeże warzywa — chrupiąca <strong>sałata</strong>, soczysty <strong>pomidor</strong>, delikatna <strong>cebula</strong> i wyrazisty <strong>ogórek kiszony</strong> — dodają lekkości i równowagi. Całość dopełnia <strong>firmowy sos Burger22</strong>, tworząc ponadczasowy smak, który zawsze zachwyca.'
-            },
-            cheese: {
-                name: 'Burger Serowy z potrójnym serem i bekonem',
-                desc: 'Puszysta bułeczka <strong>brioche</strong> kryje w sobie soczystą <strong>wołowinę</strong>, otuloną podwójnym <strong>topionym cheddarem</strong> i delikatną <strong>mozzarellą</strong>. Chrupiący <strong>bekon</strong> dodaje głębi smaku, a świeża <strong>rukola</strong>, soczysty <strong>pomidor</strong> i wyrazisty <strong>ogórek kiszony</strong> równoważą całość. Wszystko wzbogacają dwie porcje aksamitnego <strong>sosu serowego</strong>, tworząc prawdziwie serową eksplozję smaku, której nie da się zapomnieć.'
-            },
-            chicken: {
-                name: 'Burger z chrupiącym kurczakiem i cheddarem',
-                desc: 'Puszysta bułeczka <strong>brioche</strong> skrywa chrupiący, <strong>panierowany filet z kurczaka</strong>, otulony aromatycznym serem <strong>cheddar</strong>. Świeże warzywa — <strong>sałata</strong>, soczysty <strong>pomidor</strong> i delikatna <strong>cebula</strong> — dodają lekkości i świeżości, a <strong>firmowy sos Burger22</strong> dopełnia smak w idealnie zbalansowaną, apetyczną kompozycję.'
-            },
-            bbq: {
-                name: 'BBQ burger z bekonem i cheddarem',
-                desc: 'Puszysta bułeczka <strong>brioche</strong> kryje w sobie soczystą <strong>wołowinę</strong>, otuloną aromatycznym <strong>cheddarem</strong> i chrupiącym <strong>bekonem</strong>. Soczysty <strong>pomidor</strong>, świeża <strong>rukola</strong>, wyrazisty <strong>ogórek kiszony</strong> i aromatyczna <strong>cebula</strong> tworzą idealną równowagę, a dwie porcje <strong>sosu BBQ</strong> dopełniają całość, nadając burgerowi intensywny, dymny smak, którego nie da się zapomnieć.'
-            }
+            ketchup: 'Ketchup',
+            bbq: 'BBQ',
+            chili: 'Słodki Chili',
+            cheddarTopiony: 'Cheddar Topiony',
+            mayo: 'Majonez',
+            garlic: 'Czosnkowy'
         },
         extras: {
-            meat: '🥩 Mięso',
-            friedCamembert: '🧀 Ser Camembert Smażony',
-            bacon: '🥓 Bekon / Bekon x2',
-            cheese: '🧀 Ser',
-            jalapeno: '🌶️ Jalapeño',
-            vegetables: '🥗 Warzywa'
+            meat: 'Mięso',
+            friedCamembert: 'Ser Camembert Smażony',
+            bacon: 'Bekon / Bekon x2',
+            cheese: 'Ser',
+            jalapeno: 'Jalapeño',
+            vegetables: 'Warzywa'
         },
         sides: {
-            fries: '🍟 Frytki S/L',
+            fries: 'Frytki S/L',
             friesPrice: '14/18 zł',
             friesNote: '150g/250g · sos w cenie',
-            onionRings: '🧅 Krążki cebulowe S/L',
+            onionRings: 'Krążki cebulowe S/L',
             onionRingsPrice: '13/19 zł',
             onionRingsNote: '6/12 szt · sos w cenie',
-            nuggets: '🍗 Nuggetsy S/L',
+            nuggets: 'Nuggetsy S/L',
             nuggetsPrice: '17/25 zł',
             nuggetsNote: '6/12 szt · sos w cenie',
-            potatoWedges: '🥔 Łódeczki ziemniaczane ze skórką',
-            potatoWedgesDesc: 'Grube frytki ziemniaczane ze skórką - miękkie w środku, złociste na zewnątrz.',
+            potatoWedges: 'Łódeczki ziemniaczane ze skórką',
             potatoWedgesPrice: '17 zł',
-            potatoWedgesNote: 'sos w cenie',
-            friesSmall: '🍟 Frytki S',
-            friesLarge: '🍟 Frytki L',
-            onionRingsSmall: '🧅 Krążki cebulowe S',
-            onionRingsLarge: '🧅 Krążki cebulowe L',
-            nuggetsSmall: '🍗 Nuggetsy S',
-            nuggetsLarge: '🍗 Nuggetsy L',
-            friesSmallNote: '150g · sos w cenie',
-            friesLargeNote: '250g · sos w cenie',
-            onionRingsSmallNote: '6 szt · sos w cenie',
-            onionRingsLargeNote: '12 szt · sos w cenie',
-            nuggetsSmallNote: '6 szt · sos w cenie',
-            nuggetsLargeNote: '12 szt · sos w cenie',
-            extraSauce: '🧂 Sos dodatkowy'
+            potatoWedgesNote: 'sos w cenie'
         },
         hotDrinks: {
-            greenTea: '☕ Herbata zielona',
-            americano: '☕ Americano',
-            espresso: '☕ Espresso',
-            doubleEspresso: '☕ Podwójne Espresso',
-            cappuccino: '☕ Cappuccino',
-            latte: '☕ Latte'
+            greenTea: 'Herbata zielona',
+            americano: 'Americano',
+            espresso: 'Espresso',
+            doubleEspresso: 'Podwójne Espresso',
+            cappuccino: 'Cappuccino',
+            latte: 'Latte'
         },
         drinks: {
-            sodaMix: '🥤 Pepsi/Cola/Sprite',
-            juiceMix: '🍹 Sok',
+            sodaMix: 'Pepsi/Cola/Sprite',
+            juiceMix: 'Sok',
             juiceOptionOrange: 'pomarańczowy',
             juiceOptionApple: 'jabłkowy',
             juiceOptionMulti: 'multiwitamina',
-            waterMix: '💧 Woda',
+            waterMix: 'Woda',
             waterOptionStill: 'niegazowana',
             waterOptionSparkling: 'gazowana',
-            zeroBeerMix: '🍺 Piwo 0%',
+            zeroBeerMix: 'Piwo 0%',
             zeroBeerOptionClassic: 'klasyczne',
             zeroBeerOptionFlavored: 'smakowe',
             sodaMixNote: '330 ml',
@@ -151,40 +100,38 @@ const translations = {
         }
     },
     en: {
+        metadata: {
+            title: 'Menu — Burger 22 Wrocław',
+            description: 'Burger 22 menu in Wrocław: burgers, sides, sauces and drinks. View the menu and order online.'
+        },
         tagline: 'Menu',
-        combo: 'combo: burger + fries + sauce',
+        categoryNavLabel: 'Menu categories',
+        orderLabel: 'Ordering',
         comboTitle: 'Combo (for burger):',
         comboClassicOption: 'Classic fries with sauce:+10 PLN',
         comboWedgesOption: 'Potato wedges with skin + sauce:+14 PLN',
-        sauceIncluded: 'sauce included',
-        sugarIncluded: 'sugar included',
         withLemon: 'with lemon',
         newItem: 'NEW',
-        popular1: '⭐ #1',
-        popular2: '⭐ #2',
-        popular3: '⭐ #3',
-        packagingNotice: '📦 Prices do not include takeaway packaging (+1 PLN)',
-        cupNotice: '📦 Prices do not include takeaway packaging (+0.50 PLN)',
-        depositNotice: '♻️ Prices do not include the refundable bottle deposit (+0.50 PLN)',
-        sauceExtraNote: '🧂 Extra sauce: from 3 PLN',
+        packagingNotice: 'Prices do not include takeaway packaging (+1 PLN)',
+        cupNotice: 'Prices do not include takeaway packaging (+0.50 PLN)',
+        depositNotice: 'Prices do not include the refundable bottle deposit (+0.50 PLN)',
+        sauceExtraNote: 'Extra sauce: from 3 PLN',
         disclaimer: 'Actual product may differ from image',
         takeaway: {
             title: 'Place Pre-order',
             desc: 'Call us to place your order. We\'ll have it ready before you arrive!',
             trouble: '+48 573 256 526',
-            copy: 'Copy',
+            copy: 'Copy number',
+            copied: 'Copied',
             call: 'Call',
-            or: 'or',
-            preorder: 'Place pre-order',
             preorderNote: 'Choose “takeaway” and add in comment: “on-site”.'
         },
         nav: {
-            burgers: '🍔 Burgers',
-            sides: '🍟 Fries & Sides',
-            sauces: '🧂 Sauces',
-            hotDrinks: '☕ Hot Drinks',
-            drinks: '🥤 Drinks',
-            extras: '🥓 Burger Extras'
+            burgers: 'Burgers',
+            sides: 'Fries & Sides',
+            sauces: 'Sauces',
+            drinks: 'Drinks',
+            extras: 'Burger Extras'
         },
         sections: {
             burgers: 'Burgers',
@@ -193,105 +140,56 @@ const translations = {
             hotDrinks: 'Hot Drinks',
             drinks: 'Drinks',
             drinksCold: 'Cold Drinks',
-            extras: '🥓 Burger Extras'
+            extras: 'Burger Extras'
         },
         sauces: {
-            ketchup: '🍅 Ketchup',
-            bbq: '🍖 BBQ',
-            chili: '🌶️ Sweet Chili',
-            cheddarTopiony: '🧀 Melted Cheddar',
-            mayo: '🥚 Mayo',
-            garlic: '🧄 Garlic'
-        },
-        burgers: {
-            camemburger: {
-                name: 'Camemburger',
-                badge: 'Winter edition',
-                desc: 'A fluffy <strong>brioche bun</strong> conceals juicy <strong>beef</strong>, crispy <strong>bacon</strong>, and creamy <strong>camembert</strong> that melts with every bite. The sweetness of <strong>cranberry</strong> breaks through the intensity of the cheese, creating the perfect contrast, while fresh <strong>arugula</strong> adds lightness and aroma. Everything is complemented by a velvety <strong>honey-mustard sauce</strong> that brings all the flavors together in a harmonious, exquisite composition.'
-            },
-            vegeCamemburger: {
-                name: 'VEGE CAMEMBURGER 🌱',
-                desc: 'A fluffy <strong>brioche bun</strong> holds crispy <strong>fried camembert</strong>. Fresh <strong>arugula</strong> and juicy <strong>tomato</strong> add lightness, while <strong>Burger 22 signature garlic sauce</strong> completes the composition.'
-            },
-            berryGood: {
-                name: 'Berry Good',
-                desc: 'A fluffy <strong>brioche bun</strong> holds juicy <strong>beef</strong>, a double portion of <strong>smoked gouda</strong>, and bold <strong>lingonberry</strong>. Delicate <strong>mayo sauce</strong> softens the whole composition, while fresh <strong>arugula</strong> adds lightness and balance. This sweet-savory combination creates a burger that surprises with every bite.'
-            },
-            jalapenoBacon: {
-                name: 'Jalapeño Bacon',
-                desc: 'A fluffy <strong>brioche bun</strong> hides juicy <strong>100% beef</strong>, melted <strong>cheddar cheese</strong>, and <strong>double bacon</strong>, giving the burger a full, bold flavor. <strong>Jalapeño</strong> adds a spicy character, while <strong>fresh onion</strong> and <strong>lettuce</strong> bring lightness and freshness. Everything is completed by <strong>Burger 22 signature spicy sauce</strong>, creating a spicy but well-balanced composition.'
-            },
-            classic: {
-                name: 'Classic Cheeseburger',
-                desc: 'A fluffy <strong>brioche bun</strong> conceals juicy <strong>beef</strong> wrapped in aromatic <strong>cheddar cheese</strong>. Fresh vegetables — crispy <strong>lettuce</strong>, juicy <strong>tomato</strong>, delicate <strong>onion</strong>, and distinctive <strong>pickled cucumber</strong> — add lightness and balance. <strong>Burger22 signature sauce</strong> completes the composition, creating a timeless flavor that always delights.'
-            },
-            cheese: {
-                name: 'Triple Cheese Bacon',
-                desc: 'A fluffy <strong>brioche bun</strong> conceals juicy <strong>beef</strong>, wrapped in double <strong>melted cheddar</strong> and delicate <strong>mozzarella</strong>. Crispy <strong>bacon</strong> adds depth of flavor, while fresh <strong>arugula</strong>, juicy <strong>tomato</strong>, and distinctive <strong>pickled cucumber</strong> balance everything out. Two portions of velvety <strong>cheese sauce</strong> enrich it all, creating a truly cheesy flavor explosion that you won\'t forget.'
-            },
-            chicken: {
-                name: 'Crispy Chicken',
-                desc: 'A fluffy <strong>brioche bun</strong> conceals crispy, <strong>breaded chicken fillet</strong>, wrapped in aromatic <strong>cheddar cheese</strong>. Fresh vegetables — <strong>lettuce</strong>, juicy <strong>tomato</strong>, and delicate <strong>onion</strong> — add lightness and freshness, while <strong>Burger22 signature sauce</strong> completes the flavor in a perfectly balanced, appetizing composition.'
-            },
-            bbq: {
-                name: 'BBQ Bacon',
-                desc: 'A fluffy <strong>brioche bun</strong> conceals juicy <strong>beef</strong>, wrapped in aromatic <strong>cheddar</strong> and crispy <strong>bacon</strong>. Juicy <strong>tomato</strong>, fresh <strong>arugula</strong>, distinctive <strong>pickled cucumber</strong>, and aromatic <strong>onion</strong> create the perfect balance, while two portions of <strong>BBQ sauce</strong> complete everything, giving the burger an intense, smoky flavor that you won\'t forget.'
-            }
+            ketchup: 'Ketchup',
+            bbq: 'BBQ',
+            chili: 'Sweet Chili',
+            cheddarTopiony: 'Melted Cheddar',
+            mayo: 'Mayo',
+            garlic: 'Garlic'
         },
         extras: {
-            meat: '🥩 Meat',
-            friedCamembert: '🧀 Fried Camembert Cheese',
-            bacon: '🥓 Bacon / Bacon x2',
-            cheese: '🧀 Cheese',
-            jalapeno: '🌶️ Jalapeño',
-            vegetables: '🥗 Vegetables'
+            meat: 'Meat',
+            friedCamembert: 'Fried Camembert Cheese',
+            bacon: 'Bacon / Bacon x2',
+            cheese: 'Cheese',
+            jalapeno: 'Jalapeño',
+            vegetables: 'Vegetables'
         },
         sides: {
-            fries: '🍟 Fries S/L',
+            fries: 'Fries S/L',
             friesPrice: '14/18 PLN',
             friesNote: '150g/250g · sauce included',
-            onionRings: '🧅 Onion Rings S/L',
+            onionRings: 'Onion Rings S/L',
             onionRingsPrice: '13/19 PLN',
             onionRingsNote: '6/12 pcs · sauce included',
-            nuggets: '🍗 Nuggets S/L',
+            nuggets: 'Nuggets S/L',
             nuggetsPrice: '17/25 PLN',
             nuggetsNote: '6/12 pcs · sauce included',
-            potatoWedges: '🥔 Potato wedges with skin',
-            potatoWedgesDesc: 'Thick skin-on potato fries - soft inside, golden on the outside.',
+            potatoWedges: 'Potato wedges with skin',
             potatoWedgesPrice: '17 PLN',
-            potatoWedgesNote: 'sauce included',
-            friesSmall: '🍟 Fries S',
-            friesLarge: '🍟 Fries L',
-            onionRingsSmall: '🧅 Onion Rings S',
-            onionRingsLarge: '🧅 Onion Rings L',
-            nuggetsSmall: '🍗 Nuggets S',
-            nuggetsLarge: '🍗 Nuggets L',
-            friesSmallNote: '150g · sauce included',
-            friesLargeNote: '250g · sauce included',
-            onionRingsSmallNote: '6 pcs · sauce included',
-            onionRingsLargeNote: '12 pcs · sauce included',
-            nuggetsSmallNote: '6 pcs · sauce included',
-            nuggetsLargeNote: '12 pcs · sauce included',
-            extraSauce: '🧂 Extra Sauce'
+            potatoWedgesNote: 'sauce included'
         },
         hotDrinks: {
-            greenTea: '☕ Green Tea',
-            americano: '☕ Americano',
-            espresso: '☕ Espresso',
-            doubleEspresso: '☕ Double Espresso',
-            cappuccino: '☕ Cappuccino',
-            latte: '☕ Latte'
+            greenTea: 'Green Tea',
+            americano: 'Americano',
+            espresso: 'Espresso',
+            doubleEspresso: 'Double Espresso',
+            cappuccino: 'Cappuccino',
+            latte: 'Latte'
         },
         drinks: {
-            sodaMix: '🥤 Pepsi/Cola/Sprite',
-            juiceMix: '🍹 Juice',
+            sodaMix: 'Pepsi/Cola/Sprite',
+            juiceMix: 'Juice',
             juiceOptionOrange: 'orange',
             juiceOptionApple: 'apple',
             juiceOptionMulti: 'multivitamin',
-            waterMix: '💧 Water',
+            waterMix: 'Water',
             waterOptionStill: 'still',
             waterOptionSparkling: 'sparkling',
-            zeroBeerMix: '🍺 Beer 0%',
+            zeroBeerMix: 'Beer 0%',
             zeroBeerOptionClassic: 'classic',
             zeroBeerOptionFlavored: 'flavored',
             sodaMixNote: '330 ml',
@@ -315,6 +213,10 @@ function getMergedTranslations() {
 function applyAllTranslations() {
     const mergedTranslations = getMergedTranslations();
     window.CommonUtils.applyTranslations(mergedTranslations);
+    const pageLabels = translations[window.CommonUtils.currentLang];
+    window.CommonUtils.updatePageMetadata(pageLabels.metadata.title, pageLabels.metadata.description);
+    document.getElementById('menuNav').setAttribute('aria-label', pageLabels.categoryNavLabel);
+    document.querySelector('.menu-order').setAttribute('aria-label', pageLabels.orderLabel);
 }
 
 // Listen for language changes
@@ -322,10 +224,4 @@ window.addEventListener('languageChanged', () => {
     applyAllTranslations();
 });
 
-// Initialize page-specific functionality
-document.addEventListener('DOMContentLoaded', () => {
-    // Apply translations after a short delay to ensure common components are loaded
-    setTimeout(() => {
-        applyAllTranslations();
-    }, 100);
-});
+window.addEventListener('commonReady', applyAllTranslations);

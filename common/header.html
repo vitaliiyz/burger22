@@ -13,6 +13,23 @@
 -->
 <!-- ========== END ANNOUNCEMENT BANNER ========== -->
 
+<header class="site-header" hidden>
+    <a href="INDEX_PATH" class="site-header__logo" aria-label="Burger 22 — strona główna">
+        <img data-site-logo alt="Burger 22">
+    </a>
+    <nav class="site-header__nav" aria-label="Główna nawigacja">
+        <a href="MENU_PATH" data-i18n="burger.menu">Menu</a>
+        <a href="#kontakt" data-i18n="burger.contact">Kontakt</a>
+    </nav>
+    <div class="site-header__actions">
+        <div class="language-switcher" aria-label="Language">
+            <button class="lang-btn active" type="button" data-lang="pl">PL</button>
+            <button class="lang-btn" type="button" data-lang="en">EN</button>
+        </div>
+        <a href="https://order.site/burger-22" class="site-header__order" target="_blank" rel="noopener noreferrer" data-i18n="header.order">Zamów online</a>
+    </div>
+</header>
+
 <!-- Burger Menu Button -->
 <button class="burger-menu-btn" id="burgerMenuBtn" aria-label="Menu">
     <span></span>
@@ -31,7 +48,7 @@
             <span class="burger-menu-icon">📖</span>
             <span data-i18n="burger.menu">Menu</span>
         </a>
-        <a href="CONTACT_PATH" class="burger-menu-item">
+        <a href="#kontakt" class="burger-menu-item">
             <span class="burger-menu-icon">📞</span>
             <span data-i18n="burger.contact">Kontakt</span>
         </a>

@@ -9,7 +9,7 @@ const pages = [
         expectedPaths: {
             home: 'index.html',
             menu: 'menu/index.html',
-            contact: 'contact.html'
+            contact: '#kontakt'
         },
         currentLink: 'home'
     },
@@ -19,19 +19,9 @@ const pages = [
         expectedPaths: {
             home: '../index.html',
             menu: 'index.html',
-            contact: '../contact.html'
+            contact: '#kontakt'
         },
         currentLink: 'menu'
-    },
-    {
-        name: 'contact page',
-        path: '/contact.html',
-        expectedPaths: {
-            home: 'index.html',
-            menu: 'menu/index.html',
-            contact: 'contact.html'
-        },
-        currentLink: 'contact'
     }
 ];
 
@@ -60,18 +50,20 @@ test.beforeEach(async ({ page }) => {
 });
 
 function getHeaderLink(header, translationKey) {
-    return header.locator(`a:has([data-i18n="burger.${translationKey}"])`);
+    return header.locator(`.burger-menu-nav a:has([data-i18n="burger.${translationKey}"])`);
 }
 
+const MOBILE_VIEWPORT = { width: 390, height: 844 };
+
 async function expectMenuOpen(page) {
-    await expect(page.getByRole('button', { name: 'Menu' })).toHaveClass(/\bactive\b/);
+    await expect(page.locator('#common-header #burgerMenuBtn')).toHaveClass(/\bactive\b/);
     await expect(page.locator('#burgerMenuOverlay')).toHaveClass(/\bactive\b/);
     await expect(page.locator('#burgerMenuOverlay')).toBeVisible();
     await expect.poll(() => page.locator('body').evaluate((body) => body.style.overflow)).toBe('hidden');
 }
 
 async function expectMenuClosed(page) {
-    await expect(page.getByRole('button', { name: 'Menu' })).not.toHaveClass(/\bactive\b/);
+    await expect(page.locator('#common-header #burgerMenuBtn')).not.toHaveClass(/\bactive\b/);
     await expect(page.locator('#burgerMenuOverlay')).not.toHaveClass(/\bactive\b/);
     await expect(page.locator('#burgerMenuOverlay')).toBeHidden();
     await expect.poll(() => page.locator('body').evaluate((body) => body.style.overflow)).toBe('');
@@ -80,18 +72,20 @@ async function expectMenuClosed(page) {
 for (const pageUnderTest of pages) {
     test.describe(pageUnderTest.name, () => {
         test('loads the shared header and footer dynamically', async ({ page }) => {
-            const headerResponse = page.waitForResponse((response) =>
-                response.url().endsWith('/common/header.html')
-            );
-            const footerResponse = page.waitForResponse((response) =>
-                response.url().endsWith('/common/footer.html')
-            );
+            const headerResponse = page.waitForResponse((response) => {
+                const url = new URL(response.url());
+                return url.pathname.endsWith('/common/header.html') && url.searchParams.has('v');
+            });
+            const footerResponse = page.waitForResponse((response) => {
+                const url = new URL(response.url());
+                return url.pathname.endsWith('/common/footer.html') && url.searchParams.has('v');
+            });
 
             await page.goto(pageUnderTest.path, { waitUntil: 'domcontentloaded' });
 
             await expect((await headerResponse).ok()).toBe(true);
             await expect((await footerResponse).ok()).toBe(true);
-            await expect(page.locator('#common-header').getByRole('button', { name: 'Menu' })).toBeVisible();
+            await expect(page.locator('#common-header .site-header')).toBeVisible();
             await expect(page.locator('#common-footer').locator('footer')).toBeVisible();
         });
 
@@ -99,7 +93,28 @@ for (const pageUnderTest of pages) {
             await page.goto(pageUnderTest.path, { waitUntil: 'domcontentloaded' });
 
             const header = page.locator('#common-header');
-            await expect(header.getByRole('button', { name: 'Menu' })).toBeVisible();
+            await expect(header.locator('.site-header')).toBeVisible();
+
+            const desktopNav = header.locator('.site-header__nav');
+            await expect(desktopNav).toBeVisible();
+            await expect(header.locator('#burgerMenuBtn')).toBeHidden();
+
+            await expect(header.locator('.site-header__logo')).toHaveAttribute(
+                'href',
+                pageUnderTest.expectedPaths.home
+            );
+            await expect(desktopNav.locator('[data-i18n="burger.menu"]')).toHaveAttribute(
+                'href',
+                pageUnderTest.expectedPaths.menu
+            );
+            await expect(desktopNav.locator('[data-i18n="burger.contact"]')).toHaveAttribute(
+                'href',
+                pageUnderTest.expectedPaths.contact
+            );
+
+            await page.setViewportSize(MOBILE_VIEWPORT);
+            await expect(header.locator('#burgerMenuBtn')).toBeVisible();
+            await expect(desktopNav).toBeHidden();
 
             await expect(getHeaderLink(header, 'home')).toHaveAttribute(
                 'href',
@@ -117,9 +132,10 @@ for (const pageUnderTest of pages) {
         });
 
         test('opens and closes the burger menu through every supported action', async ({ page }) => {
+            await page.setViewportSize(MOBILE_VIEWPORT);
             await page.goto(pageUnderTest.path, { waitUntil: 'domcontentloaded' });
 
-            const burgerButton = page.getByRole('button', { name: 'Menu' });
+            const burgerButton = page.locator('#common-header #burgerMenuBtn');
             const overlay = page.locator('#burgerMenuOverlay');
             await expect(burgerButton).toBeVisible();
             await expectMenuClosed(page);
@@ -133,7 +149,7 @@ for (const pageUnderTest of pages) {
             await burgerButton.click();
             await expectMenuOpen(page);
 
-            await overlay.click({ position: { x: 10, y: 100 } });
+            await overlay.click({ position: { x: 10, y: 10 } });
             await expectMenuClosed(page);
 
             await burgerButton.click();
@@ -147,7 +163,7 @@ for (const pageUnderTest of pages) {
                 page.waitForNavigation({ waitUntil: 'domcontentloaded' }),
                 currentPageLink.click()
             ]);
-            await expect(page.getByRole('button', { name: 'Menu' })).toBeVisible();
+            await expect(page.locator('#common-header #burgerMenuBtn')).toBeVisible();
             await expectMenuClosed(page);
         });
 
