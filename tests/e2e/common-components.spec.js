@@ -9,7 +9,7 @@ const pages = [
         expectedPaths: {
             home: 'index.html',
             menu: 'menu/index.html',
-            contact: 'contact.html'
+            contact: '#kontakt'
         },
         currentLink: 'home'
     },
@@ -19,19 +19,9 @@ const pages = [
         expectedPaths: {
             home: '../index.html',
             menu: 'index.html',
-            contact: '../contact.html'
+            contact: '#kontakt'
         },
         currentLink: 'menu'
-    },
-    {
-        name: 'contact page',
-        path: '/contact.html',
-        expectedPaths: {
-            home: 'index.html',
-            menu: 'menu/index.html',
-            contact: 'contact.html'
-        },
-        currentLink: 'contact'
     }
 ];
 
@@ -95,11 +85,7 @@ for (const pageUnderTest of pages) {
 
             await expect((await headerResponse).ok()).toBe(true);
             await expect((await footerResponse).ok()).toBe(true);
-            if (pageUnderTest.path === '/contact.html') {
-                await expect(page.locator('#common-header #burgerMenuBtn')).toBeVisible();
-            } else {
-                await expect(page.locator('#common-header .site-header')).toBeVisible();
-            }
+            await expect(page.locator('#common-header .site-header')).toBeVisible();
             await expect(page.locator('#common-footer').locator('footer')).toBeVisible();
         });
 
@@ -107,17 +93,11 @@ for (const pageUnderTest of pages) {
             await page.goto(pageUnderTest.path, { waitUntil: 'domcontentloaded' });
 
             const header = page.locator('#common-header');
-            if (pageUnderTest.path === '/contact.html') {
-                await expect(header.locator('#burgerMenuBtn')).toBeVisible();
-            } else {
-                await expect(header.locator('.site-header')).toBeVisible();
-            }
+            await expect(header.locator('.site-header')).toBeVisible();
 
             const desktopNav = header.locator('.site-header__nav');
-            if (pageUnderTest.path !== '/contact.html') {
-                await expect(desktopNav).toBeVisible();
-                await expect(header.locator('#burgerMenuBtn')).toBeHidden();
-            }
+            await expect(desktopNav).toBeVisible();
+            await expect(header.locator('#burgerMenuBtn')).toBeHidden();
 
             await expect(header.locator('.site-header__logo')).toHaveAttribute(
                 'href',
@@ -134,9 +114,7 @@ for (const pageUnderTest of pages) {
 
             await page.setViewportSize(MOBILE_VIEWPORT);
             await expect(header.locator('#burgerMenuBtn')).toBeVisible();
-            if (pageUnderTest.path !== '/contact.html') {
-                await expect(desktopNav).toBeHidden();
-            }
+            await expect(desktopNav).toBeHidden();
 
             await expect(getHeaderLink(header, 'home')).toHaveAttribute(
                 'href',

@@ -12,11 +12,6 @@ const pages = [
         name: 'menu page',
         path: '/menu/',
         content: '#burgery .menu-grid'
-    },
-    {
-        name: 'contact page',
-        path: '/contact.html',
-        content: '.contact-grid'
     }
 ];
 
@@ -38,11 +33,13 @@ for (const pageUnderTest of pages) {
         await page.goto(pageUnderTest.path, { waitUntil: 'domcontentloaded' });
 
         await expect(page.locator(pageUnderTest.content)).toBeVisible();
-        if (pageUnderTest.path === '/contact.html') {
-            await expect(page.locator('#common-header #burgerMenuBtn')).toBeVisible();
-        } else {
-            await expect(page.locator('#common-header .site-header')).toBeVisible();
-        }
+        await expect(page.locator('#common-header .site-header')).toBeVisible();
         await expect(page.locator('#common-footer .footer')).toBeVisible();
     });
 }
+
+test('legacy contact page redirects to the shared homepage section', async ({ page }) => {
+    await page.goto('/contact.html', { waitUntil: 'domcontentloaded' });
+    await expect(page).toHaveURL(`${BASE_URL}/#kontakt`);
+    await expect(page.locator('#kontakt')).toBeVisible();
+});

@@ -1,7 +1,8 @@
 # Burger 22
 
-Static bilingual website for Burger 22 in Wrocław. It contains the landing page, menu, contact
-page, and redirects visitors to the public online-ordering service.
+Static bilingual website for Burger 22 in Wrocław. It contains the landing page, menu, and a
+shared location/contact section. The legacy contact URL redirects to that section, and ordering
+links lead to the public online-ordering service.
 
 The frontend uses HTML, CSS, and vanilla JavaScript. It has no build step or frontend package
 installation.
@@ -13,14 +14,13 @@ installation.
 ├── index.html                  # Landing page
 ├── styles.css
 ├── home.js
-├── contact.html                # Contact page and map
-├── contact-styles.css
-├── contact.js
+├── contact.html                # Legacy redirect to /#kontakt
 ├── common/
 │   ├── common.js              # Shared header/footer loading and translations
 │   ├── common.css
 │   ├── header.html
 │   ├── footer.html
+│   ├── location.html           # Shared location/contact section
 │   ├── menu-data.js            # Burger names, descriptions, prices, and images for both pages
 │   └── images/                # Shared hero, logos, and icons
 ├── menu/
@@ -52,7 +52,6 @@ HTML files directly because shared header and footer fragments are loaded with `
 - Landing-page text and featured burger order: `home.js`
 - Burger names, descriptions, prices, and images in both languages: `common/menu-data.js`
 - Menu-only items and prices: `menu/index.html`; their translated text: `menu/translations.js`
-- Contact-page text: `contact.js`
 - Shared navigation, footer translations, hours, and contact details: `common/common.js` and the
   shared HTML fragments
 
@@ -62,8 +61,9 @@ to the shared `languageChanged` event.
 
 For burgers, update `common/menu-data.js` once. Each record keeps the existing full menu copy and,
 where featured, the shorter homepage copy. `home.js` only selects the four featured burger IDs.
-Keep Polish and English variants synchronized. The homepage, menu, and contact page load the same
-`common/header.html` and `common/footer.html`; page styles control the footer layout.
+Keep Polish and English variants synchronized. The homepage and menu load the same
+`common/header.html`, `common/location.html`, and `common/footer.html`; page styles control the
+footer layout.
 
 ## Images
 

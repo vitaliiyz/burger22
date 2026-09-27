@@ -74,15 +74,18 @@ for (const width of MOBILE_WIDTHS) {
         const contactLink = page.locator('#burgerMenuOverlay a:has([data-i18n="burger.contact"])');
         await expectWithinViewport(page, contactLink);
         await contactLink.click();
-        await expect(page).toHaveURL(/\/contact\.html$/);
+        await expect(page).toHaveURL(/\/menu\/index\.html#kontakt$/);
+        await expect(page.locator('#burgerMenuOverlay')).toBeHidden();
+        await expect(page.locator('#kontakt')).toBeInViewport();
         await expect(page.locator('html')).toHaveAttribute('lang', 'en');
-        await expect(page.locator('.tagline')).toHaveText('Contact');
-        await expectWithinViewport(page, page.locator('.hero .lang-btn[data-lang="pl"]'));
+        await expect(page.locator('#kontakt [data-i18n="location.contactLabel"]')).toHaveText('Contact');
+        await expectWithinViewport(page, page.locator('#common-header .lang-btn[data-lang="pl"]'));
 
-        await page.locator('.hero .lang-btn[data-lang="pl"]').click();
+        await page.locator('#common-header .lang-btn[data-lang="pl"]').click();
         await expect(page.locator('html')).toHaveAttribute('lang', 'pl');
-        await expect(page.locator('.tagline')).toHaveText('Kontakt');
-        await page.locator('.home-link').click();
+        await expect(page.locator('#kontakt [data-i18n="location.contactLabel"]')).toHaveText('Kontakt');
+        await burgerButton.click();
+        await page.locator('#burgerMenuOverlay a:has([data-i18n="burger.home"])').click();
         await expect(page).toHaveURL(/\/index\.html$/);
         await expect(page.locator('html')).toHaveAttribute('lang', 'pl');
         await expect(page.locator('.home-hero h1')).toHaveText('Prawdziwy smak burgera.');

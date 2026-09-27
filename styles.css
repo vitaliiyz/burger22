@@ -498,6 +498,7 @@
 .location {
     display: grid;
     background: var(--home-surface);
+    scroll-margin-top: 80px;
 }
 
 .location__content {
@@ -724,6 +725,10 @@
 }
 
 @media (min-width: 900px) {
+    .location {
+        scroll-margin-top: 90px;
+    }
+
     .home-page {
         padding-bottom: 0;
     }

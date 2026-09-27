@@ -77,6 +77,10 @@
     border-bottom: 1px solid var(--home-line);
 }
 
+.menu-page .location {
+    scroll-margin-top: 140px;
+}
+
 .menu-nav::-webkit-scrollbar {
     display: none;
 }
@@ -460,6 +464,10 @@
 }
 
 @media (min-width: 900px) {
+    .menu-page .location {
+        scroll-margin-top: 152px;
+    }
+
     .menu-page .menu-intro {
         padding: 54px 40px 34px;
     }

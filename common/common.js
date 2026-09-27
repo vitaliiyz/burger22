@@ -89,13 +89,11 @@ function fixHeaderPaths() {
     if (isInMenuFolder) {
         header.innerHTML = header.innerHTML
             .replace(/INDEX_PATH/g, '../index.html')
-            .replace(/MENU_PATH/g, 'index.html')
-            .replace(/CONTACT_PATH/g, '../contact.html');
+            .replace(/MENU_PATH/g, 'index.html');
     } else {
         header.innerHTML = header.innerHTML
             .replace(/INDEX_PATH/g, 'index.html')
-            .replace(/MENU_PATH/g, 'menu/index.html')
-            .replace(/CONTACT_PATH/g, 'contact.html');
+            .replace(/MENU_PATH/g, 'menu/index.html');
     }
 
     const logo = header.querySelector('[data-site-logo]');
@@ -222,9 +220,9 @@ async function initCommon() {
     const basePath = isInMenuFolder ? '../common/' : 'common/';
 
     // Load shared page components
-    await loadComponent('common-header', basePath + 'header.html?v=20260926-3');
+    await loadComponent('common-header', basePath + 'header.html?v=20260927-2');
     if (document.getElementById('common-location')) {
-        await loadComponent('common-location', basePath + 'location.html?v=20260927-1');
+        await loadComponent('common-location', basePath + 'location.html?v=20260927-2');
     }
     await loadComponent('common-footer', basePath + 'footer.html?v=20260926-1');
     if (!document.body.classList.contains('home-page')) {
@@ -243,6 +241,10 @@ async function initCommon() {
 
     // Apply common translations
     applyTranslations(commonTranslations);
+
+    if (window.location.hash === '#kontakt') {
+        requestAnimationFrame(() => document.getElementById('kontakt')?.scrollIntoView());
+    }
 
     window.dispatchEvent(new CustomEvent('commonReady'));
 }
