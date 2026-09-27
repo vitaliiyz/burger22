@@ -520,6 +520,16 @@
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
         gap: 42px;
     }
+
+    .menu-order__actions {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .menu-order__primary,
+    .menu-order__note {
+        grid-column: 1 / -1;
+    }
 }
 
 @media (max-width: 360px) {
