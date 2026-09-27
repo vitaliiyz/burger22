@@ -6,7 +6,7 @@ const BASE_URL = `http://127.0.0.1:${PORT}`;
 module.exports = defineConfig({
     testDir: './tests/e2e',
     fullyParallel: true,
-    workers: 2,
+    workers: 1,
     reporter: [
         ['list'],
         ['html', { open: 'never' }]

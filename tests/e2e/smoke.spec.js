@@ -6,7 +6,7 @@ const pages = [
     {
         name: 'home page',
         path: '/',
-        content: '.main-nav'
+        content: '.home-hero h1'
     },
     {
         name: 'menu page',
@@ -38,7 +38,11 @@ for (const pageUnderTest of pages) {
         await page.goto(pageUnderTest.path, { waitUntil: 'domcontentloaded' });
 
         await expect(page.locator(pageUnderTest.content)).toBeVisible();
-        await expect(page.locator('#common-header #burgerMenuBtn')).toBeVisible();
+        if (pageUnderTest.path === '/contact.html') {
+            await expect(page.locator('#common-header #burgerMenuBtn')).toBeVisible();
+        } else {
+            await expect(page.locator('#common-header .site-header')).toBeVisible();
+        }
         await expect(page.locator('#common-footer .footer')).toBeVisible();
     });
 }
