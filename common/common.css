@@ -1,6 +1,4 @@
 /* Common styles for all pages - Burger 22 */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -19,8 +17,6 @@ html {
     --graphite-light: #5A5A5A;
     --white: #FFFFFF;
     --off-white: #FAFAFA;
-    --shadow: rgba(58, 58, 58, 0.1);
-    --shadow-hover: rgba(58, 58, 58, 0.15);
 }
 
 body {
@@ -215,10 +211,6 @@ body {
     transition-delay: 0.3s;
 }
 
-.burger-menu-overlay.active .burger-menu-item:nth-child(4) {
-    transition-delay: 0.4s;
-}
-
 .burger-menu-item:hover {
     transform: translateX(10px);
     text-shadow: 3px 5px 12px rgba(0, 0, 0, 0.3);
@@ -354,82 +346,6 @@ body {
     opacity: 0.7;
 }
 
-/* Hero section (common for all pages) */
-.hero {
-    background-image:
-        linear-gradient(
-            135deg,
-            rgba(255, 165, 0, 0.5) 0%,
-            rgba(255, 184, 77, 0.5) 100%
-        ),
-        url('./images/header.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    text-align: center;
-    padding: 60px 20px 50px;
-    margin-bottom: 0;
-    box-shadow: 0 4px 20px rgba(255, 165, 0, 0.3);
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 300px;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.35);
-    z-index: 0;
-    pointer-events: none;
-}
-
-.hero::after {
-    content: '';
-    position: absolute;
-    bottom: -30%;
-    left: -5%;
-    width: 200px;
-    height: 200px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 50%;
-    animation: float 8s ease-in-out infinite;
-    z-index: 0;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-}
-
-.hero-branding {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    position: relative;
-    z-index: 1;
-}
-
-.logo-main {
-    height: 120px;
-    width: auto;
-    filter: drop-shadow(3px 5px 12px rgba(0, 0, 0, 0.25));
-}
-
-.logo-full-main {
-    height: 2.5em;
-    width: auto;
-    filter: drop-shadow(3px 5px 12px rgba(0, 0, 0, 0.25));
-}
-
 h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 3.5em;
@@ -441,53 +357,6 @@ h1 {
     position: relative;
     z-index: 1;
     text-transform: uppercase;
-}
-
-.logo {
-    height: 1.2em;
-    width: auto;
-    vertical-align: middle;
-    filter: drop-shadow(3px 5px 12px rgba(0, 0, 0, 0.25));
-}
-
-.logo-full {
-    height: 1em;
-    width: auto;
-    filter: drop-shadow(3px 5px 12px rgba(0, 0, 0, 0.25));
-}
-
-.tagline {
-    font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(135deg, var(--warm-yellow) 0%, var(--primary-orange) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-size: 1.3em;
-    margin-top: 12px;
-    opacity: 1;
-    font-weight: 700;
-    position: relative;
-    z-index: 1;
-    letter-spacing: 1px;
-}
-
-.home-link {
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    position: relative;
-    z-index: 1;
-}
-
-.home-link:hover h1 {
-    transform: scale(1.02);
-}
-
-.container {
-    max-width: 1000px;
-    margin: 50px auto 0;
-    padding: 0 20px;
 }
 
 /* Mobile responsive */
@@ -514,19 +383,6 @@ h1 {
     h1 {
         font-size: 2.5em;
         letter-spacing: 1.5px;
-    }
-
-    .logo-full-main {
-        height: 2em;
-    }
-
-    .hero {
-        padding: 40px 20px 40px;
-        min-height: 250px;
-    }
-
-    .tagline {
-        font-size: 1.1em;
     }
 
     .language-switcher {
@@ -578,19 +434,6 @@ h1 {
         letter-spacing: 1.2px;
     }
 
-    .logo-full-main {
-        height: 1.6em;
-    }
-
-    .hero {
-        padding: 35px 16px 35px;
-        min-height: 220px;
-    }
-
-    .tagline {
-        font-size: 1em;
-    }
-
     .language-switcher {
         position: relative;
         top: auto;
@@ -602,10 +445,6 @@ h1 {
     .lang-btn {
         font-size: 0.8em;
         padding: 6px 12px;
-    }
-
-    .container {
-        padding: 0 16px;
     }
 
     .burger-menu-btn {

@@ -6,13 +6,49 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Burger 22 — Wrocław</title>
+    <title>Burger 22 — burgery we Wrocławiu</title>
     <meta name="description" content="Burger 22 — burgery przy Henryka Probusa 11 we Wrocławiu. Zamów online lub zobacz menu.">
+    <link rel="canonical" href="https://burger22.pl/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Burger 22 — burgery we Wrocławiu">
+    <meta property="og:description" content="Burger 22 — burgery przy Henryka Probusa 11 we Wrocławiu. Zamów online lub zobacz menu.">
+    <meta property="og:url" content="https://burger22.pl/">
+    <meta property="og:image" content="https://burger22.pl/common/images/header.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Burger 22 — burgery we Wrocławiu">
+    <meta name="twitter:description" content="Burger 22 — burgery przy Henryka Probusa 11 we Wrocławiu. Zamów online lub zobacz menu.">
+    <meta name="twitter:image" content="https://burger22.pl/common/images/header.webp">
     <link rel="icon" type="image/png" sizes="1080x1080" href="https://burger22.pl/common/images/favicon.png">
     <link rel="icon" type="image/png" sizes="180x180" href="https://burger22.pl/common/images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="https://burger22.pl/common/images/apple-touch-icon.png">
-    <link rel="stylesheet" href="common/common.css?v=20260926-2">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "@id": "https://burger22.pl/#restaurant",
+        "name": "Burger 22",
+        "url": "https://burger22.pl/",
+        "image": "https://burger22.pl/common/images/header.webp",
+        "telephone": "+48 573 256 526",
+        "email": "burger22.wroclaw@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Henryka Probusa 11",
+            "postalCode": "50-242",
+            "addressLocality": "Wrocław",
+            "addressCountry": "PL"
+        },
+        "hasMenu": "https://burger22.pl/menu/"
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="common/common.css?v=20260927-4">
     <link rel="stylesheet" href="styles.css?v=20260927-3">
+    <script defer src="common/common.js?v=20260927-3"></script>
+    <script defer src="common/menu-data.js?v=20260926-1"></script>
+    <script defer src="home.js?v=20260927-2"></script>
 </head>
 <body class="home-page">
     <div id="common-header"></div>
@@ -28,7 +64,7 @@
                 </div>
             </div>
             <div class="home-hero__media" aria-hidden="true">
-                <img src="common/images/header.webp" alt="" fetchpriority="high">
+                <img src="common/images/header.webp" srcset="common/images/header-1200.webp 1200w, common/images/header.webp 2400w" sizes="(max-width: 899px) 100vw, 60vw" width="2400" height="1600" alt="" fetchpriority="high">
             </div>
         </section>
 
@@ -83,8 +119,5 @@
 
     <div id="common-footer"></div>
 
-    <script src="common/common.js?v=20260927-2"></script>
-    <script src="common/menu-data.js?v=20260926-1"></script>
-    <script src="home.js?v=20260927-1"></script>
 </body>
 </html>

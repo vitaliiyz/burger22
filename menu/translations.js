@@ -1,20 +1,18 @@
 // Translation system for Burger 22 Menu
 const translations = {
     pl: {
+        metadata: {
+            title: 'Menu — Burger 22 Wrocław',
+            description: 'Menu Burger 22 we Wrocławiu: burgery, dodatki, sosy i napoje. Sprawdź menu i zamów online.'
+        },
         tagline: 'Menu',
         categoryNavLabel: 'Kategorie menu',
         orderLabel: 'Zamówienie',
-        combo: 'zestaw: burger + frytki + sos',
         comboTitle: 'Zestaw:',
         comboClassicOption: 'Klasyczne frytki z sosem:+10zł',
         comboWedgesOption: 'Łódeczki ziemniaczane z sosem:+14zł',
-        sauceIncluded: 'sos w cenie',
-        sugarIncluded: 'cukier w cenie',
         withLemon: 'z cytryną',
         newItem: 'NOWOŚĆ',
-        popular1: '⭐ #1',
-        popular2: '⭐ #2',
-        popular3: '⭐ #3',
         packagingNotice: 'Cena nie zawiera opakowania na wynos (+1 zł)',
         cupNotice: 'Cena nie zawiera opakowania na wynos (+0,50 zł)',
         depositNotice: 'Cena nie zawiera kaucji za butelkę zwrotną (+0,50 zł)',
@@ -27,15 +25,12 @@ const translations = {
             copy: 'Kopiuj numer',
             copied: 'Skopiowano',
             call: 'Zadzwoń',
-            or: 'lub',
-            preorder: 'Zrób przedzamówienie',
             preorderNote: 'Wybierz „na wynos” i dopisz w komentarzu: „na miejscu”.'
         },
         nav: {
             burgers: 'Burgery',
             sides: 'Frytki i dodatki',
             sauces: 'Sosy',
-            hotDrinks: 'Napoje gorące',
             drinks: 'Napoje',
             extras: 'Dodatki do burgera'
         },
@@ -75,22 +70,8 @@ const translations = {
             nuggetsPrice: '17/25 zł',
             nuggetsNote: '6/12 szt · sos w cenie',
             potatoWedges: 'Łódeczki ziemniaczane ze skórką',
-            potatoWedgesDesc: 'Grube frytki ziemniaczane ze skórką - miękkie w środku, złociste na zewnątrz.',
             potatoWedgesPrice: '17 zł',
-            potatoWedgesNote: 'sos w cenie',
-            friesSmall: 'Frytki S',
-            friesLarge: 'Frytki L',
-            onionRingsSmall: 'Krążki cebulowe S',
-            onionRingsLarge: 'Krążki cebulowe L',
-            nuggetsSmall: 'Nuggetsy S',
-            nuggetsLarge: 'Nuggetsy L',
-            friesSmallNote: '150g · sos w cenie',
-            friesLargeNote: '250g · sos w cenie',
-            onionRingsSmallNote: '6 szt · sos w cenie',
-            onionRingsLargeNote: '12 szt · sos w cenie',
-            nuggetsSmallNote: '6 szt · sos w cenie',
-            nuggetsLargeNote: '12 szt · sos w cenie',
-            extraSauce: 'Sos dodatkowy'
+            potatoWedgesNote: 'sos w cenie'
         },
         hotDrinks: {
             greenTea: 'Herbata zielona',
@@ -119,20 +100,18 @@ const translations = {
         }
     },
     en: {
+        metadata: {
+            title: 'Menu — Burger 22 Wrocław',
+            description: 'Burger 22 menu in Wrocław: burgers, sides, sauces and drinks. View the menu and order online.'
+        },
         tagline: 'Menu',
         categoryNavLabel: 'Menu categories',
         orderLabel: 'Ordering',
-        combo: 'combo: burger + fries + sauce',
         comboTitle: 'Combo (for burger):',
         comboClassicOption: 'Classic fries with sauce:+10 PLN',
         comboWedgesOption: 'Potato wedges with skin + sauce:+14 PLN',
-        sauceIncluded: 'sauce included',
-        sugarIncluded: 'sugar included',
         withLemon: 'with lemon',
         newItem: 'NEW',
-        popular1: '⭐ #1',
-        popular2: '⭐ #2',
-        popular3: '⭐ #3',
         packagingNotice: 'Prices do not include takeaway packaging (+1 PLN)',
         cupNotice: 'Prices do not include takeaway packaging (+0.50 PLN)',
         depositNotice: 'Prices do not include the refundable bottle deposit (+0.50 PLN)',
@@ -145,15 +124,12 @@ const translations = {
             copy: 'Copy number',
             copied: 'Copied',
             call: 'Call',
-            or: 'or',
-            preorder: 'Place pre-order',
             preorderNote: 'Choose “takeaway” and add in comment: “on-site”.'
         },
         nav: {
             burgers: 'Burgers',
             sides: 'Fries & Sides',
             sauces: 'Sauces',
-            hotDrinks: 'Hot Drinks',
             drinks: 'Drinks',
             extras: 'Burger Extras'
         },
@@ -193,22 +169,8 @@ const translations = {
             nuggetsPrice: '17/25 PLN',
             nuggetsNote: '6/12 pcs · sauce included',
             potatoWedges: 'Potato wedges with skin',
-            potatoWedgesDesc: 'Thick skin-on potato fries - soft inside, golden on the outside.',
             potatoWedgesPrice: '17 PLN',
-            potatoWedgesNote: 'sauce included',
-            friesSmall: 'Fries S',
-            friesLarge: 'Fries L',
-            onionRingsSmall: 'Onion Rings S',
-            onionRingsLarge: 'Onion Rings L',
-            nuggetsSmall: 'Nuggets S',
-            nuggetsLarge: 'Nuggets L',
-            friesSmallNote: '150g · sauce included',
-            friesLargeNote: '250g · sauce included',
-            onionRingsSmallNote: '6 pcs · sauce included',
-            onionRingsLargeNote: '12 pcs · sauce included',
-            nuggetsSmallNote: '6 pcs · sauce included',
-            nuggetsLargeNote: '12 pcs · sauce included',
-            extraSauce: 'Extra Sauce'
+            potatoWedgesNote: 'sauce included'
         },
         hotDrinks: {
             greenTea: 'Green Tea',
@@ -252,6 +214,7 @@ function applyAllTranslations() {
     const mergedTranslations = getMergedTranslations();
     window.CommonUtils.applyTranslations(mergedTranslations);
     const pageLabels = translations[window.CommonUtils.currentLang];
+    window.CommonUtils.updatePageMetadata(pageLabels.metadata.title, pageLabels.metadata.description);
     document.getElementById('menuNav').setAttribute('aria-label', pageLabels.categoryNavLabel);
     document.querySelector('.menu-order').setAttribute('aria-label', pageLabels.orderLabel);
 }

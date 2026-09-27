@@ -6,13 +6,31 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Burger 22 - Menu</title>
+    <title>Menu — Burger 22 Wrocław</title>
+    <meta name="description" content="Menu Burger 22 we Wrocławiu: burgery, dodatki, sosy i napoje. Sprawdź menu i zamów online.">
+    <link rel="canonical" href="https://burger22.pl/menu/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Menu — Burger 22 Wrocław">
+    <meta property="og:description" content="Menu Burger 22 we Wrocławiu: burgery, dodatki, sosy i napoje. Sprawdź menu i zamów online.">
+    <meta property="og:url" content="https://burger22.pl/menu/">
+    <meta property="og:image" content="https://burger22.pl/common/images/header.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Menu — Burger 22 Wrocław">
+    <meta name="twitter:description" content="Menu Burger 22 we Wrocławiu: burgery, dodatki, sosy i napoje. Sprawdź menu i zamów online.">
+    <meta name="twitter:image" content="https://burger22.pl/common/images/header.webp">
     <link rel="icon" type="image/png" sizes="1080x1080" href="https://burger22.pl/common/images/favicon.png">
     <link rel="icon" type="image/png" sizes="180x180" href="https://burger22.pl/common/images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="https://burger22.pl/common/images/apple-touch-icon.png">
-    <link rel="stylesheet" href="../common/common.css?v=20260926-2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="../common/common.css?v=20260927-4">
     <link rel="stylesheet" href="../styles.css?v=20260927-3">
-    <link rel="stylesheet" href="styles.css?v=20260927-3">
+    <link rel="stylesheet" href="styles.css?v=20260927-4">
+    <script defer src="../common/common.js?v=20260927-3"></script>
+    <script defer src="../common/menu-data.js?v=20260926-1"></script>
+    <script defer src="translations.js?v=20260927-3"></script>
+    <script defer src="app.js?v=20260927-2"></script>
 </head>
 <body class="home-page menu-page">
     <div id="common-header"></div>
@@ -85,7 +103,7 @@
             </div>
             <div class="sides-grid">
                 <div class="side-item">
-                    <img src="images/fries.webp?v=20260811-1" alt="Frytki S/L" class="side-image" loading="lazy" decoding="async">
+                    <img src="images/fries.webp?v=20260811-1" srcset="images/fries-360.webp?v=20260927-1 360w, images/fries.webp?v=20260811-1 1024w" sizes="(max-width: 360px) 72px, 90px" width="90" height="90" alt="Frytki S/L" class="side-image" loading="lazy" decoding="async">
                     <div class="side-content">
                         <div class="side-header">
                             <h3 class="side-name" data-i18n="sides.fries">Frytki S/L</h3>
@@ -100,7 +118,7 @@
                 </div>
 
                 <div class="side-item">
-                    <img src="images/wedges.webp?v=20260811-1" alt="Łódeczki ziemniaczane ze skórką" class="side-image" loading="lazy" decoding="async">
+                    <img src="images/wedges.webp?v=20260811-1" srcset="images/wedges-360.webp?v=20260927-1 360w, images/wedges.webp?v=20260811-1 1087w" sizes="(max-width: 360px) 72px, 90px" width="90" height="90" alt="Łódeczki ziemniaczane ze skórką" class="side-image" loading="lazy" decoding="async">
                     <div class="side-content">
                         <div class="side-header">
                             <h3 class="side-name" data-i18n="sides.potatoWedges">Łódeczki ziemniaczane ze skórką</h3>
@@ -115,7 +133,7 @@
                 </div>
 
                 <div class="side-item">
-                    <img src="images/rings.webp?v=20260811-1" alt="Krążki cebulowe S/L" class="side-image" loading="lazy" decoding="async">
+                    <img src="images/rings.webp?v=20260811-1" srcset="images/rings-360.webp?v=20260927-1 360w, images/rings.webp?v=20260811-1 1200w" sizes="(max-width: 360px) 72px, 90px" width="90" height="90" alt="Krążki cebulowe S/L" class="side-image" loading="lazy" decoding="async">
                     <div class="side-content">
                         <div class="side-header">
                             <h3 class="side-name" data-i18n="sides.onionRings">Krążki cebulowe S/L</h3>
@@ -130,7 +148,7 @@
                 </div>
 
                 <div class="side-item">
-                    <img src="images/nuggets.webp?v=20260811-1" alt="Nuggetsy S/L" class="side-image" loading="lazy" decoding="async">
+                    <img src="images/nuggets.webp?v=20260811-1" srcset="images/nuggets-360.webp?v=20260927-1 360w, images/nuggets.webp?v=20260811-1 1200w" sizes="(max-width: 360px) 72px, 90px" width="90" height="90" alt="Nuggetsy S/L" class="side-image" loading="lazy" decoding="async">
                     <div class="side-content">
                         <div class="side-header">
                             <h3 class="side-name" data-i18n="sides.nuggets">Nuggetsy S/L</h3>
@@ -297,9 +315,5 @@
     <a class="mobile-order-cta" href="https://order.site/burger-22" target="_blank" rel="noopener noreferrer" data-i18n="header.order">Zamów online</a>
     <div id="common-footer"></div>
 
-    <script src="../common/common.js?v=20260927-2"></script>
-    <script src="../common/menu-data.js?v=20260926-1"></script>
-    <script src="translations.js?v=20260927-2"></script>
-    <script src="app.js?v=20260927-1"></script>
 </body>
 </html>

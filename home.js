@@ -1,6 +1,10 @@
 // Homepage translations and language handling
 const pageTranslations = {
     pl: {
+        metadata: {
+            title: 'Burger 22 — burgery we Wrocławiu',
+            description: 'Burger 22 — burgery przy Henryka Probusa 11 we Wrocławiu. Zamów online lub zobacz menu.'
+        },
         hero: {
             eyebrow: 'Henryka Probusa 11 · Wrocław',
             title: 'Prawdziwy smak burgera.'
@@ -34,6 +38,10 @@ const pageTranslations = {
         }
     },
     en: {
+        metadata: {
+            title: 'Burger 22 — burgers in Wrocław',
+            description: 'Burger 22 — burgers at Henryka Probusa 11 in Wrocław. Order online or view the menu.'
+        },
         hero: {
             eyebrow: 'Henryka Probusa 11 · Wrocław',
             title: 'The real taste of a burger.'
@@ -112,9 +120,8 @@ function getMergedTranslations() {
 
 function applyHomeTranslations() {
     window.CommonUtils.applyTranslations(getMergedTranslations());
-    document.title = window.CommonUtils.currentLang === 'en'
-        ? 'Burger 22 — Wrocław'
-        : 'Burger 22 — Wrocław';
+    const { title, description } = pageTranslations[window.CommonUtils.currentLang].metadata;
+    window.CommonUtils.updatePageMetadata(title, description);
 }
 
 let homeInitialized = false;

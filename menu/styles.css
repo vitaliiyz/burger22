@@ -147,6 +147,10 @@
     gap: 36px;
 }
 
+#burgery .menu-grid:empty {
+    min-height: 100svh;
+}
+
 #burgery .menu-item {
     min-width: 0;
     display: grid;

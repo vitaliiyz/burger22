@@ -10,7 +10,6 @@ const commonTranslations = {
         burger: {
             home: 'Strona główna',
             menu: 'Menu',
-            cart: 'Koszyk',
             contact: 'Kontakt'
         },
         header: {
@@ -38,7 +37,6 @@ const commonTranslations = {
         burger: {
             home: 'Home',
             menu: 'Menu',
-            cart: 'Cart',
             contact: 'Contact'
         },
         header: {
@@ -132,6 +130,16 @@ function applyTranslations(translations) {
 
     // Update HTML lang attribute
     document.documentElement.setAttribute('lang', currentLang);
+}
+
+function updatePageMetadata(title, description) {
+    document.title = title;
+    for (const selector of ['meta[name="description"]', 'meta[property="og:description"]', 'meta[name="twitter:description"]']) {
+        document.querySelector(selector)?.setAttribute('content', description);
+    }
+    for (const selector of ['meta[property="og:title"]', 'meta[name="twitter:title"]']) {
+        document.querySelector(selector)?.setAttribute('content', title);
+    }
 }
 
 // Function to switch language
@@ -254,6 +262,7 @@ window.CommonUtils = {
     get currentLang() { return currentLang; },
     getTranslation,
     applyTranslations,
+    updatePageMetadata,
     commonTranslations,
     switchLanguage,
     initLanguageButtons

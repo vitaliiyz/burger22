@@ -24,9 +24,13 @@ function renderBurgers() {
                 </div>
             </div>`;
         const image = card.querySelector('.item-image');
+        const aboveFold = index === 0 || (index === 1 && window.matchMedia('(min-width: 900px)').matches);
+        if (aboveFold) {
+            image.loading = 'eager';
+            image.fetchPriority = 'high';
+        }
         image.src = '../' + burger.image;
         image.alt = burger.menuAlt;
-        if (index === 0) image.loading = 'eager';
 
         card.querySelector('.item-name').textContent = burger.text[lang].name;
         card.querySelector('.item-price').textContent = burger.price;
