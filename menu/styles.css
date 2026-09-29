@@ -537,8 +537,8 @@
     }
 
     #burgery .item-image {
-        aspect-ratio: 0.86;
-        height: 100%;
+        aspect-ratio: 1;
+        height: auto;
     }
 
     #burgery .item-content {
