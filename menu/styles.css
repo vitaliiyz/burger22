@@ -303,9 +303,19 @@
 }
 
 .alcohol-beer-group {
+    grid-column: 1 / -1;
+    min-width: 0;
     margin-top: 28px;
     padding-top: 8px;
-    border-top: 2px solid var(--home-yellow);
+    border-top: 1px solid var(--home-line);
+}
+
+.alcohol-beer-items {
+    display: grid;
+}
+
+.alcohol-beer-items .drink-content > span:first-child {
+    overflow-wrap: anywhere;
 }
 
 .alcohol-beer-title {
@@ -490,6 +500,11 @@
 }
 
 @media (min-width: 900px) {
+    .alcohol-beer-items {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        column-gap: 36px;
+    }
+
     .menu-page .location {
         scroll-margin-top: 152px;
     }
