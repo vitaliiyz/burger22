@@ -295,6 +295,38 @@
     text-transform: uppercase;
 }
 
+.drinks-group-note {
+    margin: 8px 0 4px;
+    color: var(--home-muted);
+    font-size: 0.78rem;
+    line-height: 1.5;
+}
+
+.alcohol-beer-group {
+    grid-column: 1 / -1;
+    min-width: 0;
+    margin-top: 28px;
+    padding-top: 8px;
+    border-top: 1px solid var(--home-line);
+}
+
+.alcohol-beer-items {
+    display: grid;
+}
+
+.alcohol-beer-items .drink-content > span:first-child {
+    overflow-wrap: anywhere;
+}
+
+.alcohol-beer-title {
+    margin: 0;
+    border-bottom: 0;
+}
+
+.alcohol-beer-group .drinks-group-note:last-of-type {
+    margin-bottom: 12px;
+}
+
 .drink-content {
     min-width: 0;
     display: flex;
@@ -468,6 +500,11 @@
 }
 
 @media (min-width: 900px) {
+    .alcohol-beer-items {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        column-gap: 36px;
+    }
+
     .menu-page .location {
         scroll-margin-top: 152px;
     }
