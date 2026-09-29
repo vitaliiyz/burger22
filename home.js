@@ -90,7 +90,7 @@ function renderFeaturedBurgers() {
         const card = document.createElement('article');
         card.className = 'product-card';
         card.innerHTML = `
-            <a class="product-card__image" href="menu/index.html#burgery">
+            <a class="product-card__image" href="/menu/#burgery">
                 <img loading="lazy" decoding="async">
             </a>
             <div class="product-card__heading">
