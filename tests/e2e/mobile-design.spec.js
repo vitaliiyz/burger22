@@ -55,7 +55,7 @@ for (const width of MOBILE_WIDTHS) {
         await expectNoPageOverflow(page);
 
         await page.getByRole('link', { name: 'See the menu' }).click();
-        await expect(page).toHaveURL(/\/menu\/index\.html$/);
+        await expect(page).toHaveURL(/\/menu\/$/);
         await expect(page.locator('html')).toHaveAttribute('lang', 'en');
         await expect(page.locator('#menuNav [data-section="burgery"]')).toHaveText('Burgers');
         await expect(page.locator('#burgerGrid .menu-item')).toHaveCount(8);
@@ -74,7 +74,7 @@ for (const width of MOBILE_WIDTHS) {
         const contactLink = page.locator('#burgerMenuOverlay a:has([data-i18n="burger.contact"])');
         await expectWithinViewport(page, contactLink);
         await contactLink.click();
-        await expect(page).toHaveURL(/\/menu\/index\.html#kontakt$/);
+        await expect(page).toHaveURL(/\/menu\/#kontakt$/);
         await expect(page.locator('#burgerMenuOverlay')).toBeHidden();
         await expect(page.locator('#kontakt')).toBeInViewport();
         await expect(page.locator('html')).toHaveAttribute('lang', 'en');

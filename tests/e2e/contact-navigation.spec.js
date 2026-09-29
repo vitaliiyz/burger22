@@ -85,7 +85,7 @@ for (const pageUnderTest of pages) {
                     ? page.locator('#burgerMenuOverlay a:has([data-i18n="burger.menu"])')
                     : page.locator('.site-header__nav [data-i18n="burger.menu"]');
                 await menuLink.click();
-                await expect(page).toHaveURL(`${BASE_URL}/menu/index.html`);
+                await expect(page).toHaveURL(`${BASE_URL}/menu/`);
                 await expect(page.locator('html')).toHaveAttribute('lang', language.code);
             });
         }

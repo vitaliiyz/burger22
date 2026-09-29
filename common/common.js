@@ -87,11 +87,11 @@ function fixHeaderPaths() {
     if (isInMenuFolder) {
         header.innerHTML = header.innerHTML
             .replace(/INDEX_PATH/g, '../index.html')
-            .replace(/MENU_PATH/g, 'index.html');
+            .replace(/MENU_PATH/g, '/menu/');
     } else {
         header.innerHTML = header.innerHTML
             .replace(/INDEX_PATH/g, 'index.html')
-            .replace(/MENU_PATH/g, 'menu/index.html');
+            .replace(/MENU_PATH/g, '/menu/');
     }
 
     const logo = header.querySelector('[data-site-logo]');

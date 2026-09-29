@@ -8,7 +8,7 @@ const pages = [
         path: '/',
         expectedPaths: {
             home: 'index.html',
-            menu: 'menu/index.html',
+            menu: '/menu/',
             contact: '#kontakt'
         },
         currentLink: 'home'
@@ -18,7 +18,7 @@ const pages = [
         path: '/menu/',
         expectedPaths: {
             home: '../index.html',
-            menu: 'index.html',
+            menu: '/menu/',
             contact: '#kontakt'
         },
         currentLink: 'menu'
