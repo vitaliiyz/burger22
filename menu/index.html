@@ -26,10 +26,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap">
     <link rel="stylesheet" href="../common/common.css?v=20260927-4">
     <link rel="stylesheet" href="../styles.css?v=20260927-3">
-    <link rel="stylesheet" href="styles.css?v=20260927-4">
+    <link rel="stylesheet" href="styles.css?v=20260929-1">
     <script defer src="../common/common.js?v=20260927-3"></script>
     <script defer src="../common/menu-data.js?v=20260926-1"></script>
-    <script defer src="translations.js?v=20260927-3"></script>
+    <script defer src="translations.js?v=20260929-1"></script>
     <script defer src="app.js?v=20260927-2"></script>
 </head>
 <body class="home-page menu-page">
@@ -187,8 +187,7 @@
         <section class="menu-section" id="napoje">
             <div class="section-header">
                 <h2 class="section-title" data-i18n="sections.drinks">Napoje</h2>
-                <p class="section-note" data-i18n="cupNotice">Cena nie zawiera opakowania na wynos (+0,50 zł)</p>
-                <p class="section-note" data-i18n="depositNotice">Cena nie zawiera kaucji za butelkę zwrotną (+0,50 zł)</p>
+                <p class="section-note" data-i18n="cupNotice">Opakowanie na wynos, jeśli jest potrzebne: +0,50 zł</p>
             </div>
             <div class="menu-list drinks-list">
                 <div class="menu-column">
@@ -245,6 +244,7 @@
                 </div>
                 <div class="menu-column">
                     <div class="menu-row drinks-group-title" data-i18n="sections.drinksCold">Napoje zimne</div>
+                    <p class="drinks-group-note" data-i18n="depositNotice">Kaucja za butelkę zwrotną, jeśli dotyczy: +0,50 zł</p>
                     <div class="menu-row extras-item drinks-item">
                         <div class="drink-content">
                             <span data-i18n="drinks.sodaMix">Pepsi/Cola/Sprite</span>
@@ -286,6 +286,32 @@
                         </div>
                         <div class="drink-meta">
                             <span class="row-price">11/12 zł</span>
+                        </div>
+                    </div>
+                    <div class="alcohol-beer-group" aria-labelledby="alcohol-beer-title">
+                        <h3 class="menu-row drinks-group-title alcohol-beer-title" id="alcohol-beer-title" data-i18n="sections.alcoholBeer">Piwo alkoholowe · 18+</h3>
+                        <p class="drinks-group-note" data-i18n="drinks.alcoholAgeNotice">Sprzedaż alkoholu osobom poniżej 18 lat jest zabroniona.</p>
+                        <p class="drinks-group-note" data-i18n="drinks.alcoholOrderNotice">Tych piw nie można zamówić online ani w przedzamówieniu.</p>
+                        <div class="menu-row extras-item drinks-item">
+                            <div class="drink-content">
+                                <span>Książęce Cherry Ale</span>
+                                <span class="row-note" data-i18n="drinks.cherryAleStrength">4,1% obj.</span>
+                            </div>
+                            <span class="row-price">15 zł</span>
+                        </div>
+                        <div class="menu-row extras-item drinks-item">
+                            <div class="drink-content">
+                                <span>Książęce IPA</span>
+                                <span class="row-note" data-i18n="drinks.ipaStrength">5,4% obj.</span>
+                            </div>
+                            <span class="row-price">15 zł</span>
+                        </div>
+                        <div class="menu-row extras-item drinks-item">
+                            <div class="drink-content">
+                                <span>Książęce Wiedeński Lager</span>
+                                <span class="row-note" data-i18n="drinks.wiedenskiLagerStrength">4,9% obj.</span>
+                            </div>
+                            <span class="row-price">14 zł</span>
                         </div>
                     </div>
                 </div>

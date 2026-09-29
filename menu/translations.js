@@ -14,8 +14,8 @@ const translations = {
         withLemon: 'z cytryną',
         newItem: 'NOWOŚĆ',
         packagingNotice: 'Cena nie zawiera opakowania na wynos (+1 zł)',
-        cupNotice: 'Cena nie zawiera opakowania na wynos (+0,50 zł)',
-        depositNotice: 'Cena nie zawiera kaucji za butelkę zwrotną (+0,50 zł)',
+        cupNotice: 'Opakowanie na wynos, jeśli jest potrzebne: +0,50 zł',
+        depositNotice: 'Kaucja za butelkę zwrotną, jeśli dotyczy: +0,50 zł',
         sauceExtraNote: 'Sos dodatkowy: od 3 zł',
         disclaimer: 'Wygląd potrawy może się różnić od zdjęcia',
         takeaway: {
@@ -41,6 +41,7 @@ const translations = {
             hotDrinks: 'Napoje gorące',
             drinks: 'Napoje',
             drinksCold: 'Napoje zimne',
+            alcoholBeer: 'Piwo alkoholowe · 18+',
             extras: 'Dodatki do burgera'
         },
         sauces: {
@@ -93,6 +94,11 @@ const translations = {
             zeroBeerMix: 'Piwo 0%',
             zeroBeerOptionClassic: 'klasyczne',
             zeroBeerOptionFlavored: 'smakowe',
+            alcoholAgeNotice: 'Sprzedaż alkoholu osobom poniżej 18 lat jest zabroniona.',
+            alcoholOrderNotice: 'Tych piw nie można zamówić online ani w przedzamówieniu.',
+            cherryAleStrength: '4,1% obj.',
+            ipaStrength: '5,4% obj.',
+            wiedenskiLagerStrength: '4,9% obj.',
             sodaMixNote: '330 ml',
             juiceMixNote: '300 ml',
             waterMixNote: '500 ml',
@@ -113,8 +119,8 @@ const translations = {
         withLemon: 'with lemon',
         newItem: 'NEW',
         packagingNotice: 'Prices do not include takeaway packaging (+1 PLN)',
-        cupNotice: 'Prices do not include takeaway packaging (+0.50 PLN)',
-        depositNotice: 'Prices do not include the refundable bottle deposit (+0.50 PLN)',
+        cupNotice: 'Takeaway packaging, if needed: +0.50 PLN',
+        depositNotice: 'Refundable bottle deposit, where applicable: +0.50 PLN',
         sauceExtraNote: 'Extra sauce: from 3 PLN',
         disclaimer: 'Actual product may differ from image',
         takeaway: {
@@ -140,6 +146,7 @@ const translations = {
             hotDrinks: 'Hot Drinks',
             drinks: 'Drinks',
             drinksCold: 'Cold Drinks',
+            alcoholBeer: 'Alcoholic beer · 18+',
             extras: 'Burger Extras'
         },
         sauces: {
@@ -192,6 +199,11 @@ const translations = {
             zeroBeerMix: 'Beer 0%',
             zeroBeerOptionClassic: 'classic',
             zeroBeerOptionFlavored: 'flavored',
+            alcoholAgeNotice: 'Sale of alcohol to anyone under 18 is prohibited.',
+            alcoholOrderNotice: 'These beers cannot be ordered online or by pre-order.',
+            cherryAleStrength: '4.1% ABV',
+            ipaStrength: '5.4% ABV',
+            wiedenskiLagerStrength: '4.9% ABV',
             sodaMixNote: '330 ml',
             juiceMixNote: '300 ml',
             waterMixNote: '500 ml',

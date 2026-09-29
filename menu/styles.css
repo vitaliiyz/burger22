@@ -295,6 +295,28 @@
     text-transform: uppercase;
 }
 
+.drinks-group-note {
+    margin: 8px 0 4px;
+    color: var(--home-muted);
+    font-size: 0.78rem;
+    line-height: 1.5;
+}
+
+.alcohol-beer-group {
+    margin-top: 28px;
+    padding-top: 8px;
+    border-top: 2px solid var(--home-yellow);
+}
+
+.alcohol-beer-title {
+    margin: 0;
+    border-bottom: 0;
+}
+
+.alcohol-beer-group .drinks-group-note:last-of-type {
+    margin-bottom: 12px;
+}
+
 .drink-content {
     min-width: 0;
     display: flex;
